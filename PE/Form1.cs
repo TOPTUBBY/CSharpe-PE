@@ -222,7 +222,6 @@ namespace PE
             setPoint.Enabled = true;
             start.Enabled = true;
             getData.Enabled = true;
-            dataTable1.Enabled = true;
             gridTable1.Rows.Clear();
             try
             {
@@ -256,9 +255,11 @@ namespace PE
         //Manual insert program
         private void insertBtn_Click(object sender, EventArgs e)
         {
-            for (int gridTable2RowIndex = 2; gridTable2RowIndex < range.Rows.Count + 1; gridTable2RowIndex++)
+            for (int i = 0; i < gridTable2.Rows.Count; i++)
             {
-                gridTable1.Rows.Add(workSheet.Cells[gridTable2RowIndex, 1].Value, workSheet.Cells[gridTable2RowIndex, 2].Value);
+                int n = gridTable1.Rows.Add();
+                gridTable1.Rows[n].Cells[0].Value = gridTable2.Rows[n].Cells[0].Value.ToString();
+                gridTable1.Rows[n].Cells[1].Value = gridTable2.Rows[n].Cells[1].Value.ToString();
             }
         }
         private void cleatBtn_Click(object sender, EventArgs e)
