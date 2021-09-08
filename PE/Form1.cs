@@ -18,7 +18,6 @@ using System.Windows.Forms;
 
 namespace PE
 {
-    //Top test
     public partial class peTest : Form
     {
         IniFile ini = new IniFile(@"d:\\config.ini");
