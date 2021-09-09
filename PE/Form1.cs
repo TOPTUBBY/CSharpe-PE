@@ -3,7 +3,7 @@
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 8/9/2021 18:38:00 PM
+//Last Modified On : 9/9/2021 18:51:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -12,7 +12,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.IO.Ports;
-using System.Runtime.InteropServices; 
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -71,7 +71,7 @@ namespace PE
                 cbbBaud.Items.Add(115200);
                 cbbBaud.Text = cbbBaud.Items[0].ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Port Unavailable. Please check on Device Manager.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -152,7 +152,8 @@ namespace PE
             else
             {
                 value.Text = rtbIncoming1.Text;
-                rtbIncoming2.Text += rtbIncoming1.Text;
+                //log all 
+                //rtbIncoming2.Text += rtbIncoming1.Text;
             }
 
             if (rtbIncoming1.Text == "1\n")
@@ -174,6 +175,13 @@ namespace PE
                 pushStart.ForeColor = Color.RoyalBlue;
                 toolStripStatusLabel.Text = "Ready";
                 dangerTime.Stop();
+                //Add data in cell
+                /*int cntStop = 0;
+                for (int cnt = 0; cnt <= cntStop; cnt++)
+                {
+                    gridTable1.Rows[cnt].Cells[2].Value = "hey";
+                    cntStop++;
+                }*/
             }
         }
 
@@ -255,12 +263,23 @@ namespace PE
         //Manual insert program
         private void insertBtn_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < gridTable2.Rows.Count; i++)
+            gridTable1.Rows.Clear();
+            foreach (DataGridViewRow row in gridTable2.Rows)
             {
-                int n = gridTable1.Rows.Add();
-                gridTable1.Rows[n].Cells[0].Value = gridTable2.Rows[n].Cells[0].Value.ToString();
-                gridTable1.Rows[n].Cells[1].Value = gridTable2.Rows[n].Cells[1].Value.ToString();
+                gridTable1.Rows.Add(row.Cells[0].Value, row.Cells[1].Value);
             }
+            //Back to Home
+            testProgram.Visible = true;
+            setPoint.Visible = true;
+            start.Visible = true;
+            getData.Visible = true;
+            dataTable1.Visible = true;
+            dataTable2.Visible = false;
+            serialPort.Visible = false;
+            //Enable test
+            setPoint.Enabled = true;
+            start.Enabled = true;
+            getData.Enabled = true;
         }
         private void cleatBtn_Click(object sender, EventArgs e)
         {
@@ -396,12 +415,21 @@ namespace PE
             comPort1.Close();
         }
         //Menu Strip
+        //File open Menu
+        //
+        //File save Menu
+        //
+        //File saveAs Menu
+        //
+        //File exit Menu
+        //
         private void fileExit_Click(object sender, EventArgs e)
         {
             confirmDialog.Show("Do you want to exit ?", "PE Testing");
             comPort1.Close();
         }
 
+        //Config port Menu
         private void configPort_Click(object sender, EventArgs e)
         {
             testProgram.Visible = false;
@@ -413,7 +441,7 @@ namespace PE
             serialPort.Visible = true;
             serialPort.Location = new System.Drawing.Point(12, 11);
         }
-
+        //Config edit Menu
         private void configEdit_Click(object sender, EventArgs e)
         {
             testProgram.Visible = false;
@@ -427,6 +455,7 @@ namespace PE
             serialPort.Visible = false;
         }
         //Tool Strip
+        //Home button
         private void homeTool_Click(object sender, EventArgs e)
         {
             testProgram.Visible = true;
@@ -437,7 +466,7 @@ namespace PE
             dataTable2.Visible = false;
             serialPort.Visible = false;
         }
-
+        //Edit button
         private void editTool_Click(object sender, EventArgs e)
         {
             testProgram.Visible = false;
@@ -450,7 +479,7 @@ namespace PE
             dataTable2.Location = new System.Drawing.Point(12, 11);
             serialPort.Visible = false;
         }
-
+        //Connection button
         private void connectionTool_Click(object sender, EventArgs e)
         {
             testProgram.Visible = false;
@@ -462,7 +491,7 @@ namespace PE
             serialPort.Visible = true;
             serialPort.Location = new System.Drawing.Point(12, 11);
         }
-
+        //Export button
         private void exportTool_Click(object sender, EventArgs e)
         {
             if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -470,11 +499,14 @@ namespace PE
                 StreamWriter write = new StreamWriter(File.Create(saveData.FileName));
                 write.Write("Project : " + "," + programList.Text + "\n");
                 write.Write("Serial No. : " + "," + tbSn.Text + "\n");
+                //write result table
+                //
+                //
                 write.Dispose();
-                
+
             }
         }
-
+        //Shutdown button
         private void shutdownTool_Click(object sender, EventArgs e)
         {
             confirmDialog.Show("Do you want to exit ?", "PE Testing");
@@ -513,7 +545,7 @@ namespace PE
 
     }
 }
-//Update : 18:38    8/09/2021
+//Update : 9/9/2021 18:51:00 PM
 //Coming up Next--------------------------------
 //- Insert data format each program to data table --> pointer -- OK 1/9/2021
 //- logging data as table to CSV
@@ -523,4 +555,5 @@ namespace PE
 //- pre load progress
 //- sync progress bar with work
 //- manual test program -- OK 3/9/2021
+//- Add data in cell 
 
