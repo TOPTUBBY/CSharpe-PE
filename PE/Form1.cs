@@ -30,6 +30,8 @@ namespace PE
         Range range;
         string projSheet;
         string programName;
+        int cnt0 = 0;
+        string resValue;
 
         public peTest()
         {
@@ -152,6 +154,7 @@ namespace PE
             else
             {
                 value.Text = rtbIncoming1.Text;
+                resValue = value.Text;
                 //log all 
                 //rtbIncoming2.Text += rtbIncoming1.Text;
             }
@@ -163,6 +166,9 @@ namespace PE
                 pushData.Visible = true;
                 toolStripStatusLabel.Text = "Testing...";
                 dangerTime.Start();
+                testProgram.Enabled = false;
+                setPoint.Enabled = false;
+                this.Text = "PE TESTING (RUNNING)";
             }
             else if (rtbIncoming1.Text == "0\n")
             {
@@ -175,13 +181,12 @@ namespace PE
                 pushStart.ForeColor = Color.RoyalBlue;
                 toolStripStatusLabel.Text = "Ready";
                 dangerTime.Stop();
+                testProgram.Enabled = true;
+                setPoint.Enabled = true;
+                this.Text = "PE TESTING";
                 //Add data in cell
-                /*int cntStop = 0;
-                for (int cnt = 0; cnt <= cntStop; cnt++)
-                {
-                    gridTable1.Rows[cnt].Cells[2].Value = "hey";
-                    cntStop++;
-                }*/
+                gridTable1.Rows[cnt0].Cells[2].Value = resValue;
+                cnt0++;
             }
         }
 
