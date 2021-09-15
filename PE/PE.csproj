@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_electric_armature.ico</ApplicationIcon>
+    <ApplicationIcon>icons8_quick_mode_on.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -221,6 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_electric_armature.ico" />
+    <Content Include="icons8_quick_mode_on.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
