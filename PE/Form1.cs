@@ -10,7 +10,6 @@
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Drawing;
-using System.IO;
 using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -108,11 +107,6 @@ namespace PE
                 notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
                 notifySerial.ShowBalloonTip(1000);
                 toolStripStatusLabel.Text = "Ready";
-                //for(int i = 0; i <= 1; i++) 
-                //{ 
-                //    Console.Beep();
-                //    Thread.Sleep(0); 
-                //}  
             }
             else if (btnState.Text == "Disconnect")
             {
@@ -211,11 +205,11 @@ namespace PE
                 //Add data in result cell
                 resMax = Convert.ToDecimal(gridTable1.Rows[cntRow + 1].Cells[1].Value);
                 var _color = Color.Black;
-                if(resValue <= resMax)
+                if (resValue <= resMax)
                 {
                     resultValue = "PASS";
                     _color = Color.Green;
-                    
+
                 }
                 else
                 {
@@ -539,16 +533,43 @@ namespace PE
         //Export button
         private void exportTool_Click(object sender, EventArgs e)
         {
-            if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                StreamWriter write = new StreamWriter(File.Create(saveData.FileName));
-                write.Write("Project : " + "," + programList.Text + "\n");
-                write.Write("Serial No. : " + "," + tbSn.Text + "\n");
-                //write result table
-                //
-                //
-                write.Dispose();
+                workBook = app.Workbooks.Add(1);
+                workSheet = workBook.ActiveSheet;
+                workSheet.Name = "PE";
 
+                workSheet.Cells[1, 1] = "Project";
+                workSheet.Cells[1, 2] = programList.Text;
+                workSheet.Cells[2, 1] = "Serial No.";
+                workSheet.Cells[2, 2] = tbSn.Text;
+                workSheet.Cells[3, 1] = "Test Date";
+                workSheet.Cells[3, 2] = System.DateTime.Now;
+                // header
+                for (int i = 1; i <= gridTable1.Columns.Count; i++)
+                {
+                    workSheet.Cells[4, i] = gridTable1.Columns[i - 1].HeaderText;
+                }
+
+                // data
+                for (int i = 1; i <= gridTable1.RowCount; i++)
+                {
+                    for (int j = 1; j <= gridTable1.Columns.Count; j++)
+                    {
+                        workSheet.Cells[i + 4, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
+                    }
+                }
+                if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    workBook.SaveAs(saveData.FileName);
+                }
+                app.Quit();
+                workBook = null;
+                workSheet = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
         //Shutdown button

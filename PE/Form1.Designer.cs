@@ -1131,8 +1131,7 @@ namespace PE
             this.saveData.CheckPathExists = false;
             this.saveData.DefaultExt = "csv";
             this.saveData.FileName = "PE_data";
-            this.saveData.Filter = "CSV (Comma Delimited) (*.csv)|*.csv|Text Documents (*.txt)|*.txt|All Files (*.*)|" +
-    "*.*\"";
+            this.saveData.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
             this.saveData.RestoreDirectory = true;
             this.saveData.ShowHelp = true;
             this.saveData.Title = "Export Data";
