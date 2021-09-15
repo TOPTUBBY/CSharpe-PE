@@ -49,8 +49,8 @@ void loop() {
   //-------------------------------------------
   if (Serial.available() > 0) {
     c = Serial.readString();
-    String setType = c.substring(0, 1);
-    String setValue = c.substring(2, 5);
+    String setType = c.substring(0, 1); 
+    String setValue = c.substring(2, 5);  //recieve max 999
     if (setType == "v") {
       Serial1.println("SOURce:VOLTage " + setValue);
     } else if (setType == "a") {
