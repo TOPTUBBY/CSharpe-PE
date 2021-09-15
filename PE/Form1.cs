@@ -30,8 +30,13 @@ namespace PE
         Range range;
         string projSheet;
         string programName;
-        int cnt0 = 0;
-        string resValue;
+        int cntRow = 0;
+        decimal resMax = 0;
+        string measValue;
+        decimal voltValue = 0;
+        decimal resValue = 0;
+        decimal currValue = 0;
+        string resultValue;
 
         public peTest()
         {
@@ -154,7 +159,8 @@ namespace PE
             else
             {
                 value.Text = rtbIncoming1.Text;
-                resValue = value.Text;
+                measValue = value.Text; //Measure voltage
+
                 //log all 
                 //rtbIncoming2.Text += rtbIncoming1.Text;
             }
@@ -184,9 +190,41 @@ namespace PE
                 testProgram.Enabled = true;
                 setPoint.Enabled = true;
                 this.Text = "PE TESTING";
-                //Add data in cell
-                gridTable1.Rows[cnt0].Cells[2].Value = resValue;
-                cnt0++;
+
+                //Cells Manangement
+                //Add data in voltage cell
+                gridTable1.Rows[cntRow].Cells[2].Value = measValue;
+
+                //Calculate to Resistance by use Current from setpoint
+                //Add data in resistance cell
+                voltValue = Convert.ToDecimal(measValue);
+                try
+                {
+                    resValue = voltValue / currValue;
+                }
+                catch
+                {
+                    resValue = 0;
+                }
+                gridTable1.Rows[cntRow].Cells[3].Value = resValue;
+
+                //Add data in result cell
+                resMax = Convert.ToDecimal(gridTable1.Rows[cntRow + 1].Cells[1].Value);
+                var _color = Color.Black;
+                if(resValue <= resMax)
+                {
+                    resultValue = "PASS";
+                    _color = Color.Green;
+                    
+                }
+                else
+                {
+                    resultValue = "FAIL";
+                    _color = Color.Red;
+                }
+                gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
+                gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
+                cntRow++;
             }
         }
 
@@ -318,6 +356,7 @@ namespace PE
             string currSent;
             int Length, j = 0;
 
+            currValue = currBox.Value;
             Length = curr.Length;
 
             for (int i = 0; i < Length; i++)
@@ -357,6 +396,7 @@ namespace PE
                 string currSent;
                 int Length, j = 0;
 
+                currValue = currBox.Value;
                 Length = curr.Length;
 
                 for (int i = 0; i < Length; i++)
