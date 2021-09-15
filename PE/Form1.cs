@@ -31,7 +31,7 @@ namespace PE
         string programName;
         int cntRow = 0;
         decimal resMax = 0;
-        string measValue;
+        decimal measValue;
         decimal voltValue = 0;
         decimal resValue = 0;
         decimal currValue = 0;
@@ -153,7 +153,7 @@ namespace PE
             else
             {
                 value.Text = rtbIncoming1.Text;
-                measValue = value.Text; //Measure voltage
+                measValue = Convert.ToDecimal(value.Text); //Measure voltage
 
                 //log all 
                 //rtbIncoming2.Text += rtbIncoming1.Text;
@@ -203,7 +203,7 @@ namespace PE
                 gridTable1.Rows[cntRow].Cells[3].Value = resValue;
 
                 //Add data in result cell
-                resMax = Convert.ToDecimal(gridTable1.Rows[cntRow + 1].Cells[1].Value);
+                resMax = Convert.ToDecimal(gridTable1.Rows[cntRow].Cells[1].Value);
                 var _color = Color.Black;
                 if (resValue <= resMax)
                 {
