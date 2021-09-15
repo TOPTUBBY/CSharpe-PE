@@ -53,6 +53,7 @@ namespace PE
             // 
             this.pictureBox3.ErrorImage = global::PE.Properties.Resources.icons8_checkmark_48;
             this.pictureBox3.Image = global::PE.Properties.Resources.icons8_checkmark_48;
+            this.pictureBox3.InitialImage = global::PE.Properties.Resources.icons8_checkmark_48;
             this.pictureBox3.Location = new System.Drawing.Point(61, 72);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 48);
@@ -65,6 +66,7 @@ namespace PE
             // 
             this.pictureBox2.ErrorImage = global::PE.Properties.Resources.icons8_delete_48;
             this.pictureBox2.Image = global::PE.Properties.Resources.icons8_delete_48;
+            this.pictureBox2.InitialImage = global::PE.Properties.Resources.icons8_delete_48;
             this.pictureBox2.Location = new System.Drawing.Point(196, 72);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
@@ -112,7 +114,7 @@ namespace PE
         #endregion
         private System.Windows.Forms.Label lblConfirm;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.PictureBox pictureBox3;
     }
 }
