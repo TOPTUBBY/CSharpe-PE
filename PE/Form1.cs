@@ -228,11 +228,11 @@ namespace PE
         private void programList_SelectionChangeCommitted(object sender, EventArgs e)
         {
             programName = programList.Text;
-            if (programName == "BMW")
+            if (programName == "BMW	- CCU")
             {
                 projSheet = "bmw";
             }
-            else if (programName == "DAIMLER	- OBC")
+            else if (programName == "DAIMLER    - OBC")
             {
                 projSheet = "obc";
             }
