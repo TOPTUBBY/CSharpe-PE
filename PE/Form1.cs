@@ -530,6 +530,17 @@ namespace PE
             serialPort.Visible = true;
             serialPort.Location = new System.Drawing.Point(12, 11);
         }
+        //Manual button
+        private void manualTool_Click(object sender, EventArgs e)
+        {
+            testProgram.Visible = false;
+            setPoint.Visible = false;
+            start.Visible = false;
+            getData.Visible = false;
+            dataTable1.Visible = false;
+            dataTable2.Visible = false;
+            serialPort.Visible = false;
+        }
         //Export button
         private void exportTool_Click(object sender, EventArgs e)
         {
@@ -578,6 +589,7 @@ namespace PE
             confirmDialog.Show("Do you want to exit ?", "PE Testing");
             comPort1.Close();
         }
+
     }
 
     /*====================================================================================================*/

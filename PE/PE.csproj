@@ -222,6 +222,8 @@
   <ItemGroup>
     <Content Include="icons8_electric_armature.ico" />
     <Content Include="icons8_quick_mode_on.ico" />
+    <None Include="Resources\icons8_manual_64.png" />
+    <None Include="Resources\icons8_manual_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
