@@ -222,6 +222,10 @@
   <ItemGroup>
     <Content Include="icons8_electric_armature.ico" />
     <Content Include="icons8_quick_mode_on.ico" />
+    <None Include="Resources\icons8_toggle_on_64.png" />
+    <None Include="Resources\icons8_toggle_off_64.png" />
+    <None Include="Resources\CHR-62000H-ON.jpg" />
+    <None Include="Resources\CHR-62000H.jpg" />
     <None Include="Resources\icons8_manual_64.png" />
     <None Include="Resources\icons8_manual_48.png" />
   </ItemGroup>

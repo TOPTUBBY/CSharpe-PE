@@ -3,7 +3,7 @@
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 9/9/2021 18:51:00 PM
+//Last Modified On : 17/9/2021 18:44:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,6 +35,7 @@ namespace PE
         decimal voltValue = 0;
         decimal resValue = 0;
         decimal currValue = 0;
+        decimal powValue = 0;
         string resultValue;
 
         public peTest()
@@ -107,6 +108,7 @@ namespace PE
                 notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
                 notifySerial.ShowBalloonTip(1000);
                 toolStripStatusLabel.Text = "Ready";
+                toolStripStatusLabel2.Text = comPort1.PortName + "," + comPort1.BaudRate;
             }
             else if (btnState.Text == "Disconnect")
             {
@@ -123,6 +125,7 @@ namespace PE
                 cbbPort.Enabled = true;
                 cbbBaud.Enabled = true;
                 toolStripStatusLabel.Text = "Device not connected";
+                toolStripStatusLabel2.Text = null;
                 rtbIncoming1.Clear();
                 statusBox.BackColor = Color.Red;
                 notifySerial.Icon = SystemIcons.Application;
@@ -168,6 +171,7 @@ namespace PE
                 dangerTime.Start();
                 testProgram.Enabled = false;
                 setPoint.Enabled = false;
+                manualTool.Enabled = false;
                 this.Text = "PE TESTING (RUNNING)";
             }
             else if (rtbIncoming1.Text == "0\n")
@@ -183,6 +187,7 @@ namespace PE
                 dangerTime.Stop();
                 testProgram.Enabled = true;
                 setPoint.Enabled = true;
+                manualTool.Enabled = true;
                 this.Text = "PE TESTING";
 
                 //Cells Manangement
@@ -318,15 +323,17 @@ namespace PE
             start.Enabled = true;
             getData.Enabled = true;
         }
+
         private void cleatBtn_Click(object sender, EventArgs e)
         {
             gridTable2.Rows.Clear();
         }
 
         /*====================================================================================================*/
-        /*--------------------------------------------Setpoint------------------------------------------------*/
+        /*--------------------------------------------DC Source-----------------------------------------------*/
+        //Auto DC source --------------------------------------------------------------------------------------
         //Button Click to set
-        private void setVoltBtn_Click(object sender, EventArgs e)
+        private void btnSetVolt_Click(object sender, EventArgs e)
         {
             pushStart.Visible = true;
             string volt = "v," + voltBox.Text;
@@ -343,7 +350,7 @@ namespace PE
             }
         }
 
-        private void setCurrBtn_Click(object sender, EventArgs e)
+        private void btnSetCurr_Click(object sender, EventArgs e)
         {
             pushStart.Visible = true;
             string curr = "a," + currBox.Text;
@@ -360,6 +367,7 @@ namespace PE
                 j++;
             }
         }
+
         //Enter to set
         private void voltBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -402,6 +410,117 @@ namespace PE
             }
         }
 
+        //Manual DC source-------------------------------------------------------------------------------------
+        //Button Click to set
+        private void btnSetVoltManual_Click(object sender, EventArgs e)
+        {
+            string volt = "v," + voltBoxManual.Text;
+            string voltSent;
+            int Length, j = 0;
+
+            voltValue = voltBoxManual.Value;
+            Length = volt.Length;
+
+            for (int i = 0; i < Length; i++)
+            {
+                voltSent = volt.Substring(j, 1);
+                comPort1.Write(voltSent);
+                j++;
+            }
+            setVoltScr.Text = String.Format("{0:0.00}", voltBoxManual.Value);
+            powValue = voltValue * currValue;
+            showPowScr.Text = String.Format("{0:0.0}", powValue);
+        }
+
+        private void btnSetCurrManual_Click(object sender, EventArgs e)
+        {
+            string curr = "a," + currBoxManual.Text;
+            string currSent;
+            int Length, j = 0;
+
+            currValue = currBoxManual.Value;
+            Length = curr.Length;
+
+            for (int i = 0; i < Length; i++)
+            {
+                currSent = curr.Substring(j, 1);
+                comPort1.Write(currSent);
+                j++;
+            }
+            setCurrScr.Text = String.Format("{0:0.00}", currBoxManual.Value);
+            powValue = voltValue * currValue;
+            showPowScr.Text = String.Format("{0:0.0}", powValue);
+        }
+
+        //Enter to set
+        private void voltBoxManual_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string volt = "v," + voltBoxManual.Text;
+                string voltSent;
+                int Length, j = 0;
+
+                voltValue = voltBoxManual.Value;
+                Length = volt.Length;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    voltSent = volt.Substring(j, 1);
+                    comPort1.Write(voltSent);
+                    j++;
+                }
+                setVoltScr.Text = String.Format("{0:0.00}", voltBoxManual.Value);
+            }
+            powValue = voltValue * currValue;
+            showPowScr.Text = String.Format("{0:0.0}", powValue);
+        }
+
+        private void currBoxManual_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string curr = "a," + currBoxManual.Text;
+                string currSent;
+                int Length, j = 0;
+
+                currValue = currBoxManual.Value;
+                Length = curr.Length;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    currSent = curr.Substring(j, 1);
+                    comPort1.Write(currSent);
+                    j++;
+                }
+                setCurrScr.Text = String.Format("{0:0.00}", currBoxManual.Value);
+            }
+            powValue = voltValue * currValue;
+            showPowScr.Text = String.Format("{0:0.0}", powValue);
+        }
+
+        private void btnToggleOff_Click(object sender, EventArgs e)
+        {
+            btnToggleOff.Visible = false;
+            btnToggleOn.Visible = true;
+            lblToggleOff.Visible = false;
+            lblToggleOn.Visible = true;
+            this.Text = "PE TESTING (OUTPUT ON)";
+
+            comPort1.Write("1");
+        }
+
+        private void btnToggleOn_Click(object sender, EventArgs e)
+        {
+            btnToggleOn.Visible = false;
+            btnToggleOff.Visible = true;
+            lblToggleOn.Visible = false;
+            lblToggleOff.Visible = true;
+            this.Text = "PE TESTING";
+
+            comPort1.Write("0");
+        }
+
         /*====================================================================================================*/
         /*-------------------------------------------DangerSign------------------------------------------------*/
         void dangerTime_Tick(object sender, EventArgs e)
@@ -414,7 +533,6 @@ namespace PE
 
         /*====================================================================================================*/
         /*----------------------------------------------Interface---------------------------------------------*/
-
         //Auto Connect
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -434,6 +552,7 @@ namespace PE
                 disConnect.Visible = false;
                 testProgram.Visible = true;
                 toolStripStatusLabel.Text = "Ready";
+                toolStripStatusLabel2.Text = comPort1.PortName + "," + comPort1.BaudRate;
                 statusBox.BackColor = Color.LawnGreen;
                 notifySerial.Icon = SystemIcons.Application;
                 notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
@@ -446,6 +565,7 @@ namespace PE
                 btnState.Enabled = false;
                 testProgram.Enabled = false;
                 toolStripStatusLabel.Text = "Device not connected";
+                toolStripStatusLabel2.Text = null;
             }
         }
 
@@ -479,7 +599,9 @@ namespace PE
             dataTable2.Visible = false;
             serialPort.Visible = true;
             serialPort.Location = new System.Drawing.Point(12, 11);
+            manual.Visible = false;
         }
+
         //Config edit Menu
         private void configEdit_Click(object sender, EventArgs e)
         {
@@ -492,7 +614,9 @@ namespace PE
             dataTable2.Height = 450;
             dataTable2.Location = new System.Drawing.Point(12, 11);
             serialPort.Visible = false;
+            manual.Visible = false;
         }
+
         //Tool Strip
         //Home button
         private void homeTool_Click(object sender, EventArgs e)
@@ -504,7 +628,9 @@ namespace PE
             dataTable1.Visible = true;
             dataTable2.Visible = false;
             serialPort.Visible = false;
+            manual.Visible = false;
         }
+
         //Edit button
         private void editTool_Click(object sender, EventArgs e)
         {
@@ -517,7 +643,9 @@ namespace PE
             dataTable2.Height = 450;
             dataTable2.Location = new System.Drawing.Point(12, 11);
             serialPort.Visible = false;
+            manual.Visible = false;
         }
+
         //Connection button
         private void connectionTool_Click(object sender, EventArgs e)
         {
@@ -529,7 +657,9 @@ namespace PE
             dataTable2.Visible = false;
             serialPort.Visible = true;
             serialPort.Location = new System.Drawing.Point(12, 11);
+            manual.Visible = false;
         }
+
         //Manual button
         private void manualTool_Click(object sender, EventArgs e)
         {
@@ -540,7 +670,11 @@ namespace PE
             dataTable1.Visible = false;
             dataTable2.Visible = false;
             serialPort.Visible = false;
+            manual.Visible = true;
+            manual.Location = new System.Drawing.Point(12, 11);
+            manual.Size = new System.Drawing.Size(958, 491);
         }
+
         //Export button
         private void exportTool_Click(object sender, EventArgs e)
         {
@@ -583,13 +717,13 @@ namespace PE
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
         //Shutdown button
         private void shutdownTool_Click(object sender, EventArgs e)
         {
             confirmDialog.Show("Do you want to exit ?", "PE Testing");
             comPort1.Close();
         }
-
     }
 
     /*====================================================================================================*/
@@ -623,15 +757,20 @@ namespace PE
 
     }
 }
-//Update : 9/9/2021 18:51:00 PM
+//Update : 17/9/2021 18:44:00 PM
 //Coming up Next--------------------------------
 //- Insert data format each program to data table --> pointer -- OK 1/9/2021
-//- logging data as table to CSV
-//- fileOpen,fileSave,fileSaveAs,help --> Defined
+//- logging data as table to CSV -- OK 15/9/2021
+//- fileOpen,fileSave,fileSaveAs,help 
 //- ini config -- OK 1/9/2021
 //- user login
-//- pre load progress
-//- sync progress bar with work
+//- pre load progress 
+//- sync progress bar with work 
 //- manual test program -- OK 3/9/2021
-//- Add data in cell 
+//- Add data in cell -- OK 13/9/2021
+//- Add manual DC-source -- On-Going
+//  - setpoint screen -- OK 17/09/2021
+//  - setpoint -- OK 17/09/2021
+//  - Measure screen
+//  - Port can connect but data not match**
 

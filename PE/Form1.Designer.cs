@@ -31,28 +31,37 @@ namespace PE
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(peTest));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.configToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.configPort = new System.Windows.Forms.ToolStripMenuItem();
+            this.configEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.serialPort = new System.Windows.Forms.GroupBox();
+            this.statusBox = new System.Windows.Forms.PictureBox();
             this.lblBaud = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
             this.rtbIncoming2 = new System.Windows.Forms.RichTextBox();
@@ -65,8 +74,8 @@ namespace PE
             this.setPoint = new System.Windows.Forms.GroupBox();
             this.currBox = new System.Windows.Forms.NumericUpDown();
             this.voltBox = new System.Windows.Forms.NumericUpDown();
-            this.setCurrBtn = new System.Windows.Forms.Button();
-            this.setVoltBtn = new System.Windows.Forms.Button();
+            this.btnSetCurr = new System.Windows.Forms.Button();
+            this.btnSetVolt = new System.Windows.Forms.Button();
             this.lblCurr = new System.Windows.Forms.Label();
             this.lblCurr2 = new System.Windows.Forms.Label();
             this.lblVolt2 = new System.Windows.Forms.Label();
@@ -74,6 +83,9 @@ namespace PE
             this.dangerTime = new System.Windows.Forms.Timer(this.components);
             this.pushStart = new System.Windows.Forms.Label();
             this.start = new System.Windows.Forms.GroupBox();
+            this.warning = new System.Windows.Forms.PictureBox();
+            this.dangerOn = new System.Windows.Forms.PictureBox();
+            this.danger = new System.Windows.Forms.PictureBox();
             this.comPort1 = new System.IO.Ports.SerialPort(this.components);
             this.getData = new System.Windows.Forms.GroupBox();
             this.lblTestResult = new System.Windows.Forms.Label();
@@ -81,16 +93,51 @@ namespace PE
             this.value = new System.Windows.Forms.Label();
             this.pushData = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.homeTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.editTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.connectionTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.manualTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.exportTool = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.shutdownTool = new System.Windows.Forms.ToolStripButton();
             this.groupTest = new System.Windows.Forms.GroupBox();
             this.testProgram = new System.Windows.Forms.GroupBox();
             this.tbSn = new System.Windows.Forms.TextBox();
+            this.confirmSelectBtn = new System.Windows.Forms.Button();
             this.lblSn = new System.Windows.Forms.Label();
             this.lblSelectProgram = new System.Windows.Forms.Label();
             this.programList = new System.Windows.Forms.ComboBox();
+            this.manual = new System.Windows.Forms.GroupBox();
+            this.lblShowCurrScr = new System.Windows.Forms.Label();
+            this.lblPowScr = new System.Windows.Forms.Label();
+            this.lblCurrScr = new System.Windows.Forms.Label();
+            this.lblSetCurrScr = new System.Windows.Forms.Label();
+            this.lblVoltScr = new System.Windows.Forms.Label();
+            this.lblSetVoltScr = new System.Windows.Forms.Label();
+            this.lblShowVoltScr = new System.Windows.Forms.Label();
+            this.showPowScr = new System.Windows.Forms.TextBox();
+            this.setCurrScr = new System.Windows.Forms.TextBox();
+            this.showCurrScr = new System.Windows.Forms.TextBox();
+            this.setVoltScr = new System.Windows.Forms.TextBox();
+            this.showVoltScr = new System.Windows.Forms.TextBox();
+            this.lblToggleOn = new System.Windows.Forms.Label();
+            this.lblToggleOff = new System.Windows.Forms.Label();
+            this.btnToggleOff = new System.Windows.Forms.PictureBox();
+            this.chroma = new System.Windows.Forms.PictureBox();
+            this.setPointManual = new System.Windows.Forms.GroupBox();
+            this.currBoxManual = new System.Windows.Forms.NumericUpDown();
+            this.voltBoxManual = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSetVoltManual = new System.Windows.Forms.Button();
+            this.lblCurrManual = new System.Windows.Forms.Label();
+            this.lblCurrManual2 = new System.Windows.Forms.Label();
+            this.lblVoltManual2 = new System.Windows.Forms.Label();
+            this.lblVoltManual = new System.Windows.Forms.Label();
+            this.btnToggleOn = new System.Windows.Forms.PictureBox();
             this.dataTable2 = new System.Windows.Forms.GroupBox();
             this.cleatBtn = new System.Windows.Forms.Button();
             this.insertBtn = new System.Windows.Forms.Button();
@@ -106,40 +153,32 @@ namespace PE
             this.result = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveData = new System.Windows.Forms.SaveFileDialog();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.delta = new System.Windows.Forms.PictureBox();
             this.disConnect = new System.Windows.Forms.PictureBox();
             this.connect = new System.Windows.Forms.PictureBox();
-            this.confirmSelectBtn = new System.Windows.Forms.Button();
-            this.statusBox = new System.Windows.Forms.PictureBox();
-            this.warning = new System.Windows.Forms.PictureBox();
-            this.dangerOn = new System.Windows.Forms.PictureBox();
-            this.danger = new System.Windows.Forms.PictureBox();
-            this.homeTool = new System.Windows.Forms.ToolStripButton();
-            this.editTool = new System.Windows.Forms.ToolStripButton();
-            this.connectionTool = new System.Windows.Forms.ToolStripButton();
-            this.exportTool = new System.Windows.Forms.ToolStripButton();
-            this.shutdownTool = new System.Windows.Forms.ToolStripButton();
-            this.manualTool = new System.Windows.Forms.ToolStripButton();
-            this.fileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.configPort = new System.Windows.Forms.ToolStripMenuItem();
-            this.configEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.serialPort.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
             this.setPoint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBox)).BeginInit();
             this.start.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.warning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danger)).BeginInit();
             this.getData.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupTest.SuspendLayout();
             this.testProgram.SuspendLayout();
+            this.manual.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chroma)).BeginInit();
+            this.setPointManual.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.currBoxManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voltBoxManual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).BeginInit();
             this.dataTable2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTable2)).BeginInit();
             this.dataTable1.SuspendLayout();
@@ -148,10 +187,6 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.delta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disConnect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.connect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.warning)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danger)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -179,6 +214,38 @@ namespace PE
             this.fileToolStripMenu.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenu.Text = "File";
             // 
+            // fileOpen
+            // 
+            this.fileOpen.Image = global::PE.Properties.Resources.icons8_open_folder_in_new_tab_32;
+            this.fileOpen.Name = "fileOpen";
+            this.fileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.fileOpen.Size = new System.Drawing.Size(163, 22);
+            this.fileOpen.Text = "Open...";
+            // 
+            // fileSave
+            // 
+            this.fileSave.Image = global::PE.Properties.Resources.icons8_save_32;
+            this.fileSave.Name = "fileSave";
+            this.fileSave.Size = new System.Drawing.Size(163, 22);
+            this.fileSave.Text = "Save...";
+            // 
+            // fileSaveAs
+            // 
+            this.fileSaveAs.Image = global::PE.Properties.Resources.icons8_save_as_32;
+            this.fileSaveAs.Name = "fileSaveAs";
+            this.fileSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.fileSaveAs.Size = new System.Drawing.Size(163, 22);
+            this.fileSaveAs.Text = "Save As...";
+            // 
+            // fileExit
+            // 
+            this.fileExit.Image = global::PE.Properties.Resources.icons8_shutdown_32;
+            this.fileExit.Name = "fileExit";
+            this.fileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.fileExit.Size = new System.Drawing.Size(163, 22);
+            this.fileExit.Text = "Exit";
+            this.fileExit.Click += new System.EventHandler(this.fileExit_Click);
+            // 
             // configToolStripMenu
             // 
             this.configToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -187,6 +254,25 @@ namespace PE
             this.configToolStripMenu.Name = "configToolStripMenu";
             this.configToolStripMenu.Size = new System.Drawing.Size(93, 20);
             this.configToolStripMenu.Text = "Configuration";
+            // 
+            // configPort
+            // 
+            this.configPort.Image = global::PE.Properties.Resources.icons8_internet_of_things_32;
+            this.configPort.Name = "configPort";
+            this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.configPort.Size = new System.Drawing.Size(183, 22);
+            this.configPort.Text = "Port";
+            this.configPort.Click += new System.EventHandler(this.configPort_Click);
+            // 
+            // configEdit
+            // 
+            this.configEdit.Image = global::PE.Properties.Resources.icons8_edit_32;
+            this.configEdit.Name = "configEdit";
+            this.configEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.configEdit.Size = new System.Drawing.Size(183, 22);
+            this.configEdit.Text = "Edit program";
+            this.configEdit.Click += new System.EventHandler(this.configEdit_Click);
             // 
             // helpToolStripMenu
             // 
@@ -197,6 +283,21 @@ namespace PE
             this.helpToolStripMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.helpToolStripMenu.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenu.Text = "Help";
+            // 
+            // helpInfo
+            // 
+            this.helpInfo.Image = global::PE.Properties.Resources.icons8_about_32;
+            this.helpInfo.Name = "helpInfo";
+            this.helpInfo.Size = new System.Drawing.Size(163, 22);
+            this.helpInfo.Text = "About PE Testing";
+            // 
+            // helpHelp
+            // 
+            this.helpHelp.Image = global::PE.Properties.Resources.icons8_get_help_32;
+            this.helpHelp.Name = "helpHelp";
+            this.helpHelp.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.helpHelp.Size = new System.Drawing.Size(163, 22);
+            this.helpHelp.Text = "Help";
             // 
             // serialPort
             // 
@@ -217,6 +318,16 @@ namespace PE
             this.serialPort.TabStop = false;
             this.serialPort.Text = "Connection";
             this.serialPort.Visible = false;
+            // 
+            // statusBox
+            // 
+            this.statusBox.BackColor = System.Drawing.Color.Red;
+            this.statusBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.statusBox.Location = new System.Drawing.Point(286, 0);
+            this.statusBox.Name = "statusBox";
+            this.statusBox.Size = new System.Drawing.Size(30, 15);
+            this.statusBox.TabIndex = 3;
+            this.statusBox.TabStop = false;
             // 
             // lblBaud
             // 
@@ -310,8 +421,8 @@ namespace PE
             // 
             this.setPoint.Controls.Add(this.currBox);
             this.setPoint.Controls.Add(this.voltBox);
-            this.setPoint.Controls.Add(this.setCurrBtn);
-            this.setPoint.Controls.Add(this.setVoltBtn);
+            this.setPoint.Controls.Add(this.btnSetCurr);
+            this.setPoint.Controls.Add(this.btnSetVolt);
             this.setPoint.Controls.Add(this.lblCurr);
             this.setPoint.Controls.Add(this.lblCurr2);
             this.setPoint.Controls.Add(this.lblVolt2);
@@ -369,27 +480,27 @@ namespace PE
             this.voltBox.ThousandsSeparator = true;
             this.voltBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.voltBox_KeyDown);
             // 
-            // setCurrBtn
+            // btnSetCurr
             // 
-            this.setCurrBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.setCurrBtn.Location = new System.Drawing.Point(325, 70);
-            this.setCurrBtn.Name = "setCurrBtn";
-            this.setCurrBtn.Size = new System.Drawing.Size(118, 32);
-            this.setCurrBtn.TabIndex = 2;
-            this.setCurrBtn.Text = "Set";
-            this.setCurrBtn.UseVisualStyleBackColor = true;
-            this.setCurrBtn.Click += new System.EventHandler(this.setCurrBtn_Click);
+            this.btnSetCurr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSetCurr.Location = new System.Drawing.Point(325, 70);
+            this.btnSetCurr.Name = "btnSetCurr";
+            this.btnSetCurr.Size = new System.Drawing.Size(118, 32);
+            this.btnSetCurr.TabIndex = 2;
+            this.btnSetCurr.Text = "Set";
+            this.btnSetCurr.UseVisualStyleBackColor = true;
+            this.btnSetCurr.Click += new System.EventHandler(this.btnSetCurr_Click);
             // 
-            // setVoltBtn
+            // btnSetVolt
             // 
-            this.setVoltBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.setVoltBtn.Location = new System.Drawing.Point(325, 25);
-            this.setVoltBtn.Name = "setVoltBtn";
-            this.setVoltBtn.Size = new System.Drawing.Size(118, 32);
-            this.setVoltBtn.TabIndex = 2;
-            this.setVoltBtn.Text = "Set";
-            this.setVoltBtn.UseVisualStyleBackColor = true;
-            this.setVoltBtn.Click += new System.EventHandler(this.setVoltBtn_Click);
+            this.btnSetVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSetVolt.Location = new System.Drawing.Point(325, 25);
+            this.btnSetVolt.Name = "btnSetVolt";
+            this.btnSetVolt.Size = new System.Drawing.Size(118, 32);
+            this.btnSetVolt.TabIndex = 2;
+            this.btnSetVolt.Text = "Set";
+            this.btnSetVolt.UseVisualStyleBackColor = true;
+            this.btnSetVolt.Click += new System.EventHandler(this.btnSetVolt_Click);
             // 
             // lblCurr
             // 
@@ -465,8 +576,48 @@ namespace PE
             this.start.TabStop = false;
             this.start.Text = "Start testing";
             // 
+            // warning
+            // 
+            this.warning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.warning.ErrorImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
+            this.warning.Image = global::PE.Properties.Resources.icons8_electricity_hazard_64;
+            this.warning.InitialImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
+            this.warning.Location = new System.Drawing.Point(367, 17);
+            this.warning.Name = "warning";
+            this.warning.Size = new System.Drawing.Size(40, 36);
+            this.warning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.warning.TabIndex = 9;
+            this.warning.TabStop = false;
+            this.warning.Visible = false;
+            // 
+            // dangerOn
+            // 
+            this.dangerOn.ErrorImage = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.Image = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.InitialImage = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.Location = new System.Drawing.Point(11, 64);
+            this.dangerOn.Name = "dangerOn";
+            this.dangerOn.Size = new System.Drawing.Size(450, 148);
+            this.dangerOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dangerOn.TabIndex = 4;
+            this.dangerOn.TabStop = false;
+            this.dangerOn.Visible = false;
+            // 
+            // danger
+            // 
+            this.danger.ErrorImage = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.Image = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.InitialImage = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.Location = new System.Drawing.Point(11, 64);
+            this.danger.Name = "danger";
+            this.danger.Size = new System.Drawing.Size(450, 148);
+            this.danger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.danger.TabIndex = 4;
+            this.danger.TabStop = false;
+            // 
             // comPort1
             // 
+            this.comPort1.BaudRate = 115200;
             this.comPort1.DtrEnable = true;
             this.comPort1.RtsEnable = true;
             this.comPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.port_DataReceived_1);
@@ -563,11 +714,35 @@ namespace PE
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // homeTool
+            // 
+            this.homeTool.Image = global::PE.Properties.Resources.icons8_home_48;
+            this.homeTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.homeTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.homeTool.Margin = new System.Windows.Forms.Padding(20, 2, 0, 1);
+            this.homeTool.Name = "homeTool";
+            this.homeTool.Size = new System.Drawing.Size(52, 67);
+            this.homeTool.Text = "Home";
+            this.homeTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.homeTool.ToolTipText = "Home";
+            this.homeTool.Click += new System.EventHandler(this.homeTool_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 70);
+            // 
+            // editTool
+            // 
+            this.editTool.Image = global::PE.Properties.Resources.icons8_edit_48;
+            this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editTool.Name = "editTool";
+            this.editTool.Size = new System.Drawing.Size(80, 67);
+            this.editTool.Text = "Edit Program";
+            this.editTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editTool.Click += new System.EventHandler(this.editTool_Click);
             // 
             // toolStripSeparator2
             // 
@@ -575,11 +750,35 @@ namespace PE
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
             // 
+            // connectionTool
+            // 
+            this.connectionTool.Image = global::PE.Properties.Resources.icons8_internet_of_things_48;
+            this.connectionTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.connectionTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.connectionTool.Name = "connectionTool";
+            this.connectionTool.Size = new System.Drawing.Size(73, 67);
+            this.connectionTool.Text = "Connection";
+            this.connectionTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.connectionTool.ToolTipText = "Connection\r\n setting";
+            this.connectionTool.Click += new System.EventHandler(this.connectionTool_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
+            // 
+            // manualTool
+            // 
+            this.manualTool.Image = global::PE.Properties.Resources.icons8_manual_48;
+            this.manualTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manualTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.manualTool.Name = "manualTool";
+            this.manualTool.Size = new System.Drawing.Size(52, 67);
+            this.manualTool.Text = "Manual";
+            this.manualTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.manualTool.ToolTipText = "Manual DC-source";
+            this.manualTool.Click += new System.EventHandler(this.manualTool_Click);
             // 
             // toolStripSeparator4
             // 
@@ -587,9 +786,41 @@ namespace PE
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 70);
             // 
+            // exportTool
+            // 
+            this.exportTool.Enabled = false;
+            this.exportTool.Image = global::PE.Properties.Resources.icons8_microsoft_excel_2019_48;
+            this.exportTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.exportTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.exportTool.Name = "exportTool";
+            this.exportTool.Size = new System.Drawing.Size(72, 67);
+            this.exportTool.Text = "Export Data";
+            this.exportTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportTool.ToolTipText = "Export data";
+            this.exportTool.Click += new System.EventHandler(this.exportTool_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
+            // 
+            // shutdownTool
+            // 
+            this.shutdownTool.Image = global::PE.Properties.Resources.icons8_shutdown_48;
+            this.shutdownTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.shutdownTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.shutdownTool.Name = "shutdownTool";
+            this.shutdownTool.Size = new System.Drawing.Size(52, 67);
+            this.shutdownTool.Text = "Exit";
+            this.shutdownTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shutdownTool.ToolTipText = "Exit Program";
+            this.shutdownTool.Click += new System.EventHandler(this.shutdownTool_Click);
+            // 
             // groupTest
             // 
             this.groupTest.Controls.Add(this.testProgram);
+            this.groupTest.Controls.Add(this.manual);
             this.groupTest.Controls.Add(this.dataTable2);
             this.groupTest.Controls.Add(this.dataTable1);
             this.groupTest.Controls.Add(this.serialPort);
@@ -600,7 +831,7 @@ namespace PE
             this.groupTest.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupTest.Location = new System.Drawing.Point(0, 94);
             this.groupTest.Name = "groupTest";
-            this.groupTest.Size = new System.Drawing.Size(981, 655);
+            this.groupTest.Size = new System.Drawing.Size(981, 797);
             this.groupTest.TabIndex = 9;
             this.groupTest.TabStop = false;
             // 
@@ -632,6 +863,19 @@ namespace PE
             this.tbSn.Name = "tbSn";
             this.tbSn.Size = new System.Drawing.Size(197, 26);
             this.tbSn.TabIndex = 3;
+            // 
+            // confirmSelectBtn
+            // 
+            this.confirmSelectBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.confirmSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.confirmSelectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.confirmSelectBtn.Image = global::PE.Properties.Resources.icons8_ok_64;
+            this.confirmSelectBtn.Location = new System.Drawing.Point(375, 25);
+            this.confirmSelectBtn.Name = "confirmSelectBtn";
+            this.confirmSelectBtn.Size = new System.Drawing.Size(86, 71);
+            this.confirmSelectBtn.TabIndex = 2;
+            this.confirmSelectBtn.UseVisualStyleBackColor = false;
+            this.confirmSelectBtn.Click += new System.EventHandler(this.confirmSelectBtn_Click);
             // 
             // lblSn
             // 
@@ -673,6 +917,382 @@ namespace PE
             this.programList.TabIndex = 0;
             this.programList.SelectionChangeCommitted += new System.EventHandler(this.programList_SelectionChangeCommitted);
             // 
+            // manual
+            // 
+            this.manual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.manual.Controls.Add(this.lblShowCurrScr);
+            this.manual.Controls.Add(this.lblPowScr);
+            this.manual.Controls.Add(this.lblCurrScr);
+            this.manual.Controls.Add(this.lblSetCurrScr);
+            this.manual.Controls.Add(this.lblVoltScr);
+            this.manual.Controls.Add(this.lblSetVoltScr);
+            this.manual.Controls.Add(this.lblShowVoltScr);
+            this.manual.Controls.Add(this.showPowScr);
+            this.manual.Controls.Add(this.setCurrScr);
+            this.manual.Controls.Add(this.showCurrScr);
+            this.manual.Controls.Add(this.setVoltScr);
+            this.manual.Controls.Add(this.showVoltScr);
+            this.manual.Controls.Add(this.lblToggleOn);
+            this.manual.Controls.Add(this.lblToggleOff);
+            this.manual.Controls.Add(this.btnToggleOff);
+            this.manual.Controls.Add(this.chroma);
+            this.manual.Controls.Add(this.setPointManual);
+            this.manual.Controls.Add(this.btnToggleOn);
+            this.manual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.manual.Location = new System.Drawing.Point(990, 143);
+            this.manual.Name = "manual";
+            this.manual.Size = new System.Drawing.Size(677, 209);
+            this.manual.TabIndex = 8;
+            this.manual.TabStop = false;
+            this.manual.Text = "Manual - DC Source (Chroma 62100H Series)";
+            this.manual.Visible = false;
+            // 
+            // lblShowCurrScr
+            // 
+            this.lblShowCurrScr.AutoSize = true;
+            this.lblShowCurrScr.BackColor = System.Drawing.Color.Black;
+            this.lblShowCurrScr.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.lblShowCurrScr.Location = new System.Drawing.Point(436, 96);
+            this.lblShowCurrScr.Name = "lblShowCurrScr";
+            this.lblShowCurrScr.Size = new System.Drawing.Size(22, 24);
+            this.lblShowCurrScr.TabIndex = 1;
+            this.lblShowCurrScr.Text = "A";
+            // 
+            // lblPowScr
+            // 
+            this.lblPowScr.AutoSize = true;
+            this.lblPowScr.BackColor = System.Drawing.Color.Black;
+            this.lblPowScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPowScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.lblPowScr.Location = new System.Drawing.Point(440, 121);
+            this.lblPowScr.Name = "lblPowScr";
+            this.lblPowScr.Size = new System.Drawing.Size(14, 15);
+            this.lblPowScr.TabIndex = 1;
+            this.lblPowScr.Text = "W";
+            // 
+            // lblCurrScr
+            // 
+            this.lblCurrScr.AutoSize = true;
+            this.lblCurrScr.BackColor = System.Drawing.Color.Black;
+            this.lblCurrScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.lblCurrScr.Location = new System.Drawing.Point(440, 69);
+            this.lblCurrScr.Name = "lblCurrScr";
+            this.lblCurrScr.Size = new System.Drawing.Size(14, 15);
+            this.lblCurrScr.TabIndex = 1;
+            this.lblCurrScr.Text = "A";
+            // 
+            // lblSetCurrScr
+            // 
+            this.lblSetCurrScr.AutoSize = true;
+            this.lblSetCurrScr.BackColor = System.Drawing.Color.Black;
+            this.lblSetCurrScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.lblSetCurrScr.Location = new System.Drawing.Point(351, 69);
+            this.lblSetCurrScr.Name = "lblSetCurrScr";
+            this.lblSetCurrScr.Size = new System.Drawing.Size(28, 15);
+            this.lblSetCurrScr.TabIndex = 1;
+            this.lblSetCurrScr.Text = "I =";
+            // 
+            // lblVoltScr
+            // 
+            this.lblVoltScr.AutoSize = true;
+            this.lblVoltScr.BackColor = System.Drawing.Color.Black;
+            this.lblVoltScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.lblVoltScr.Location = new System.Drawing.Point(308, 69);
+            this.lblVoltScr.Name = "lblVoltScr";
+            this.lblVoltScr.Size = new System.Drawing.Size(14, 15);
+            this.lblVoltScr.TabIndex = 1;
+            this.lblVoltScr.Text = "V";
+            // 
+            // lblSetVoltScr
+            // 
+            this.lblSetVoltScr.AutoSize = true;
+            this.lblSetVoltScr.BackColor = System.Drawing.Color.Black;
+            this.lblSetVoltScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.lblSetVoltScr.Location = new System.Drawing.Point(219, 69);
+            this.lblSetVoltScr.Name = "lblSetVoltScr";
+            this.lblSetVoltScr.Size = new System.Drawing.Size(28, 15);
+            this.lblSetVoltScr.TabIndex = 1;
+            this.lblSetVoltScr.Text = "V =";
+            // 
+            // lblShowVoltScr
+            // 
+            this.lblShowVoltScr.AutoSize = true;
+            this.lblShowVoltScr.BackColor = System.Drawing.Color.Black;
+            this.lblShowVoltScr.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.lblShowVoltScr.Location = new System.Drawing.Point(304, 96);
+            this.lblShowVoltScr.Name = "lblShowVoltScr";
+            this.lblShowVoltScr.Size = new System.Drawing.Size(22, 24);
+            this.lblShowVoltScr.TabIndex = 1;
+            this.lblShowVoltScr.Text = "V";
+            // 
+            // showPowScr
+            // 
+            this.showPowScr.BackColor = System.Drawing.Color.Black;
+            this.showPowScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.showPowScr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.showPowScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPowScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.showPowScr.Location = new System.Drawing.Point(385, 121);
+            this.showPowScr.Name = "showPowScr";
+            this.showPowScr.ReadOnly = true;
+            this.showPowScr.Size = new System.Drawing.Size(45, 16);
+            this.showPowScr.TabIndex = 6;
+            this.showPowScr.Text = "0.0";
+            this.showPowScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // setCurrScr
+            // 
+            this.setCurrScr.BackColor = System.Drawing.Color.Black;
+            this.setCurrScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.setCurrScr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.setCurrScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.setCurrScr.Location = new System.Drawing.Point(385, 69);
+            this.setCurrScr.Name = "setCurrScr";
+            this.setCurrScr.ReadOnly = true;
+            this.setCurrScr.Size = new System.Drawing.Size(45, 16);
+            this.setCurrScr.TabIndex = 6;
+            this.setCurrScr.Text = "0.00";
+            this.setCurrScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // showCurrScr
+            // 
+            this.showCurrScr.BackColor = System.Drawing.Color.Black;
+            this.showCurrScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.showCurrScr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.showCurrScr.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.showCurrScr.Location = new System.Drawing.Point(318, 96);
+            this.showCurrScr.Name = "showCurrScr";
+            this.showCurrScr.ReadOnly = true;
+            this.showCurrScr.Size = new System.Drawing.Size(116, 25);
+            this.showCurrScr.TabIndex = 6;
+            this.showCurrScr.Text = "00.0000";
+            this.showCurrScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // setVoltScr
+            // 
+            this.setVoltScr.BackColor = System.Drawing.Color.Black;
+            this.setVoltScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.setVoltScr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.setVoltScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.setVoltScr.Location = new System.Drawing.Point(253, 69);
+            this.setVoltScr.Name = "setVoltScr";
+            this.setVoltScr.ReadOnly = true;
+            this.setVoltScr.Size = new System.Drawing.Size(45, 16);
+            this.setVoltScr.TabIndex = 6;
+            this.setVoltScr.Text = "0.00";
+            this.setVoltScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // showVoltScr
+            // 
+            this.showVoltScr.BackColor = System.Drawing.Color.Black;
+            this.showVoltScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.showVoltScr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.showVoltScr.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
+            this.showVoltScr.Location = new System.Drawing.Point(203, 96);
+            this.showVoltScr.Name = "showVoltScr";
+            this.showVoltScr.ReadOnly = true;
+            this.showVoltScr.Size = new System.Drawing.Size(101, 25);
+            this.showVoltScr.TabIndex = 6;
+            this.showVoltScr.Text = "00.0000";
+            this.showVoltScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblToggleOn
+            // 
+            this.lblToggleOn.AutoSize = true;
+            this.lblToggleOn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.lblToggleOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblToggleOn.ForeColor = System.Drawing.Color.Black;
+            this.lblToggleOn.Location = new System.Drawing.Point(530, 408);
+            this.lblToggleOn.Name = "lblToggleOn";
+            this.lblToggleOn.Size = new System.Drawing.Size(30, 16);
+            this.lblToggleOn.TabIndex = 5;
+            this.lblToggleOn.Text = "ON";
+            this.lblToggleOn.Visible = false;
+            // 
+            // lblToggleOff
+            // 
+            this.lblToggleOff.AutoSize = true;
+            this.lblToggleOff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
+            this.lblToggleOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblToggleOff.ForeColor = System.Drawing.Color.Black;
+            this.lblToggleOff.Location = new System.Drawing.Point(582, 409);
+            this.lblToggleOff.Name = "lblToggleOff";
+            this.lblToggleOff.Size = new System.Drawing.Size(37, 16);
+            this.lblToggleOff.TabIndex = 5;
+            this.lblToggleOff.Text = "OFF";
+            // 
+            // btnToggleOff
+            // 
+            this.btnToggleOff.ErrorImage = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.Image = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.InitialImage = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.Location = new System.Drawing.Point(520, 379);
+            this.btnToggleOff.Name = "btnToggleOff";
+            this.btnToggleOff.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnToggleOff.TabIndex = 4;
+            this.btnToggleOff.TabStop = false;
+            this.btnToggleOff.Click += new System.EventHandler(this.btnToggleOff_Click);
+            // 
+            // chroma
+            // 
+            this.chroma.Image = global::PE.Properties.Resources.CHR_62000H;
+            this.chroma.Location = new System.Drawing.Point(31, 37);
+            this.chroma.Name = "chroma";
+            this.chroma.Size = new System.Drawing.Size(893, 294);
+            this.chroma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.chroma.TabIndex = 0;
+            this.chroma.TabStop = false;
+            // 
+            // setPointManual
+            // 
+            this.setPointManual.Controls.Add(this.currBoxManual);
+            this.setPointManual.Controls.Add(this.voltBoxManual);
+            this.setPointManual.Controls.Add(this.button1);
+            this.setPointManual.Controls.Add(this.btnSetVoltManual);
+            this.setPointManual.Controls.Add(this.lblCurrManual);
+            this.setPointManual.Controls.Add(this.lblCurrManual2);
+            this.setPointManual.Controls.Add(this.lblVoltManual2);
+            this.setPointManual.Controls.Add(this.lblVoltManual);
+            this.setPointManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.setPointManual.Location = new System.Drawing.Point(29, 354);
+            this.setPointManual.Name = "setPointManual";
+            this.setPointManual.Size = new System.Drawing.Size(474, 117);
+            this.setPointManual.TabIndex = 3;
+            this.setPointManual.TabStop = false;
+            this.setPointManual.Text = "Setpoint";
+            // 
+            // currBoxManual
+            // 
+            this.currBoxManual.DecimalPlaces = 2;
+            this.currBoxManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.currBoxManual.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            262144});
+            this.currBoxManual.Location = new System.Drawing.Point(143, 74);
+            this.currBoxManual.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.currBoxManual.Name = "currBoxManual";
+            this.currBoxManual.Size = new System.Drawing.Size(128, 26);
+            this.currBoxManual.TabIndex = 3;
+            this.currBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.currBoxManual.ThousandsSeparator = true;
+            this.currBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.currBoxManual_KeyDown);
+            // 
+            // voltBoxManual
+            // 
+            this.voltBoxManual.DecimalPlaces = 2;
+            this.voltBoxManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.voltBoxManual.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            262144});
+            this.voltBoxManual.Location = new System.Drawing.Point(143, 29);
+            this.voltBoxManual.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.voltBoxManual.Name = "voltBoxManual";
+            this.voltBoxManual.Size = new System.Drawing.Size(128, 26);
+            this.voltBoxManual.TabIndex = 3;
+            this.voltBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.voltBoxManual.ThousandsSeparator = true;
+            this.voltBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.voltBoxManual_KeyDown);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button1.Location = new System.Drawing.Point(325, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 32);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Set";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnSetCurrManual_Click);
+            // 
+            // btnSetVoltManual
+            // 
+            this.btnSetVoltManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSetVoltManual.Location = new System.Drawing.Point(325, 25);
+            this.btnSetVoltManual.Name = "btnSetVoltManual";
+            this.btnSetVoltManual.Size = new System.Drawing.Size(118, 32);
+            this.btnSetVoltManual.TabIndex = 2;
+            this.btnSetVoltManual.Text = "Set";
+            this.btnSetVoltManual.UseVisualStyleBackColor = true;
+            this.btnSetVoltManual.Click += new System.EventHandler(this.btnSetVoltManual_Click);
+            // 
+            // lblCurrManual
+            // 
+            this.lblCurrManual.AutoSize = true;
+            this.lblCurrManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblCurrManual.Location = new System.Drawing.Point(67, 76);
+            this.lblCurrManual.Name = "lblCurrManual";
+            this.lblCurrManual.Size = new System.Drawing.Size(70, 20);
+            this.lblCurrManual.TabIndex = 1;
+            this.lblCurrManual.Text = "Current :";
+            // 
+            // lblCurrManual2
+            // 
+            this.lblCurrManual2.AutoSize = true;
+            this.lblCurrManual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblCurrManual2.Location = new System.Drawing.Point(287, 76);
+            this.lblCurrManual2.Name = "lblCurrManual2";
+            this.lblCurrManual2.Size = new System.Drawing.Size(20, 20);
+            this.lblCurrManual2.TabIndex = 1;
+            this.lblCurrManual2.Text = "A";
+            // 
+            // lblVoltManual2
+            // 
+            this.lblVoltManual2.AutoSize = true;
+            this.lblVoltManual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblVoltManual2.Location = new System.Drawing.Point(287, 31);
+            this.lblVoltManual2.Name = "lblVoltManual2";
+            this.lblVoltManual2.Size = new System.Drawing.Size(20, 20);
+            this.lblVoltManual2.TabIndex = 1;
+            this.lblVoltManual2.Text = "V";
+            // 
+            // lblVoltManual
+            // 
+            this.lblVoltManual.AutoSize = true;
+            this.lblVoltManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblVoltManual.Location = new System.Drawing.Point(65, 31);
+            this.lblVoltManual.Name = "lblVoltManual";
+            this.lblVoltManual.Size = new System.Drawing.Size(72, 20);
+            this.lblVoltManual.TabIndex = 1;
+            this.lblVoltManual.Text = "Voltage :";
+            // 
+            // btnToggleOn
+            // 
+            this.btnToggleOn.ErrorImage = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.Image = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.InitialImage = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.Location = new System.Drawing.Point(520, 379);
+            this.btnToggleOn.Name = "btnToggleOn";
+            this.btnToggleOn.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnToggleOn.TabIndex = 4;
+            this.btnToggleOn.TabStop = false;
+            this.btnToggleOn.Visible = false;
+            this.btnToggleOn.Click += new System.EventHandler(this.btnToggleOn_Click);
+            // 
             // dataTable2
             // 
             this.dataTable2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -683,7 +1303,7 @@ namespace PE
             this.dataTable2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.dataTable2.Location = new System.Drawing.Point(990, 358);
             this.dataTable2.Name = "dataTable2";
-            this.dataTable2.Size = new System.Drawing.Size(677, 272);
+            this.dataTable2.Size = new System.Drawing.Size(677, 414);
             this.dataTable2.TabIndex = 8;
             this.dataTable2.TabStop = false;
             this.dataTable2.Text = "Edit Specification Test";
@@ -693,7 +1313,7 @@ namespace PE
             // 
             this.cleatBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cleatBtn.BackColor = System.Drawing.Color.Red;
-            this.cleatBtn.Location = new System.Drawing.Point(538, 202);
+            this.cleatBtn.Location = new System.Drawing.Point(538, 344);
             this.cleatBtn.Name = "cleatBtn";
             this.cleatBtn.Size = new System.Drawing.Size(121, 64);
             this.cleatBtn.TabIndex = 8;
@@ -716,9 +1336,9 @@ namespace PE
             // 
             this.gridTable2.AllowUserToOrderColumns = true;
             this.gridTable2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridTable2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridTable2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -726,61 +1346,61 @@ namespace PE
             this.gridTable2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridTable2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridTable2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridTable2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTable2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.editContactPairs,
             this.editMaxRes});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.DefaultCellStyle = dataGridViewCellStyle5;
             this.gridTable2.Location = new System.Drawing.Point(16, 29);
             this.gridTable2.Name = "gridTable2";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridTable2.RowHeadersVisible = false;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.gridTable2.Size = new System.Drawing.Size(510, 237);
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.gridTable2.Size = new System.Drawing.Size(510, 379);
             this.gridTable2.TabIndex = 7;
             // 
             // editContactPairs
             // 
             this.editContactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editContactPairs.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editContactPairs.DefaultCellStyle = dataGridViewCellStyle3;
             this.editContactPairs.HeaderText = "Contact Pairs";
             this.editContactPairs.Name = "editContactPairs";
             // 
             // editMaxRes
             // 
             this.editMaxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.Format = "N1";
-            dataGridViewCellStyle21.NullValue = null;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editMaxRes.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N1";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editMaxRes.DefaultCellStyle = dataGridViewCellStyle4;
             this.editMaxRes.HeaderText = "Max.Res (mΩ)";
             this.editMaxRes.Name = "editMaxRes";
             this.editMaxRes.Width = 150;
@@ -793,7 +1413,7 @@ namespace PE
             this.dataTable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.dataTable1.Location = new System.Drawing.Point(12, 358);
             this.dataTable1.Name = "dataTable1";
-            this.dataTable1.Size = new System.Drawing.Size(958, 272);
+            this.dataTable1.Size = new System.Drawing.Size(958, 414);
             this.dataTable1.TabIndex = 8;
             this.dataTable1.TabStop = false;
             this.dataTable1.Text = "Test Data";
@@ -802,9 +1422,9 @@ namespace PE
             // 
             this.gridTable1.AllowUserToOrderColumns = true;
             this.gridTable1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridTable1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -813,14 +1433,14 @@ namespace PE
             this.gridTable1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridTable1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridTable1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.gridTable1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTable1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.contactPairs,
@@ -828,39 +1448,39 @@ namespace PE
             this.measVolt,
             this.res,
             this.result});
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.DefaultCellStyle = dataGridViewCellStyle15;
             this.gridTable1.Location = new System.Drawing.Point(16, 29);
             this.gridTable1.Name = "gridTable1";
             this.gridTable1.ReadOnly = true;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.gridTable1.RowHeadersVisible = false;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle34;
-            this.gridTable1.Size = new System.Drawing.Size(924, 237);
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            this.gridTable1.Size = new System.Drawing.Size(924, 379);
             this.gridTable1.TabIndex = 7;
             // 
             // contactPairs
             // 
             this.contactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle10;
             this.contactPairs.HeaderText = "Contact Pairs";
             this.contactPairs.Name = "contactPairs";
             this.contactPairs.ReadOnly = true;
@@ -868,11 +1488,11 @@ namespace PE
             // maxRes
             // 
             this.maxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.Format = "N1";
-            dataGridViewCellStyle28.NullValue = null;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.maxRes.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "N1";
+            dataGridViewCellStyle11.NullValue = null;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.maxRes.DefaultCellStyle = dataGridViewCellStyle11;
             this.maxRes.HeaderText = "Max.Res (mΩ)";
             this.maxRes.Name = "maxRes";
             this.maxRes.ReadOnly = true;
@@ -880,11 +1500,11 @@ namespace PE
             // measVolt
             // 
             this.measVolt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.Format = "N2";
-            dataGridViewCellStyle29.NullValue = null;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.measVolt.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.measVolt.DefaultCellStyle = dataGridViewCellStyle12;
             this.measVolt.HeaderText = "Voltage (mV)";
             this.measVolt.Name = "measVolt";
             this.measVolt.ReadOnly = true;
@@ -892,10 +1512,10 @@ namespace PE
             // res
             // 
             this.res.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.Format = "N2";
-            dataGridViewCellStyle30.NullValue = null;
-            this.res.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.res.DefaultCellStyle = dataGridViewCellStyle13;
             this.res.HeaderText = "Res (mΩ)";
             this.res.Name = "res";
             this.res.ReadOnly = true;
@@ -903,10 +1523,10 @@ namespace PE
             // result
             // 
             this.result.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.NullValue = null;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.result.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.NullValue = null;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.result.DefaultCellStyle = dataGridViewCellStyle14;
             this.result.HeaderText = "Result";
             this.result.Name = "result";
             this.result.ReadOnly = true;
@@ -915,8 +1535,9 @@ namespace PE
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 727);
+            this.toolStripStatusLabel,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 869);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.statusStrip1.Size = new System.Drawing.Size(981, 22);
@@ -932,6 +1553,14 @@ namespace PE
             this.toolStripStatusLabel.Text = "STATUS";
             this.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(35, 17);
+            this.toolStripStatusLabel2.Text = "PORT";
+            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // saveData
             // 
             this.saveData.CheckPathExists = false;
@@ -941,12 +1570,6 @@ namespace PE
             this.saveData.RestoreDirectory = true;
             this.saveData.ShowHelp = true;
             this.saveData.Title = "Export Data";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
             // 
             // delta
             // 
@@ -991,213 +1614,12 @@ namespace PE
             this.connect.TabStop = false;
             this.connect.Visible = false;
             // 
-            // confirmSelectBtn
-            // 
-            this.confirmSelectBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.confirmSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.confirmSelectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.confirmSelectBtn.Image = global::PE.Properties.Resources.icons8_ok_64;
-            this.confirmSelectBtn.Location = new System.Drawing.Point(375, 25);
-            this.confirmSelectBtn.Name = "confirmSelectBtn";
-            this.confirmSelectBtn.Size = new System.Drawing.Size(86, 71);
-            this.confirmSelectBtn.TabIndex = 2;
-            this.confirmSelectBtn.UseVisualStyleBackColor = false;
-            this.confirmSelectBtn.Click += new System.EventHandler(this.confirmSelectBtn_Click);
-            // 
-            // statusBox
-            // 
-            this.statusBox.BackColor = System.Drawing.Color.Red;
-            this.statusBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.statusBox.Location = new System.Drawing.Point(286, 0);
-            this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(30, 15);
-            this.statusBox.TabIndex = 3;
-            this.statusBox.TabStop = false;
-            // 
-            // warning
-            // 
-            this.warning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.warning.ErrorImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.Image = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.InitialImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.Location = new System.Drawing.Point(367, 17);
-            this.warning.Name = "warning";
-            this.warning.Size = new System.Drawing.Size(40, 36);
-            this.warning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.warning.TabIndex = 9;
-            this.warning.TabStop = false;
-            this.warning.Visible = false;
-            // 
-            // dangerOn
-            // 
-            this.dangerOn.ErrorImage = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.Image = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.InitialImage = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.Location = new System.Drawing.Point(11, 64);
-            this.dangerOn.Name = "dangerOn";
-            this.dangerOn.Size = new System.Drawing.Size(450, 148);
-            this.dangerOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dangerOn.TabIndex = 4;
-            this.dangerOn.TabStop = false;
-            this.dangerOn.Visible = false;
-            // 
-            // danger
-            // 
-            this.danger.ErrorImage = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.Image = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.InitialImage = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.Location = new System.Drawing.Point(11, 64);
-            this.danger.Name = "danger";
-            this.danger.Size = new System.Drawing.Size(450, 148);
-            this.danger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.danger.TabIndex = 4;
-            this.danger.TabStop = false;
-            // 
-            // homeTool
-            // 
-            this.homeTool.Image = global::PE.Properties.Resources.icons8_home_48;
-            this.homeTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.homeTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.homeTool.Margin = new System.Windows.Forms.Padding(20, 2, 0, 1);
-            this.homeTool.Name = "homeTool";
-            this.homeTool.Size = new System.Drawing.Size(52, 67);
-            this.homeTool.Text = "Home";
-            this.homeTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.homeTool.ToolTipText = "Home";
-            this.homeTool.Click += new System.EventHandler(this.homeTool_Click);
-            // 
-            // editTool
-            // 
-            this.editTool.Image = global::PE.Properties.Resources.icons8_edit_48;
-            this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.editTool.Name = "editTool";
-            this.editTool.Size = new System.Drawing.Size(80, 67);
-            this.editTool.Text = "Edit Program";
-            this.editTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.editTool.Click += new System.EventHandler(this.editTool_Click);
-            // 
-            // connectionTool
-            // 
-            this.connectionTool.Image = global::PE.Properties.Resources.icons8_internet_of_things_48;
-            this.connectionTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.connectionTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.connectionTool.Name = "connectionTool";
-            this.connectionTool.Size = new System.Drawing.Size(73, 67);
-            this.connectionTool.Text = "Connection";
-            this.connectionTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.connectionTool.ToolTipText = "Connection\r\n setting";
-            this.connectionTool.Click += new System.EventHandler(this.connectionTool_Click);
-            // 
-            // exportTool
-            // 
-            this.exportTool.Enabled = false;
-            this.exportTool.Image = global::PE.Properties.Resources.icons8_microsoft_excel_2019_48;
-            this.exportTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.exportTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.exportTool.Name = "exportTool";
-            this.exportTool.Size = new System.Drawing.Size(72, 67);
-            this.exportTool.Text = "Export Data";
-            this.exportTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.exportTool.ToolTipText = "Export data";
-            this.exportTool.Click += new System.EventHandler(this.exportTool_Click);
-            // 
-            // shutdownTool
-            // 
-            this.shutdownTool.Image = global::PE.Properties.Resources.icons8_shutdown_48;
-            this.shutdownTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.shutdownTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.shutdownTool.Name = "shutdownTool";
-            this.shutdownTool.Size = new System.Drawing.Size(52, 67);
-            this.shutdownTool.Text = "Exit";
-            this.shutdownTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shutdownTool.ToolTipText = "Exit Program";
-            this.shutdownTool.Click += new System.EventHandler(this.shutdownTool_Click);
-            // 
-            // manualTool
-            // 
-            this.manualTool.Image = global::PE.Properties.Resources.icons8_manual_48;
-            this.manualTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.manualTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.manualTool.Name = "manualTool";
-            this.manualTool.Size = new System.Drawing.Size(52, 67);
-            this.manualTool.Text = "Manual";
-            this.manualTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.manualTool.ToolTipText = "Manual DC-source";
-            this.manualTool.Click += new System.EventHandler(this.manualTool_Click);
-            // 
-            // fileOpen
-            // 
-            this.fileOpen.Image = global::PE.Properties.Resources.icons8_open_folder_in_new_tab_32;
-            this.fileOpen.Name = "fileOpen";
-            this.fileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.fileOpen.Size = new System.Drawing.Size(163, 22);
-            this.fileOpen.Text = "Open...";
-            // 
-            // fileSave
-            // 
-            this.fileSave.Image = global::PE.Properties.Resources.icons8_save_32;
-            this.fileSave.Name = "fileSave";
-            this.fileSave.Size = new System.Drawing.Size(163, 22);
-            this.fileSave.Text = "Save...";
-            // 
-            // fileSaveAs
-            // 
-            this.fileSaveAs.Image = global::PE.Properties.Resources.icons8_save_as_32;
-            this.fileSaveAs.Name = "fileSaveAs";
-            this.fileSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.fileSaveAs.Size = new System.Drawing.Size(163, 22);
-            this.fileSaveAs.Text = "Save As...";
-            // 
-            // fileExit
-            // 
-            this.fileExit.Image = global::PE.Properties.Resources.icons8_shutdown_32;
-            this.fileExit.Name = "fileExit";
-            this.fileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.fileExit.Size = new System.Drawing.Size(163, 22);
-            this.fileExit.Text = "Exit";
-            this.fileExit.Click += new System.EventHandler(this.fileExit_Click);
-            // 
-            // configPort
-            // 
-            this.configPort.Image = global::PE.Properties.Resources.icons8_internet_of_things_32;
-            this.configPort.Name = "configPort";
-            this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.C)));
-            this.configPort.Size = new System.Drawing.Size(183, 22);
-            this.configPort.Text = "Port";
-            this.configPort.Click += new System.EventHandler(this.configPort_Click);
-            // 
-            // configEdit
-            // 
-            this.configEdit.Image = global::PE.Properties.Resources.icons8_edit_32;
-            this.configEdit.Name = "configEdit";
-            this.configEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.configEdit.Size = new System.Drawing.Size(183, 22);
-            this.configEdit.Text = "Edit program";
-            this.configEdit.Click += new System.EventHandler(this.configEdit_Click);
-            // 
-            // helpInfo
-            // 
-            this.helpInfo.Image = global::PE.Properties.Resources.icons8_about_32;
-            this.helpInfo.Name = "helpInfo";
-            this.helpInfo.Size = new System.Drawing.Size(163, 22);
-            this.helpInfo.Text = "About PE Testing";
-            // 
-            // helpHelp
-            // 
-            this.helpHelp.Image = global::PE.Properties.Resources.icons8_get_help_32;
-            this.helpHelp.Name = "helpHelp";
-            this.helpHelp.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.helpHelp.Size = new System.Drawing.Size(163, 22);
-            this.helpHelp.Text = "Help";
-            // 
             // peTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(981, 749);
+            this.ClientSize = new System.Drawing.Size(981, 891);
             this.Controls.Add(this.delta);
             this.Controls.Add(this.disConnect);
             this.Controls.Add(this.statusStrip1);
@@ -1216,12 +1638,16 @@ namespace PE
             this.menuStrip1.PerformLayout();
             this.serialPort.ResumeLayout(false);
             this.serialPort.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).EndInit();
             this.setPoint.ResumeLayout(false);
             this.setPoint.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBox)).EndInit();
             this.start.ResumeLayout(false);
             this.start.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.warning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danger)).EndInit();
             this.getData.ResumeLayout(false);
             this.getData.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -1229,6 +1655,15 @@ namespace PE
             this.groupTest.ResumeLayout(false);
             this.testProgram.ResumeLayout(false);
             this.testProgram.PerformLayout();
+            this.manual.ResumeLayout(false);
+            this.manual.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chroma)).EndInit();
+            this.setPointManual.ResumeLayout(false);
+            this.setPointManual.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.currBoxManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voltBoxManual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).EndInit();
             this.dataTable2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTable2)).EndInit();
             this.dataTable1.ResumeLayout(false);
@@ -1238,10 +1673,6 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.delta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disConnect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.connect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.warning)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danger)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1270,8 +1701,8 @@ namespace PE
         private System.Windows.Forms.Label lblCurr2;
         private System.Windows.Forms.Label lblVolt2;
         private System.Windows.Forms.Label lblVolt;
-        private System.Windows.Forms.Button setCurrBtn;
-        private System.Windows.Forms.Button setVoltBtn;
+        private System.Windows.Forms.Button btnSetCurr;
+        private System.Windows.Forms.Button btnSetVolt;
         public System.Windows.Forms.NumericUpDown voltBox;
         public System.Windows.Forms.NumericUpDown currBox;
         private System.Windows.Forms.ToolStripMenuItem configToolStripMenu;
@@ -1330,6 +1761,34 @@ namespace PE
         public System.Windows.Forms.ToolStripButton shutdownTool;
         public System.Windows.Forms.ToolStripButton exportTool;
         public System.Windows.Forms.ToolStripButton editTool;
+        private System.Windows.Forms.GroupBox manual;
+        private System.Windows.Forms.PictureBox chroma;
+        private System.Windows.Forms.GroupBox setPointManual;
+        public System.Windows.Forms.NumericUpDown currBoxManual;
+        public System.Windows.Forms.NumericUpDown voltBoxManual;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSetVoltManual;
+        private System.Windows.Forms.Label lblCurrManual;
+        private System.Windows.Forms.Label lblCurrManual2;
+        private System.Windows.Forms.Label lblVoltManual2;
+        private System.Windows.Forms.Label lblVoltManual;
+        private System.Windows.Forms.PictureBox btnToggleOff;
+        private System.Windows.Forms.PictureBox btnToggleOn;
+        private System.Windows.Forms.Label lblToggleOff;
+        private System.Windows.Forms.Label lblToggleOn;
+        public System.Windows.Forms.Label lblShowCurrScr;
+        public System.Windows.Forms.Label lblShowVoltScr;
+        public System.Windows.Forms.TextBox showCurrScr;
+        public System.Windows.Forms.TextBox showVoltScr;
+        public System.Windows.Forms.TextBox setVoltScr;
+        public System.Windows.Forms.Label lblCurrScr;
+        public System.Windows.Forms.Label lblSetCurrScr;
+        public System.Windows.Forms.Label lblVoltScr;
+        public System.Windows.Forms.Label lblSetVoltScr;
+        public System.Windows.Forms.TextBox setCurrScr;
+        public System.Windows.Forms.Label lblPowScr;
+        public System.Windows.Forms.TextBox showPowScr;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }
 

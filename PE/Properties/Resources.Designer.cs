@@ -83,6 +83,26 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CHR_62000H {
+            get {
+                object obj = ResourceManager.GetObject("CHR-62000H", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CHR_62000H_ON {
+            get {
+                object obj = ResourceManager.GetObject("CHR-62000H-ON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delta {
             get {
                 object obj = ResourceManager.GetObject("delta", resourceCulture);
@@ -506,6 +526,26 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap icons8_shutdown_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_shutdown_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_toggle_off_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_toggle_off_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_toggle_on_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_toggle_on_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
