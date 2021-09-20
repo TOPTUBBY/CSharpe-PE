@@ -149,7 +149,7 @@ namespace PE
         private void SetText1(string text)
         {
             this.rtbIncoming1.Text = text;
-            if (rtbIncoming1.Text == "0\n" || rtbIncoming1.Text == "1\n")
+            if (rtbIncoming1.Text == "0\r\n" || rtbIncoming1.Text == "1\r\n")
             {
                 value.Text = "----.--";
             }
@@ -162,7 +162,7 @@ namespace PE
                 //rtbIncoming2.Text += rtbIncoming1.Text;
             }
 
-            if (rtbIncoming1.Text == "1\n")
+            if (rtbIncoming1.Text == "1\r\n")
             {
                 pushStart.Text = "Push foot button to Stop ...";
                 pushStart.ForeColor = Color.Red;
@@ -174,7 +174,7 @@ namespace PE
                 manualTool.Enabled = false;
                 this.Text = "PE TESTING (RUNNING)";
             }
-            else if (rtbIncoming1.Text == "0\n")
+            else if (rtbIncoming1.Text == "0\r\n")
             {
                 pushStart.Visible = true;
                 pushData.Visible = false;
@@ -190,40 +190,41 @@ namespace PE
                 manualTool.Enabled = true;
                 this.Text = "PE TESTING";
 
-                //Cells Manangement
-                //Add data in voltage cell
-                gridTable1.Rows[cntRow].Cells[2].Value = measValue;
-
-                //Calculate to Resistance by use Current from setpoint
-                //Add data in resistance cell
-                voltValue = Convert.ToDecimal(measValue);
                 try
                 {
+                    //Cells Manangement
+                    //Add data in voltage cell
+
+                    gridTable1.Rows[cntRow].Cells[2].Value = measValue;
+
+                    //Calculate to Resistance by use Current from setpoint
+                    //Add data in resistance cell
+                    voltValue = Convert.ToDecimal(measValue);
                     resValue = voltValue / currValue;
+                    gridTable1.Rows[cntRow].Cells[3].Value = resValue;
+
+                    //Add data in result cell
+                    resMax = Convert.ToDecimal(gridTable1.Rows[cntRow].Cells[1].Value);
+                    var _color = Color.Black;
+                    if (resValue <= resMax)
+                    {
+                        resultValue = "PASS";
+                        _color = Color.Green;
+
+                    }
+                    else
+                    {
+                        resultValue = "FAIL";
+                        _color = Color.Red;
+                    }
+                    gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
+                    gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
+                    cntRow++;
                 }
                 catch
                 {
                     resValue = 0;
                 }
-                gridTable1.Rows[cntRow].Cells[3].Value = resValue;
-
-                //Add data in result cell
-                resMax = Convert.ToDecimal(gridTable1.Rows[cntRow].Cells[1].Value);
-                var _color = Color.Black;
-                if (resValue <= resMax)
-                {
-                    resultValue = "PASS";
-                    _color = Color.Green;
-
-                }
-                else
-                {
-                    resultValue = "FAIL";
-                    _color = Color.Red;
-                }
-                gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
-                gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
-                cntRow++;
             }
         }
 
