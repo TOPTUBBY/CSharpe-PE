@@ -190,6 +190,12 @@ namespace PE
                 manualTool.Enabled = true;
                 this.Text = "PE TESTING";
 
+                //Add check condition if have get data then do, if not just off DC-source
+                /*if ()
+                {
+
+                }*/
+
                 try
                 {
                     //Cells Manangement
