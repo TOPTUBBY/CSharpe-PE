@@ -710,7 +710,7 @@ namespace PE
             serialPort.Visible = false;
             manualDC.Visible = true;
             manualDC.Location = new System.Drawing.Point(12, 11);
-            manualDC.Size = new System.Drawing.Size(958, 491);
+            manualDC.Size = new System.Drawing.Size(958, 530);
         }
 
         //Config Database
@@ -842,7 +842,7 @@ namespace PE
             serialPort.Visible = false;
             manualDC.Visible = true;
             manualDC.Location = new System.Drawing.Point(12, 11);
-            manualDC.Size = new System.Drawing.Size(958, 491);
+            manualDC.Size = new System.Drawing.Size(958, 530);
         }
 
         //Export button
