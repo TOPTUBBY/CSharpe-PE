@@ -31,23 +31,23 @@ namespace PE
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(peTest));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.fileOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +58,7 @@ namespace PE
             this.configPort = new System.Windows.Forms.ToolStripMenuItem();
             this.configEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.configManual = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.helpHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,9 +101,9 @@ namespace PE
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.editTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.connectionTool = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.manualTool = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.databaseTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.exportTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -161,6 +162,7 @@ namespace PE
             this.delta = new System.Windows.Forms.PictureBox();
             this.disConnect = new System.Windows.Forms.PictureBox();
             this.connect = new System.Windows.Forms.PictureBox();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.serialPort.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
@@ -224,21 +226,26 @@ namespace PE
             this.fileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.fileOpen.Size = new System.Drawing.Size(163, 22);
             this.fileOpen.Text = "Open...";
+            this.fileOpen.Click += new System.EventHandler(this.fileOpen_Click);
             // 
             // fileSave
             // 
+            this.fileSave.Enabled = false;
             this.fileSave.Image = global::PE.Properties.Resources.icons8_save_32;
             this.fileSave.Name = "fileSave";
             this.fileSave.Size = new System.Drawing.Size(163, 22);
             this.fileSave.Text = "Save...";
+            this.fileSave.Click += new System.EventHandler(this.fileSave_Click);
             // 
             // fileSaveAs
             // 
+            this.fileSaveAs.Enabled = false;
             this.fileSaveAs.Image = global::PE.Properties.Resources.icons8_save_as_32;
             this.fileSaveAs.Name = "fileSaveAs";
             this.fileSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.fileSaveAs.Size = new System.Drawing.Size(163, 22);
             this.fileSaveAs.Text = "Save As...";
+            this.fileSaveAs.Click += new System.EventHandler(this.fileSaveAs_Click);
             // 
             // fileExit
             // 
@@ -254,14 +261,14 @@ namespace PE
             this.configToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configPort,
             this.configEdit,
-            this.configManual});
+            this.configManual,
+            this.databaseToolStripMenuItem});
             this.configToolStripMenu.Name = "configToolStripMenu";
             this.configToolStripMenu.Size = new System.Drawing.Size(93, 20);
             this.configToolStripMenu.Text = "Configuration";
             // 
             // configPort
             // 
-            this.configPort.Enabled = false;
             this.configPort.Image = global::PE.Properties.Resources.icons8_internet_of_things_32;
             this.configPort.Name = "configPort";
             this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
@@ -287,6 +294,15 @@ namespace PE
             this.configManual.Size = new System.Drawing.Size(186, 22);
             this.configManual.Text = "Manual";
             this.configManual.Click += new System.EventHandler(this.configManual_Click);
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.Image = global::PE.Properties.Resources.icons8_database_administrator_32;
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.databaseToolStripMenuItem.Text = "Database";
+            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
             // 
             // helpToolStripMenu
             // 
@@ -389,6 +405,7 @@ namespace PE
             this.btnState.Name = "btnState";
             this.btnState.Size = new System.Drawing.Size(310, 29);
             this.btnState.TabIndex = 1;
+            this.btnState.TabStop = false;
             this.btnState.Text = "Connect";
             this.btnState.UseVisualStyleBackColor = true;
             this.btnState.Click += new System.EventHandler(this.btnState_Click);
@@ -400,6 +417,7 @@ namespace PE
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(96, 62);
             this.btnScan.TabIndex = 1;
+            this.btnScan.TabStop = false;
             this.btnScan.Text = "Scan Port";
             this.btnScan.UseVisualStyleBackColor = true;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
@@ -412,7 +430,7 @@ namespace PE
             this.cbbBaud.Location = new System.Drawing.Point(111, 54);
             this.cbbBaud.Name = "cbbBaud";
             this.cbbBaud.Size = new System.Drawing.Size(116, 28);
-            this.cbbBaud.TabIndex = 0;
+            this.cbbBaud.TabIndex = 1;
             // 
             // cbbPort
             // 
@@ -468,7 +486,7 @@ namespace PE
             0});
             this.currBox.Name = "currBox";
             this.currBox.Size = new System.Drawing.Size(128, 26);
-            this.currBox.TabIndex = 3;
+            this.currBox.TabIndex = 4;
             this.currBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.currBox.ThousandsSeparator = true;
             this.currBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.currBox_KeyDown);
@@ -502,6 +520,7 @@ namespace PE
             this.btnSetCurr.Name = "btnSetCurr";
             this.btnSetCurr.Size = new System.Drawing.Size(118, 32);
             this.btnSetCurr.TabIndex = 2;
+            this.btnSetCurr.TabStop = false;
             this.btnSetCurr.Text = "Set";
             this.btnSetCurr.UseVisualStyleBackColor = true;
             this.btnSetCurr.Click += new System.EventHandler(this.btnSetCurr_Click);
@@ -513,6 +532,7 @@ namespace PE
             this.btnSetVolt.Name = "btnSetVolt";
             this.btnSetVolt.Size = new System.Drawing.Size(118, 32);
             this.btnSetVolt.TabIndex = 2;
+            this.btnSetVolt.TabStop = false;
             this.btnSetVolt.Text = "Set";
             this.btnSetVolt.UseVisualStyleBackColor = true;
             this.btnSetVolt.Click += new System.EventHandler(this.btnSetVolt_Click);
@@ -715,9 +735,9 @@ namespace PE
             this.toolStripSeparator1,
             this.editTool,
             this.toolStripSeparator2,
-            this.connectionTool,
-            this.toolStripSeparator3,
             this.manualTool,
+            this.toolStripSeparator3,
+            this.databaseTool,
             this.toolStripSeparator4,
             this.exportTool,
             this.toolStripSeparator5,
@@ -784,25 +804,6 @@ namespace PE
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
             // 
-            // connectionTool
-            // 
-            this.connectionTool.Enabled = false;
-            this.connectionTool.Image = global::PE.Properties.Resources.icons8_internet_of_things_48;
-            this.connectionTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.connectionTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.connectionTool.Name = "connectionTool";
-            this.connectionTool.Size = new System.Drawing.Size(73, 67);
-            this.connectionTool.Text = "Connection";
-            this.connectionTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.connectionTool.ToolTipText = "Connection\r\n setting";
-            this.connectionTool.Click += new System.EventHandler(this.connectionTool_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
-            // 
             // manualTool
             // 
             this.manualTool.Image = global::PE.Properties.Resources.icons8_manual_48;
@@ -814,6 +815,24 @@ namespace PE
             this.manualTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.manualTool.ToolTipText = "Manual DC-source";
             this.manualTool.Click += new System.EventHandler(this.manualTool_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
+            // 
+            // databaseTool
+            // 
+            this.databaseTool.Image = global::PE.Properties.Resources.icons8_database_administrator_48;
+            this.databaseTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.databaseTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.databaseTool.Name = "databaseTool";
+            this.databaseTool.Size = new System.Drawing.Size(59, 67);
+            this.databaseTool.Text = "Database";
+            this.databaseTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.databaseTool.ToolTipText = "Connection\r\n setting";
+            this.databaseTool.Click += new System.EventHandler(this.databaseTool_Click);
             // 
             // toolStripSeparator4
             // 
@@ -898,7 +917,7 @@ namespace PE
             this.tbSn.MaxLength = 20;
             this.tbSn.Name = "tbSn";
             this.tbSn.Size = new System.Drawing.Size(197, 26);
-            this.tbSn.TabIndex = 3;
+            this.tbSn.TabIndex = 2;
             // 
             // confirmSelectBtn
             // 
@@ -910,6 +929,7 @@ namespace PE
             this.confirmSelectBtn.Name = "confirmSelectBtn";
             this.confirmSelectBtn.Size = new System.Drawing.Size(86, 71);
             this.confirmSelectBtn.TabIndex = 2;
+            this.confirmSelectBtn.TabStop = false;
             this.confirmSelectBtn.UseVisualStyleBackColor = false;
             this.confirmSelectBtn.Click += new System.EventHandler(this.confirmSelectBtn_Click);
             // 
@@ -950,7 +970,7 @@ namespace PE
             this.programList.Location = new System.Drawing.Point(164, 25);
             this.programList.Name = "programList";
             this.programList.Size = new System.Drawing.Size(197, 28);
-            this.programList.TabIndex = 0;
+            this.programList.TabIndex = 1;
             this.programList.SelectionChangeCommitted += new System.EventHandler(this.programList_SelectionChangeCommitted);
             // 
             // manualDC
@@ -994,7 +1014,7 @@ namespace PE
             this.lblShowCurrScr.Location = new System.Drawing.Point(436, 96);
             this.lblShowCurrScr.Name = "lblShowCurrScr";
             this.lblShowCurrScr.Size = new System.Drawing.Size(22, 24);
-            this.lblShowCurrScr.TabIndex = 1;
+            this.lblShowCurrScr.TabIndex = 0;
             this.lblShowCurrScr.Text = "A";
             // 
             // lblPowScr
@@ -1006,7 +1026,7 @@ namespace PE
             this.lblPowScr.Location = new System.Drawing.Point(440, 121);
             this.lblPowScr.Name = "lblPowScr";
             this.lblPowScr.Size = new System.Drawing.Size(14, 15);
-            this.lblPowScr.TabIndex = 1;
+            this.lblPowScr.TabIndex = 0;
             this.lblPowScr.Text = "W";
             // 
             // lblCurrScr
@@ -1018,7 +1038,7 @@ namespace PE
             this.lblCurrScr.Location = new System.Drawing.Point(440, 69);
             this.lblCurrScr.Name = "lblCurrScr";
             this.lblCurrScr.Size = new System.Drawing.Size(14, 15);
-            this.lblCurrScr.TabIndex = 1;
+            this.lblCurrScr.TabIndex = 0;
             this.lblCurrScr.Text = "A";
             // 
             // lblSetCurrScr
@@ -1030,7 +1050,7 @@ namespace PE
             this.lblSetCurrScr.Location = new System.Drawing.Point(351, 69);
             this.lblSetCurrScr.Name = "lblSetCurrScr";
             this.lblSetCurrScr.Size = new System.Drawing.Size(28, 15);
-            this.lblSetCurrScr.TabIndex = 1;
+            this.lblSetCurrScr.TabIndex = 0;
             this.lblSetCurrScr.Text = "I =";
             // 
             // lblVoltScr
@@ -1042,11 +1062,12 @@ namespace PE
             this.lblVoltScr.Location = new System.Drawing.Point(308, 69);
             this.lblVoltScr.Name = "lblVoltScr";
             this.lblVoltScr.Size = new System.Drawing.Size(14, 15);
-            this.lblVoltScr.TabIndex = 1;
+            this.lblVoltScr.TabIndex = 0;
             this.lblVoltScr.Text = "V";
             // 
             // lblSetVoltScr
             // 
+            this.lblSetVoltScr.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.lblSetVoltScr.AutoSize = true;
             this.lblSetVoltScr.BackColor = System.Drawing.Color.Black;
             this.lblSetVoltScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1054,7 +1075,7 @@ namespace PE
             this.lblSetVoltScr.Location = new System.Drawing.Point(219, 69);
             this.lblSetVoltScr.Name = "lblSetVoltScr";
             this.lblSetVoltScr.Size = new System.Drawing.Size(28, 15);
-            this.lblSetVoltScr.TabIndex = 1;
+            this.lblSetVoltScr.TabIndex = 0;
             this.lblSetVoltScr.Text = "V =";
             // 
             // lblShowVoltScr
@@ -1066,7 +1087,7 @@ namespace PE
             this.lblShowVoltScr.Location = new System.Drawing.Point(304, 96);
             this.lblShowVoltScr.Name = "lblShowVoltScr";
             this.lblShowVoltScr.Size = new System.Drawing.Size(22, 24);
-            this.lblShowVoltScr.TabIndex = 1;
+            this.lblShowVoltScr.TabIndex = 0;
             this.lblShowVoltScr.Text = "V";
             // 
             // showPowScr
@@ -1080,7 +1101,8 @@ namespace PE
             this.showPowScr.Name = "showPowScr";
             this.showPowScr.ReadOnly = true;
             this.showPowScr.Size = new System.Drawing.Size(45, 16);
-            this.showPowScr.TabIndex = 6;
+            this.showPowScr.TabIndex = 0;
+            this.showPowScr.TabStop = false;
             this.showPowScr.Text = "0.0";
             this.showPowScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1095,7 +1117,8 @@ namespace PE
             this.setCurrScr.Name = "setCurrScr";
             this.setCurrScr.ReadOnly = true;
             this.setCurrScr.Size = new System.Drawing.Size(45, 16);
-            this.setCurrScr.TabIndex = 6;
+            this.setCurrScr.TabIndex = 0;
+            this.setCurrScr.TabStop = false;
             this.setCurrScr.Text = "0.00";
             this.setCurrScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1110,12 +1133,14 @@ namespace PE
             this.showCurrScr.Name = "showCurrScr";
             this.showCurrScr.ReadOnly = true;
             this.showCurrScr.Size = new System.Drawing.Size(116, 25);
-            this.showCurrScr.TabIndex = 6;
+            this.showCurrScr.TabIndex = 0;
+            this.showCurrScr.TabStop = false;
             this.showCurrScr.Text = "00.0000";
             this.showCurrScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // setVoltScr
             // 
+            this.setVoltScr.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.setVoltScr.BackColor = System.Drawing.Color.Black;
             this.setVoltScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.setVoltScr.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1125,7 +1150,8 @@ namespace PE
             this.setVoltScr.Name = "setVoltScr";
             this.setVoltScr.ReadOnly = true;
             this.setVoltScr.Size = new System.Drawing.Size(45, 16);
-            this.setVoltScr.TabIndex = 6;
+            this.setVoltScr.TabIndex = 0;
+            this.setVoltScr.TabStop = false;
             this.setVoltScr.Text = "0.00";
             this.setVoltScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1140,7 +1166,8 @@ namespace PE
             this.showVoltScr.Name = "showVoltScr";
             this.showVoltScr.ReadOnly = true;
             this.showVoltScr.Size = new System.Drawing.Size(101, 25);
-            this.showVoltScr.TabIndex = 6;
+            this.showVoltScr.TabIndex = 0;
+            this.showVoltScr.TabStop = false;
             this.showVoltScr.Text = "00.0000";
             this.showVoltScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1227,7 +1254,7 @@ namespace PE
             0});
             this.currBoxManual.Name = "currBoxManual";
             this.currBoxManual.Size = new System.Drawing.Size(128, 26);
-            this.currBoxManual.TabIndex = 3;
+            this.currBoxManual.TabIndex = 2;
             this.currBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.currBoxManual.ThousandsSeparator = true;
             this.currBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.currBoxManual_KeyDown);
@@ -1249,7 +1276,7 @@ namespace PE
             0});
             this.voltBoxManual.Name = "voltBoxManual";
             this.voltBoxManual.Size = new System.Drawing.Size(128, 26);
-            this.voltBoxManual.TabIndex = 3;
+            this.voltBoxManual.TabIndex = 1;
             this.voltBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.voltBoxManual.ThousandsSeparator = true;
             this.voltBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.voltBoxManual_KeyDown);
@@ -1260,7 +1287,8 @@ namespace PE
             this.button1.Location = new System.Drawing.Point(325, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 32);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 1;
+            this.button1.TabStop = false;
             this.button1.Text = "Set";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnSetCurrManual_Click);
@@ -1271,7 +1299,8 @@ namespace PE
             this.btnSetVoltManual.Location = new System.Drawing.Point(325, 25);
             this.btnSetVoltManual.Name = "btnSetVoltManual";
             this.btnSetVoltManual.Size = new System.Drawing.Size(118, 32);
-            this.btnSetVoltManual.TabIndex = 2;
+            this.btnSetVoltManual.TabIndex = 1;
+            this.btnSetVoltManual.TabStop = false;
             this.btnSetVoltManual.Text = "Set";
             this.btnSetVoltManual.UseVisualStyleBackColor = true;
             this.btnSetVoltManual.Click += new System.EventHandler(this.btnSetVoltManual_Click);
@@ -1283,7 +1312,7 @@ namespace PE
             this.lblCurrManual.Location = new System.Drawing.Point(67, 76);
             this.lblCurrManual.Name = "lblCurrManual";
             this.lblCurrManual.Size = new System.Drawing.Size(70, 20);
-            this.lblCurrManual.TabIndex = 1;
+            this.lblCurrManual.TabIndex = 0;
             this.lblCurrManual.Text = "Current :";
             // 
             // lblCurrManual2
@@ -1293,7 +1322,7 @@ namespace PE
             this.lblCurrManual2.Location = new System.Drawing.Point(287, 76);
             this.lblCurrManual2.Name = "lblCurrManual2";
             this.lblCurrManual2.Size = new System.Drawing.Size(20, 20);
-            this.lblCurrManual2.TabIndex = 1;
+            this.lblCurrManual2.TabIndex = 0;
             this.lblCurrManual2.Text = "A";
             // 
             // lblVoltManual2
@@ -1303,7 +1332,7 @@ namespace PE
             this.lblVoltManual2.Location = new System.Drawing.Point(287, 31);
             this.lblVoltManual2.Name = "lblVoltManual2";
             this.lblVoltManual2.Size = new System.Drawing.Size(20, 20);
-            this.lblVoltManual2.TabIndex = 1;
+            this.lblVoltManual2.TabIndex = 0;
             this.lblVoltManual2.Text = "V";
             // 
             // lblVoltManual
@@ -1313,7 +1342,7 @@ namespace PE
             this.lblVoltManual.Location = new System.Drawing.Point(65, 31);
             this.lblVoltManual.Name = "lblVoltManual";
             this.lblVoltManual.Size = new System.Drawing.Size(72, 20);
-            this.lblVoltManual.TabIndex = 1;
+            this.lblVoltManual.TabIndex = 0;
             this.lblVoltManual.Text = "Voltage :";
             // 
             // btnToggleOn
@@ -1354,7 +1383,8 @@ namespace PE
             this.cleatBtn.Location = new System.Drawing.Point(538, 344);
             this.cleatBtn.Name = "cleatBtn";
             this.cleatBtn.Size = new System.Drawing.Size(121, 64);
-            this.cleatBtn.TabIndex = 8;
+            this.cleatBtn.TabIndex = 2;
+            this.cleatBtn.TabStop = false;
             this.cleatBtn.Text = "Clear";
             this.cleatBtn.UseVisualStyleBackColor = false;
             this.cleatBtn.Click += new System.EventHandler(this.cleatBtn_Click);
@@ -1365,7 +1395,8 @@ namespace PE
             this.insertBtn.Location = new System.Drawing.Point(538, 29);
             this.insertBtn.Name = "insertBtn";
             this.insertBtn.Size = new System.Drawing.Size(121, 64);
-            this.insertBtn.TabIndex = 8;
+            this.insertBtn.TabIndex = 1;
+            this.insertBtn.TabStop = false;
             this.insertBtn.Text = "Insert";
             this.insertBtn.UseVisualStyleBackColor = false;
             this.insertBtn.Click += new System.EventHandler(this.insertBtn_Click);
@@ -1374,9 +1405,9 @@ namespace PE
             // 
             this.gridTable2.AllowUserToOrderColumns = true;
             this.gridTable2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
             this.gridTable2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridTable2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -1384,61 +1415,61 @@ namespace PE
             this.gridTable2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridTable2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridTable2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.gridTable2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTable2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.editContactPairs,
             this.editMaxRes});
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.DefaultCellStyle = dataGridViewCellStyle22;
             this.gridTable2.Location = new System.Drawing.Point(16, 29);
             this.gridTable2.Name = "gridTable2";
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.RowHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.gridTable2.RowHeadersVisible = false;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.RowsDefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.gridTable2.Size = new System.Drawing.Size(510, 379);
             this.gridTable2.TabIndex = 7;
             // 
             // editContactPairs
             // 
             this.editContactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editContactPairs.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editContactPairs.DefaultCellStyle = dataGridViewCellStyle20;
             this.editContactPairs.HeaderText = "Contact Pairs";
             this.editContactPairs.Name = "editContactPairs";
             // 
             // editMaxRes
             // 
             this.editMaxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle55.Format = "N1";
-            dataGridViewCellStyle55.NullValue = null;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editMaxRes.DefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.Format = "N1";
+            dataGridViewCellStyle21.NullValue = null;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editMaxRes.DefaultCellStyle = dataGridViewCellStyle21;
             this.editMaxRes.HeaderText = "Max.Res (mΩ)";
             this.editMaxRes.Name = "editMaxRes";
             this.editMaxRes.Width = 150;
@@ -1461,9 +1492,9 @@ namespace PE
             // 
             this.gridTable1.AllowUserToOrderColumns = true;
             this.gridTable1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.gridTable1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1472,14 +1503,14 @@ namespace PE
             this.gridTable1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridTable1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridTable1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.gridTable1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTable1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.contactPairs,
@@ -1487,39 +1518,39 @@ namespace PE
             this.measVolt,
             this.res,
             this.result});
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle66.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.DefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.DefaultCellStyle = dataGridViewCellStyle32;
             this.gridTable1.Location = new System.Drawing.Point(16, 29);
             this.gridTable1.Name = "gridTable1";
             this.gridTable1.ReadOnly = true;
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle67.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.gridTable1.RowHeadersVisible = false;
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle34;
             this.gridTable1.Size = new System.Drawing.Size(924, 379);
-            this.gridTable1.TabIndex = 7;
+            this.gridTable1.TabIndex = 5;
             // 
             // contactPairs
             // 
             this.contactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle27;
             this.contactPairs.HeaderText = "Contact Pairs";
             this.contactPairs.Name = "contactPairs";
             this.contactPairs.ReadOnly = true;
@@ -1527,11 +1558,11 @@ namespace PE
             // maxRes
             // 
             this.maxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle62.Format = "N1";
-            dataGridViewCellStyle62.NullValue = null;
-            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.maxRes.DefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.Format = "N1";
+            dataGridViewCellStyle28.NullValue = null;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.maxRes.DefaultCellStyle = dataGridViewCellStyle28;
             this.maxRes.HeaderText = "Max.Res (mΩ)";
             this.maxRes.Name = "maxRes";
             this.maxRes.ReadOnly = true;
@@ -1539,11 +1570,11 @@ namespace PE
             // measVolt
             // 
             this.measVolt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle63.Format = "N2";
-            dataGridViewCellStyle63.NullValue = null;
-            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.measVolt.DefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.Format = "N2";
+            dataGridViewCellStyle29.NullValue = null;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.measVolt.DefaultCellStyle = dataGridViewCellStyle29;
             this.measVolt.HeaderText = "Voltage (mV)";
             this.measVolt.Name = "measVolt";
             this.measVolt.ReadOnly = true;
@@ -1551,10 +1582,10 @@ namespace PE
             // res
             // 
             this.res.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle64.Format = "N2";
-            dataGridViewCellStyle64.NullValue = null;
-            this.res.DefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.Format = "N2";
+            dataGridViewCellStyle30.NullValue = null;
+            this.res.DefaultCellStyle = dataGridViewCellStyle30;
             this.res.HeaderText = "Res (mΩ)";
             this.res.Name = "res";
             this.res.ReadOnly = true;
@@ -1562,10 +1593,10 @@ namespace PE
             // result
             // 
             this.result.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle65.NullValue = null;
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.result.DefaultCellStyle = dataGridViewCellStyle65;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.NullValue = null;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.result.DefaultCellStyle = dataGridViewCellStyle31;
             this.result.HeaderText = "Result";
             this.result.Name = "result";
             this.result.ReadOnly = true;
@@ -1652,6 +1683,11 @@ namespace PE
             this.connect.TabIndex = 7;
             this.connect.TabStop = false;
             this.connect.Visible = false;
+            // 
+            // openFile
+            // 
+            this.openFile.Filter = "Excel Workbook (*.xlsx)|*.xlsx|CSV (Comma Delimited) (*.csv)|*.csv|Text files (*." +
+    "txt)|*.txt|All files (*.*)|*.*";
             // 
             // peTest
             // 
@@ -1763,7 +1799,7 @@ namespace PE
         public System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Label lblTestResult;
-        public System.Windows.Forms.ToolStripButton connectionTool;
+        public System.Windows.Forms.ToolStripButton databaseTool;
         public System.Windows.Forms.ToolStripButton homeTool;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -1831,6 +1867,8 @@ namespace PE
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem configManual;
         public System.Windows.Forms.ToolStripButton startTool;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        public System.Windows.Forms.OpenFileDialog openFile;
     }
 }
 

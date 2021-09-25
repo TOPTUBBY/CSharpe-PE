@@ -222,6 +222,9 @@
   <ItemGroup>
     <Content Include="icons8_electric_armature.ico" />
     <Content Include="icons8_quick_mode_on.ico" />
+    <None Include="Resources\icons8_database_administrator_48.png" />
+    <None Include="Resources\icons8_database_administrator_32.png" />
+    <None Include="Resources\icons8_microsoft_excel_2019_32.png" />
     <None Include="Resources\icons8_manual_32.png" />
     <None Include="Resources\icons8_full_stop_48.png" />
     <None Include="Resources\icons8_conflict_48.png" />

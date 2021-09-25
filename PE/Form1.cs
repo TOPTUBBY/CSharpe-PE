@@ -3,7 +3,7 @@
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 17/9/2021 18:44:00 PM
+//Last Modified On : 25/9/2021 16:17:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -149,7 +149,8 @@ namespace PE
             }
             else
             {
-                value.Text = rtbIncoming1.Text;
+                rtbIncoming2.Text = rtbIncoming1.Text;
+                value.Text = rtbIncoming2.Text;
                 measValue = Convert.ToDecimal(value.Text); //Measure voltage
 
                 //log all 
@@ -158,71 +159,73 @@ namespace PE
 
             if (rtbIncoming1.Text == "1\r\n")
             {
-                pushStart.Text = "Push foot button to Stop ...";
-                pushStart.ForeColor = Color.Red;
-                pushData.Visible = true;
-                toolStripStatusLabel.Text = "Testing...";
-                dangerTime.Start();
+                this.rtbIncoming2.Text = null;
+                this.Text = "PE TESTING (RUNNING)";
                 testProgram.Enabled = false;
                 setPoint.Enabled = false;
                 manualTool.Enabled = false;
-                this.Text = "PE TESTING (RUNNING)";
+                pushStart.Text = "Push foot button to Stop ...";
+                pushStart.ForeColor = Color.Red;
+                pushData.Visible = true;
+                dangerTime.Start();
+                toolStripStatusLabel.Text = "Testing...";
+
+
+
             }
             else if (rtbIncoming1.Text == "0\r\n")
             {
+                this.Text = "PE TESTING";
+                testProgram.Enabled = true;
+                setPoint.Enabled = true;
+                manualTool.Enabled = true;
+                fileSaveAs.Enabled = true;
+                exportTool.Enabled = true;
                 pushStart.Visible = true;
                 pushData.Visible = false;
                 warning.Visible = false;
                 dangerOn.Visible = false;
-                exportTool.Enabled = true;
                 pushStart.Text = "Push foot button to Start ...";
                 pushStart.ForeColor = Color.RoyalBlue;
-                toolStripStatusLabel.Text = "Ready";
                 dangerTime.Stop();
-                testProgram.Enabled = true;
-                setPoint.Enabled = true;
-                manualTool.Enabled = true;
-                this.Text = "PE TESTING";
+                toolStripStatusLabel.Text = "Ready";
 
-                //Add check condition if have get data then do, if not just off DC-source
-                /*if ()
+                if (rtbIncoming2.Text != "")
                 {
-
-                }*/
-                
-                //Cells Manangement
-                //Add data in voltage cell
-                try
-                {
-                    gridTable1.Rows[cntRow].Cells[2].Value = measValue;
-
-                    //Calculate to Resistance by use Current from setpoint
-                    //Add data in resistance cell
-                    voltValue = Convert.ToDecimal(measValue);
-                    resValue = voltValue / currValue;
-                    gridTable1.Rows[cntRow].Cells[3].Value = resValue;
-
-                    //Add data in result cell
-                    resMax = Convert.ToDecimal(gridTable1.Rows[cntRow].Cells[1].Value);
-                    var _color = Color.Black;
-                    if (resValue <= resMax)
+                    //Cells Manangement
+                    //Add data in voltage cell
+                    try
                     {
-                        resultValue = "PASS";
-                        _color = Color.Green;
+                        gridTable1.Rows[cntRow].Cells[2].Value = measValue;
 
+                        //Calculate to Resistance by use Current from setpoint
+                        //Add data in resistance cell
+                        voltValue = Convert.ToDecimal(measValue);
+                        resValue = voltValue / currValue;
+                        gridTable1.Rows[cntRow].Cells[3].Value = resValue;
+
+                        //Add data in result cell
+                        resMax = Convert.ToDecimal(gridTable1.Rows[cntRow].Cells[1].Value);
+                        var _color = Color.Black;
+                        if (resValue <= resMax)
+                        {
+                            resultValue = "PASS";
+                            _color = Color.Green;
+
+                        }
+                        else
+                        {
+                            resultValue = "FAIL";
+                            _color = Color.Red;
+                        }
+                        gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
+                        gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
+                        cntRow++;
                     }
-                    else
+                    catch
                     {
-                        resultValue = "FAIL";
-                        _color = Color.Red;
+                        resValue = 0;
                     }
-                    gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
-                    gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
-                    cntRow++;
-                }
-                catch
-                {
-                    resValue = 0;
                 }
             }
         }
@@ -501,22 +504,24 @@ namespace PE
 
         private void btnToggleOff_Click(object sender, EventArgs e)
         {
+            this.Text = "PE TESTING (OUTPUT ON)";
+            showVoltScr.Text = setVoltScr.Text;
             btnToggleOff.Visible = false;
             btnToggleOn.Visible = true;
             lblToggleOff.Visible = false;
             lblToggleOn.Visible = true;
-            this.Text = "PE TESTING (OUTPUT ON)";
 
             comPort1.Write("1");
         }
 
         private void btnToggleOn_Click(object sender, EventArgs e)
         {
+            this.Text = "PE TESTING";
+            showVoltScr.Text = "00.0000";
             btnToggleOn.Visible = false;
             btnToggleOff.Visible = true;
             lblToggleOn.Visible = false;
             lblToggleOff.Visible = true;
-            this.Text = "PE TESTING";
 
             comPort1.Write("0");
         }
@@ -533,7 +538,6 @@ namespace PE
 
         /*====================================================================================================*/
         /*----------------------------------------------Interface---------------------------------------------*/
-        //Auto Connect
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel.Text = "Device not connected";
@@ -577,25 +581,96 @@ namespace PE
             comPort1.DtrEnable = false;
             comPort1.Close();
         }
-        //Menu Strip
-        //File open Menu
-        //
-        //File save Menu
-        //
-        //File saveAs Menu
-        //
+
+        //File Open Menu
+        private void fileOpen_Click(object sender, EventArgs e)
+        {
+            var path = string.Empty;
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                if(openFile.FilterIndex == 1)
+                {
+                    path = openFile.FileName;
+                    app = new Microsoft.Office.Interop.Excel.Application();
+                    workBook = app.Workbooks.Open(path);
+                    app.Visible = true;
+                }
+                else if(openFile.FilterIndex == 2)
+                {
+                    path = openFile.FileName;
+                    app = new Microsoft.Office.Interop.Excel.Application();
+                    workBook = app.Workbooks.Open(path);
+                    app.Visible = true;
+                }
+                else
+                {
+                    path = openFile.FileName;
+                    System.Diagnostics.Process.Start(path);
+                }
+            }
+        }
+
+        //File Save Menu
+        private void fileSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //File Save As Menu
+        private void fileSaveAs_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                workBook = app.Workbooks.Add(1);
+                workSheet = workBook.ActiveSheet;
+                workSheet.Name = "PE";
+
+                workSheet.Cells[1, 1] = "Project";
+                workSheet.Cells[1, 2] = programList.Text;
+                workSheet.Cells[2, 1] = "Serial No.";
+                workSheet.Cells[2, 2] = tbSn.Text;
+                workSheet.Cells[3, 1] = "Test Date";
+                workSheet.Cells[3, 2] = System.DateTime.Now;
+                // header
+                for (int i = 1; i <= gridTable1.Columns.Count; i++)
+                {
+                    workSheet.Cells[4, i] = gridTable1.Columns[i - 1].HeaderText;
+                }
+
+                // data
+                for (int i = 1; i <= gridTable1.RowCount; i++)
+                {
+                    for (int j = 1; j <= gridTable1.Columns.Count; j++)
+                    {
+                        workSheet.Cells[i + 4, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
+                    }
+                }
+                if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    workBook.SaveAs(saveData.FileName);
+                }
+                app.Quit();
+                workBook = null;
+                workSheet = null;
+                fileSave.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
         //File exit Menu
-        //
         private void fileExit_Click(object sender, EventArgs e)
         {
             confirmDialog.Show("Do you want to exit ?", "PE Testing");
             comPort1.Close();
         }
 
-        //Config port Menu -- (NOT USE)
+        //Config port Menu 
         private void configPort_Click(object sender, EventArgs e)
         {
-            testProgram.Visible = false;
+            /*testProgram.Visible = false;
             setPoint.Visible = false;
             startTesting.Visible = false;
             getData.Visible = false;
@@ -603,7 +678,9 @@ namespace PE
             editSpecTest.Visible = false;
             serialPort.Visible = true;
             serialPort.Location = new System.Drawing.Point(12, 11);
-            manualDC.Visible = false;
+            manualDC.Visible = false;*/
+            System.Diagnostics.Process.Start("d:/config.ini");
+
         }
 
         //Config edit Menu
@@ -636,6 +713,14 @@ namespace PE
             manualDC.Size = new System.Drawing.Size(958, 491);
         }
 
+        //Config Database
+        private void databaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            app = new Microsoft.Office.Interop.Excel.Application();
+            workBook = app.Workbooks.Open("d:/pe_database.xlsx");
+            app.Visible = true;
+        }
+
         //Tool Strip
         //Start button
         private void startTool_Click(object sender, EventArgs e)
@@ -656,6 +741,10 @@ namespace PE
                 notifySerial.ShowBalloonTip(1000);
 
                 //GUI Disable
+                fileSave.Enabled = false;
+                fileSaveAs.Enabled = false;
+                databaseTool.Enabled = true;
+                exportTool.Enabled = false;
                 testProgram.Enabled = false;
                 setPoint.Enabled = false;
                 startTesting.Enabled = false;
@@ -663,6 +752,7 @@ namespace PE
                 testData.Enabled = false;
                 manualDC.Enabled = false;
                 editSpecTest.Enabled = false;
+
             }
             else if (startTool.Text == "Start")
             {
@@ -685,6 +775,7 @@ namespace PE
                     notifySerial.ShowBalloonTip(1000);
 
                     //GUI Enable
+                    databaseTool.Enabled = false;
                     testProgram.Enabled = true;
                     setPoint.Enabled = true;
                     startTesting.Enabled = true;
@@ -731,18 +822,12 @@ namespace PE
             manualDC.Visible = false;
         }
 
-        //Connection button -- (NOT USE)
-        private void connectionTool_Click(object sender, EventArgs e)
+        //Database button
+        private void databaseTool_Click(object sender, EventArgs e)
         {
-            testProgram.Visible = false;
-            setPoint.Visible = false;
-            startTesting.Visible = false;
-            getData.Visible = false;
-            testData.Visible = false;
-            editSpecTest.Visible = false;
-            serialPort.Visible = true;
-            serialPort.Location = new System.Drawing.Point(12, 11);
-            manualDC.Visible = false;
+            app = new Microsoft.Office.Interop.Excel.Application();
+            workBook = app.Workbooks.Open("d:/pe_database.xlsx");
+            app.Visible = true;
         }
 
         //Manual button
@@ -796,6 +881,7 @@ namespace PE
                 app.Quit();
                 workBook = null;
                 workSheet = null;
+                fileSave.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -844,21 +930,27 @@ namespace PE
 
     }
 }
-//Update : 17/9/2021 18:44:00 PM
+//Update : 25/9/2021 16:17:00 PM
 //Coming up Next--------------------------------
-//- Insert data format each program to data table --> pointer -- OK 1/9/2021
-//- logging data as table to CSV -- OK 15/9/2021
-//- fileOpen,fileSave,fileSaveAs,help 
-//- ini config -- OK 1/9/2021
-//- user login
-//- pre load progress 
-//- sync progress bar with work 
-//- manual test program -- OK 3/9/2021
-//- Add data in cell -- OK 13/9/2021
-//- Add manual DC-source -- On-Going
+//  - Insert data format each program to data table -- OK 1/9/2021
+//  - logging data as table to CSV -- OK 15/9/2021
+//  - fileOpen -- OK 25/9/2021 (Open xlsx,csv,txt)
+//  - fileSave
+//  - fileSaveAs -- OK 25/9/2021 (Same export)
+//  - Help,Info
+//  - ini config -- OK 1/9/2021
+//  - user login
+//  - pre load progress 
+//  - sync progress bar with work -- Remove
+//  - manual test program -- OK 3/9/2021
+//  - Add data in cell -- OK 13/9/2021
+//  - Add manual DC-source -- OK 17/09/2021
 //  - setpoint screen -- OK 17/09/2021
 //  - setpoint -- OK 17/09/2021
 //  - Measure screen
-//  - Port can connect but data not match**
+//  - Port can connect but data not match -- OK 25/09/2021 (Add /r/n)
 //  - Start Stop button / Disable connection tool -- OK 25/09/2021
-
+//  - User Off DC-Source without getdata >>> Table will not written -- OK 25/09/2021 (Use rtbIncoming2 to check)
+//  - Assign and arrange Tabindex to any filling box --> 25/09/2021
+//  - Add database open button and toolstrip -- 25/09/2021
+//  - Change Config port to open config.ini -- 25/09/2021
