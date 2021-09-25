@@ -50,7 +50,7 @@ namespace PE
 
         /*====================================================================================================*/
         /*--------------------------------------------SerialPort----------------------------------------------*/
-
+        //NOT USE---------------------------------------------------------------------------------------------
         private void btnScan_Click(object sender, EventArgs e)
         {
             int index = -1;
@@ -99,10 +99,6 @@ namespace PE
                 disConnect.Visible = false;
                 comPort1.RtsEnable = true;
                 comPort1.DtrEnable = true;
-                btnScan.Enabled = false;
-                cbbPort.Enabled = false;
-                cbbBaud.Enabled = false;
-                testProgram.Enabled = true;
                 statusBox.BackColor = Color.LawnGreen;
                 notifySerial.Icon = SystemIcons.Application;
                 notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
@@ -121,9 +117,7 @@ namespace PE
                 cbbBaud.Enabled = true;
                 connect.Visible = false;
                 disConnect.Visible = true;
-                btnScan.Enabled = true;
-                cbbPort.Enabled = true;
-                cbbBaud.Enabled = true;
+
                 toolStripStatusLabel.Text = "Device not connected";
                 toolStripStatusLabel2.Text = null;
                 rtbIncoming1.Clear();
@@ -195,12 +189,11 @@ namespace PE
                 {
 
                 }*/
-
+                
+                //Cells Manangement
+                //Add data in voltage cell
                 try
                 {
-                    //Cells Manangement
-                    //Add data in voltage cell
-
                     gridTable1.Rows[cntRow].Cells[2].Value = measValue;
 
                     //Calculate to Resistance by use Current from setpoint
@@ -277,7 +270,7 @@ namespace PE
         private void confirmSelectBtn_Click(object sender, EventArgs e)
         {
             setPoint.Enabled = true;
-            start.Enabled = true;
+            startTesting.Enabled = true;
             getData.Enabled = true;
             gridTable1.Rows.Clear();
             try
@@ -320,14 +313,14 @@ namespace PE
             //Back to Home
             testProgram.Visible = true;
             setPoint.Visible = true;
-            start.Visible = true;
+            startTesting.Visible = true;
             getData.Visible = true;
-            dataTable1.Visible = true;
-            dataTable2.Visible = false;
+            testData.Visible = true;
+            editSpecTest.Visible = false;
             serialPort.Visible = false;
             //Enable test
             setPoint.Enabled = true;
-            start.Enabled = true;
+            startTesting.Enabled = true;
             getData.Enabled = true;
         }
 
@@ -543,41 +536,45 @@ namespace PE
         //Auto Connect
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                String _port = ini.IniReadValue("CONFIG", "PORT");
-                String _baud = ini.IniReadValue("CONFIG", "BAUDRATE");
-                comPort1.PortName = _port;
-                comPort1.BaudRate = int.Parse(_baud);
-                comPort1.Open();
-                serialPort.Visible = false;
-                btnState.Text = "Disconnect";
-                btnScan.Enabled = false;
-                cbbPort.Enabled = false;
-                cbbBaud.Enabled = false;
-                connect.Visible = true;
-                disConnect.Visible = false;
-                testProgram.Visible = true;
-                toolStripStatusLabel.Text = "Ready";
-                toolStripStatusLabel2.Text = comPort1.PortName + "," + comPort1.BaudRate;
-                statusBox.BackColor = Color.LawnGreen;
-                notifySerial.Icon = SystemIcons.Application;
-                notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
-                notifySerial.ShowBalloonTip(1000);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show("Please confirm your device port setting." + "\n" + "Configuration at d:\\config.ini", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnState.Enabled = false;
-                testProgram.Enabled = false;
-                toolStripStatusLabel.Text = "Device not connected";
-                toolStripStatusLabel2.Text = null;
-            }
+            toolStripStatusLabel.Text = "Device not connected";
+            toolStripStatusLabel2.Text = null;
+            /*            try
+                        {
+                            String _port = ini.IniReadValue("CONFIG", "PORT");
+                            String _baud = ini.IniReadValue("CONFIG", "BAUDRATE");
+                            comPort1.PortName = _port;
+                            comPort1.BaudRate = int.Parse(_baud);
+                            comPort1.Open();
+                            serialPort.Visible = false;
+                            btnState.Text = "Disconnect";
+                            btnScan.Enabled = false;
+                            cbbPort.Enabled = false;
+                            cbbBaud.Enabled = false;
+                            connect.Visible = true;
+                            disConnect.Visible = false;
+                            testProgram.Visible = true;
+                            toolStripStatusLabel.Text = "Ready";
+                            toolStripStatusLabel2.Text = comPort1.PortName + "," + comPort1.BaudRate;
+                            statusBox.BackColor = Color.LawnGreen;
+                            notifySerial.Icon = SystemIcons.Application;
+                            notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
+                            notifySerial.ShowBalloonTip(1000);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Please confirm your device port setting." + "\n" + "Configuration at d:\\config.ini", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            btnState.Enabled = false;
+                            testProgram.Enabled = false;
+                            toolStripStatusLabel.Text = "Device not connected";
+                            toolStripStatusLabel2.Text = null;
+                        }*/
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            comPort1.RtsEnable = false;
+            comPort1.DtrEnable = false;
             comPort1.Close();
         }
         //Menu Strip
@@ -595,18 +592,18 @@ namespace PE
             comPort1.Close();
         }
 
-        //Config port Menu
+        //Config port Menu -- (NOT USE)
         private void configPort_Click(object sender, EventArgs e)
         {
             testProgram.Visible = false;
             setPoint.Visible = false;
-            start.Visible = false;
+            startTesting.Visible = false;
             getData.Visible = false;
-            dataTable1.Visible = false;
-            dataTable2.Visible = false;
+            testData.Visible = false;
+            editSpecTest.Visible = false;
             serialPort.Visible = true;
             serialPort.Location = new System.Drawing.Point(12, 11);
-            manual.Visible = false;
+            manualDC.Visible = false;
         }
 
         //Config edit Menu
@@ -614,28 +611,109 @@ namespace PE
         {
             testProgram.Visible = false;
             setPoint.Visible = false;
-            start.Visible = false;
+            startTesting.Visible = false;
             getData.Visible = false;
-            dataTable1.Visible = false;
-            dataTable2.Visible = true;
-            dataTable2.Height = 450;
-            dataTable2.Location = new System.Drawing.Point(12, 11);
+            testData.Visible = false;
+            editSpecTest.Visible = true;
+            editSpecTest.Height = 450;
+            editSpecTest.Location = new System.Drawing.Point(12, 11);
             serialPort.Visible = false;
-            manual.Visible = false;
+            manualDC.Visible = false;
+        }
+
+        //Config Manual
+        private void configManual_Click(object sender, EventArgs e)
+        {
+            testProgram.Visible = false;
+            setPoint.Visible = false;
+            startTesting.Visible = false;
+            getData.Visible = false;
+            testData.Visible = false;
+            editSpecTest.Visible = false;
+            serialPort.Visible = false;
+            manualDC.Visible = true;
+            manualDC.Location = new System.Drawing.Point(12, 11);
+            manualDC.Size = new System.Drawing.Size(958, 491);
         }
 
         //Tool Strip
+        //Start button
+        private void startTool_Click(object sender, EventArgs e)
+        {
+            if (startTool.Text == "Stop")
+            {
+                startTool.Image = new Bitmap(PE.Properties.Resources.icons8_conflict_48);
+                startTool.Text = "Start";
+
+                comPort1.RtsEnable = false;
+                comPort1.DtrEnable = false;
+                comPort1.Close();
+                toolStripStatusLabel.Text = "Device not connected";
+                toolStripStatusLabel2.Text = null;
+                rtbIncoming1.Clear();
+                notifySerial.Icon = SystemIcons.Application;
+                notifySerial.BalloonTipText = cbbPort.Text + "  has been Disconnected";
+                notifySerial.ShowBalloonTip(1000);
+
+                //GUI Disable
+                testProgram.Enabled = false;
+                setPoint.Enabled = false;
+                startTesting.Enabled = false;
+                getData.Enabled = false;
+                testData.Enabled = false;
+                manualDC.Enabled = false;
+                editSpecTest.Enabled = false;
+            }
+            else if (startTool.Text == "Start")
+            {
+                startTool.Image = new Bitmap(PE.Properties.Resources.icons8_full_stop_48);
+                startTool.Text = "Stop";
+
+                try
+                {
+                    String _port = ini.IniReadValue("CONFIG", "PORT");
+                    String _baud = ini.IniReadValue("CONFIG", "BAUDRATE");
+                    comPort1.PortName = _port;
+                    comPort1.BaudRate = int.Parse(_baud);
+                    comPort1.Open();
+                    comPort1.RtsEnable = true;
+                    comPort1.DtrEnable = true;
+                    toolStripStatusLabel.Text = "Ready";
+                    toolStripStatusLabel2.Text = comPort1.PortName + "," + comPort1.BaudRate;
+                    notifySerial.Icon = SystemIcons.Application;
+                    notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
+                    notifySerial.ShowBalloonTip(1000);
+
+                    //GUI Enable
+                    testProgram.Enabled = true;
+                    setPoint.Enabled = true;
+                    startTesting.Enabled = true;
+                    getData.Enabled = true;
+                    testData.Enabled = true;
+                    manualDC.Enabled = true;
+                    editSpecTest.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please confirm your device port setting." + "\n" + "Configuration at d:\\config.ini", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    startTool.Image = new Bitmap(PE.Properties.Resources.icons8_conflict_48);
+                    startTool.Text = "Start";
+                }
+            }
+        }
+
         //Home button
         private void homeTool_Click(object sender, EventArgs e)
         {
             testProgram.Visible = true;
             setPoint.Visible = true;
-            start.Visible = true;
+            startTesting.Visible = true;
             getData.Visible = true;
-            dataTable1.Visible = true;
-            dataTable2.Visible = false;
+            testData.Visible = true;
+            editSpecTest.Visible = false;
             serialPort.Visible = false;
-            manual.Visible = false;
+            manualDC.Visible = false;
         }
 
         //Edit button
@@ -643,28 +721,28 @@ namespace PE
         {
             testProgram.Visible = false;
             setPoint.Visible = false;
-            start.Visible = false;
+            startTesting.Visible = false;
             getData.Visible = false;
-            dataTable1.Visible = false;
-            dataTable2.Visible = true;
-            dataTable2.Height = 450;
-            dataTable2.Location = new System.Drawing.Point(12, 11);
+            testData.Visible = false;
+            editSpecTest.Visible = true;
+            editSpecTest.Height = 450;
+            editSpecTest.Location = new System.Drawing.Point(12, 11);
             serialPort.Visible = false;
-            manual.Visible = false;
+            manualDC.Visible = false;
         }
 
-        //Connection button
+        //Connection button -- (NOT USE)
         private void connectionTool_Click(object sender, EventArgs e)
         {
             testProgram.Visible = false;
             setPoint.Visible = false;
-            start.Visible = false;
+            startTesting.Visible = false;
             getData.Visible = false;
-            dataTable1.Visible = false;
-            dataTable2.Visible = false;
+            testData.Visible = false;
+            editSpecTest.Visible = false;
             serialPort.Visible = true;
             serialPort.Location = new System.Drawing.Point(12, 11);
-            manual.Visible = false;
+            manualDC.Visible = false;
         }
 
         //Manual button
@@ -672,14 +750,14 @@ namespace PE
         {
             testProgram.Visible = false;
             setPoint.Visible = false;
-            start.Visible = false;
+            startTesting.Visible = false;
             getData.Visible = false;
-            dataTable1.Visible = false;
-            dataTable2.Visible = false;
+            testData.Visible = false;
+            editSpecTest.Visible = false;
             serialPort.Visible = false;
-            manual.Visible = true;
-            manual.Location = new System.Drawing.Point(12, 11);
-            manual.Size = new System.Drawing.Size(958, 491);
+            manualDC.Visible = true;
+            manualDC.Location = new System.Drawing.Point(12, 11);
+            manualDC.Size = new System.Drawing.Size(958, 491);
         }
 
         //Export button
@@ -729,6 +807,8 @@ namespace PE
         private void shutdownTool_Click(object sender, EventArgs e)
         {
             confirmDialog.Show("Do you want to exit ?", "PE Testing");
+            comPort1.RtsEnable = false;
+            comPort1.DtrEnable = false;
             comPort1.Close();
         }
     }
@@ -780,4 +860,5 @@ namespace PE
 //  - setpoint -- OK 17/09/2021
 //  - Measure screen
 //  - Port can connect but data not match**
+//  - Start Stop button / Disable connection tool -- OK 25/09/2021
 
