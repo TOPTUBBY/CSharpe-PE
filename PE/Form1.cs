@@ -154,7 +154,6 @@ namespace PE
                 manualTool.Enabled = false;
                 pushStart.Text = "Push foot button to Stop ...";
                 pushStart.ForeColor = Color.Red;
-                pushData.Visible = true;
                 dangerTime.Start();
                 toolStripStatusLabel.Text = "Testing...";
             }
@@ -167,7 +166,6 @@ namespace PE
                 fileSaveAs.Enabled = true;
                 exportTool.Enabled = true;
                 pushStart.Visible = true;
-                pushData.Visible = false;
                 warning.Visible = false;
                 dangerOn.Visible = false;
                 pushStart.Text = "Push foot button to Start ...";
@@ -563,7 +561,6 @@ namespace PE
         {
             dangerOn.Visible = !dangerOn.Visible;
             pushStart.Visible = !pushStart.Visible;
-            pushData.Visible = !pushData.Visible;
             warning.Visible = !warning.Visible;
         }
 
@@ -800,7 +797,6 @@ namespace PE
                 setPoint.Enabled = false;
                 startTesting.Enabled = false;
                 pushStart.Visible = true;
-                pushData.Visible = false;
                 warning.Visible = false;
                 dangerOn.Visible = false;
                 pushStart.Text = "Push foot button to Start ...";
