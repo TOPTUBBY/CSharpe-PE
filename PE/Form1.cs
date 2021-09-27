@@ -42,8 +42,7 @@ namespace PE
         {
             InitializeComponent();
             comPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(port_DataReceived_1);
-            connect.Visible = false;
-            disConnect.Visible = true;
+            comPort2.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(port_DataReceived_2);
             dangerTime.Stop();
             toolStripStatusLabel.Text = "Device not connected";
         }
@@ -78,7 +77,7 @@ namespace PE
                 cbbBaud.Items.Add(115200);
                 cbbBaud.Text = cbbBaud.Items[0].ToString();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Port Unavailable. Please check on Device Manager.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -104,7 +103,6 @@ namespace PE
                 notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
                 notifySerial.ShowBalloonTip(1000);
                 toolStripStatusLabel.Text = "Ready";
-                toolStripStatusLabel2.Text = comPort1.PortName + "," + comPort1.BaudRate;
             }
             else if (btnState.Text == "Disconnect")
             {
@@ -119,7 +117,6 @@ namespace PE
                 disConnect.Visible = true;
 
                 toolStripStatusLabel.Text = "Device not connected";
-                toolStripStatusLabel2.Text = null;
                 rtbIncoming1.Clear();
                 statusBox.BackColor = Color.Red;
                 notifySerial.Icon = SystemIcons.Application;
@@ -129,7 +126,7 @@ namespace PE
         }
 
         /*====================================================================================================*/
-        /*-------------------------------------------Read Port------------------------------------------------*/
+        /*-------------------------------------------Read Port1-----------------------------------------------*/
         private void port_DataReceived_1(object sender, SerialDataReceivedEventArgs e)
         {
 
@@ -140,21 +137,12 @@ namespace PE
             }
         }
 
-        private void SetText1(string text)
+        private void SetText1(string text1)
         {
-            this.rtbIncoming1.Text = text;
+            this.rtbIncoming1.Text = text1;
             if (rtbIncoming1.Text == "0\r\n" || rtbIncoming1.Text == "1\r\n")
             {
                 value.Text = "----.--";
-            }
-            else
-            {
-                rtbIncoming2.Text = rtbIncoming1.Text;
-                value.Text = rtbIncoming2.Text;
-                measValue = Convert.ToDecimal(value.Text); //Measure voltage
-
-                //log all 
-                //rtbIncoming2.Text += rtbIncoming1.Text;
             }
 
             if (rtbIncoming1.Text == "1\r\n")
@@ -169,9 +157,6 @@ namespace PE
                 pushData.Visible = true;
                 dangerTime.Start();
                 toolStripStatusLabel.Text = "Testing...";
-
-
-
             }
             else if (rtbIncoming1.Text == "0\r\n")
             {
@@ -189,45 +174,94 @@ namespace PE
                 pushStart.ForeColor = Color.RoyalBlue;
                 dangerTime.Stop();
                 toolStripStatusLabel.Text = "Ready";
-
-                if (rtbIncoming2.Text != "")
+                if (gridTable1.Rows[cntRow].Cells[0].Value != null)
                 {
-                    //Cells Manangement
-                    //Add data in voltage cell
-                    try
+                    if (rtbIncoming2.Text != null)
                     {
-                        gridTable1.Rows[cntRow].Cells[2].Value = measValue;
-
-                        //Calculate to Resistance by use Current from setpoint
-                        //Add data in resistance cell
-                        voltValue = Convert.ToDecimal(measValue);
-                        resValue = voltValue / currValue;
-                        gridTable1.Rows[cntRow].Cells[3].Value = resValue;
-
-                        //Add data in result cell
-                        resMax = Convert.ToDecimal(gridTable1.Rows[cntRow].Cells[1].Value);
-                        var _color = Color.Black;
-                        if (resValue <= resMax)
+                        //Cells Manangement
+                        //Add data in voltage cell
+                        try
                         {
-                            resultValue = "PASS";
-                            _color = Color.Green;
+                            //Add data in voltage cell
+                            gridTable1.Rows[cntRow].Cells[2].Value = measValue;
 
+                            //Calculate to Resistance by use Current from setpoint
+                            //Add data in resistance cell
+                            voltValue = Convert.ToDecimal(measValue);
+                            resValue = voltValue / currValue;
+                            gridTable1.Rows[cntRow].Cells[3].Value = resValue;
+
+                            //Add data in result cell
+                            resMax = Convert.ToDecimal(gridTable1.Rows[cntRow].Cells[1].Value);
+                            var _color = Color.Black;
+                            if (resValue <= resMax)
+                            {
+                                resultValue = "PASS";
+                                _color = Color.Green;
+
+                            }
+                            else
+                            {
+                                resultValue = "FAIL";
+                                _color = Color.Red;
+                            }
+                            gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
+                            gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
+                            cntRow++;
                         }
-                        else
+                        catch
                         {
-                            resultValue = "FAIL";
-                            _color = Color.Red;
+                            resValue = 0;
                         }
-                        gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
-                        gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
-                        cntRow++;
-                    }
-                    catch
-                    {
-                        resValue = 0;
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Finish !!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
+        }
+
+        //Clear Lastest data in gridTable1
+        private void btnClearData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gridTable1.Rows[cntRow - 1].Cells[2].Value = null;
+                gridTable1.Rows[cntRow - 1].Cells[3].Value = null;
+                gridTable1.Rows[cntRow - 1].Cells[4].Value = null;
+                cntRow--;
+            }
+            catch
+            {
+                MessageBox.Show("Data unavailable to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        /*-------------------------------------------Read Port2-----------------------------------------------*/
+        private void port_DataReceived_2(object sender, SerialDataReceivedEventArgs e)
+        {
+            InputData = comPort2.ReadExisting();
+            if (InputData != String.Empty)
+            {
+                this.BeginInvoke(new SetTextCallback(SetText2), new object[] { InputData });
+            }
+        }
+
+        private void SetText2(string text2)
+        {
+            this.rtbIncoming2.Text = text2;
+            value.Text = rtbIncoming2.Text;
+            try
+            {
+                measValue = Convert.ToDecimal(value.Text); //Measure voltage
+            }
+            catch
+            {
+
+            }
+
         }
 
         /*====================================================================================================*/
@@ -272,9 +306,6 @@ namespace PE
 
         private void confirmSelectBtn_Click(object sender, EventArgs e)
         {
-            setPoint.Enabled = true;
-            startTesting.Enabled = true;
-            getData.Enabled = true;
             gridTable1.Rows.Clear();
             try
             {
@@ -541,7 +572,8 @@ namespace PE
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel.Text = "Device not connected";
-            toolStripStatusLabel2.Text = null;
+            lblDCPort.Text = null;
+            lblDMMPort.Text = null;
             /*            try
                         {
                             String _port = ini.IniReadValue("CONFIG", "PORT");
@@ -588,14 +620,14 @@ namespace PE
             var path = string.Empty;
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                if(openFile.FilterIndex == 1)
+                if (openFile.FilterIndex == 1)
                 {
                     path = openFile.FileName;
                     app = new Microsoft.Office.Interop.Excel.Application();
                     workBook = app.Workbooks.Open(path);
                     app.Visible = true;
                 }
-                else if(openFile.FilterIndex == 2)
+                else if (openFile.FilterIndex == 2)
                 {
                     path = openFile.FileName;
                     app = new Microsoft.Office.Interop.Excel.Application();
@@ -664,6 +696,8 @@ namespace PE
         private void fileExit_Click(object sender, EventArgs e)
         {
             confirmDialog.Show("Do you want to exit ?", "PE Testing");
+            comPort1.RtsEnable = false;
+            comPort1.DtrEnable = false;
             comPort1.Close();
         }
 
@@ -725,29 +759,53 @@ namespace PE
         //Start button
         private void startTool_Click(object sender, EventArgs e)
         {
+            String _port1 = ini.IniReadValue("DC-SOURCE", "PORT");
+            String _baud1 = ini.IniReadValue("DC-SOURCE", "BAUDRATE");
+            String _port2 = ini.IniReadValue("DMM", "PORT");
+            String _baud2 = ini.IniReadValue("DMM", "BAUDRATE");
+            lblDCPort.Text = comPort1.PortName + "," + comPort1.BaudRate;
+            lblDCPort.BackColor = Color.Red;
+            lblDMMPort.Text = comPort2.PortName + "," + comPort2.BaudRate;
+            lblDMMPort.BackColor = Color.Red;
+
             if (startTool.Text == "Stop")
             {
                 startTool.Image = new Bitmap(PE.Properties.Resources.icons8_conflict_48);
                 startTool.Text = "Start";
 
+                //Port1-DC
                 comPort1.RtsEnable = false;
                 comPort1.DtrEnable = false;
                 comPort1.Close();
-                toolStripStatusLabel.Text = "Device not connected";
-                toolStripStatusLabel2.Text = null;
-                rtbIncoming1.Clear();
-                notifySerial.Icon = SystemIcons.Application;
-                notifySerial.BalloonTipText = cbbPort.Text + "  has been Disconnected";
-                notifySerial.ShowBalloonTip(1000);
 
-                //GUI Disable
+                //Port2-DMM
+                comPort2.RtsEnable = false;
+                comPort2.DtrEnable = false;
+                comPort2.Close();
+
+                toolStripStatusLabel.Text = "Device not connected";
+                rtbIncoming1.Clear();
+                /*notifySerial.BalloonTipText = cbbPort.Text + "  has been Disconnected";
+                notifySerial.ShowBalloonTip(1000);*/
+
+                //GUI Manager
+                connect.Visible = false;
+                disConnect.Visible = true;
                 fileSave.Enabled = false;
                 fileSaveAs.Enabled = false;
+                manualTool.Enabled = true;
                 databaseTool.Enabled = true;
                 exportTool.Enabled = false;
                 testProgram.Enabled = false;
                 setPoint.Enabled = false;
                 startTesting.Enabled = false;
+                pushStart.Visible = true;
+                pushData.Visible = false;
+                warning.Visible = false;
+                dangerOn.Visible = false;
+                pushStart.Text = "Push foot button to Start ...";
+                pushStart.ForeColor = Color.RoyalBlue;
+                dangerTime.Stop();
                 getData.Enabled = false;
                 testData.Enabled = false;
                 manualDC.Enabled = false;
@@ -758,38 +816,74 @@ namespace PE
             {
                 startTool.Image = new Bitmap(PE.Properties.Resources.icons8_full_stop_48);
                 startTool.Text = "Stop";
+                connect.Visible = true;
+                disConnect.Visible = false;
+                toolStripStatusLabel.Text = "Ready";
 
+                //Port1-DC
                 try
                 {
-                    String _port = ini.IniReadValue("CONFIG", "PORT");
-                    String _baud = ini.IniReadValue("CONFIG", "BAUDRATE");
-                    comPort1.PortName = _port;
-                    comPort1.BaudRate = int.Parse(_baud);
+                    comPort1.PortName = _port1;
+                    comPort1.BaudRate = int.Parse(_baud1);
                     comPort1.Open();
                     comPort1.RtsEnable = true;
                     comPort1.DtrEnable = true;
-                    toolStripStatusLabel.Text = "Ready";
-                    toolStripStatusLabel2.Text = comPort1.PortName + "," + comPort1.BaudRate;
-                    notifySerial.Icon = SystemIcons.Application;
-                    notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
-                    notifySerial.ShowBalloonTip(1000);
+                    lblDCPort.Text = comPort1.PortName + "," + comPort1.BaudRate;
+                    lblDCPort.BackColor = Color.LawnGreen;
+                    /*notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
+                    notifySerial.ShowBalloonTip(1000);*/
 
                     //GUI Enable
+                    editSpecTest.Enabled = true;
                     databaseTool.Enabled = false;
                     testProgram.Enabled = true;
                     setPoint.Enabled = true;
                     startTesting.Enabled = true;
-                    getData.Enabled = true;
-                    testData.Enabled = true;
                     manualDC.Enabled = true;
-                    editSpecTest.Enabled = true;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    setPoint.Enabled = false;
+                    startTesting.Enabled = false;
+                    manualDC.Enabled = false;
+                    lblDCPort.Text = comPort1.PortName + "," + comPort1.BaudRate;
+                    lblDCPort.BackColor = Color.Red;
+                    /*MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     MessageBox.Show("Please confirm your device port setting." + "\n" + "Configuration at d:\\config.ini", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     startTool.Image = new Bitmap(PE.Properties.Resources.icons8_conflict_48);
-                    startTool.Text = "Start";
+                    startTool.Text = "Start";*/
+                }
+
+                //Port2-DMM
+                try
+                {
+                    comPort2.PortName = _port2;
+                    comPort2.BaudRate = int.Parse(_baud2);
+                    comPort2.Open();
+                    comPort2.RtsEnable = true;
+                    comPort2.DtrEnable = true;
+                    lblDMMPort.Text = comPort2.PortName + "," + comPort2.BaudRate;
+                    lblDMMPort.BackColor = Color.LawnGreen;
+                    /*notifySerial.BalloonTipText = cbbPort.Text + "  has been Connected";
+                    notifySerial.ShowBalloonTip(1000);*/
+
+                    //GUI Enable
+                    editSpecTest.Enabled = true;
+                    databaseTool.Enabled = false;
+                    testProgram.Enabled = true;
+                    getData.Enabled = true;
+                    testData.Enabled = true;
+                }
+                catch
+                {
+                    getData.Enabled = false;
+                    testData.Enabled = false;
+                    lblDMMPort.Text = comPort2.PortName + "," + comPort2.BaudRate;
+                    lblDMMPort.BackColor = Color.Red;
+                    /*MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please confirm your device port setting." + "\n" + "Configuration at d:\\config.ini", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    startTool.Image = new Bitmap(PE.Properties.Resources.icons8_conflict_48);
+                    startTool.Text = "Start";*/
                 }
             }
         }
@@ -950,7 +1044,13 @@ namespace PE
 //  - Measure screen
 //  - Port can connect but data not match -- OK 25/09/2021 (Add /r/n)
 //  - Start Stop button / Disable connection tool -- OK 25/09/2021
-//  - User Off DC-Source without getdata >>> Table will not written -- OK 25/09/2021 (Use rtbIncoming2 to check)
+//  - User Off DC-Source without getdata >>> Table will not written -- OK 25/09/2021 (Use rtbIncoming2 to check) -- Edit
 //  - Assign and arrange Tabindex to any filling box --> 25/09/2021
 //  - Add database open button and toolstrip -- 25/09/2021
 //  - Change Config port to open config.ini -- 25/09/2021
+//  - Edit dc manual panel size to capatible with notebook -- OK 26/09/2021
+//  - Add port2 for support DMM and edit config.ini file -- OK 27/09/2021
+//  - Use rtbIncoming1 for Port1,rtbIncoming2 for Port2 -- OK 27/09/2021
+//  - Add clear latest data in gridTable1 -- OK 27/09/2021
+//  - Get data in port 2 (simulation by arduino) and log to table when off DC-Source -- OK 27/09/2021
+//  - Edit log data in gridTable1 not log over item existing -- OK 27/09/2021

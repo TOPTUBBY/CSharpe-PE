@@ -116,6 +116,8 @@ namespace PE
             this.lblSelectProgram = new System.Windows.Forms.Label();
             this.programList = new System.Windows.Forms.ComboBox();
             this.manualDC = new System.Windows.Forms.GroupBox();
+            this.lblDMMPort = new System.Windows.Forms.Label();
+            this.lblDCPort = new System.Windows.Forms.Label();
             this.lblShowCurrScr = new System.Windows.Forms.Label();
             this.lblPowScr = new System.Windows.Forms.Label();
             this.lblCurrScr = new System.Windows.Forms.Label();
@@ -149,20 +151,21 @@ namespace PE
             this.editContactPairs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editMaxRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.testData = new System.Windows.Forms.GroupBox();
+            this.btnClearData = new System.Windows.Forms.Button();
             this.gridTable1 = new System.Windows.Forms.DataGridView();
             this.contactPairs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.measVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.res = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.result = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveData = new System.Windows.Forms.SaveFileDialog();
             this.delta = new System.Windows.Forms.PictureBox();
             this.disConnect = new System.Windows.Forms.PictureBox();
             this.connect = new System.Windows.Forms.PictureBox();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.comPort2 = new System.IO.Ports.SerialPort(this.components);
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.serialPort.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
@@ -188,10 +191,10 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.gridTable2)).BeginInit();
             this.testData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTable1)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disConnect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.connect)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -204,7 +207,7 @@ namespace PE
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(983, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -344,7 +347,7 @@ namespace PE
             this.serialPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.serialPort.Location = new System.Drawing.Point(990, 11);
             this.serialPort.Name = "serialPort";
-            this.serialPort.Size = new System.Drawing.Size(322, 126);
+            this.serialPort.Size = new System.Drawing.Size(322, 117);
             this.serialPort.TabIndex = 1;
             this.serialPort.TabStop = false;
             this.serialPort.Text = "Connection";
@@ -448,7 +451,6 @@ namespace PE
             this.notifySerial.BalloonTipTitle = "Warning !!!";
             this.notifySerial.Icon = ((System.Drawing.Icon)(resources.GetObject("notifySerial.Icon")));
             this.notifySerial.Text = "Comport Status";
-            this.notifySerial.Visible = true;
             // 
             // setPoint
             // 
@@ -746,7 +748,7 @@ namespace PE
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(982, 70);
+            this.toolStrip1.Size = new System.Drawing.Size(983, 70);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
@@ -873,11 +875,11 @@ namespace PE
             // 
             // groupTest
             // 
+            this.groupTest.Controls.Add(this.serialPort);
             this.groupTest.Controls.Add(this.testProgram);
             this.groupTest.Controls.Add(this.manualDC);
             this.groupTest.Controls.Add(this.editSpecTest);
             this.groupTest.Controls.Add(this.testData);
-            this.groupTest.Controls.Add(this.serialPort);
             this.groupTest.Controls.Add(this.setPoint);
             this.groupTest.Controls.Add(this.startTesting);
             this.groupTest.Controls.Add(this.getData);
@@ -885,7 +887,7 @@ namespace PE
             this.groupTest.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupTest.Location = new System.Drawing.Point(0, 94);
             this.groupTest.Name = "groupTest";
-            this.groupTest.Size = new System.Drawing.Size(982, 655);
+            this.groupTest.Size = new System.Drawing.Size(983, 655);
             this.groupTest.TabIndex = 9;
             this.groupTest.TabStop = false;
             // 
@@ -977,6 +979,8 @@ namespace PE
             // 
             this.manualDC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.manualDC.Controls.Add(this.lblDMMPort);
+            this.manualDC.Controls.Add(this.lblDCPort);
             this.manualDC.Controls.Add(this.lblShowCurrScr);
             this.manualDC.Controls.Add(this.lblPowScr);
             this.manualDC.Controls.Add(this.lblCurrScr);
@@ -997,13 +1001,33 @@ namespace PE
             this.manualDC.Controls.Add(this.btnToggleOn);
             this.manualDC.Enabled = false;
             this.manualDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.manualDC.Location = new System.Drawing.Point(990, 143);
+            this.manualDC.Location = new System.Drawing.Point(990, 134);
             this.manualDC.Name = "manualDC";
-            this.manualDC.Size = new System.Drawing.Size(677, 67);
+            this.manualDC.Size = new System.Drawing.Size(677, 218);
             this.manualDC.TabIndex = 8;
             this.manualDC.TabStop = false;
             this.manualDC.Text = "Manual - DC Source (Chroma 62100H Series)";
             this.manualDC.Visible = false;
+            // 
+            // lblDMMPort
+            // 
+            this.lblDMMPort.AutoSize = true;
+            this.lblDMMPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblDMMPort.Location = new System.Drawing.Point(380, 18);
+            this.lblDMMPort.Name = "lblDMMPort";
+            this.lblDMMPort.Size = new System.Drawing.Size(47, 15);
+            this.lblDMMPort.TabIndex = 6;
+            this.lblDMMPort.Text = "PORT2";
+            // 
+            // lblDCPort
+            // 
+            this.lblDCPort.AutoSize = true;
+            this.lblDCPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblDCPort.Location = new System.Drawing.Point(380, 1);
+            this.lblDCPort.Name = "lblDCPort";
+            this.lblDCPort.Size = new System.Drawing.Size(47, 15);
+            this.lblDCPort.TabIndex = 6;
+            this.lblDCPort.Text = "PORT1";
             // 
             // lblShowCurrScr
             // 
@@ -1478,6 +1502,7 @@ namespace PE
             // 
             this.testData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.testData.Controls.Add(this.btnClearData);
             this.testData.Controls.Add(this.gridTable1);
             this.testData.Enabled = false;
             this.testData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -1488,6 +1513,20 @@ namespace PE
             this.testData.TabStop = false;
             this.testData.Text = "Test Data";
             // 
+            // btnClearData
+            // 
+            this.btnClearData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnClearData.ForeColor = System.Drawing.Color.Red;
+            this.btnClearData.Location = new System.Drawing.Point(876, 209);
+            this.btnClearData.Name = "btnClearData";
+            this.btnClearData.Size = new System.Drawing.Size(76, 57);
+            this.btnClearData.TabIndex = 6;
+            this.btnClearData.Text = "Clear lastest Data";
+            this.btnClearData.UseVisualStyleBackColor = true;
+            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
+            // 
             // gridTable1
             // 
             this.gridTable1.AllowUserToOrderColumns = true;
@@ -1495,9 +1534,8 @@ namespace PE
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.gridTable1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridTable1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gridTable1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.gridTable1.BackgroundColor = System.Drawing.Color.White;
             this.gridTable1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -1542,7 +1580,7 @@ namespace PE
             dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle17;
-            this.gridTable1.Size = new System.Drawing.Size(924, 237);
+            this.gridTable1.Size = new System.Drawing.Size(854, 237);
             this.gridTable1.TabIndex = 5;
             // 
             // contactPairs
@@ -1601,36 +1639,6 @@ namespace PE
             this.result.Name = "result";
             this.result.ReadOnly = true;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel,
-            this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 727);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip1.Size = new System.Drawing.Size(982, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 10;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(45, 17);
-            this.toolStripStatusLabel.Text = "STATUS";
-            this.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(35, 17);
-            this.toolStripStatusLabel2.Text = "PORT";
-            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // saveData
             // 
             this.saveData.CheckPathExists = false;
@@ -1648,7 +1656,7 @@ namespace PE
             this.delta.ErrorImage = global::PE.Properties.Resources.delta;
             this.delta.Image = global::PE.Properties.Resources.delta;
             this.delta.InitialImage = global::PE.Properties.Resources.delta;
-            this.delta.Location = new System.Drawing.Point(788, 32);
+            this.delta.Location = new System.Drawing.Point(789, 32);
             this.delta.Name = "delta";
             this.delta.Size = new System.Drawing.Size(179, 56);
             this.delta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1662,7 +1670,7 @@ namespace PE
             this.disConnect.ErrorImage = global::PE.Properties.Resources.icons8_disconnected_64;
             this.disConnect.Image = global::PE.Properties.Resources.icons8_disconnected_64;
             this.disConnect.InitialImage = global::PE.Properties.Resources.icons8_disconnected_64;
-            this.disConnect.Location = new System.Drawing.Point(715, 27);
+            this.disConnect.Location = new System.Drawing.Point(716, 27);
             this.disConnect.Name = "disConnect";
             this.disConnect.Size = new System.Drawing.Size(67, 67);
             this.disConnect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1676,7 +1684,7 @@ namespace PE
             this.connect.ErrorImage = global::PE.Properties.Resources.icons8_connected_64;
             this.connect.Image = global::PE.Properties.Resources.icons8_connected_64;
             this.connect.InitialImage = global::PE.Properties.Resources.icons8_connected_64;
-            this.connect.Location = new System.Drawing.Point(715, 27);
+            this.connect.Location = new System.Drawing.Point(716, 27);
             this.connect.Name = "connect";
             this.connect.Size = new System.Drawing.Size(67, 67);
             this.connect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1689,12 +1697,41 @@ namespace PE
             this.openFile.Filter = "Excel Workbook (*.xlsx)|*.xlsx|CSV (Comma Delimited) (*.csv)|*.csv|Text files (*." +
     "txt)|*.txt|All files (*.*)|*.*";
             // 
+            // comPort2
+            // 
+            this.comPort2.BaudRate = 115200;
+            this.comPort2.DtrEnable = true;
+            this.comPort2.PortName = "COM2";
+            this.comPort2.RtsEnable = true;
+            this.comPort2.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.port_DataReceived_2);
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(45, 17);
+            this.toolStripStatusLabel.Text = "STATUS";
+            this.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 727);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(983, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // peTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(982, 749);
+            this.ClientSize = new System.Drawing.Size(983, 749);
             this.Controls.Add(this.delta);
             this.Controls.Add(this.disConnect);
             this.Controls.Add(this.statusStrip1);
@@ -1743,11 +1780,11 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.gridTable2)).EndInit();
             this.testData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTable1)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disConnect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.connect)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1795,9 +1832,7 @@ namespace PE
         private System.Windows.Forms.PictureBox disConnect;
         private System.Windows.Forms.PictureBox connect;
         private System.Windows.Forms.GroupBox groupTest;
-        public System.Windows.Forms.StatusStrip statusStrip1;
         public System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Label lblTestResult;
         public System.Windows.Forms.ToolStripButton databaseTool;
         public System.Windows.Forms.ToolStripButton homeTool;
@@ -1863,12 +1898,17 @@ namespace PE
         public System.Windows.Forms.TextBox setCurrScr;
         public System.Windows.Forms.Label lblPowScr;
         public System.Windows.Forms.TextBox showPowScr;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem configManual;
         public System.Windows.Forms.ToolStripButton startTool;
         private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
         public System.Windows.Forms.OpenFileDialog openFile;
+        private System.Windows.Forms.Button btnClearData;
+        public System.IO.Ports.SerialPort comPort2;
+        public System.Windows.Forms.Label lblDMMPort;
+        public System.Windows.Forms.Label lblDCPort;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        public System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 
