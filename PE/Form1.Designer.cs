@@ -119,6 +119,8 @@ namespace PE
             this.btnRemoteDMM = new System.Windows.Forms.Button();
             this.btnClearDMM = new System.Windows.Forms.Button();
             this.valueDMM = new System.Windows.Forms.Label();
+            this.btnStopMeasure = new System.Windows.Forms.Button();
+            this.btnStartMeasure = new System.Windows.Forms.Button();
             this.lblVoltDMM = new System.Windows.Forms.Label();
             this.gbDC = new System.Windows.Forms.GroupBox();
             this.lblToggleOn = new System.Windows.Forms.Label();
@@ -595,7 +597,7 @@ namespace PE
             // dangerTime
             // 
             this.dangerTime.Enabled = true;
-            this.dangerTime.Interval = 500;
+            this.dangerTime.Interval = 600;
             this.dangerTime.Tick += new System.EventHandler(this.dangerTime_Tick);
             // 
             // pushStart
@@ -734,7 +736,7 @@ namespace PE
             this.value.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.value.Size = new System.Drawing.Size(275, 75);
             this.value.TabIndex = 6;
-            this.value.Text = "----.--";
+            this.value.Text = "---.---";
             this.value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.value.UseCompatibleTextRendering = true;
             // 
@@ -912,9 +914,9 @@ namespace PE
             this.manualDC.Controls.Add(this.pbDCSign);
             this.manualDC.Enabled = false;
             this.manualDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.manualDC.Location = new System.Drawing.Point(990, 11);
+            this.manualDC.Location = new System.Drawing.Point(990, 134);
             this.manualDC.Name = "manualDC";
-            this.manualDC.Size = new System.Drawing.Size(677, 341);
+            this.manualDC.Size = new System.Drawing.Size(677, 218);
             this.manualDC.TabIndex = 8;
             this.manualDC.TabStop = false;
             this.manualDC.Text = "Manual";
@@ -925,6 +927,8 @@ namespace PE
             this.gbDMM.Controls.Add(this.pbDMM);
             this.gbDMM.Controls.Add(this.statusDMM);
             this.gbDMM.Controls.Add(this.valueDMM);
+            this.gbDMM.Controls.Add(this.btnStopMeasure);
+            this.gbDMM.Controls.Add(this.btnStartMeasure);
             this.gbDMM.Controls.Add(this.lblVoltDMM);
             this.gbDMM.Location = new System.Drawing.Point(71, 318);
             this.gbDMM.Name = "gbDMM";
@@ -1018,22 +1022,47 @@ namespace PE
             this.valueDMM.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.valueDMM.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valueDMM.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.valueDMM.Location = new System.Drawing.Point(140, 174);
+            this.valueDMM.Location = new System.Drawing.Point(147, 174);
             this.valueDMM.MaximumSize = new System.Drawing.Size(275, 75);
             this.valueDMM.MinimumSize = new System.Drawing.Size(275, 75);
             this.valueDMM.Name = "valueDMM";
             this.valueDMM.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.valueDMM.Size = new System.Drawing.Size(275, 75);
             this.valueDMM.TabIndex = 6;
-            this.valueDMM.Text = "----.--";
+            this.valueDMM.Text = "---.---";
             this.valueDMM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.valueDMM.UseCompatibleTextRendering = true;
+            // 
+            // btnStopMeasure
+            // 
+            this.btnStopMeasure.Enabled = false;
+            this.btnStopMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnStopMeasure.Location = new System.Drawing.Point(640, 174);
+            this.btnStopMeasure.Name = "btnStopMeasure";
+            this.btnStopMeasure.Size = new System.Drawing.Size(86, 75);
+            this.btnStopMeasure.TabIndex = 1;
+            this.btnStopMeasure.TabStop = false;
+            this.btnStopMeasure.Text = "Stop";
+            this.btnStopMeasure.UseVisualStyleBackColor = true;
+            this.btnStopMeasure.Click += new System.EventHandler(this.btnStopMeasure_Click);
+            // 
+            // btnStartMeasure
+            // 
+            this.btnStartMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnStartMeasure.Location = new System.Drawing.Point(548, 174);
+            this.btnStartMeasure.Name = "btnStartMeasure";
+            this.btnStartMeasure.Size = new System.Drawing.Size(86, 75);
+            this.btnStartMeasure.TabIndex = 1;
+            this.btnStartMeasure.TabStop = false;
+            this.btnStartMeasure.Text = "Measure";
+            this.btnStartMeasure.UseVisualStyleBackColor = true;
+            this.btnStartMeasure.Click += new System.EventHandler(this.btnStartMeasure_Click);
             // 
             // lblVoltDMM
             // 
             this.lblVoltDMM.AutoSize = true;
             this.lblVoltDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVoltDMM.Location = new System.Drawing.Point(437, 184);
+            this.lblVoltDMM.Location = new System.Drawing.Point(444, 184);
             this.lblVoltDMM.Name = "lblVoltDMM";
             this.lblVoltDMM.Size = new System.Drawing.Size(98, 55);
             this.lblVoltDMM.TabIndex = 6;
@@ -1961,6 +1990,8 @@ namespace PE
         public System.Windows.Forms.Label valueDMM;
         private System.Windows.Forms.Label lblVoltDMM;
         private System.Windows.Forms.GroupBox gbDC;
+        private System.Windows.Forms.Button btnStartMeasure;
+        private System.Windows.Forms.Button btnStopMeasure;
     }
 }
 
