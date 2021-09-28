@@ -353,6 +353,46 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_energy_meter_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_energy_meter_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_energy_meter_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_energy_meter_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_energy_meter_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_energy_meter_641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_energy_meter_642 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_energy_meter_642", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_full_stop_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_full_stop_48", resourceCulture);
@@ -456,6 +496,16 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap icons8_manual_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_manual_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_manual_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_manual_481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -626,6 +676,46 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap icons8_voltage_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8_voltage_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_voltmeter_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_voltmeter_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_voltmeter_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_voltmeter_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_voltmeter_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_voltmeter_641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_voltmeter_642 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_voltmeter_642", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

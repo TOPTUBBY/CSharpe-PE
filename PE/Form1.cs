@@ -144,6 +144,10 @@ namespace PE
             {
                 value.Text = "----.--";
             }
+            else
+            {
+                tbIdentDC.Text = rtbIncoming1.Text;
+            }
 
             if (rtbIncoming1.Text == "1\r\n")
             {
@@ -250,7 +254,20 @@ namespace PE
         private void SetText2(string text2)
         {
             this.rtbIncoming2.Text = text2;
+            /*string preValue;
+            int Length, j = 0;
+
+            Length = rtbIncoming2.Text.Length;
+
+            for (int i = 0; i < Length; i++)
+            {
+                preValue = rtbIncoming2.Text.Substring(j, 1);
+
+                j++;
+            }*/
+            tbIdentDMM.Text = rtbIncoming2.Text;
             value.Text = rtbIncoming2.Text;
+            valueDMM.Text = rtbIncoming2.Text;
             try
             {
                 measValue = Convert.ToDecimal(value.Text); //Measure voltage
@@ -259,7 +276,6 @@ namespace PE
             {
 
             }
-
         }
 
         /*====================================================================================================*/
@@ -443,6 +459,59 @@ namespace PE
         }
 
         //Manual DC source-------------------------------------------------------------------------------------
+        //Command DC
+        private void btnRemoteDC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                comPort1.Write("*idn?\r\n");
+                comPort1.Write("syst:rem\r\n");
+            }
+            catch
+            {
+                tbIdentDC.Text = "Error.";
+            }
+        }
+
+        private void btnClearDC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                comPort1.Write("*cls\r\n");
+            }
+            catch
+            {
+                tbIdentDC.Text = "Error.";
+            }
+        }
+
+        private void tbCommandDC_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    string command = tbCommandDC.Text + "\r\n";
+                    string commandDC;
+                    int Length, j = 0;
+
+                    Length = command.Length;
+
+                    for (int i = 0; i < Length; i++)
+                    {
+                        commandDC = command.Substring(j, 1);
+                        comPort1.Write(commandDC);
+                        j++;
+                    }
+                }
+            }
+            catch
+            {
+                tbIdentDC.Text = "Error.";
+            }
+        }
+
+        //Setpoint DC
         //Button Click to set
         private void btnSetVoltManual_Click(object sender, EventArgs e)
         {
@@ -459,9 +528,9 @@ namespace PE
                 comPort1.Write(voltSent);
                 j++;
             }
-            setVoltScr.Text = String.Format("{0:0.00}", voltBoxManual.Value);
+            /*setVoltScr.Text = String.Format("{0:0.00}", voltBoxManual.Value);
             powValue = voltValue * currValue;
-            showPowScr.Text = String.Format("{0:0.0}", powValue);
+            showPowScr.Text = String.Format("{0:0.0}", powValue);*/
         }
 
         private void btnSetCurrManual_Click(object sender, EventArgs e)
@@ -479,9 +548,9 @@ namespace PE
                 comPort1.Write(currSent);
                 j++;
             }
-            setCurrScr.Text = String.Format("{0:0.00}", currBoxManual.Value);
+            /*setCurrScr.Text = String.Format("{0:0.00}", currBoxManual.Value);
             powValue = voltValue * currValue;
-            showPowScr.Text = String.Format("{0:0.0}", powValue);
+            showPowScr.Text = String.Format("{0:0.0}", powValue);*/
         }
 
         //Enter to set
@@ -502,10 +571,10 @@ namespace PE
                     comPort1.Write(voltSent);
                     j++;
                 }
-                setVoltScr.Text = String.Format("{0:0.00}", voltBoxManual.Value);
+                //setVoltScr.Text = String.Format("{0:0.00}", voltBoxManual.Value);
             }
-            powValue = voltValue * currValue;
-            showPowScr.Text = String.Format("{0:0.0}", powValue);
+            /*powValue = voltValue * currValue;
+            showPowScr.Text = String.Format("{0:0.0}", powValue);*/
         }
 
         private void currBoxManual_KeyDown(object sender, KeyEventArgs e)
@@ -525,16 +594,16 @@ namespace PE
                     comPort1.Write(currSent);
                     j++;
                 }
-                setCurrScr.Text = String.Format("{0:0.00}", currBoxManual.Value);
+                //setCurrScr.Text = String.Format("{0:0.00}", currBoxManual.Value);
             }
-            powValue = voltValue * currValue;
-            showPowScr.Text = String.Format("{0:0.0}", powValue);
+            /*powValue = voltValue * currValue;
+            showPowScr.Text = String.Format("{0:0.0}", powValue);*/
         }
 
         private void btnToggleOff_Click(object sender, EventArgs e)
         {
             this.Text = "PE TESTING (OUTPUT ON)";
-            showVoltScr.Text = setVoltScr.Text;
+            //showVoltScr.Text = setVoltScr.Text;
             btnToggleOff.Visible = false;
             btnToggleOn.Visible = true;
             lblToggleOff.Visible = false;
@@ -546,13 +615,66 @@ namespace PE
         private void btnToggleOn_Click(object sender, EventArgs e)
         {
             this.Text = "PE TESTING";
-            showVoltScr.Text = "00.0000";
+            //showVoltScr.Text = "00.0000";
             btnToggleOn.Visible = false;
             btnToggleOff.Visible = true;
             lblToggleOn.Visible = false;
             lblToggleOff.Visible = true;
 
             comPort1.Write("0");
+        }
+
+        /*--------------------------------------------DC Source-----------------------------------------------*/
+        //Manual DMM --------------------------------------------------------------------------------------
+        private void btnRemoteDMM_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                comPort2.Write("*idn?\r\n");
+                comPort2.Write("syst:rem\r\n");
+            }
+            catch
+            {
+                tbIdentDMM.Text = "Error.";
+            }
+        }
+
+        private void btnClearDMM_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                comPort2.Write("*cls\r\n");
+            }
+            catch
+            {
+                tbIdentDMM.Text = "Error.";
+            }
+        }
+
+        private void tbCommandDMM_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    string command = tbCommandDMM.Text + "\r\n";
+                    string commandDMM;
+                    int Length, j = 0;
+
+                    Length = command.Length;
+
+                    for (int i = 0; i < Length; i++)
+                    {
+                        commandDMM = command.Substring(j, 1);
+                        comPort2.Write(commandDMM);
+                        j++;
+                    }
+                }
+            }
+            catch
+            {
+                tbIdentDMM.Text = "Error.";
+            }
         }
 
         /*====================================================================================================*/
@@ -741,7 +863,7 @@ namespace PE
             serialPort.Visible = false;
             manualDC.Visible = true;
             manualDC.Location = new System.Drawing.Point(12, 11);
-            manualDC.Size = new System.Drawing.Size(958, 530);
+            manualDC.Size = new System.Drawing.Size(876, 600);
         }
 
         //Config Database
@@ -891,6 +1013,7 @@ namespace PE
             setPoint.Visible = true;
             startTesting.Visible = true;
             getData.Visible = true;
+            value.Text = "----.--";
             testData.Visible = true;
             editSpecTest.Visible = false;
             serialPort.Visible = false;
@@ -932,7 +1055,7 @@ namespace PE
             serialPort.Visible = false;
             manualDC.Visible = true;
             manualDC.Location = new System.Drawing.Point(12, 11);
-            manualDC.Size = new System.Drawing.Size(958, 530);
+            manualDC.Size = new System.Drawing.Size(876, 600);
         }
 
         //Export button
@@ -1050,3 +1173,4 @@ namespace PE
 //  - Add clear latest data in gridTable1 -- OK 27/09/2021
 //  - Get data in port 2 (simulation by arduino) and log to table when off DC-Source -- OK 27/09/2021
 //  - Edit log data in gridTable1 not log over item existing -- OK 27/09/2021
+//  - New DC manual and add DMM manual with command box,identify box -- OK 28/09/2021

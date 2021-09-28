@@ -222,6 +222,10 @@
   <ItemGroup>
     <Content Include="icons8_electric_armature.ico" />
     <Content Include="icons8_quick_mode_on.ico" />
+    <None Include="Resources\icons8_voltmeter_64.png" />
+    <None Include="Resources\icons8_energy_meter_64.png" />
+    <None Include="Resources\icons8_energy_meter_32.png" />
+    <None Include="Resources\icons8_voltmeter_32.png" />
     <None Include="Resources\34401DMM.jpg" />
     <None Include="Resources\icons8_database_administrator_48.png" />
     <None Include="Resources\icons8_database_administrator_32.png" />

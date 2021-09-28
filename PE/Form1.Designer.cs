@@ -57,7 +57,7 @@ namespace PE
             this.configToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.configPort = new System.Windows.Forms.ToolStripMenuItem();
             this.configEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.configManual = new System.Windows.Forms.ToolStripMenuItem();
+            this.configManualDC = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpInfo = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,31 +109,29 @@ namespace PE
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.shutdownTool = new System.Windows.Forms.ToolStripButton();
             this.groupTest = new System.Windows.Forms.GroupBox();
-            this.testProgram = new System.Windows.Forms.GroupBox();
-            this.tbSn = new System.Windows.Forms.TextBox();
-            this.confirmSelectBtn = new System.Windows.Forms.Button();
-            this.lblSn = new System.Windows.Forms.Label();
-            this.lblSelectProgram = new System.Windows.Forms.Label();
-            this.programList = new System.Windows.Forms.ComboBox();
             this.manualDC = new System.Windows.Forms.GroupBox();
+            this.gbDMM = new System.Windows.Forms.GroupBox();
+            this.pbDMM = new System.Windows.Forms.PictureBox();
+            this.statusDMM = new System.Windows.Forms.GroupBox();
+            this.tbCommandDMM = new System.Windows.Forms.TextBox();
             this.lblDMMPort = new System.Windows.Forms.Label();
-            this.lblDCPort = new System.Windows.Forms.Label();
-            this.lblShowCurrScr = new System.Windows.Forms.Label();
-            this.lblPowScr = new System.Windows.Forms.Label();
-            this.lblCurrScr = new System.Windows.Forms.Label();
-            this.lblSetCurrScr = new System.Windows.Forms.Label();
-            this.lblVoltScr = new System.Windows.Forms.Label();
-            this.lblSetVoltScr = new System.Windows.Forms.Label();
-            this.lblShowVoltScr = new System.Windows.Forms.Label();
-            this.showPowScr = new System.Windows.Forms.TextBox();
-            this.setCurrScr = new System.Windows.Forms.TextBox();
-            this.showCurrScr = new System.Windows.Forms.TextBox();
-            this.setVoltScr = new System.Windows.Forms.TextBox();
-            this.showVoltScr = new System.Windows.Forms.TextBox();
+            this.tbIdentDMM = new System.Windows.Forms.TextBox();
+            this.btnRemoteDMM = new System.Windows.Forms.Button();
+            this.btnClearDMM = new System.Windows.Forms.Button();
+            this.valueDMM = new System.Windows.Forms.Label();
+            this.lblVoltDMM = new System.Windows.Forms.Label();
+            this.gbDC = new System.Windows.Forms.GroupBox();
             this.lblToggleOn = new System.Windows.Forms.Label();
             this.lblToggleOff = new System.Windows.Forms.Label();
+            this.statusDC = new System.Windows.Forms.GroupBox();
+            this.tbCommandDC = new System.Windows.Forms.TextBox();
+            this.tbIdentDC = new System.Windows.Forms.TextBox();
+            this.lblDCPort = new System.Windows.Forms.Label();
+            this.btnRemoteDC = new System.Windows.Forms.Button();
+            this.btnClearDC = new System.Windows.Forms.Button();
             this.btnToggleOff = new System.Windows.Forms.PictureBox();
-            this.chroma = new System.Windows.Forms.PictureBox();
+            this.btnToggleOn = new System.Windows.Forms.PictureBox();
+            this.pbDC = new System.Windows.Forms.PictureBox();
             this.setPointManual = new System.Windows.Forms.GroupBox();
             this.currBoxManual = new System.Windows.Forms.NumericUpDown();
             this.voltBoxManual = new System.Windows.Forms.NumericUpDown();
@@ -143,7 +141,14 @@ namespace PE
             this.lblCurrManual2 = new System.Windows.Forms.Label();
             this.lblVoltManual2 = new System.Windows.Forms.Label();
             this.lblVoltManual = new System.Windows.Forms.Label();
-            this.btnToggleOn = new System.Windows.Forms.PictureBox();
+            this.pbDMMSign = new System.Windows.Forms.PictureBox();
+            this.pbDCSign = new System.Windows.Forms.PictureBox();
+            this.testProgram = new System.Windows.Forms.GroupBox();
+            this.tbSn = new System.Windows.Forms.TextBox();
+            this.confirmSelectBtn = new System.Windows.Forms.Button();
+            this.lblSn = new System.Windows.Forms.Label();
+            this.lblSelectProgram = new System.Windows.Forms.Label();
+            this.programList = new System.Windows.Forms.ComboBox();
             this.editSpecTest = new System.Windows.Forms.GroupBox();
             this.cleatBtn = new System.Windows.Forms.Button();
             this.insertBtn = new System.Windows.Forms.Button();
@@ -180,14 +185,21 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupTest.SuspendLayout();
-            this.testProgram.SuspendLayout();
             this.manualDC.SuspendLayout();
+            this.gbDMM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).BeginInit();
+            this.statusDMM.SuspendLayout();
+            this.gbDC.SuspendLayout();
+            this.statusDC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chroma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).BeginInit();
             this.setPointManual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBoxManual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBoxManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).BeginInit();
+            this.testProgram.SuspendLayout();
             this.editSpecTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTable2)).BeginInit();
             this.testData.SuspendLayout();
@@ -208,7 +220,7 @@ namespace PE
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(983, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -265,7 +277,7 @@ namespace PE
             this.configToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configPort,
             this.configEdit,
-            this.configManual,
+            this.configManualDC,
             this.databaseToolStripMenuItem});
             this.configToolStripMenu.Name = "configToolStripMenu";
             this.configToolStripMenu.Size = new System.Drawing.Size(93, 20);
@@ -277,7 +289,7 @@ namespace PE
             this.configPort.Name = "configPort";
             this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.configPort.Size = new System.Drawing.Size(186, 22);
+            this.configPort.Size = new System.Drawing.Size(219, 22);
             this.configPort.Text = "Port";
             this.configPort.Click += new System.EventHandler(this.configPort_Click);
             // 
@@ -286,25 +298,25 @@ namespace PE
             this.configEdit.Image = global::PE.Properties.Resources.icons8_edit_32;
             this.configEdit.Name = "configEdit";
             this.configEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.configEdit.Size = new System.Drawing.Size(186, 22);
+            this.configEdit.Size = new System.Drawing.Size(219, 22);
             this.configEdit.Text = "Edit program";
             this.configEdit.Click += new System.EventHandler(this.configEdit_Click);
             // 
-            // configManual
+            // configManualDC
             // 
-            this.configManual.Image = global::PE.Properties.Resources.icons8_manual_32;
-            this.configManual.Name = "configManual";
-            this.configManual.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.configManual.Size = new System.Drawing.Size(186, 22);
-            this.configManual.Text = "Manual";
-            this.configManual.Click += new System.EventHandler(this.configManual_Click);
+            this.configManualDC.Image = global::PE.Properties.Resources.icons8_manual_481;
+            this.configManualDC.Name = "configManualDC";
+            this.configManualDC.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.configManualDC.Size = new System.Drawing.Size(219, 22);
+            this.configManualDC.Text = "Manual DC-Source";
+            this.configManualDC.Click += new System.EventHandler(this.configManual_Click);
             // 
             // databaseToolStripMenuItem
             // 
             this.databaseToolStripMenuItem.Image = global::PE.Properties.Resources.icons8_database_administrator_32;
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
             this.databaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.databaseToolStripMenuItem.Text = "Database";
             this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
             // 
@@ -749,7 +761,7 @@ namespace PE
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(983, 70);
+            this.toolStrip1.Size = new System.Drawing.Size(982, 70);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
@@ -876,9 +888,9 @@ namespace PE
             // 
             // groupTest
             // 
+            this.groupTest.Controls.Add(this.manualDC);
             this.groupTest.Controls.Add(this.serialPort);
             this.groupTest.Controls.Add(this.testProgram);
-            this.groupTest.Controls.Add(this.manualDC);
             this.groupTest.Controls.Add(this.editSpecTest);
             this.groupTest.Controls.Add(this.testData);
             this.groupTest.Controls.Add(this.setPoint);
@@ -888,9 +900,440 @@ namespace PE
             this.groupTest.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupTest.Location = new System.Drawing.Point(0, 94);
             this.groupTest.Name = "groupTest";
-            this.groupTest.Size = new System.Drawing.Size(983, 655);
+            this.groupTest.Size = new System.Drawing.Size(982, 655);
             this.groupTest.TabIndex = 9;
             this.groupTest.TabStop = false;
+            // 
+            // manualDC
+            // 
+            this.manualDC.Controls.Add(this.gbDMM);
+            this.manualDC.Controls.Add(this.gbDC);
+            this.manualDC.Controls.Add(this.pbDMMSign);
+            this.manualDC.Controls.Add(this.pbDCSign);
+            this.manualDC.Enabled = false;
+            this.manualDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.manualDC.Location = new System.Drawing.Point(990, 11);
+            this.manualDC.Name = "manualDC";
+            this.manualDC.Size = new System.Drawing.Size(677, 341);
+            this.manualDC.TabIndex = 8;
+            this.manualDC.TabStop = false;
+            this.manualDC.Text = "Manual";
+            this.manualDC.Visible = false;
+            // 
+            // gbDMM
+            // 
+            this.gbDMM.Controls.Add(this.pbDMM);
+            this.gbDMM.Controls.Add(this.statusDMM);
+            this.gbDMM.Controls.Add(this.valueDMM);
+            this.gbDMM.Controls.Add(this.lblVoltDMM);
+            this.gbDMM.Location = new System.Drawing.Point(71, 318);
+            this.gbDMM.Name = "gbDMM";
+            this.gbDMM.Size = new System.Drawing.Size(788, 262);
+            this.gbDMM.TabIndex = 10;
+            this.gbDMM.TabStop = false;
+            this.gbDMM.Text = "Digital Multimeter (Agilent 34401A 6½ Digit Multimeter)";
+            // 
+            // pbDMM
+            // 
+            this.pbDMM.Image = global::PE.Properties.Resources._34401DMM;
+            this.pbDMM.Location = new System.Drawing.Point(58, 29);
+            this.pbDMM.Name = "pbDMM";
+            this.pbDMM.Size = new System.Drawing.Size(284, 123);
+            this.pbDMM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDMM.TabIndex = 8;
+            this.pbDMM.TabStop = false;
+            // 
+            // statusDMM
+            // 
+            this.statusDMM.Controls.Add(this.tbCommandDMM);
+            this.statusDMM.Controls.Add(this.lblDMMPort);
+            this.statusDMM.Controls.Add(this.tbIdentDMM);
+            this.statusDMM.Controls.Add(this.btnRemoteDMM);
+            this.statusDMM.Controls.Add(this.btnClearDMM);
+            this.statusDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.statusDMM.Location = new System.Drawing.Point(379, 29);
+            this.statusDMM.Name = "statusDMM";
+            this.statusDMM.Size = new System.Drawing.Size(395, 117);
+            this.statusDMM.TabIndex = 3;
+            this.statusDMM.TabStop = false;
+            this.statusDMM.Text = "Status";
+            // 
+            // tbCommandDMM
+            // 
+            this.tbCommandDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tbCommandDMM.Location = new System.Drawing.Point(39, 73);
+            this.tbCommandDMM.Name = "tbCommandDMM";
+            this.tbCommandDMM.Size = new System.Drawing.Size(255, 26);
+            this.tbCommandDMM.TabIndex = 4;
+            this.tbCommandDMM.Text = "Enter command";
+            this.tbCommandDMM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDMM_KeyDown);
+            // 
+            // lblDMMPort
+            // 
+            this.lblDMMPort.AutoSize = true;
+            this.lblDMMPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblDMMPort.Location = new System.Drawing.Point(68, 3);
+            this.lblDMMPort.Name = "lblDMMPort";
+            this.lblDMMPort.Size = new System.Drawing.Size(47, 15);
+            this.lblDMMPort.TabIndex = 6;
+            this.lblDMMPort.Text = "PORT2";
+            // 
+            // tbIdentDMM
+            // 
+            this.tbIdentDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tbIdentDMM.Location = new System.Drawing.Point(39, 29);
+            this.tbIdentDMM.Name = "tbIdentDMM";
+            this.tbIdentDMM.ReadOnly = true;
+            this.tbIdentDMM.Size = new System.Drawing.Size(255, 26);
+            this.tbIdentDMM.TabIndex = 3;
+            // 
+            // btnRemoteDMM
+            // 
+            this.btnRemoteDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnRemoteDMM.Location = new System.Drawing.Point(313, 27);
+            this.btnRemoteDMM.Name = "btnRemoteDMM";
+            this.btnRemoteDMM.Size = new System.Drawing.Size(61, 32);
+            this.btnRemoteDMM.TabIndex = 1;
+            this.btnRemoteDMM.TabStop = false;
+            this.btnRemoteDMM.Text = "Get";
+            this.btnRemoteDMM.UseVisualStyleBackColor = true;
+            this.btnRemoteDMM.Click += new System.EventHandler(this.btnRemoteDMM_Click);
+            // 
+            // btnClearDMM
+            // 
+            this.btnClearDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnClearDMM.Location = new System.Drawing.Point(313, 70);
+            this.btnClearDMM.Name = "btnClearDMM";
+            this.btnClearDMM.Size = new System.Drawing.Size(61, 32);
+            this.btnClearDMM.TabIndex = 1;
+            this.btnClearDMM.TabStop = false;
+            this.btnClearDMM.Text = "Reset";
+            this.btnClearDMM.UseVisualStyleBackColor = true;
+            this.btnClearDMM.Click += new System.EventHandler(this.btnClearDMM_Click);
+            // 
+            // valueDMM
+            // 
+            this.valueDMM.AutoSize = true;
+            this.valueDMM.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.valueDMM.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.valueDMM.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueDMM.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.valueDMM.Location = new System.Drawing.Point(140, 174);
+            this.valueDMM.MaximumSize = new System.Drawing.Size(275, 75);
+            this.valueDMM.MinimumSize = new System.Drawing.Size(275, 75);
+            this.valueDMM.Name = "valueDMM";
+            this.valueDMM.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.valueDMM.Size = new System.Drawing.Size(275, 75);
+            this.valueDMM.TabIndex = 6;
+            this.valueDMM.Text = "----.--";
+            this.valueDMM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valueDMM.UseCompatibleTextRendering = true;
+            // 
+            // lblVoltDMM
+            // 
+            this.lblVoltDMM.AutoSize = true;
+            this.lblVoltDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVoltDMM.Location = new System.Drawing.Point(437, 184);
+            this.lblVoltDMM.Name = "lblVoltDMM";
+            this.lblVoltDMM.Size = new System.Drawing.Size(98, 55);
+            this.lblVoltDMM.TabIndex = 6;
+            this.lblVoltDMM.Text = "mV";
+            // 
+            // gbDC
+            // 
+            this.gbDC.Controls.Add(this.lblToggleOn);
+            this.gbDC.Controls.Add(this.lblToggleOff);
+            this.gbDC.Controls.Add(this.statusDC);
+            this.gbDC.Controls.Add(this.btnToggleOff);
+            this.gbDC.Controls.Add(this.btnToggleOn);
+            this.gbDC.Controls.Add(this.pbDC);
+            this.gbDC.Controls.Add(this.setPointManual);
+            this.gbDC.Location = new System.Drawing.Point(71, 25);
+            this.gbDC.Name = "gbDC";
+            this.gbDC.Size = new System.Drawing.Size(788, 287);
+            this.gbDC.TabIndex = 9;
+            this.gbDC.TabStop = false;
+            this.gbDC.Text = "DC Source (Chroma 62100H Series)";
+            // 
+            // lblToggleOn
+            // 
+            this.lblToggleOn.AutoSize = true;
+            this.lblToggleOn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.lblToggleOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblToggleOn.ForeColor = System.Drawing.Color.Black;
+            this.lblToggleOn.Location = new System.Drawing.Point(271, 202);
+            this.lblToggleOn.Name = "lblToggleOn";
+            this.lblToggleOn.Size = new System.Drawing.Size(30, 16);
+            this.lblToggleOn.TabIndex = 5;
+            this.lblToggleOn.Text = "ON";
+            this.lblToggleOn.Visible = false;
+            // 
+            // lblToggleOff
+            // 
+            this.lblToggleOff.AutoSize = true;
+            this.lblToggleOff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
+            this.lblToggleOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblToggleOff.ForeColor = System.Drawing.Color.Black;
+            this.lblToggleOff.Location = new System.Drawing.Point(323, 203);
+            this.lblToggleOff.Name = "lblToggleOff";
+            this.lblToggleOff.Size = new System.Drawing.Size(37, 16);
+            this.lblToggleOff.TabIndex = 5;
+            this.lblToggleOff.Text = "OFF";
+            // 
+            // statusDC
+            // 
+            this.statusDC.Controls.Add(this.tbCommandDC);
+            this.statusDC.Controls.Add(this.tbIdentDC);
+            this.statusDC.Controls.Add(this.lblDCPort);
+            this.statusDC.Controls.Add(this.btnRemoteDC);
+            this.statusDC.Controls.Add(this.btnClearDC);
+            this.statusDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.statusDC.Location = new System.Drawing.Point(379, 25);
+            this.statusDC.Name = "statusDC";
+            this.statusDC.Size = new System.Drawing.Size(395, 117);
+            this.statusDC.TabIndex = 3;
+            this.statusDC.TabStop = false;
+            this.statusDC.Text = "Status";
+            // 
+            // tbCommandDC
+            // 
+            this.tbCommandDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tbCommandDC.Location = new System.Drawing.Point(39, 73);
+            this.tbCommandDC.Name = "tbCommandDC";
+            this.tbCommandDC.Size = new System.Drawing.Size(255, 26);
+            this.tbCommandDC.TabIndex = 4;
+            this.tbCommandDC.Text = "Enter command";
+            this.tbCommandDC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDC_KeyDown);
+            // 
+            // tbIdentDC
+            // 
+            this.tbIdentDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.tbIdentDC.Location = new System.Drawing.Point(39, 29);
+            this.tbIdentDC.Name = "tbIdentDC";
+            this.tbIdentDC.ReadOnly = true;
+            this.tbIdentDC.Size = new System.Drawing.Size(255, 26);
+            this.tbIdentDC.TabIndex = 3;
+            // 
+            // lblDCPort
+            // 
+            this.lblDCPort.AutoSize = true;
+            this.lblDCPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblDCPort.Location = new System.Drawing.Point(68, 3);
+            this.lblDCPort.Name = "lblDCPort";
+            this.lblDCPort.Size = new System.Drawing.Size(47, 15);
+            this.lblDCPort.TabIndex = 6;
+            this.lblDCPort.Text = "PORT1";
+            // 
+            // btnRemoteDC
+            // 
+            this.btnRemoteDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnRemoteDC.Location = new System.Drawing.Point(313, 27);
+            this.btnRemoteDC.Name = "btnRemoteDC";
+            this.btnRemoteDC.Size = new System.Drawing.Size(61, 32);
+            this.btnRemoteDC.TabIndex = 1;
+            this.btnRemoteDC.TabStop = false;
+            this.btnRemoteDC.Text = "Get";
+            this.btnRemoteDC.UseVisualStyleBackColor = true;
+            this.btnRemoteDC.Click += new System.EventHandler(this.btnRemoteDC_Click);
+            // 
+            // btnClearDC
+            // 
+            this.btnClearDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnClearDC.Location = new System.Drawing.Point(313, 70);
+            this.btnClearDC.Name = "btnClearDC";
+            this.btnClearDC.Size = new System.Drawing.Size(61, 32);
+            this.btnClearDC.TabIndex = 1;
+            this.btnClearDC.TabStop = false;
+            this.btnClearDC.Text = "Reset";
+            this.btnClearDC.UseVisualStyleBackColor = true;
+            this.btnClearDC.Click += new System.EventHandler(this.btnClearDC_Click);
+            // 
+            // btnToggleOff
+            // 
+            this.btnToggleOff.ErrorImage = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.Image = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.InitialImage = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.Location = new System.Drawing.Point(263, 172);
+            this.btnToggleOff.Name = "btnToggleOff";
+            this.btnToggleOff.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnToggleOff.TabIndex = 4;
+            this.btnToggleOff.TabStop = false;
+            this.btnToggleOff.Click += new System.EventHandler(this.btnToggleOff_Click);
+            // 
+            // btnToggleOn
+            // 
+            this.btnToggleOn.ErrorImage = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.Image = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.InitialImage = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.Location = new System.Drawing.Point(263, 171);
+            this.btnToggleOn.Name = "btnToggleOn";
+            this.btnToggleOn.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnToggleOn.TabIndex = 4;
+            this.btnToggleOn.TabStop = false;
+            this.btnToggleOn.Visible = false;
+            this.btnToggleOn.Click += new System.EventHandler(this.btnToggleOn_Click);
+            // 
+            // pbDC
+            // 
+            this.pbDC.Image = global::PE.Properties.Resources.CHR_62000H;
+            this.pbDC.Location = new System.Drawing.Point(26, 30);
+            this.pbDC.Name = "pbDC";
+            this.pbDC.Size = new System.Drawing.Size(343, 112);
+            this.pbDC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDC.TabIndex = 8;
+            this.pbDC.TabStop = false;
+            // 
+            // setPointManual
+            // 
+            this.setPointManual.Controls.Add(this.currBoxManual);
+            this.setPointManual.Controls.Add(this.voltBoxManual);
+            this.setPointManual.Controls.Add(this.button1);
+            this.setPointManual.Controls.Add(this.btnSetVoltManual);
+            this.setPointManual.Controls.Add(this.lblCurrManual);
+            this.setPointManual.Controls.Add(this.lblCurrManual2);
+            this.setPointManual.Controls.Add(this.lblVoltManual2);
+            this.setPointManual.Controls.Add(this.lblVoltManual);
+            this.setPointManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.setPointManual.Location = new System.Drawing.Point(380, 148);
+            this.setPointManual.Name = "setPointManual";
+            this.setPointManual.Size = new System.Drawing.Size(395, 117);
+            this.setPointManual.TabIndex = 3;
+            this.setPointManual.TabStop = false;
+            this.setPointManual.Text = "Setpoint";
+            // 
+            // currBoxManual
+            // 
+            this.currBoxManual.DecimalPlaces = 2;
+            this.currBoxManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.currBoxManual.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            262144});
+            this.currBoxManual.Location = new System.Drawing.Point(113, 74);
+            this.currBoxManual.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.currBoxManual.Name = "currBoxManual";
+            this.currBoxManual.Size = new System.Drawing.Size(103, 26);
+            this.currBoxManual.TabIndex = 2;
+            this.currBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.currBoxManual.ThousandsSeparator = true;
+            this.currBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.currBoxManual_KeyDown);
+            // 
+            // voltBoxManual
+            // 
+            this.voltBoxManual.DecimalPlaces = 2;
+            this.voltBoxManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.voltBoxManual.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            262144});
+            this.voltBoxManual.Location = new System.Drawing.Point(113, 29);
+            this.voltBoxManual.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.voltBoxManual.Name = "voltBoxManual";
+            this.voltBoxManual.Size = new System.Drawing.Size(103, 26);
+            this.voltBoxManual.TabIndex = 1;
+            this.voltBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.voltBoxManual.ThousandsSeparator = true;
+            this.voltBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.voltBoxManual_KeyDown);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button1.Location = new System.Drawing.Point(255, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 32);
+            this.button1.TabIndex = 1;
+            this.button1.TabStop = false;
+            this.button1.Text = "Set";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnSetCurrManual_Click);
+            // 
+            // btnSetVoltManual
+            // 
+            this.btnSetVoltManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSetVoltManual.Location = new System.Drawing.Point(255, 25);
+            this.btnSetVoltManual.Name = "btnSetVoltManual";
+            this.btnSetVoltManual.Size = new System.Drawing.Size(118, 32);
+            this.btnSetVoltManual.TabIndex = 1;
+            this.btnSetVoltManual.TabStop = false;
+            this.btnSetVoltManual.Text = "Set";
+            this.btnSetVoltManual.UseVisualStyleBackColor = true;
+            this.btnSetVoltManual.Click += new System.EventHandler(this.btnSetVoltManual_Click);
+            // 
+            // lblCurrManual
+            // 
+            this.lblCurrManual.AutoSize = true;
+            this.lblCurrManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblCurrManual.Location = new System.Drawing.Point(37, 76);
+            this.lblCurrManual.Name = "lblCurrManual";
+            this.lblCurrManual.Size = new System.Drawing.Size(70, 20);
+            this.lblCurrManual.TabIndex = 0;
+            this.lblCurrManual.Text = "Current :";
+            // 
+            // lblCurrManual2
+            // 
+            this.lblCurrManual2.AutoSize = true;
+            this.lblCurrManual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblCurrManual2.Location = new System.Drawing.Point(227, 76);
+            this.lblCurrManual2.Name = "lblCurrManual2";
+            this.lblCurrManual2.Size = new System.Drawing.Size(20, 20);
+            this.lblCurrManual2.TabIndex = 0;
+            this.lblCurrManual2.Text = "A";
+            // 
+            // lblVoltManual2
+            // 
+            this.lblVoltManual2.AutoSize = true;
+            this.lblVoltManual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblVoltManual2.Location = new System.Drawing.Point(227, 31);
+            this.lblVoltManual2.Name = "lblVoltManual2";
+            this.lblVoltManual2.Size = new System.Drawing.Size(20, 20);
+            this.lblVoltManual2.TabIndex = 0;
+            this.lblVoltManual2.Text = "V";
+            // 
+            // lblVoltManual
+            // 
+            this.lblVoltManual.AutoSize = true;
+            this.lblVoltManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblVoltManual.Location = new System.Drawing.Point(35, 31);
+            this.lblVoltManual.Name = "lblVoltManual";
+            this.lblVoltManual.Size = new System.Drawing.Size(72, 20);
+            this.lblVoltManual.TabIndex = 0;
+            this.lblVoltManual.Text = "Voltage :";
+            // 
+            // pbDMMSign
+            // 
+            this.pbDMMSign.ErrorImage = global::PE.Properties.Resources.icons8_voltmeter_64;
+            this.pbDMMSign.Image = global::PE.Properties.Resources.icons8_voltmeter_641;
+            this.pbDMMSign.InitialImage = global::PE.Properties.Resources.icons8_voltmeter_642;
+            this.pbDMMSign.Location = new System.Drawing.Point(6, 321);
+            this.pbDMMSign.Name = "pbDMMSign";
+            this.pbDMMSign.Size = new System.Drawing.Size(59, 43);
+            this.pbDMMSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDMMSign.TabIndex = 7;
+            this.pbDMMSign.TabStop = false;
+            // 
+            // pbDCSign
+            // 
+            this.pbDCSign.ErrorImage = global::PE.Properties.Resources.icons8_energy_meter_641;
+            this.pbDCSign.Image = global::PE.Properties.Resources.icons8_energy_meter_64;
+            this.pbDCSign.InitialImage = global::PE.Properties.Resources.icons8_energy_meter_642;
+            this.pbDCSign.Location = new System.Drawing.Point(14, 25);
+            this.pbDCSign.Name = "pbDCSign";
+            this.pbDCSign.Size = new System.Drawing.Size(51, 43);
+            this.pbDCSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDCSign.TabIndex = 7;
+            this.pbDCSign.TabStop = false;
             // 
             // testProgram
             // 
@@ -975,414 +1418,6 @@ namespace PE
             this.programList.Size = new System.Drawing.Size(197, 28);
             this.programList.TabIndex = 1;
             this.programList.SelectionChangeCommitted += new System.EventHandler(this.programList_SelectionChangeCommitted);
-            // 
-            // manualDC
-            // 
-            this.manualDC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.manualDC.Controls.Add(this.lblDMMPort);
-            this.manualDC.Controls.Add(this.lblDCPort);
-            this.manualDC.Controls.Add(this.lblShowCurrScr);
-            this.manualDC.Controls.Add(this.lblPowScr);
-            this.manualDC.Controls.Add(this.lblCurrScr);
-            this.manualDC.Controls.Add(this.lblSetCurrScr);
-            this.manualDC.Controls.Add(this.lblVoltScr);
-            this.manualDC.Controls.Add(this.lblSetVoltScr);
-            this.manualDC.Controls.Add(this.lblShowVoltScr);
-            this.manualDC.Controls.Add(this.showPowScr);
-            this.manualDC.Controls.Add(this.setCurrScr);
-            this.manualDC.Controls.Add(this.showCurrScr);
-            this.manualDC.Controls.Add(this.setVoltScr);
-            this.manualDC.Controls.Add(this.showVoltScr);
-            this.manualDC.Controls.Add(this.lblToggleOn);
-            this.manualDC.Controls.Add(this.lblToggleOff);
-            this.manualDC.Controls.Add(this.btnToggleOff);
-            this.manualDC.Controls.Add(this.chroma);
-            this.manualDC.Controls.Add(this.setPointManual);
-            this.manualDC.Controls.Add(this.btnToggleOn);
-            this.manualDC.Enabled = false;
-            this.manualDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.manualDC.Location = new System.Drawing.Point(990, 134);
-            this.manualDC.Name = "manualDC";
-            this.manualDC.Size = new System.Drawing.Size(677, 218);
-            this.manualDC.TabIndex = 8;
-            this.manualDC.TabStop = false;
-            this.manualDC.Text = "Manual - DC Source (Chroma 62100H Series)";
-            this.manualDC.Visible = false;
-            // 
-            // lblDMMPort
-            // 
-            this.lblDMMPort.AutoSize = true;
-            this.lblDMMPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblDMMPort.Location = new System.Drawing.Point(380, 18);
-            this.lblDMMPort.Name = "lblDMMPort";
-            this.lblDMMPort.Size = new System.Drawing.Size(47, 15);
-            this.lblDMMPort.TabIndex = 6;
-            this.lblDMMPort.Text = "PORT2";
-            // 
-            // lblDCPort
-            // 
-            this.lblDCPort.AutoSize = true;
-            this.lblDCPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblDCPort.Location = new System.Drawing.Point(380, 1);
-            this.lblDCPort.Name = "lblDCPort";
-            this.lblDCPort.Size = new System.Drawing.Size(47, 15);
-            this.lblDCPort.TabIndex = 6;
-            this.lblDCPort.Text = "PORT1";
-            // 
-            // lblShowCurrScr
-            // 
-            this.lblShowCurrScr.AutoSize = true;
-            this.lblShowCurrScr.BackColor = System.Drawing.Color.Black;
-            this.lblShowCurrScr.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.lblShowCurrScr.Location = new System.Drawing.Point(436, 96);
-            this.lblShowCurrScr.Name = "lblShowCurrScr";
-            this.lblShowCurrScr.Size = new System.Drawing.Size(22, 24);
-            this.lblShowCurrScr.TabIndex = 0;
-            this.lblShowCurrScr.Text = "A";
-            // 
-            // lblPowScr
-            // 
-            this.lblPowScr.AutoSize = true;
-            this.lblPowScr.BackColor = System.Drawing.Color.Black;
-            this.lblPowScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPowScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.lblPowScr.Location = new System.Drawing.Point(440, 121);
-            this.lblPowScr.Name = "lblPowScr";
-            this.lblPowScr.Size = new System.Drawing.Size(14, 15);
-            this.lblPowScr.TabIndex = 0;
-            this.lblPowScr.Text = "W";
-            // 
-            // lblCurrScr
-            // 
-            this.lblCurrScr.AutoSize = true;
-            this.lblCurrScr.BackColor = System.Drawing.Color.Black;
-            this.lblCurrScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.lblCurrScr.Location = new System.Drawing.Point(440, 69);
-            this.lblCurrScr.Name = "lblCurrScr";
-            this.lblCurrScr.Size = new System.Drawing.Size(14, 15);
-            this.lblCurrScr.TabIndex = 0;
-            this.lblCurrScr.Text = "A";
-            // 
-            // lblSetCurrScr
-            // 
-            this.lblSetCurrScr.AutoSize = true;
-            this.lblSetCurrScr.BackColor = System.Drawing.Color.Black;
-            this.lblSetCurrScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSetCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.lblSetCurrScr.Location = new System.Drawing.Point(351, 69);
-            this.lblSetCurrScr.Name = "lblSetCurrScr";
-            this.lblSetCurrScr.Size = new System.Drawing.Size(28, 15);
-            this.lblSetCurrScr.TabIndex = 0;
-            this.lblSetCurrScr.Text = "I =";
-            // 
-            // lblVoltScr
-            // 
-            this.lblVoltScr.AutoSize = true;
-            this.lblVoltScr.BackColor = System.Drawing.Color.Black;
-            this.lblVoltScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.lblVoltScr.Location = new System.Drawing.Point(308, 69);
-            this.lblVoltScr.Name = "lblVoltScr";
-            this.lblVoltScr.Size = new System.Drawing.Size(14, 15);
-            this.lblVoltScr.TabIndex = 0;
-            this.lblVoltScr.Text = "V";
-            // 
-            // lblSetVoltScr
-            // 
-            this.lblSetVoltScr.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.lblSetVoltScr.AutoSize = true;
-            this.lblSetVoltScr.BackColor = System.Drawing.Color.Black;
-            this.lblSetVoltScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSetVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.lblSetVoltScr.Location = new System.Drawing.Point(219, 69);
-            this.lblSetVoltScr.Name = "lblSetVoltScr";
-            this.lblSetVoltScr.Size = new System.Drawing.Size(28, 15);
-            this.lblSetVoltScr.TabIndex = 0;
-            this.lblSetVoltScr.Text = "V =";
-            // 
-            // lblShowVoltScr
-            // 
-            this.lblShowVoltScr.AutoSize = true;
-            this.lblShowVoltScr.BackColor = System.Drawing.Color.Black;
-            this.lblShowVoltScr.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.lblShowVoltScr.Location = new System.Drawing.Point(304, 96);
-            this.lblShowVoltScr.Name = "lblShowVoltScr";
-            this.lblShowVoltScr.Size = new System.Drawing.Size(22, 24);
-            this.lblShowVoltScr.TabIndex = 0;
-            this.lblShowVoltScr.Text = "V";
-            // 
-            // showPowScr
-            // 
-            this.showPowScr.BackColor = System.Drawing.Color.Black;
-            this.showPowScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.showPowScr.Cursor = System.Windows.Forms.Cursors.Default;
-            this.showPowScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPowScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.showPowScr.Location = new System.Drawing.Point(385, 121);
-            this.showPowScr.Name = "showPowScr";
-            this.showPowScr.ReadOnly = true;
-            this.showPowScr.Size = new System.Drawing.Size(45, 16);
-            this.showPowScr.TabIndex = 0;
-            this.showPowScr.TabStop = false;
-            this.showPowScr.Text = "0.0";
-            this.showPowScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // setCurrScr
-            // 
-            this.setCurrScr.BackColor = System.Drawing.Color.Black;
-            this.setCurrScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.setCurrScr.Cursor = System.Windows.Forms.Cursors.Default;
-            this.setCurrScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.setCurrScr.Location = new System.Drawing.Point(385, 69);
-            this.setCurrScr.Name = "setCurrScr";
-            this.setCurrScr.ReadOnly = true;
-            this.setCurrScr.Size = new System.Drawing.Size(45, 16);
-            this.setCurrScr.TabIndex = 0;
-            this.setCurrScr.TabStop = false;
-            this.setCurrScr.Text = "0.00";
-            this.setCurrScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // showCurrScr
-            // 
-            this.showCurrScr.BackColor = System.Drawing.Color.Black;
-            this.showCurrScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.showCurrScr.Cursor = System.Windows.Forms.Cursors.Default;
-            this.showCurrScr.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showCurrScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.showCurrScr.Location = new System.Drawing.Point(318, 96);
-            this.showCurrScr.Name = "showCurrScr";
-            this.showCurrScr.ReadOnly = true;
-            this.showCurrScr.Size = new System.Drawing.Size(116, 25);
-            this.showCurrScr.TabIndex = 0;
-            this.showCurrScr.TabStop = false;
-            this.showCurrScr.Text = "00.0000";
-            this.showCurrScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // setVoltScr
-            // 
-            this.setVoltScr.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.setVoltScr.BackColor = System.Drawing.Color.Black;
-            this.setVoltScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.setVoltScr.Cursor = System.Windows.Forms.Cursors.Default;
-            this.setVoltScr.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.setVoltScr.Location = new System.Drawing.Point(253, 69);
-            this.setVoltScr.Name = "setVoltScr";
-            this.setVoltScr.ReadOnly = true;
-            this.setVoltScr.Size = new System.Drawing.Size(45, 16);
-            this.setVoltScr.TabIndex = 0;
-            this.setVoltScr.TabStop = false;
-            this.setVoltScr.Text = "0.00";
-            this.setVoltScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // showVoltScr
-            // 
-            this.showVoltScr.BackColor = System.Drawing.Color.Black;
-            this.showVoltScr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.showVoltScr.Cursor = System.Windows.Forms.Cursors.Default;
-            this.showVoltScr.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showVoltScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(207)))), ((int)(((byte)(203)))));
-            this.showVoltScr.Location = new System.Drawing.Point(203, 96);
-            this.showVoltScr.Name = "showVoltScr";
-            this.showVoltScr.ReadOnly = true;
-            this.showVoltScr.Size = new System.Drawing.Size(101, 25);
-            this.showVoltScr.TabIndex = 0;
-            this.showVoltScr.TabStop = false;
-            this.showVoltScr.Text = "00.0000";
-            this.showVoltScr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lblToggleOn
-            // 
-            this.lblToggleOn.AutoSize = true;
-            this.lblToggleOn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.lblToggleOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblToggleOn.ForeColor = System.Drawing.Color.Black;
-            this.lblToggleOn.Location = new System.Drawing.Point(530, 408);
-            this.lblToggleOn.Name = "lblToggleOn";
-            this.lblToggleOn.Size = new System.Drawing.Size(30, 16);
-            this.lblToggleOn.TabIndex = 5;
-            this.lblToggleOn.Text = "ON";
-            this.lblToggleOn.Visible = false;
-            // 
-            // lblToggleOff
-            // 
-            this.lblToggleOff.AutoSize = true;
-            this.lblToggleOff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
-            this.lblToggleOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblToggleOff.ForeColor = System.Drawing.Color.Black;
-            this.lblToggleOff.Location = new System.Drawing.Point(582, 409);
-            this.lblToggleOff.Name = "lblToggleOff";
-            this.lblToggleOff.Size = new System.Drawing.Size(37, 16);
-            this.lblToggleOff.TabIndex = 5;
-            this.lblToggleOff.Text = "OFF";
-            // 
-            // btnToggleOff
-            // 
-            this.btnToggleOff.ErrorImage = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.Image = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.InitialImage = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.Location = new System.Drawing.Point(520, 379);
-            this.btnToggleOff.Name = "btnToggleOff";
-            this.btnToggleOff.Size = new System.Drawing.Size(106, 77);
-            this.btnToggleOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnToggleOff.TabIndex = 4;
-            this.btnToggleOff.TabStop = false;
-            this.btnToggleOff.Click += new System.EventHandler(this.btnToggleOff_Click);
-            // 
-            // chroma
-            // 
-            this.chroma.Image = global::PE.Properties.Resources.CHR_62000H;
-            this.chroma.Location = new System.Drawing.Point(31, 37);
-            this.chroma.Name = "chroma";
-            this.chroma.Size = new System.Drawing.Size(893, 294);
-            this.chroma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.chroma.TabIndex = 0;
-            this.chroma.TabStop = false;
-            // 
-            // setPointManual
-            // 
-            this.setPointManual.Controls.Add(this.currBoxManual);
-            this.setPointManual.Controls.Add(this.voltBoxManual);
-            this.setPointManual.Controls.Add(this.button1);
-            this.setPointManual.Controls.Add(this.btnSetVoltManual);
-            this.setPointManual.Controls.Add(this.lblCurrManual);
-            this.setPointManual.Controls.Add(this.lblCurrManual2);
-            this.setPointManual.Controls.Add(this.lblVoltManual2);
-            this.setPointManual.Controls.Add(this.lblVoltManual);
-            this.setPointManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.setPointManual.Location = new System.Drawing.Point(29, 354);
-            this.setPointManual.Name = "setPointManual";
-            this.setPointManual.Size = new System.Drawing.Size(474, 117);
-            this.setPointManual.TabIndex = 3;
-            this.setPointManual.TabStop = false;
-            this.setPointManual.Text = "Setpoint";
-            // 
-            // currBoxManual
-            // 
-            this.currBoxManual.DecimalPlaces = 2;
-            this.currBoxManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.currBoxManual.Increment = new decimal(new int[] {
-            500,
-            0,
-            0,
-            262144});
-            this.currBoxManual.Location = new System.Drawing.Point(143, 74);
-            this.currBoxManual.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.currBoxManual.Name = "currBoxManual";
-            this.currBoxManual.Size = new System.Drawing.Size(128, 26);
-            this.currBoxManual.TabIndex = 2;
-            this.currBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.currBoxManual.ThousandsSeparator = true;
-            this.currBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.currBoxManual_KeyDown);
-            // 
-            // voltBoxManual
-            // 
-            this.voltBoxManual.DecimalPlaces = 2;
-            this.voltBoxManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.voltBoxManual.Increment = new decimal(new int[] {
-            500,
-            0,
-            0,
-            262144});
-            this.voltBoxManual.Location = new System.Drawing.Point(143, 29);
-            this.voltBoxManual.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.voltBoxManual.Name = "voltBoxManual";
-            this.voltBoxManual.Size = new System.Drawing.Size(128, 26);
-            this.voltBoxManual.TabIndex = 1;
-            this.voltBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.voltBoxManual.ThousandsSeparator = true;
-            this.voltBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.voltBoxManual_KeyDown);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.Location = new System.Drawing.Point(325, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 32);
-            this.button1.TabIndex = 1;
-            this.button1.TabStop = false;
-            this.button1.Text = "Set";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnSetCurrManual_Click);
-            // 
-            // btnSetVoltManual
-            // 
-            this.btnSetVoltManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSetVoltManual.Location = new System.Drawing.Point(325, 25);
-            this.btnSetVoltManual.Name = "btnSetVoltManual";
-            this.btnSetVoltManual.Size = new System.Drawing.Size(118, 32);
-            this.btnSetVoltManual.TabIndex = 1;
-            this.btnSetVoltManual.TabStop = false;
-            this.btnSetVoltManual.Text = "Set";
-            this.btnSetVoltManual.UseVisualStyleBackColor = true;
-            this.btnSetVoltManual.Click += new System.EventHandler(this.btnSetVoltManual_Click);
-            // 
-            // lblCurrManual
-            // 
-            this.lblCurrManual.AutoSize = true;
-            this.lblCurrManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblCurrManual.Location = new System.Drawing.Point(67, 76);
-            this.lblCurrManual.Name = "lblCurrManual";
-            this.lblCurrManual.Size = new System.Drawing.Size(70, 20);
-            this.lblCurrManual.TabIndex = 0;
-            this.lblCurrManual.Text = "Current :";
-            // 
-            // lblCurrManual2
-            // 
-            this.lblCurrManual2.AutoSize = true;
-            this.lblCurrManual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblCurrManual2.Location = new System.Drawing.Point(287, 76);
-            this.lblCurrManual2.Name = "lblCurrManual2";
-            this.lblCurrManual2.Size = new System.Drawing.Size(20, 20);
-            this.lblCurrManual2.TabIndex = 0;
-            this.lblCurrManual2.Text = "A";
-            // 
-            // lblVoltManual2
-            // 
-            this.lblVoltManual2.AutoSize = true;
-            this.lblVoltManual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblVoltManual2.Location = new System.Drawing.Point(287, 31);
-            this.lblVoltManual2.Name = "lblVoltManual2";
-            this.lblVoltManual2.Size = new System.Drawing.Size(20, 20);
-            this.lblVoltManual2.TabIndex = 0;
-            this.lblVoltManual2.Text = "V";
-            // 
-            // lblVoltManual
-            // 
-            this.lblVoltManual.AutoSize = true;
-            this.lblVoltManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblVoltManual.Location = new System.Drawing.Point(65, 31);
-            this.lblVoltManual.Name = "lblVoltManual";
-            this.lblVoltManual.Size = new System.Drawing.Size(72, 20);
-            this.lblVoltManual.TabIndex = 0;
-            this.lblVoltManual.Text = "Voltage :";
-            // 
-            // btnToggleOn
-            // 
-            this.btnToggleOn.ErrorImage = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.Image = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.InitialImage = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.Location = new System.Drawing.Point(520, 379);
-            this.btnToggleOn.Name = "btnToggleOn";
-            this.btnToggleOn.Size = new System.Drawing.Size(106, 77);
-            this.btnToggleOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnToggleOn.TabIndex = 4;
-            this.btnToggleOn.TabStop = false;
-            this.btnToggleOn.Visible = false;
-            this.btnToggleOn.Click += new System.EventHandler(this.btnToggleOn_Click);
             // 
             // editSpecTest
             // 
@@ -1679,7 +1714,7 @@ namespace PE
             this.statusStrip1.Location = new System.Drawing.Point(0, 727);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip1.Size = new System.Drawing.Size(983, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(982, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
@@ -1691,7 +1726,7 @@ namespace PE
             this.delta.ErrorImage = global::PE.Properties.Resources.delta;
             this.delta.Image = global::PE.Properties.Resources.delta;
             this.delta.InitialImage = global::PE.Properties.Resources.delta;
-            this.delta.Location = new System.Drawing.Point(789, 32);
+            this.delta.Location = new System.Drawing.Point(788, 32);
             this.delta.Name = "delta";
             this.delta.Size = new System.Drawing.Size(179, 56);
             this.delta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1705,7 +1740,7 @@ namespace PE
             this.disConnect.ErrorImage = global::PE.Properties.Resources.icons8_disconnected_64;
             this.disConnect.Image = global::PE.Properties.Resources.icons8_disconnected_64;
             this.disConnect.InitialImage = global::PE.Properties.Resources.icons8_disconnected_64;
-            this.disConnect.Location = new System.Drawing.Point(716, 27);
+            this.disConnect.Location = new System.Drawing.Point(715, 27);
             this.disConnect.Name = "disConnect";
             this.disConnect.Size = new System.Drawing.Size(67, 67);
             this.disConnect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1719,7 +1754,7 @@ namespace PE
             this.connect.ErrorImage = global::PE.Properties.Resources.icons8_connected_64;
             this.connect.Image = global::PE.Properties.Resources.icons8_connected_64;
             this.connect.InitialImage = global::PE.Properties.Resources.icons8_connected_64;
-            this.connect.Location = new System.Drawing.Point(716, 27);
+            this.connect.Location = new System.Drawing.Point(715, 27);
             this.connect.Name = "connect";
             this.connect.Size = new System.Drawing.Size(67, 67);
             this.connect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1732,7 +1767,7 @@ namespace PE
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(983, 749);
+            this.ClientSize = new System.Drawing.Size(982, 749);
             this.Controls.Add(this.delta);
             this.Controls.Add(this.disConnect);
             this.Controls.Add(this.statusStrip1);
@@ -1767,17 +1802,27 @@ namespace PE
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupTest.ResumeLayout(false);
-            this.testProgram.ResumeLayout(false);
-            this.testProgram.PerformLayout();
             this.manualDC.ResumeLayout(false);
-            this.manualDC.PerformLayout();
+            this.gbDMM.ResumeLayout(false);
+            this.gbDMM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).EndInit();
+            this.statusDMM.ResumeLayout(false);
+            this.statusDMM.PerformLayout();
+            this.gbDC.ResumeLayout(false);
+            this.gbDC.PerformLayout();
+            this.statusDC.ResumeLayout(false);
+            this.statusDC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chroma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).EndInit();
             this.setPointManual.ResumeLayout(false);
             this.setPointManual.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBoxManual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBoxManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).EndInit();
+            this.testProgram.ResumeLayout(false);
+            this.testProgram.PerformLayout();
             this.editSpecTest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTable2)).EndInit();
             this.testData.ResumeLayout(false);
@@ -1873,7 +1918,6 @@ namespace PE
         public System.Windows.Forms.ToolStripButton exportTool;
         public System.Windows.Forms.ToolStripButton editTool;
         private System.Windows.Forms.GroupBox manualDC;
-        private System.Windows.Forms.PictureBox chroma;
         private System.Windows.Forms.GroupBox setPointManual;
         public System.Windows.Forms.NumericUpDown currBoxManual;
         public System.Windows.Forms.NumericUpDown voltBoxManual;
@@ -1887,20 +1931,8 @@ namespace PE
         private System.Windows.Forms.PictureBox btnToggleOn;
         private System.Windows.Forms.Label lblToggleOff;
         private System.Windows.Forms.Label lblToggleOn;
-        public System.Windows.Forms.Label lblShowCurrScr;
-        public System.Windows.Forms.Label lblShowVoltScr;
-        public System.Windows.Forms.TextBox showCurrScr;
-        public System.Windows.Forms.TextBox showVoltScr;
-        public System.Windows.Forms.TextBox setVoltScr;
-        public System.Windows.Forms.Label lblCurrScr;
-        public System.Windows.Forms.Label lblSetCurrScr;
-        public System.Windows.Forms.Label lblVoltScr;
-        public System.Windows.Forms.Label lblSetVoltScr;
-        public System.Windows.Forms.TextBox setCurrScr;
-        public System.Windows.Forms.Label lblPowScr;
-        public System.Windows.Forms.TextBox showPowScr;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem configManual;
+        private System.Windows.Forms.ToolStripMenuItem configManualDC;
         public System.Windows.Forms.ToolStripButton startTool;
         private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
         public System.Windows.Forms.OpenFileDialog openFile;
@@ -1911,6 +1943,24 @@ namespace PE
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         public System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.PictureBox dmm34401a;
+        private System.Windows.Forms.GroupBox statusDC;
+        public System.Windows.Forms.TextBox tbCommandDC;
+        public System.Windows.Forms.TextBox tbIdentDC;
+        private System.Windows.Forms.Button btnRemoteDC;
+        private System.Windows.Forms.Button btnClearDC;
+        private System.Windows.Forms.GroupBox statusDMM;
+        public System.Windows.Forms.TextBox tbCommandDMM;
+        public System.Windows.Forms.TextBox tbIdentDMM;
+        private System.Windows.Forms.Button btnRemoteDMM;
+        private System.Windows.Forms.Button btnClearDMM;
+        private System.Windows.Forms.PictureBox pbDCSign;
+        private System.Windows.Forms.PictureBox pbDMMSign;
+        private System.Windows.Forms.PictureBox pbDC;
+        private System.Windows.Forms.GroupBox gbDMM;
+        private System.Windows.Forms.PictureBox pbDMM;
+        public System.Windows.Forms.Label valueDMM;
+        private System.Windows.Forms.Label lblVoltDMM;
+        private System.Windows.Forms.GroupBox gbDC;
     }
 }
 
