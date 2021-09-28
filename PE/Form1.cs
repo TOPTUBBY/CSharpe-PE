@@ -337,6 +337,7 @@ namespace PE
                 comPort1.Write("a," + dbSetCurr + "\r\n");
                 voltBox.Value = Convert.ToInt32(dbSetVolt);
                 currBox.Value = Convert.ToInt32(dbSetCurr);
+                currValue = currBox.Value;
 
                 //Enable to normal
                 confirmSelectBtn.Enabled = true;
@@ -393,6 +394,7 @@ namespace PE
         private void btnSetCurr_Click(object sender, EventArgs e)
         {
             pushStart.Visible = true;
+            currValue = currBox.Value;
             comPort1.Write("a," + currBox.Value + "\r\n");
         }
 
@@ -410,6 +412,7 @@ namespace PE
         {
             if (e.KeyCode == Keys.Enter)
             {
+                currValue = currBox.Value;
                 comPort1.Write("a," + currBox.Value + "\r\n");
             }
         }
