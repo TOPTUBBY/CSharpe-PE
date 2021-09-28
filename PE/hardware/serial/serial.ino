@@ -4,12 +4,13 @@ bool button_status_1;
 int count;
 int count_1;
 String c = "";
+String command = "";
 
 void setup() {
   // put your setup code here, to run once:
   pinMode(SW_INPUTPIN, INPUT_PULLUP);
-  Serial.begin(115200);
-  Serial1.begin(115200);
+  Serial.begin(9600);
+  Serial1.begin(9600);
 
 }
 //Serial is GUI
@@ -53,6 +54,7 @@ void loop() {
     c = Serial.readString();
     if (c == "1") {
       Serial1.println("CONFigure:OUTPut ON");
+      Serial.println("ON");
       delay(100);
       Serial1.println("CONFigure:OUTPut ON");
     } else if (c == "0") {
@@ -68,6 +70,8 @@ void loop() {
       } else if (setType == "a") {
         Serial1.println("SOURce:CURRent " + setValue);
       }
+      //send to DC directly--------------------
+      Serial1.println(c);
     }
   }
 }
