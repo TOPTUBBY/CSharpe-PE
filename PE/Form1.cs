@@ -424,7 +424,7 @@ namespace PE
             try
             {
                 comPort1.Write("*idn?\r\n");
-                comPort1.Write("syst:rem\r\n");
+                comPort1.Write("comf:rem\r\n");
             }
             catch
             {
@@ -820,7 +820,7 @@ namespace PE
 
                     //Inintial DC
                     comPort1.Write("*cls\r\n");
-                    comPort1.Write("syst:rem\r\n");
+                    comPort1.Write("conf:rem\r\n");
                 }
                 catch
                 {

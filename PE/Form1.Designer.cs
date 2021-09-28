@@ -964,6 +964,13 @@ namespace PE
             // 
             // tbCommandDMM
             // 
+            this.tbCommandDMM.AutoCompleteCustomSource.AddRange(new string[] {
+            "*IDN?",
+            "*CLS",
+            "SYST:REM?",
+            "READ?",
+            "TRIG:SOUR?",
+            "MEAS:VOLT:DC?"});
             this.tbCommandDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tbCommandDMM.Location = new System.Drawing.Point(39, 73);
             this.tbCommandDMM.Name = "tbCommandDMM";
@@ -1126,12 +1133,23 @@ namespace PE
             // 
             // tbCommandDC
             // 
+            this.tbCommandDC.AutoCompleteCustomSource.AddRange(new string[] {
+            "*IDN?",
+            "*CLS",
+            "CONF:REM ON",
+            "CONF:REM OFF",
+            "CONF:OUTP ON",
+            "CONF:OUTP OFF",
+            "SOUR:VOLT?",
+            "SOUR:CURR?"});
+            this.tbCommandDC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbCommandDC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbCommandDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tbCommandDC.Location = new System.Drawing.Point(39, 73);
             this.tbCommandDC.Name = "tbCommandDC";
             this.tbCommandDC.Size = new System.Drawing.Size(255, 26);
             this.tbCommandDC.TabIndex = 4;
-            this.tbCommandDC.Text = "Enter command";
+            this.tbCommandDC.Text = "*IDN?";
             this.tbCommandDC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDC_KeyDown);
             // 
             // tbIdentDC
