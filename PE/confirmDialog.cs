@@ -30,13 +30,13 @@ namespace PE
             return result;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pbY_Click(object sender, EventArgs e)
         {
             result = DialogResult.Yes;
             Application.Exit();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pbX_Click(object sender, EventArgs e)
         {
             result = DialogResult.Yes;
             MsgBox.Close();

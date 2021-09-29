@@ -31,11 +31,11 @@ namespace PE
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(confirmDialog));
             this.lblConfirm = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbY = new System.Windows.Forms.PictureBox();
+            this.pbX = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,31 +49,31 @@ namespace PE
             this.lblConfirm.TabIndex = 1;
             this.lblConfirm.Text = "label";
             // 
-            // pictureBox3
+            // pbY
             // 
-            this.pictureBox3.ErrorImage = global::PE.Properties.Resources.icons8_checkmark_48;
-            this.pictureBox3.Image = global::PE.Properties.Resources.icons8_checkmark_48;
-            this.pictureBox3.InitialImage = global::PE.Properties.Resources.icons8_checkmark_48;
-            this.pictureBox3.Location = new System.Drawing.Point(61, 72);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pbY.ErrorImage = global::PE.Properties.Resources.icons8_checkmark_48;
+            this.pbY.Image = global::PE.Properties.Resources.icons8_checkmark_48;
+            this.pbY.InitialImage = global::PE.Properties.Resources.icons8_checkmark_48;
+            this.pbY.Location = new System.Drawing.Point(61, 72);
+            this.pbY.Name = "pbY";
+            this.pbY.Size = new System.Drawing.Size(48, 48);
+            this.pbY.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbY.TabIndex = 2;
+            this.pbY.TabStop = false;
+            this.pbY.Click += new System.EventHandler(this.pbY_Click);
             // 
-            // pictureBox2
+            // pbX
             // 
-            this.pictureBox2.ErrorImage = global::PE.Properties.Resources.icons8_delete_48;
-            this.pictureBox2.Image = global::PE.Properties.Resources.icons8_delete_48;
-            this.pictureBox2.InitialImage = global::PE.Properties.Resources.icons8_delete_48;
-            this.pictureBox2.Location = new System.Drawing.Point(196, 72);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pbX.ErrorImage = global::PE.Properties.Resources.icons8_delete_48;
+            this.pbX.Image = global::PE.Properties.Resources.icons8_delete_48;
+            this.pbX.InitialImage = global::PE.Properties.Resources.icons8_delete_48;
+            this.pbX.Location = new System.Drawing.Point(196, 72);
+            this.pbX.Name = "pbX";
+            this.pbX.Size = new System.Drawing.Size(48, 48);
+            this.pbX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbX.TabIndex = 2;
+            this.pbX.TabStop = false;
+            this.pbX.Click += new System.EventHandler(this.pbX_Click);
             // 
             // pictureBox1
             // 
@@ -91,9 +91,10 @@ namespace PE
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(299, 139);
+            this.ControlBox = false;
             this.Controls.Add(this.lblConfirm);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pbY);
+            this.Controls.Add(this.pbX);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
@@ -102,9 +103,9 @@ namespace PE
             this.Name = "confirmDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Text = "exitScr";
+            ((System.ComponentModel.ISupportInitialize)(this.pbY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,7 +115,7 @@ namespace PE
         #endregion
         private System.Windows.Forms.Label lblConfirm;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.PictureBox pictureBox2;
-        public System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.PictureBox pbX;
+        public System.Windows.Forms.PictureBox pbY;
     }
 }

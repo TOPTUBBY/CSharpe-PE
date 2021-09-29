@@ -63,6 +63,12 @@
     <Compile Include="confirmDialog.Designer.cs">
       <DependentUpon>confirmDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="warningDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="warningDialog.Designer.cs">
+      <DependentUpon>warningDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="confirmDialog.resx">
       <DependentUpon>confirmDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="warningDialog.resx">
+      <DependentUpon>warningDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,6 +231,8 @@
   <ItemGroup>
     <Content Include="icons8_electric_armature.ico" />
     <Content Include="icons8_quick_mode_on.ico" />
+    <None Include="Resources\icons8_flammable_material_64.png" />
+    <None Include="Resources\icons8_fire_hazard_64.png" />
     <None Include="Resources\icons8_voltmeter_64.png" />
     <None Include="Resources\icons8_energy_meter_64.png" />
     <None Include="Resources\icons8_energy_meter_32.png" />

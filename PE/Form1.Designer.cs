@@ -160,11 +160,6 @@ namespace PE
             this.testData = new System.Windows.Forms.GroupBox();
             this.btnClearData = new System.Windows.Forms.Button();
             this.gridTable1 = new System.Windows.Forms.DataGridView();
-            this.contactPairs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maxRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.measVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.res = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.result = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveData = new System.Windows.Forms.SaveFileDialog();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.comPort2 = new System.IO.Ports.SerialPort(this.components);
@@ -173,6 +168,12 @@ namespace PE
             this.delta = new System.Windows.Forms.PictureBox();
             this.disConnect = new System.Windows.Forms.PictureBox();
             this.connect = new System.Windows.Forms.PictureBox();
+            this.hotTime = new System.Windows.Forms.Timer(this.components);
+            this.contactPairs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.measVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.res = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.result = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.serialPort.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
@@ -1405,17 +1406,18 @@ namespace PE
             // tbSn
             // 
             this.tbSn.AutoCompleteCustomSource.AddRange(new string[] {
+            "DES202012080061900041",
             "292A01977RTA10780023",
-            "220010002108260001"});
-            this.tbSn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            "220010002108260000"});
+            this.tbSn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbSn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.tbSn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tbSn.Location = new System.Drawing.Point(164, 70);
-            this.tbSn.MaxLength = 20;
+            this.tbSn.MaxLength = 22;
             this.tbSn.Name = "tbSn";
-            this.tbSn.Size = new System.Drawing.Size(197, 26);
+            this.tbSn.Size = new System.Drawing.Size(205, 26);
             this.tbSn.TabIndex = 2;
-            this.tbSn.Text = "292A01977RTAxxxxxxxx";
+            this.tbSn.Text = "DES202012080061900041";
             this.tbSn.Click += new System.EventHandler(this.tbSn_Click);
             // 
             // confirmSelectBtn
@@ -1468,7 +1470,7 @@ namespace PE
             "CUSTOM "});
             this.programList.Location = new System.Drawing.Point(164, 25);
             this.programList.Name = "programList";
-            this.programList.Size = new System.Drawing.Size(197, 28);
+            this.programList.Size = new System.Drawing.Size(205, 28);
             this.programList.TabIndex = 1;
             this.programList.SelectionChangeCommitted += new System.EventHandler(this.programList_SelectionChangeCommitted);
             // 
@@ -1672,62 +1674,6 @@ namespace PE
             this.gridTable1.Size = new System.Drawing.Size(854, 237);
             this.gridTable1.TabIndex = 5;
             // 
-            // contactPairs
-            // 
-            this.contactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle10;
-            this.contactPairs.HeaderText = "Contact Pairs";
-            this.contactPairs.Name = "contactPairs";
-            this.contactPairs.ReadOnly = true;
-            // 
-            // maxRes
-            // 
-            this.maxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "N1";
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.maxRes.DefaultCellStyle = dataGridViewCellStyle11;
-            this.maxRes.HeaderText = "Max.Res (mΩ)";
-            this.maxRes.Name = "maxRes";
-            this.maxRes.ReadOnly = true;
-            // 
-            // measVolt
-            // 
-            this.measVolt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = null;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.measVolt.DefaultCellStyle = dataGridViewCellStyle12;
-            this.measVolt.HeaderText = "Voltage (mV)";
-            this.measVolt.Name = "measVolt";
-            this.measVolt.ReadOnly = true;
-            // 
-            // res
-            // 
-            this.res.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Format = "N2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.res.DefaultCellStyle = dataGridViewCellStyle13;
-            this.res.HeaderText = "Res (mΩ)";
-            this.res.Name = "res";
-            this.res.ReadOnly = true;
-            // 
-            // result
-            // 
-            this.result.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.NullValue = null;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.result.DefaultCellStyle = dataGridViewCellStyle14;
-            this.result.HeaderText = "Result";
-            this.result.Name = "result";
-            this.result.ReadOnly = true;
-            // 
             // saveData
             // 
             this.saveData.CheckPathExists = false;
@@ -1813,6 +1759,69 @@ namespace PE
             this.connect.TabIndex = 7;
             this.connect.TabStop = false;
             this.connect.Visible = false;
+            // 
+            // hotTime
+            // 
+            this.hotTime.Enabled = true;
+            this.hotTime.Interval = 10000;
+            this.hotTime.Tick += new System.EventHandler(this.hotTime_Tick);
+            // 
+            // contactPairs
+            // 
+            this.contactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle10;
+            this.contactPairs.FillWeight = 150F;
+            this.contactPairs.HeaderText = "Contact Pairs";
+            this.contactPairs.Name = "contactPairs";
+            this.contactPairs.ReadOnly = true;
+            // 
+            // maxRes
+            // 
+            this.maxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "N1";
+            dataGridViewCellStyle11.NullValue = null;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.maxRes.DefaultCellStyle = dataGridViewCellStyle11;
+            this.maxRes.HeaderText = "Max.Res (mΩ)";
+            this.maxRes.Name = "maxRes";
+            this.maxRes.ReadOnly = true;
+            // 
+            // measVolt
+            // 
+            this.measVolt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.measVolt.DefaultCellStyle = dataGridViewCellStyle12;
+            this.measVolt.HeaderText = "Voltage (mV)";
+            this.measVolt.Name = "measVolt";
+            this.measVolt.ReadOnly = true;
+            // 
+            // res
+            // 
+            this.res.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.res.DefaultCellStyle = dataGridViewCellStyle13;
+            this.res.HeaderText = "Res (mΩ)";
+            this.res.Name = "res";
+            this.res.ReadOnly = true;
+            // 
+            // result
+            // 
+            this.result.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.NullValue = null;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.result.DefaultCellStyle = dataGridViewCellStyle14;
+            this.result.HeaderText = "Result";
+            this.result.Name = "result";
+            this.result.ReadOnly = true;
             // 
             // peTest
             // 
@@ -1957,11 +1966,6 @@ namespace PE
         public System.Windows.Forms.DataGridView gridTable2;
         private System.Windows.Forms.Button cleatBtn;
         private System.Windows.Forms.Button insertBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactPairs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maxRes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn measVolt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn res;
-        private System.Windows.Forms.DataGridViewTextBoxColumn result;
         private System.Windows.Forms.DataGridViewTextBoxColumn editContactPairs;
         private System.Windows.Forms.DataGridViewTextBoxColumn editMaxRes;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
@@ -2015,6 +2019,12 @@ namespace PE
         private System.Windows.Forms.GroupBox gbDC;
         private System.Windows.Forms.Button btnStartMeasure;
         private System.Windows.Forms.Button btnStopMeasure;
+        public System.Windows.Forms.Timer hotTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactPairs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn measVolt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn res;
+        private System.Windows.Forms.DataGridViewTextBoxColumn result;
     }
 }
 
