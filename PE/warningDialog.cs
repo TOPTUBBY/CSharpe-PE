@@ -27,7 +27,14 @@ namespace PE
         {
             if (result == DialogResult.Yes)
             {
-                MsgBox.Close();
+                try
+                {
+                    MsgBox.Close();
+                }
+                catch
+                {
+
+                }
             }
             return result;
         }
