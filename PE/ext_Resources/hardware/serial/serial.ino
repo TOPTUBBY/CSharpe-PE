@@ -67,8 +67,12 @@ void loop() {
       String setValue = c.substring(2, 5);  //recieve max 999
       if (setType == "v") {
         Serial1.println("SOURce:VOLTage " + setValue);
+        delay(1000);
+        Serial1.println("*cls");
       } else if (setType == "a") {
         Serial1.println("SOURce:CURRent " + setValue);
+        delay(1000);
+        Serial1.println("*cls");
       }
       //send to DC directly--------------------
       Serial1.println(c);

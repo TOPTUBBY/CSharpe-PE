@@ -222,7 +222,7 @@ namespace PE
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(983, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -727,10 +727,11 @@ namespace PE
             // value
             // 
             this.value.AutoSize = true;
+            this.value.BackColor = System.Drawing.Color.Black;
             this.value.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.value.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.value.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.value.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.value.ForeColor = System.Drawing.Color.LawnGreen;
             this.value.Location = new System.Drawing.Point(48, 124);
             this.value.MaximumSize = new System.Drawing.Size(275, 75);
             this.value.MinimumSize = new System.Drawing.Size(275, 75);
@@ -765,7 +766,7 @@ namespace PE
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(982, 70);
+            this.toolStrip1.Size = new System.Drawing.Size(983, 70);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
@@ -904,7 +905,7 @@ namespace PE
             this.groupTest.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupTest.Location = new System.Drawing.Point(0, 94);
             this.groupTest.Name = "groupTest";
-            this.groupTest.Size = new System.Drawing.Size(982, 655);
+            this.groupTest.Size = new System.Drawing.Size(983, 655);
             this.groupTest.TabIndex = 9;
             this.groupTest.TabStop = false;
             // 
@@ -1027,10 +1028,11 @@ namespace PE
             // valueDMM
             // 
             this.valueDMM.AutoSize = true;
+            this.valueDMM.BackColor = System.Drawing.Color.Black;
             this.valueDMM.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.valueDMM.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.valueDMM.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueDMM.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.valueDMM.ForeColor = System.Drawing.Color.LawnGreen;
             this.valueDMM.Location = new System.Drawing.Point(147, 174);
             this.valueDMM.MaximumSize = new System.Drawing.Size(275, 75);
             this.valueDMM.MinimumSize = new System.Drawing.Size(275, 75);
@@ -1764,7 +1766,7 @@ namespace PE
             this.statusStrip1.Location = new System.Drawing.Point(0, 727);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip1.Size = new System.Drawing.Size(982, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(983, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
@@ -1776,7 +1778,7 @@ namespace PE
             this.delta.ErrorImage = global::PE.Properties.Resources.delta;
             this.delta.Image = global::PE.Properties.Resources.delta;
             this.delta.InitialImage = global::PE.Properties.Resources.delta;
-            this.delta.Location = new System.Drawing.Point(788, 32);
+            this.delta.Location = new System.Drawing.Point(789, 32);
             this.delta.Name = "delta";
             this.delta.Size = new System.Drawing.Size(179, 56);
             this.delta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1790,7 +1792,7 @@ namespace PE
             this.disConnect.ErrorImage = global::PE.Properties.Resources.icons8_disconnected_64;
             this.disConnect.Image = global::PE.Properties.Resources.icons8_disconnected_64;
             this.disConnect.InitialImage = global::PE.Properties.Resources.icons8_disconnected_64;
-            this.disConnect.Location = new System.Drawing.Point(715, 27);
+            this.disConnect.Location = new System.Drawing.Point(716, 27);
             this.disConnect.Name = "disConnect";
             this.disConnect.Size = new System.Drawing.Size(67, 67);
             this.disConnect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1804,7 +1806,7 @@ namespace PE
             this.connect.ErrorImage = global::PE.Properties.Resources.icons8_connected_64;
             this.connect.Image = global::PE.Properties.Resources.icons8_connected_64;
             this.connect.InitialImage = global::PE.Properties.Resources.icons8_connected_64;
-            this.connect.Location = new System.Drawing.Point(715, 27);
+            this.connect.Location = new System.Drawing.Point(716, 27);
             this.connect.Name = "connect";
             this.connect.Size = new System.Drawing.Size(67, 67);
             this.connect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1817,7 +1819,7 @@ namespace PE
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(982, 749);
+            this.ClientSize = new System.Drawing.Size(983, 749);
             this.Controls.Add(this.delta);
             this.Controls.Add(this.disConnect);
             this.Controls.Add(this.statusStrip1);
