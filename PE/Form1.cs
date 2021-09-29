@@ -342,7 +342,7 @@ namespace PE
                 double dbSetVolt = workSheet.Cells[2, 3].Value;
                 double dbSetCurr = workSheet.Cells[2, 4].Value;
                 comPort1.Write("v," + dbSetVolt + "\r\n");
-                System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
+                System.Threading.Thread.Sleep(2000);    //Delay command 2 sec
                 comPort1.Write("a," + dbSetCurr + "\r\n");
                 System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
                 comPort1.Write("*cls\r\n");
@@ -448,6 +448,7 @@ namespace PE
             try
             {
                 comPort1.Write("*idn?\r\n");
+                System.Threading.Thread.Sleep(2000);    //Delay command 2 sec
                 comPort1.Write("comf:rem\r\n");
             }
             catch
@@ -894,7 +895,7 @@ namespace PE
 
                     //Inintial DC
                     comPort1.Write("*cls\r\n");
-                    System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
+                    System.Threading.Thread.Sleep(2000);    //Delay command 2 sec
                     comPort1.Write("conf:rem\r\n");
                 }
                 catch
