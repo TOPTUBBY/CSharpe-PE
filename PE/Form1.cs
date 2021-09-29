@@ -10,6 +10,7 @@
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Drawing;
+using System.IO;
 using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -19,7 +20,7 @@ namespace PE
 {
     public partial class peTest : Form
     {
-        IniFile ini = new IniFile(@"d:\\config.ini");
+        IniFile ini = new IniFile(@"D:\\config.ini");
         internal delegate void SerialDataReceivedEventHandlerDelegate(object sender, SerialDataReceivedEventArgs e);
         delegate void SetTextCallback(string text);
         string InputData = String.Empty;
@@ -29,6 +30,7 @@ namespace PE
         Range range;
         string projSheet;
         string programName;
+        string trimSN;
         int cntRow = 0;
         decimal resMax = 0;
         decimal measValue;
@@ -36,6 +38,7 @@ namespace PE
         decimal resValue = 0;
         decimal currValue = 0;
         string resultValue;
+
 
         public peTest()
         {
@@ -278,36 +281,41 @@ namespace PE
             programName = programList.Text;
             if (programName == "BMW	- CCU")
             {
-                projSheet = "bmw";
+                projSheet = "BMW";
             }
             else if (programName == "DAIMLER    - OBC")
             {
-                projSheet = "obc";
+                projSheet = "DAI_OBC";
             }
             else if (programName == "DAIMLER	- DC Box 1.2")
             {
-                projSheet = "dcb1.2";
+                projSheet = "DAI_DCB1.2";
             }
             else if (programName == "DAIMLER	- DC Box 1.2H")
             {
-                projSheet = "dcb1.2h";
+                projSheet = "DAI_DCB1.2H";
             }
             else if (programName == "DAIMLER	- DC Box 2.0")
             {
-                projSheet = "dcb2.0";
+                projSheet = "DAI_DCB2.0";
             }
             else if (programName == "RENAULT	- 5DH")
             {
-                projSheet = "5dh";
+                projSheet = "REN_5DH";
             }
             else if (programName == "NISSAN	- OBC")
             {
-                projSheet = "nissan";
+                projSheet = "NISSAN_OBC";
             }
             else
             {
-                projSheet = "custom";
+                projSheet = "CUSTOM";
             }
+        }
+
+        private void tbSn_Click(object sender, EventArgs e)
+        {
+            tbSn.Text = null;
         }
 
         private void confirmSelectBtn_Click(object sender, EventArgs e)
@@ -320,7 +328,7 @@ namespace PE
                 setPoint.Enabled = false;
 
                 app = new Microsoft.Office.Interop.Excel.Application();
-                workBook = app.Workbooks.Open("d:/pe_database.xlsx");
+                workBook = app.Workbooks.Open(@"D:/pe_database.xlsx");
                 workSheet = workBook.Worksheets[projSheet];
                 range = workSheet.UsedRange;
 
@@ -334,7 +342,10 @@ namespace PE
                 double dbSetVolt = workSheet.Cells[2, 3].Value;
                 double dbSetCurr = workSheet.Cells[2, 4].Value;
                 comPort1.Write("v," + dbSetVolt + "\r\n");
+                System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
                 comPort1.Write("a," + dbSetCurr + "\r\n");
+                System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
+                comPort1.Write("*cls\r\n");
                 voltBox.Value = Convert.ToInt32(dbSetVolt);
                 currBox.Value = Convert.ToInt32(dbSetCurr);
                 currValue = currBox.Value;
@@ -343,13 +354,15 @@ namespace PE
                 confirmSelectBtn.Enabled = true;
                 setPoint.Enabled = true;
 
+                //trim SN
+                trimSN = tbSn.Text.Substring(tbSn.Text.Length - 4);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            workBook.Save();
             workBook.Close();
+            app.Quit();
         }
 
         //Manual insert program
@@ -384,6 +397,17 @@ namespace PE
         /*====================================================================================================*/
         /*--------------------------------------------DC Source-----------------------------------------------*/
         //Auto DC source --------------------------------------------------------------------------------------
+        //Delete value in box when click
+        private void voltBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            voltBox.ResetText();
+        }
+
+        private void currBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            currBox.ResetText();
+        }
+
         //Button Click to set
         private void btnSetVolt_Click(object sender, EventArgs e)
         {
@@ -647,14 +671,14 @@ namespace PE
             {
                 workBook = app.Workbooks.Add(1);
                 workSheet = workBook.ActiveSheet;
-                workSheet.Name = "PE";
+                workSheet.Name = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
 
                 workSheet.Cells[1, 1] = "Project";
                 workSheet.Cells[1, 2] = programList.Text;
                 workSheet.Cells[2, 1] = "Serial No.";
                 workSheet.Cells[2, 2] = tbSn.Text;
                 workSheet.Cells[3, 1] = "Test Date";
-                workSheet.Cells[3, 2] = System.DateTime.Now;
+                workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 // header
                 for (int i = 1; i <= gridTable1.Columns.Count; i++)
                 {
@@ -669,9 +693,16 @@ namespace PE
                         workSheet.Cells[i + 4, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
                     }
                 }
+                string root = @"D:\PE_DATA";
+                // If directory does not exist, create it. 
+                if (!Directory.Exists(root))
+                {
+                    Directory.CreateDirectory(root);
+                }
+                saveData.FileName = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
                 if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    workBook.SaveAs(saveData.FileName);
+                    workBook.SaveAs(@"D:\PE_DATA\" + saveData.FileName + ".xlsx");
                 }
                 app.Quit();
                 workBook = null;
@@ -696,7 +727,7 @@ namespace PE
         //Config port Menu 
         private void configPort_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("d:/config.ini");
+            System.Diagnostics.Process.Start(@"D:/config.ini");
         }
 
         //Config edit Menu
@@ -733,7 +764,7 @@ namespace PE
         private void databaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             app = new Microsoft.Office.Interop.Excel.Application();
-            workBook = app.Workbooks.Open("d:/pe_database.xlsx");
+            workBook = app.Workbooks.Open(@"D:/pe_database.xlsx");
             app.Visible = true;
         }
 
@@ -790,6 +821,49 @@ namespace PE
                 manualDC.Enabled = false;
                 editSpecTest.Enabled = false;
 
+                //Auto Export
+                try
+                {
+                    workBook = app.Workbooks.Add(1);
+                    workSheet = workBook.ActiveSheet;
+                    workSheet.Name = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
+
+                    workSheet.Cells[1, 1] = "Project";
+                    workSheet.Cells[1, 2] = programList.Text;
+                    workSheet.Cells[2, 1] = "Serial No.";
+                    workSheet.Cells[2, 2] = tbSn.Text;
+                    workSheet.Cells[3, 1] = "Test Date";
+                    workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                    // header
+                    for (int i = 1; i <= gridTable1.Columns.Count; i++)
+                    {
+                        workSheet.Cells[4, i] = gridTable1.Columns[i - 1].HeaderText;
+                    }
+
+                    // data
+                    for (int i = 1; i <= gridTable1.RowCount; i++)
+                    {
+                        for (int j = 1; j <= gridTable1.Columns.Count; j++)
+                        {
+                            workSheet.Cells[i + 4, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
+                        }
+                    }
+                    string root = @"D:\PE_DATA";
+                    // If directory does not exist, create it. 
+                    if (!Directory.Exists(root))
+                    {
+                        Directory.CreateDirectory(root);
+                    }
+                    saveData.FileName = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
+                    workBook.SaveAs(@"D:\PE_DATA\" + saveData.FileName + ".xlsx");
+                    app.Quit();
+                    workBook = null;
+                    workSheet = null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else if (startTool.Text == "Start")
             {
@@ -820,6 +894,7 @@ namespace PE
 
                     //Inintial DC
                     comPort1.Write("*cls\r\n");
+                    System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
                     comPort1.Write("conf:rem\r\n");
                 }
                 catch
@@ -851,6 +926,7 @@ namespace PE
 
                     //Inintial DMM
                     comPort2.Write("*cls\r\n");
+                    System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
                     comPort2.Write("syst:rem\r\n");
                 }
                 catch
@@ -896,7 +972,7 @@ namespace PE
         private void databaseTool_Click(object sender, EventArgs e)
         {
             app = new Microsoft.Office.Interop.Excel.Application();
-            workBook = app.Workbooks.Open("d:/pe_database.xlsx");
+            workBook = app.Workbooks.Open(@"D:/pe_database.xlsx");
             app.Visible = true;
         }
 
@@ -922,14 +998,14 @@ namespace PE
             {
                 workBook = app.Workbooks.Add(1);
                 workSheet = workBook.ActiveSheet;
-                workSheet.Name = "PE";
+                workSheet.Name = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
 
                 workSheet.Cells[1, 1] = "Project";
                 workSheet.Cells[1, 2] = programList.Text;
                 workSheet.Cells[2, 1] = "Serial No.";
                 workSheet.Cells[2, 2] = tbSn.Text;
                 workSheet.Cells[3, 1] = "Test Date";
-                workSheet.Cells[3, 2] = System.DateTime.Now;
+                workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 // header
                 for (int i = 1; i <= gridTable1.Columns.Count; i++)
                 {
@@ -944,9 +1020,16 @@ namespace PE
                         workSheet.Cells[i + 4, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
                     }
                 }
+                string root = @"D:\PE_DATA";
+                // If directory does not exist, create it. 
+                if (!Directory.Exists(root))
+                {
+                    Directory.CreateDirectory(root);
+                }
+                saveData.FileName = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
                 if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    workBook.SaveAs(saveData.FileName);
+                    workBook.SaveAs(@"D:\PE_DATA\" + saveData.FileName + ".xlsx");
                 }
                 app.Quit();
                 workBook = null;
@@ -1037,5 +1120,8 @@ namespace PE
 //  - Identify DMM have value --> Use manual
 //  - Get set point from database to automatic set and send to comPort1 -- OK 28/09/2021
 //  - Clean and Check every grammar and comment -- OK 28/09/2021
+//  - Add delay 1 sec of DC setpoint command after select program by use Thread.sleep -- OK 29/09/2021
+//  - Add trimSN to use last 4 character -- OK 29/09/2021
+//  - Add auto export after stop program -- OK 29/09/2021
 
 

@@ -507,6 +507,7 @@ namespace PE
             this.currBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.currBox.ThousandsSeparator = true;
             this.currBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.currBox_KeyDown);
+            this.currBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.currBox_MouseClick);
             // 
             // voltBox
             // 
@@ -529,6 +530,7 @@ namespace PE
             this.voltBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.voltBox.ThousandsSeparator = true;
             this.voltBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.voltBox_KeyDown);
+            this.voltBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.voltBox_MouseClick);
             // 
             // btnSetCurr
             // 
@@ -976,7 +978,7 @@ namespace PE
             this.tbCommandDMM.Name = "tbCommandDMM";
             this.tbCommandDMM.Size = new System.Drawing.Size(255, 26);
             this.tbCommandDMM.TabIndex = 4;
-            this.tbCommandDMM.Text = "Enter command";
+            this.tbCommandDMM.Text = "*IDN?";
             this.tbCommandDMM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDMM_KeyDown);
             // 
             // lblDMMPort
@@ -1411,6 +1413,8 @@ namespace PE
             this.tbSn.Name = "tbSn";
             this.tbSn.Size = new System.Drawing.Size(197, 26);
             this.tbSn.TabIndex = 2;
+            this.tbSn.Text = "292A01977RTAxxxxxxxx";
+            this.tbSn.Click += new System.EventHandler(this.tbSn_Click);
             // 
             // confirmSelectBtn
             // 
@@ -1725,8 +1729,7 @@ namespace PE
             // saveData
             // 
             this.saveData.CheckPathExists = false;
-            this.saveData.DefaultExt = "csv";
-            this.saveData.FileName = "PE_data";
+            this.saveData.DefaultExt = "xlsx";
             this.saveData.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
             this.saveData.RestoreDirectory = true;
             this.saveData.ShowHelp = true;
