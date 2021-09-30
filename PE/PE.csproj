@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="PE_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PE_Form.Designer.cs">
+      <DependentUpon>PE_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="confirmDialog.cs">
       <SubType>Form</SubType>
@@ -71,8 +71,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="PE_Form.resx">
+      <DependentUpon>PE_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="confirmDialog.resx">
       <DependentUpon>confirmDialog.cs</DependentUpon>
