@@ -3,7 +3,7 @@
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 28/9/2021 16:05:00 PM
+//Last Modified On : 30/9/2021 08:13:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1087,7 +1087,7 @@ namespace PE
     }
 }
 
-//Update : 28/9/2021 16:05:00 PM
+//Update : 30/9/2021 08:13:00 PM
 //Coming up Next--------------------------------
 //  - Insert data format each program to data table -- OK 1/9/2021
 //  - logging data as table to CSV -- OK 15/9/2021
@@ -1130,6 +1130,6 @@ namespace PE
 //  - Reset cntRow when Stop program -- OK 29/09/2021
 //  - Add auto complete source tbSn and increase limit lenght -- OK 29/09/2021
 //  - Add Warning popup when turn on over 10 sec -- Remove
-//  - increase Contact pairs width cells -- OK 29/09/2021
+//  - increase Contact pairs width cells -- OK 30/09/2021
 
 
