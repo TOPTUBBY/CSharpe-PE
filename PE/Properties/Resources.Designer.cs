@@ -133,6 +133,16 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DAI2_32 {
+            get {
+                object obj = ResourceManager.GetObject("DAI2_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delta {
             get {
                 object obj = ResourceManager.GetObject("delta", resourceCulture);
@@ -786,6 +796,16 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap REN_32 {
             get {
                 object obj = ResourceManager.GetObject("REN_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REN2_32 {
+            get {
+                object obj = ResourceManager.GetObject("REN2_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

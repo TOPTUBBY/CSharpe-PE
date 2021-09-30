@@ -774,27 +774,27 @@ namespace PE
         //Help >>> Spec
         private void helpSpecBMW_Click(object sender, EventArgs e)
         {
-
+            specBMW.Show("BMW Specification");
         }
 
         private void helpSpecOBC_Click(object sender, EventArgs e)
         {
-
+            specOBC.Show("DAIMLER-OBC Specification");
         }
 
         private void helpSpecDCB_Click(object sender, EventArgs e)
         {
-
+            specDCB.Show("DAIMLER-DC Box Specification");
         }
 
-        private void helpSpec5DH_Click(object sender, EventArgs e)
+        private void helpSpecREN_Click(object sender, EventArgs e)
         {
-
+            specREN.Show("Renault 5DH Specification");
         }
 
         private void helpSpecNIS_Click(object sender, EventArgs e)
         {
-
+            specNIS.Show("Nissan OBC Specification");
         }
 
         //Tool Strip
@@ -1161,5 +1161,6 @@ namespace PE
 //  - Add Warning popup when turn on over 10 sec -- Remove
 //  - increase Contact pairs width cells -- OK 30/09/2021
 //  - Edit export button cannot export and add finish popup when export finish -- OK 30/09/2021
+//  - Add help >>> Spec (BMW,OBC,DCB,5DH,NISSAN) information dialog -- Ongoing 30/09/2021
 
 

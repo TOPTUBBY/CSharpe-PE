@@ -51,6 +51,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="specDCB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specDCB.Designer.cs">
+      <DependentUpon>specDCB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specNIS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specNIS.Designer.cs">
+      <DependentUpon>specNIS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specOBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specOBC.Designer.cs">
+      <DependentUpon>specOBC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specBMW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specBMW.Designer.cs">
+      <DependentUpon>specBMW.cs</DependentUpon>
+    </Compile>
     <Compile Include="PE_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +86,12 @@
     </Compile>
     <Compile Include="confirmDialog.Designer.cs">
       <DependentUpon>confirmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specREN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specREN.Designer.cs">
+      <DependentUpon>specREN.cs</DependentUpon>
     </Compile>
     <Compile Include="warningDialog.cs">
       <SubType>Form</SubType>
@@ -76,6 +106,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="confirmDialog.resx">
       <DependentUpon>confirmDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specBMW.resx">
+      <DependentUpon>specBMW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specDCB.resx">
+      <DependentUpon>specDCB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specNIS.resx">
+      <DependentUpon>specNIS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specOBC.resx">
+      <DependentUpon>specOBC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specREN.resx">
+      <DependentUpon>specREN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="warningDialog.resx">
       <DependentUpon>warningDialog.cs</DependentUpon>
@@ -231,6 +276,8 @@
   <ItemGroup>
     <Content Include="icons8_electric_armature.ico" />
     <Content Include="icons8_quick_mode_on.ico" />
+    <None Include="Resources\badge\REN2_32.png" />
+    <None Include="Resources\badge\DAI2_32.png" />
     <None Include="Resources\badge\REN.png" />
     <None Include="Resources\badge\NIS_32.png" />
     <None Include="Resources\badge\REN_32.png" />
