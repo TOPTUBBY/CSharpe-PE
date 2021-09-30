@@ -274,6 +274,13 @@
     <None Include="Resources\icons8_ok_64.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ext_Resources\file\specsheet\BM22.jpg" />
+    <None Include="ext_Resources\file\specsheet\BM7.4.jpg" />
+    <None Include="ext_Resources\file\specsheet\DCB2.0.jpg" />
+    <None Include="ext_Resources\file\specsheet\DCB1.2.jpg" />
+    <None Include="ext_Resources\file\specsheet\NIS.jpg" />
+    <None Include="ext_Resources\file\specsheet\OBC.jpg" />
+    <None Include="ext_Resources\file\specsheet\REN.jpg" />
     <Content Include="icons8_electric_armature.ico" />
     <Content Include="icons8_quick_mode_on.ico" />
     <None Include="Resources\badge\REN2_32.png" />

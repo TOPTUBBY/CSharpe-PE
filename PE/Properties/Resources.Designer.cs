@@ -93,6 +93,26 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BM22 {
+            get {
+                object obj = ResourceManager.GetObject("BM22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BM7_4 {
+            get {
+                object obj = ResourceManager.GetObject("BM7.4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BMW_32 {
             get {
                 object obj = ResourceManager.GetObject("BMW_32", resourceCulture);
@@ -136,6 +156,26 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap DAI2_32 {
             get {
                 object obj = ResourceManager.GetObject("DAI2_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DCB1_2 {
+            get {
+                object obj = ResourceManager.GetObject("DCB1.2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DCB2_0 {
+            get {
+                object obj = ResourceManager.GetObject("DCB2.0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -773,9 +813,29 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NIS {
+            get {
+                object obj = ResourceManager.GetObject("NIS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NIS_32 {
             get {
                 object obj = ResourceManager.GetObject("NIS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OBC {
+            get {
+                object obj = ResourceManager.GetObject("OBC", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -796,6 +856,16 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap REN_32 {
             get {
                 object obj = ResourceManager.GetObject("REN_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REN1 {
+            get {
+                object obj = ResourceManager.GetObject("REN1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

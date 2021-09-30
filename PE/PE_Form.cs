@@ -1161,6 +1161,6 @@ namespace PE
 //  - Add Warning popup when turn on over 10 sec -- Remove
 //  - increase Contact pairs width cells -- OK 30/09/2021
 //  - Edit export button cannot export and add finish popup when export finish -- OK 30/09/2021
-//  - Add help >>> Spec (BMW,OBC,DCB,5DH,NISSAN) information dialog -- Ongoing 30/09/2021
+//  - Add help >>> Spec (BMW,OBC,DCB,5DH,NISSAN) information dialog -- OK 30/09/2021
 
 
