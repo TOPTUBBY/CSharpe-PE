@@ -866,7 +866,7 @@ namespace PE
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
             }
             else if (startTool.Text == "Start")
@@ -890,6 +890,7 @@ namespace PE
 
                     //GUI Enable
                     editSpecTest.Enabled = true;
+                    //manualTool.Enabled = true;
                     databaseTool.Enabled = false;
                     testProgram.Enabled = true;
                     setPoint.Enabled = true;
