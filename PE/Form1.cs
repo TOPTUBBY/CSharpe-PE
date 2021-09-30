@@ -771,6 +771,32 @@ namespace PE
             app.Visible = true;
         }
 
+        //Help >>> Spec
+        private void helpSpecBMW_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpSpecOBC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpSpecDCB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpSpec5DH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpSpecNIS_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //Tool Strip
         //Start button
         private void startTool_Click(object sender, EventArgs e)

@@ -93,6 +93,16 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BMW_32 {
+            get {
+                object obj = ResourceManager.GetObject("BMW_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CHR_62000H {
             get {
                 object obj = ResourceManager.GetObject("CHR-62000H", resourceCulture);
@@ -106,6 +116,16 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap CHR_62000H_ON {
             get {
                 object obj = ResourceManager.GetObject("CHR-62000H-ON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DAI_32 {
+            get {
+                object obj = ResourceManager.GetObject("DAI_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -736,6 +756,36 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap icons8_voltmeter_642 {
             get {
                 object obj = ResourceManager.GetObject("icons8_voltmeter_642", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NIS_32 {
+            get {
+                object obj = ResourceManager.GetObject("NIS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REN {
+            get {
+                object obj = ResourceManager.GetObject("REN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REN_32 {
+            get {
+                object obj = ResourceManager.GetObject("REN_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

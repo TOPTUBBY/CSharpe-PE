@@ -31,39 +31,28 @@ namespace PE
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(peTest));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.configToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.configPort = new System.Windows.Forms.ToolStripMenuItem();
-            this.configEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.configManualDC = new System.Windows.Forms.ToolStripMenuItem();
-            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.serialPort = new System.Windows.Forms.GroupBox();
-            this.statusBox = new System.Windows.Forms.PictureBox();
             this.lblBaud = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
             this.rtbIncoming2 = new System.Windows.Forms.RichTextBox();
@@ -85,33 +74,21 @@ namespace PE
             this.dangerTime = new System.Windows.Forms.Timer(this.components);
             this.pushStart = new System.Windows.Forms.Label();
             this.startTesting = new System.Windows.Forms.GroupBox();
-            this.warning = new System.Windows.Forms.PictureBox();
-            this.dangerOn = new System.Windows.Forms.PictureBox();
-            this.danger = new System.Windows.Forms.PictureBox();
             this.comPort1 = new System.IO.Ports.SerialPort(this.components);
             this.getData = new System.Windows.Forms.GroupBox();
             this.lblTestResult = new System.Windows.Forms.Label();
-            this.dmm34401a = new System.Windows.Forms.PictureBox();
             this.lblVolt3 = new System.Windows.Forms.Label();
             this.value = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.startTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.homeTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.editTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.manualTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.databaseTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.exportTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.shutdownTool = new System.Windows.Forms.ToolStripButton();
             this.groupTest = new System.Windows.Forms.GroupBox();
             this.manualDC = new System.Windows.Forms.GroupBox();
             this.gbDMM = new System.Windows.Forms.GroupBox();
-            this.pbDMM = new System.Windows.Forms.PictureBox();
             this.statusDMM = new System.Windows.Forms.GroupBox();
             this.tbCommandDMM = new System.Windows.Forms.TextBox();
             this.lblDMMPort = new System.Windows.Forms.Label();
@@ -131,9 +108,6 @@ namespace PE
             this.lblDCPort = new System.Windows.Forms.Label();
             this.btnRemoteDC = new System.Windows.Forms.Button();
             this.btnClearDC = new System.Windows.Forms.Button();
-            this.btnToggleOff = new System.Windows.Forms.PictureBox();
-            this.btnToggleOn = new System.Windows.Forms.PictureBox();
-            this.pbDC = new System.Windows.Forms.PictureBox();
             this.setPointManual = new System.Windows.Forms.GroupBox();
             this.currBoxManual = new System.Windows.Forms.NumericUpDown();
             this.voltBoxManual = new System.Windows.Forms.NumericUpDown();
@@ -143,11 +117,8 @@ namespace PE
             this.lblCurrManual2 = new System.Windows.Forms.Label();
             this.lblVoltManual2 = new System.Windows.Forms.Label();
             this.lblVoltManual = new System.Windows.Forms.Label();
-            this.pbDMMSign = new System.Windows.Forms.PictureBox();
-            this.pbDCSign = new System.Windows.Forms.PictureBox();
             this.testProgram = new System.Windows.Forms.GroupBox();
             this.tbSn = new System.Windows.Forms.TextBox();
-            this.confirmSelectBtn = new System.Windows.Forms.Button();
             this.lblSn = new System.Windows.Forms.Label();
             this.lblSelectProgram = new System.Windows.Forms.Label();
             this.programList = new System.Windows.Forms.ComboBox();
@@ -173,34 +144,57 @@ namespace PE
             this.delta = new System.Windows.Forms.PictureBox();
             this.disConnect = new System.Windows.Forms.PictureBox();
             this.connect = new System.Windows.Forms.PictureBox();
+            this.pbDMM = new System.Windows.Forms.PictureBox();
+            this.btnToggleOff = new System.Windows.Forms.PictureBox();
+            this.btnToggleOn = new System.Windows.Forms.PictureBox();
+            this.pbDC = new System.Windows.Forms.PictureBox();
+            this.pbDMMSign = new System.Windows.Forms.PictureBox();
+            this.pbDCSign = new System.Windows.Forms.PictureBox();
+            this.statusBox = new System.Windows.Forms.PictureBox();
+            this.confirmSelectBtn = new System.Windows.Forms.Button();
+            this.warning = new System.Windows.Forms.PictureBox();
+            this.dangerOn = new System.Windows.Forms.PictureBox();
+            this.danger = new System.Windows.Forms.PictureBox();
+            this.dmm34401a = new System.Windows.Forms.PictureBox();
+            this.startTool = new System.Windows.Forms.ToolStripButton();
+            this.homeTool = new System.Windows.Forms.ToolStripButton();
+            this.editTool = new System.Windows.Forms.ToolStripButton();
+            this.manualTool = new System.Windows.Forms.ToolStripButton();
+            this.databaseTool = new System.Windows.Forms.ToolStripButton();
+            this.exportTool = new System.Windows.Forms.ToolStripButton();
+            this.shutdownTool = new System.Windows.Forms.ToolStripButton();
+            this.fileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.configPort = new System.Windows.Forms.ToolStripMenuItem();
+            this.configEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.configManualDC = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpec = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecBMW = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecOBC = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecDCB = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpec5DH = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecNIS = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.serialPort.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
             this.setPoint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBox)).BeginInit();
             this.startTesting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.warning)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danger)).BeginInit();
             this.getData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupTest.SuspendLayout();
             this.manualDC.SuspendLayout();
             this.gbDMM.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).BeginInit();
             this.statusDMM.SuspendLayout();
             this.gbDC.SuspendLayout();
             this.statusDC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).BeginInit();
             this.setPointManual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBoxManual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBoxManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).BeginInit();
             this.testProgram.SuspendLayout();
             this.editSpecTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTable2)).BeginInit();
@@ -210,6 +204,17 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.delta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disConnect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.connect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danger)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -237,43 +242,6 @@ namespace PE
             this.fileToolStripMenu.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenu.Text = "File";
             // 
-            // fileOpen
-            // 
-            this.fileOpen.Image = global::PE.Properties.Resources.icons8_open_folder_in_new_tab_32;
-            this.fileOpen.Name = "fileOpen";
-            this.fileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.fileOpen.Size = new System.Drawing.Size(163, 22);
-            this.fileOpen.Text = "Open...";
-            this.fileOpen.Click += new System.EventHandler(this.fileOpen_Click);
-            // 
-            // fileSave
-            // 
-            this.fileSave.Enabled = false;
-            this.fileSave.Image = global::PE.Properties.Resources.icons8_save_32;
-            this.fileSave.Name = "fileSave";
-            this.fileSave.Size = new System.Drawing.Size(163, 22);
-            this.fileSave.Text = "Save...";
-            this.fileSave.Click += new System.EventHandler(this.fileSave_Click);
-            // 
-            // fileSaveAs
-            // 
-            this.fileSaveAs.Enabled = false;
-            this.fileSaveAs.Image = global::PE.Properties.Resources.icons8_save_as_32;
-            this.fileSaveAs.Name = "fileSaveAs";
-            this.fileSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.fileSaveAs.Size = new System.Drawing.Size(163, 22);
-            this.fileSaveAs.Text = "Save As...";
-            this.fileSaveAs.Click += new System.EventHandler(this.fileSaveAs_Click);
-            // 
-            // fileExit
-            // 
-            this.fileExit.Image = global::PE.Properties.Resources.icons8_shutdown_32;
-            this.fileExit.Name = "fileExit";
-            this.fileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.fileExit.Size = new System.Drawing.Size(163, 22);
-            this.fileExit.Text = "Exit";
-            this.fileExit.Click += new System.EventHandler(this.fileExit_Click);
-            // 
             // configToolStripMenu
             // 
             this.configToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -285,67 +253,15 @@ namespace PE
             this.configToolStripMenu.Size = new System.Drawing.Size(93, 20);
             this.configToolStripMenu.Text = "Configuration";
             // 
-            // configPort
-            // 
-            this.configPort.Image = global::PE.Properties.Resources.icons8_internet_of_things_32;
-            this.configPort.Name = "configPort";
-            this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.C)));
-            this.configPort.Size = new System.Drawing.Size(219, 22);
-            this.configPort.Text = "Port";
-            this.configPort.Click += new System.EventHandler(this.configPort_Click);
-            // 
-            // configEdit
-            // 
-            this.configEdit.Image = global::PE.Properties.Resources.icons8_edit_32;
-            this.configEdit.Name = "configEdit";
-            this.configEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.configEdit.Size = new System.Drawing.Size(219, 22);
-            this.configEdit.Text = "Edit program";
-            this.configEdit.Click += new System.EventHandler(this.configEdit_Click);
-            // 
-            // configManualDC
-            // 
-            this.configManualDC.Image = global::PE.Properties.Resources.icons8_manual_481;
-            this.configManualDC.Name = "configManualDC";
-            this.configManualDC.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.configManualDC.Size = new System.Drawing.Size(219, 22);
-            this.configManualDC.Text = "Manual DC-Source";
-            this.configManualDC.Click += new System.EventHandler(this.configManual_Click);
-            // 
-            // databaseToolStripMenuItem
-            // 
-            this.databaseToolStripMenuItem.Image = global::PE.Properties.Resources.icons8_database_administrator_32;
-            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.databaseToolStripMenuItem.Text = "Database";
-            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
-            // 
             // helpToolStripMenu
             // 
             this.helpToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpInfo,
+            this.helpSpec,
             this.helpHelp});
             this.helpToolStripMenu.Name = "helpToolStripMenu";
             this.helpToolStripMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.helpToolStripMenu.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenu.Text = "Help";
-            // 
-            // helpInfo
-            // 
-            this.helpInfo.Image = global::PE.Properties.Resources.icons8_about_32;
-            this.helpInfo.Name = "helpInfo";
-            this.helpInfo.Size = new System.Drawing.Size(163, 22);
-            this.helpInfo.Text = "About PE Testing";
-            // 
-            // helpHelp
-            // 
-            this.helpHelp.Image = global::PE.Properties.Resources.icons8_get_help_32;
-            this.helpHelp.Name = "helpHelp";
-            this.helpHelp.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.helpHelp.Size = new System.Drawing.Size(163, 22);
-            this.helpHelp.Text = "Help";
             // 
             // serialPort
             // 
@@ -367,16 +283,6 @@ namespace PE
             this.serialPort.TabStop = false;
             this.serialPort.Text = "Connection";
             this.serialPort.Visible = false;
-            // 
-            // statusBox
-            // 
-            this.statusBox.BackColor = System.Drawing.Color.Red;
-            this.statusBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.statusBox.Location = new System.Drawing.Point(286, 0);
-            this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(30, 15);
-            this.statusBox.TabIndex = 3;
-            this.statusBox.TabStop = false;
             // 
             // lblBaud
             // 
@@ -630,45 +536,6 @@ namespace PE
             this.startTesting.TabStop = false;
             this.startTesting.Text = "Start testing (On/Off DC-Source Chroma 62000H )";
             // 
-            // warning
-            // 
-            this.warning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.warning.ErrorImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.Image = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.InitialImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.Location = new System.Drawing.Point(367, 23);
-            this.warning.Name = "warning";
-            this.warning.Size = new System.Drawing.Size(40, 36);
-            this.warning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.warning.TabIndex = 9;
-            this.warning.TabStop = false;
-            this.warning.Visible = false;
-            // 
-            // dangerOn
-            // 
-            this.dangerOn.ErrorImage = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.Image = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.InitialImage = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.Location = new System.Drawing.Point(11, 64);
-            this.dangerOn.Name = "dangerOn";
-            this.dangerOn.Size = new System.Drawing.Size(450, 148);
-            this.dangerOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dangerOn.TabIndex = 4;
-            this.dangerOn.TabStop = false;
-            this.dangerOn.Visible = false;
-            // 
-            // danger
-            // 
-            this.danger.ErrorImage = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.Image = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.InitialImage = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.Location = new System.Drawing.Point(11, 64);
-            this.danger.Name = "danger";
-            this.danger.Size = new System.Drawing.Size(450, 148);
-            this.danger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.danger.TabIndex = 4;
-            this.danger.TabStop = false;
-            // 
             // comPort1
             // 
             this.comPort1.BaudRate = 115200;
@@ -700,19 +567,6 @@ namespace PE
             this.lblTestResult.Size = new System.Drawing.Size(90, 20);
             this.lblTestResult.TabIndex = 7;
             this.lblTestResult.Text = "Test Result";
-            // 
-            // dmm34401a
-            // 
-            this.dmm34401a.Enabled = false;
-            this.dmm34401a.ErrorImage = global::PE.Properties.Resources._34401DMM;
-            this.dmm34401a.Image = global::PE.Properties.Resources._34401DMM;
-            this.dmm34401a.InitialImage = global::PE.Properties.Resources._34401DMM;
-            this.dmm34401a.Location = new System.Drawing.Point(133, 31);
-            this.dmm34401a.Name = "dmm34401a";
-            this.dmm34401a.Size = new System.Drawing.Size(193, 76);
-            this.dmm34401a.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dmm34401a.TabIndex = 4;
-            this.dmm34401a.TabStop = false;
             // 
             // lblVolt3
             // 
@@ -771,35 +625,11 @@ namespace PE
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // startTool
-            // 
-            this.startTool.Image = global::PE.Properties.Resources.icons8_conflict_48;
-            this.startTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.startTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.startTool.Margin = new System.Windows.Forms.Padding(20, 1, 0, 2);
-            this.startTool.Name = "startTool";
-            this.startTool.Size = new System.Drawing.Size(52, 67);
-            this.startTool.Text = "Start";
-            this.startTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.startTool.Click += new System.EventHandler(this.startTool_Click);
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
-            // 
-            // homeTool
-            // 
-            this.homeTool.Image = global::PE.Properties.Resources.icons8_home_48;
-            this.homeTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.homeTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.homeTool.Name = "homeTool";
-            this.homeTool.Size = new System.Drawing.Size(52, 67);
-            this.homeTool.Text = "Home";
-            this.homeTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.homeTool.ToolTipText = "Home";
-            this.homeTool.Click += new System.EventHandler(this.homeTool_Click);
             // 
             // toolStripSeparator1
             // 
@@ -807,34 +637,11 @@ namespace PE
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 70);
             // 
-            // editTool
-            // 
-            this.editTool.Image = global::PE.Properties.Resources.icons8_edit_48;
-            this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.editTool.Name = "editTool";
-            this.editTool.Size = new System.Drawing.Size(80, 67);
-            this.editTool.Text = "Edit Program";
-            this.editTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.editTool.Click += new System.EventHandler(this.editTool_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
-            // 
-            // manualTool
-            // 
-            this.manualTool.Image = global::PE.Properties.Resources.icons8_manual_48;
-            this.manualTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.manualTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.manualTool.Name = "manualTool";
-            this.manualTool.Size = new System.Drawing.Size(52, 67);
-            this.manualTool.Text = "Manual";
-            this.manualTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.manualTool.ToolTipText = "Manual DC-source";
-            this.manualTool.Click += new System.EventHandler(this.manualTool_Click);
             // 
             // toolStripSeparator3
             // 
@@ -842,54 +649,17 @@ namespace PE
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
             // 
-            // databaseTool
-            // 
-            this.databaseTool.Image = global::PE.Properties.Resources.icons8_database_administrator_48;
-            this.databaseTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.databaseTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.databaseTool.Name = "databaseTool";
-            this.databaseTool.Size = new System.Drawing.Size(59, 67);
-            this.databaseTool.Text = "Database";
-            this.databaseTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.databaseTool.ToolTipText = "Connection\r\n setting";
-            this.databaseTool.Click += new System.EventHandler(this.databaseTool_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 70);
             // 
-            // exportTool
-            // 
-            this.exportTool.Enabled = false;
-            this.exportTool.Image = global::PE.Properties.Resources.icons8_microsoft_excel_2019_48;
-            this.exportTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.exportTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.exportTool.Name = "exportTool";
-            this.exportTool.Size = new System.Drawing.Size(72, 67);
-            this.exportTool.Text = "Export Data";
-            this.exportTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.exportTool.ToolTipText = "Export data";
-            this.exportTool.Click += new System.EventHandler(this.exportTool_Click);
-            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
-            // 
-            // shutdownTool
-            // 
-            this.shutdownTool.Image = global::PE.Properties.Resources.icons8_shutdown_48;
-            this.shutdownTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.shutdownTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.shutdownTool.Name = "shutdownTool";
-            this.shutdownTool.Size = new System.Drawing.Size(52, 67);
-            this.shutdownTool.Text = "Exit";
-            this.shutdownTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shutdownTool.ToolTipText = "Exit Program";
-            this.shutdownTool.Click += new System.EventHandler(this.shutdownTool_Click);
             // 
             // groupTest
             // 
@@ -939,16 +709,6 @@ namespace PE
             this.gbDMM.TabIndex = 10;
             this.gbDMM.TabStop = false;
             this.gbDMM.Text = "Digital Multimeter (Agilent 34401A 6½ Digit Multimeter)";
-            // 
-            // pbDMM
-            // 
-            this.pbDMM.Image = global::PE.Properties.Resources._34401DMM;
-            this.pbDMM.Location = new System.Drawing.Point(58, 29);
-            this.pbDMM.Name = "pbDMM";
-            this.pbDMM.Size = new System.Drawing.Size(284, 123);
-            this.pbDMM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDMM.TabIndex = 8;
-            this.pbDMM.TabStop = false;
             // 
             // statusDMM
             // 
@@ -1199,43 +959,6 @@ namespace PE
             this.btnClearDC.UseVisualStyleBackColor = true;
             this.btnClearDC.Click += new System.EventHandler(this.btnClearDC_Click);
             // 
-            // btnToggleOff
-            // 
-            this.btnToggleOff.ErrorImage = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.Image = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.InitialImage = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.Location = new System.Drawing.Point(263, 172);
-            this.btnToggleOff.Name = "btnToggleOff";
-            this.btnToggleOff.Size = new System.Drawing.Size(106, 77);
-            this.btnToggleOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnToggleOff.TabIndex = 4;
-            this.btnToggleOff.TabStop = false;
-            this.btnToggleOff.Click += new System.EventHandler(this.btnToggleOff_Click);
-            // 
-            // btnToggleOn
-            // 
-            this.btnToggleOn.ErrorImage = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.Image = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.InitialImage = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.Location = new System.Drawing.Point(263, 171);
-            this.btnToggleOn.Name = "btnToggleOn";
-            this.btnToggleOn.Size = new System.Drawing.Size(106, 77);
-            this.btnToggleOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnToggleOn.TabIndex = 4;
-            this.btnToggleOn.TabStop = false;
-            this.btnToggleOn.Visible = false;
-            this.btnToggleOn.Click += new System.EventHandler(this.btnToggleOn_Click);
-            // 
-            // pbDC
-            // 
-            this.pbDC.Image = global::PE.Properties.Resources.CHR_62000H;
-            this.pbDC.Location = new System.Drawing.Point(26, 30);
-            this.pbDC.Name = "pbDC";
-            this.pbDC.Size = new System.Drawing.Size(343, 112);
-            this.pbDC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDC.TabIndex = 8;
-            this.pbDC.TabStop = false;
-            // 
             // setPointManual
             // 
             this.setPointManual.Controls.Add(this.currBoxManual);
@@ -1362,30 +1085,6 @@ namespace PE
             this.lblVoltManual.TabIndex = 0;
             this.lblVoltManual.Text = "Voltage :";
             // 
-            // pbDMMSign
-            // 
-            this.pbDMMSign.ErrorImage = global::PE.Properties.Resources.icons8_voltmeter_64;
-            this.pbDMMSign.Image = global::PE.Properties.Resources.icons8_voltmeter_641;
-            this.pbDMMSign.InitialImage = global::PE.Properties.Resources.icons8_voltmeter_642;
-            this.pbDMMSign.Location = new System.Drawing.Point(6, 321);
-            this.pbDMMSign.Name = "pbDMMSign";
-            this.pbDMMSign.Size = new System.Drawing.Size(59, 43);
-            this.pbDMMSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDMMSign.TabIndex = 7;
-            this.pbDMMSign.TabStop = false;
-            // 
-            // pbDCSign
-            // 
-            this.pbDCSign.ErrorImage = global::PE.Properties.Resources.icons8_energy_meter_641;
-            this.pbDCSign.Image = global::PE.Properties.Resources.icons8_energy_meter_64;
-            this.pbDCSign.InitialImage = global::PE.Properties.Resources.icons8_energy_meter_642;
-            this.pbDCSign.Location = new System.Drawing.Point(14, 25);
-            this.pbDCSign.Name = "pbDCSign";
-            this.pbDCSign.Size = new System.Drawing.Size(51, 43);
-            this.pbDCSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDCSign.TabIndex = 7;
-            this.pbDCSign.TabStop = false;
-            // 
             // testProgram
             // 
             this.testProgram.Controls.Add(this.tbSn);
@@ -1418,20 +1117,6 @@ namespace PE
             this.tbSn.TabIndex = 2;
             this.tbSn.Text = "DES202012080061900041";
             this.tbSn.Click += new System.EventHandler(this.tbSn_Click);
-            // 
-            // confirmSelectBtn
-            // 
-            this.confirmSelectBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.confirmSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.confirmSelectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.confirmSelectBtn.Image = global::PE.Properties.Resources.icons8_ok_64;
-            this.confirmSelectBtn.Location = new System.Drawing.Point(375, 25);
-            this.confirmSelectBtn.Name = "confirmSelectBtn";
-            this.confirmSelectBtn.Size = new System.Drawing.Size(86, 71);
-            this.confirmSelectBtn.TabIndex = 2;
-            this.confirmSelectBtn.TabStop = false;
-            this.confirmSelectBtn.UseVisualStyleBackColor = false;
-            this.confirmSelectBtn.Click += new System.EventHandler(this.confirmSelectBtn_Click);
             // 
             // lblSn
             // 
@@ -1519,9 +1204,9 @@ namespace PE
             // 
             this.gridTable2.AllowUserToOrderColumns = true;
             this.gridTable2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle69;
             this.gridTable2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridTable2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -1529,61 +1214,61 @@ namespace PE
             this.gridTable2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridTable2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridTable2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
             this.gridTable2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTable2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.editContactPairs,
             this.editMaxRes});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle73.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle73.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.DefaultCellStyle = dataGridViewCellStyle73;
             this.gridTable2.Location = new System.Drawing.Point(16, 29);
             this.gridTable2.Name = "gridTable2";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle74.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle74.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle74.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.RowHeadersDefaultCellStyle = dataGridViewCellStyle74;
             this.gridTable2.RowHeadersVisible = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.RowsDefaultCellStyle = dataGridViewCellStyle75;
             this.gridTable2.Size = new System.Drawing.Size(510, 237);
             this.gridTable2.TabIndex = 7;
             // 
             // editContactPairs
             // 
             this.editContactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editContactPairs.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editContactPairs.DefaultCellStyle = dataGridViewCellStyle71;
             this.editContactPairs.HeaderText = "Contact Pairs";
             this.editContactPairs.Name = "editContactPairs";
             // 
             // editMaxRes
             // 
             this.editMaxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "N1";
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editMaxRes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle72.Format = "N1";
+            dataGridViewCellStyle72.NullValue = null;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editMaxRes.DefaultCellStyle = dataGridViewCellStyle72;
             this.editMaxRes.HeaderText = "Max.Res (mΩ)";
             this.editMaxRes.Name = "editMaxRes";
             this.editMaxRes.Width = 150;
@@ -1621,9 +1306,9 @@ namespace PE
             // 
             this.gridTable1.AllowUserToOrderColumns = true;
             this.gridTable1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle76.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle76;
             this.gridTable1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridTable1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -1631,14 +1316,14 @@ namespace PE
             this.gridTable1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridTable1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridTable1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle77;
             this.gridTable1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTable1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.contactPairs,
@@ -1646,39 +1331,39 @@ namespace PE
             this.measVolt,
             this.res,
             this.result});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle83.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle83.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle83.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.DefaultCellStyle = dataGridViewCellStyle83;
             this.gridTable1.Location = new System.Drawing.Point(16, 29);
             this.gridTable1.Name = "gridTable1";
             this.gridTable1.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle84.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle84.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle84.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle84;
             this.gridTable1.RowHeadersVisible = false;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle85;
             this.gridTable1.Size = new System.Drawing.Size(854, 237);
             this.gridTable1.TabIndex = 5;
             // 
             // contactPairs
             // 
             this.contactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle78;
             this.contactPairs.FillWeight = 150F;
             this.contactPairs.HeaderText = "Contact Pairs";
             this.contactPairs.Name = "contactPairs";
@@ -1687,11 +1372,11 @@ namespace PE
             // maxRes
             // 
             this.maxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "N1";
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.maxRes.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle79.Format = "N1";
+            dataGridViewCellStyle79.NullValue = null;
+            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.maxRes.DefaultCellStyle = dataGridViewCellStyle79;
             this.maxRes.HeaderText = "Max.Res (mΩ)";
             this.maxRes.Name = "maxRes";
             this.maxRes.ReadOnly = true;
@@ -1699,11 +1384,11 @@ namespace PE
             // measVolt
             // 
             this.measVolt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = null;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.measVolt.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle80.Format = "N2";
+            dataGridViewCellStyle80.NullValue = null;
+            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.measVolt.DefaultCellStyle = dataGridViewCellStyle80;
             this.measVolt.HeaderText = "Voltage (mV)";
             this.measVolt.Name = "measVolt";
             this.measVolt.ReadOnly = true;
@@ -1711,10 +1396,10 @@ namespace PE
             // res
             // 
             this.res.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Format = "N2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.res.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle81.Format = "N2";
+            dataGridViewCellStyle81.NullValue = null;
+            this.res.DefaultCellStyle = dataGridViewCellStyle81;
             this.res.HeaderText = "Res (mΩ)";
             this.res.Name = "res";
             this.res.ReadOnly = true;
@@ -1722,10 +1407,10 @@ namespace PE
             // result
             // 
             this.result.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.NullValue = null;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.result.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle82.NullValue = null;
+            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.result.DefaultCellStyle = dataGridViewCellStyle82;
             this.result.HeaderText = "Result";
             this.result.Name = "result";
             this.result.ReadOnly = true;
@@ -1816,6 +1501,372 @@ namespace PE
             this.connect.TabStop = false;
             this.connect.Visible = false;
             // 
+            // pbDMM
+            // 
+            this.pbDMM.Image = global::PE.Properties.Resources._34401DMM;
+            this.pbDMM.Location = new System.Drawing.Point(58, 29);
+            this.pbDMM.Name = "pbDMM";
+            this.pbDMM.Size = new System.Drawing.Size(284, 123);
+            this.pbDMM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDMM.TabIndex = 8;
+            this.pbDMM.TabStop = false;
+            // 
+            // btnToggleOff
+            // 
+            this.btnToggleOff.ErrorImage = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.Image = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.InitialImage = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.Location = new System.Drawing.Point(263, 172);
+            this.btnToggleOff.Name = "btnToggleOff";
+            this.btnToggleOff.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnToggleOff.TabIndex = 4;
+            this.btnToggleOff.TabStop = false;
+            this.btnToggleOff.Click += new System.EventHandler(this.btnToggleOff_Click);
+            // 
+            // btnToggleOn
+            // 
+            this.btnToggleOn.ErrorImage = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.Image = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.InitialImage = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.Location = new System.Drawing.Point(263, 171);
+            this.btnToggleOn.Name = "btnToggleOn";
+            this.btnToggleOn.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnToggleOn.TabIndex = 4;
+            this.btnToggleOn.TabStop = false;
+            this.btnToggleOn.Visible = false;
+            this.btnToggleOn.Click += new System.EventHandler(this.btnToggleOn_Click);
+            // 
+            // pbDC
+            // 
+            this.pbDC.Image = global::PE.Properties.Resources.CHR_62000H;
+            this.pbDC.Location = new System.Drawing.Point(26, 30);
+            this.pbDC.Name = "pbDC";
+            this.pbDC.Size = new System.Drawing.Size(343, 112);
+            this.pbDC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDC.TabIndex = 8;
+            this.pbDC.TabStop = false;
+            // 
+            // pbDMMSign
+            // 
+            this.pbDMMSign.ErrorImage = global::PE.Properties.Resources.icons8_voltmeter_64;
+            this.pbDMMSign.Image = global::PE.Properties.Resources.icons8_voltmeter_641;
+            this.pbDMMSign.InitialImage = global::PE.Properties.Resources.icons8_voltmeter_642;
+            this.pbDMMSign.Location = new System.Drawing.Point(6, 321);
+            this.pbDMMSign.Name = "pbDMMSign";
+            this.pbDMMSign.Size = new System.Drawing.Size(59, 43);
+            this.pbDMMSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDMMSign.TabIndex = 7;
+            this.pbDMMSign.TabStop = false;
+            // 
+            // pbDCSign
+            // 
+            this.pbDCSign.ErrorImage = global::PE.Properties.Resources.icons8_energy_meter_641;
+            this.pbDCSign.Image = global::PE.Properties.Resources.icons8_energy_meter_64;
+            this.pbDCSign.InitialImage = global::PE.Properties.Resources.icons8_energy_meter_642;
+            this.pbDCSign.Location = new System.Drawing.Point(14, 25);
+            this.pbDCSign.Name = "pbDCSign";
+            this.pbDCSign.Size = new System.Drawing.Size(51, 43);
+            this.pbDCSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDCSign.TabIndex = 7;
+            this.pbDCSign.TabStop = false;
+            // 
+            // statusBox
+            // 
+            this.statusBox.BackColor = System.Drawing.Color.Red;
+            this.statusBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.statusBox.Location = new System.Drawing.Point(286, 0);
+            this.statusBox.Name = "statusBox";
+            this.statusBox.Size = new System.Drawing.Size(30, 15);
+            this.statusBox.TabIndex = 3;
+            this.statusBox.TabStop = false;
+            // 
+            // confirmSelectBtn
+            // 
+            this.confirmSelectBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.confirmSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.confirmSelectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.confirmSelectBtn.Image = global::PE.Properties.Resources.icons8_ok_64;
+            this.confirmSelectBtn.Location = new System.Drawing.Point(375, 25);
+            this.confirmSelectBtn.Name = "confirmSelectBtn";
+            this.confirmSelectBtn.Size = new System.Drawing.Size(86, 71);
+            this.confirmSelectBtn.TabIndex = 2;
+            this.confirmSelectBtn.TabStop = false;
+            this.confirmSelectBtn.UseVisualStyleBackColor = false;
+            this.confirmSelectBtn.Click += new System.EventHandler(this.confirmSelectBtn_Click);
+            // 
+            // warning
+            // 
+            this.warning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.warning.ErrorImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
+            this.warning.Image = global::PE.Properties.Resources.icons8_electricity_hazard_64;
+            this.warning.InitialImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
+            this.warning.Location = new System.Drawing.Point(367, 23);
+            this.warning.Name = "warning";
+            this.warning.Size = new System.Drawing.Size(40, 36);
+            this.warning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.warning.TabIndex = 9;
+            this.warning.TabStop = false;
+            this.warning.Visible = false;
+            // 
+            // dangerOn
+            // 
+            this.dangerOn.ErrorImage = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.Image = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.InitialImage = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.Location = new System.Drawing.Point(11, 64);
+            this.dangerOn.Name = "dangerOn";
+            this.dangerOn.Size = new System.Drawing.Size(450, 148);
+            this.dangerOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dangerOn.TabIndex = 4;
+            this.dangerOn.TabStop = false;
+            this.dangerOn.Visible = false;
+            // 
+            // danger
+            // 
+            this.danger.ErrorImage = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.Image = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.InitialImage = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.Location = new System.Drawing.Point(11, 64);
+            this.danger.Name = "danger";
+            this.danger.Size = new System.Drawing.Size(450, 148);
+            this.danger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.danger.TabIndex = 4;
+            this.danger.TabStop = false;
+            // 
+            // dmm34401a
+            // 
+            this.dmm34401a.Enabled = false;
+            this.dmm34401a.ErrorImage = global::PE.Properties.Resources._34401DMM;
+            this.dmm34401a.Image = global::PE.Properties.Resources._34401DMM;
+            this.dmm34401a.InitialImage = global::PE.Properties.Resources._34401DMM;
+            this.dmm34401a.Location = new System.Drawing.Point(133, 31);
+            this.dmm34401a.Name = "dmm34401a";
+            this.dmm34401a.Size = new System.Drawing.Size(193, 76);
+            this.dmm34401a.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dmm34401a.TabIndex = 4;
+            this.dmm34401a.TabStop = false;
+            // 
+            // startTool
+            // 
+            this.startTool.Image = global::PE.Properties.Resources.icons8_conflict_48;
+            this.startTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.startTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.startTool.Margin = new System.Windows.Forms.Padding(20, 1, 0, 2);
+            this.startTool.Name = "startTool";
+            this.startTool.Size = new System.Drawing.Size(52, 67);
+            this.startTool.Text = "Start";
+            this.startTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.startTool.Click += new System.EventHandler(this.startTool_Click);
+            // 
+            // homeTool
+            // 
+            this.homeTool.Image = global::PE.Properties.Resources.icons8_home_48;
+            this.homeTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.homeTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.homeTool.Name = "homeTool";
+            this.homeTool.Size = new System.Drawing.Size(52, 67);
+            this.homeTool.Text = "Home";
+            this.homeTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.homeTool.ToolTipText = "Home";
+            this.homeTool.Click += new System.EventHandler(this.homeTool_Click);
+            // 
+            // editTool
+            // 
+            this.editTool.Image = global::PE.Properties.Resources.icons8_edit_48;
+            this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editTool.Name = "editTool";
+            this.editTool.Size = new System.Drawing.Size(80, 67);
+            this.editTool.Text = "Edit Program";
+            this.editTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editTool.Click += new System.EventHandler(this.editTool_Click);
+            // 
+            // manualTool
+            // 
+            this.manualTool.Image = global::PE.Properties.Resources.icons8_manual_48;
+            this.manualTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manualTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.manualTool.Name = "manualTool";
+            this.manualTool.Size = new System.Drawing.Size(52, 67);
+            this.manualTool.Text = "Manual";
+            this.manualTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.manualTool.ToolTipText = "Manual DC-source";
+            this.manualTool.Click += new System.EventHandler(this.manualTool_Click);
+            // 
+            // databaseTool
+            // 
+            this.databaseTool.Image = global::PE.Properties.Resources.icons8_database_administrator_48;
+            this.databaseTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.databaseTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.databaseTool.Name = "databaseTool";
+            this.databaseTool.Size = new System.Drawing.Size(59, 67);
+            this.databaseTool.Text = "Database";
+            this.databaseTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.databaseTool.ToolTipText = "Connection\r\n setting";
+            this.databaseTool.Click += new System.EventHandler(this.databaseTool_Click);
+            // 
+            // exportTool
+            // 
+            this.exportTool.Enabled = false;
+            this.exportTool.Image = global::PE.Properties.Resources.icons8_microsoft_excel_2019_48;
+            this.exportTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.exportTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.exportTool.Name = "exportTool";
+            this.exportTool.Size = new System.Drawing.Size(72, 67);
+            this.exportTool.Text = "Export Data";
+            this.exportTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportTool.ToolTipText = "Export data";
+            this.exportTool.Click += new System.EventHandler(this.exportTool_Click);
+            // 
+            // shutdownTool
+            // 
+            this.shutdownTool.Image = global::PE.Properties.Resources.icons8_shutdown_48;
+            this.shutdownTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.shutdownTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.shutdownTool.Name = "shutdownTool";
+            this.shutdownTool.Size = new System.Drawing.Size(52, 67);
+            this.shutdownTool.Text = "Exit";
+            this.shutdownTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shutdownTool.ToolTipText = "Exit Program";
+            this.shutdownTool.Click += new System.EventHandler(this.shutdownTool_Click);
+            // 
+            // fileOpen
+            // 
+            this.fileOpen.Image = global::PE.Properties.Resources.icons8_open_folder_in_new_tab_32;
+            this.fileOpen.Name = "fileOpen";
+            this.fileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.fileOpen.Size = new System.Drawing.Size(163, 22);
+            this.fileOpen.Text = "Open...";
+            this.fileOpen.Click += new System.EventHandler(this.fileOpen_Click);
+            // 
+            // fileSave
+            // 
+            this.fileSave.Enabled = false;
+            this.fileSave.Image = global::PE.Properties.Resources.icons8_save_32;
+            this.fileSave.Name = "fileSave";
+            this.fileSave.Size = new System.Drawing.Size(163, 22);
+            this.fileSave.Text = "Save...";
+            this.fileSave.Click += new System.EventHandler(this.fileSave_Click);
+            // 
+            // fileSaveAs
+            // 
+            this.fileSaveAs.Enabled = false;
+            this.fileSaveAs.Image = global::PE.Properties.Resources.icons8_save_as_32;
+            this.fileSaveAs.Name = "fileSaveAs";
+            this.fileSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.fileSaveAs.Size = new System.Drawing.Size(163, 22);
+            this.fileSaveAs.Text = "Save As...";
+            this.fileSaveAs.Click += new System.EventHandler(this.fileSaveAs_Click);
+            // 
+            // fileExit
+            // 
+            this.fileExit.Image = global::PE.Properties.Resources.icons8_shutdown_32;
+            this.fileExit.Name = "fileExit";
+            this.fileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.fileExit.Size = new System.Drawing.Size(163, 22);
+            this.fileExit.Text = "Exit";
+            this.fileExit.Click += new System.EventHandler(this.fileExit_Click);
+            // 
+            // configPort
+            // 
+            this.configPort.Image = global::PE.Properties.Resources.icons8_internet_of_things_32;
+            this.configPort.Name = "configPort";
+            this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.configPort.Size = new System.Drawing.Size(219, 22);
+            this.configPort.Text = "Port";
+            this.configPort.Click += new System.EventHandler(this.configPort_Click);
+            // 
+            // configEdit
+            // 
+            this.configEdit.Image = global::PE.Properties.Resources.icons8_edit_32;
+            this.configEdit.Name = "configEdit";
+            this.configEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.configEdit.Size = new System.Drawing.Size(219, 22);
+            this.configEdit.Text = "Edit program";
+            this.configEdit.Click += new System.EventHandler(this.configEdit_Click);
+            // 
+            // configManualDC
+            // 
+            this.configManualDC.Image = global::PE.Properties.Resources.icons8_manual_481;
+            this.configManualDC.Name = "configManualDC";
+            this.configManualDC.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.configManualDC.Size = new System.Drawing.Size(219, 22);
+            this.configManualDC.Text = "Manual DC-Source";
+            this.configManualDC.Click += new System.EventHandler(this.configManual_Click);
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.Image = global::PE.Properties.Resources.icons8_database_administrator_32;
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.databaseToolStripMenuItem.Text = "Database";
+            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
+            // 
+            // helpSpec
+            // 
+            this.helpSpec.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpSpecBMW,
+            this.helpSpecOBC,
+            this.helpSpecDCB,
+            this.helpSpec5DH,
+            this.helpSpecNIS});
+            this.helpSpec.Image = global::PE.Properties.Resources.icons8_about_32;
+            this.helpSpec.Name = "helpSpec";
+            this.helpSpec.Size = new System.Drawing.Size(180, 22);
+            this.helpSpec.Text = "Specification";
+            // 
+            // helpSpecBMW
+            // 
+            this.helpSpecBMW.Image = global::PE.Properties.Resources.BMW_32;
+            this.helpSpecBMW.Name = "helpSpecBMW";
+            this.helpSpecBMW.Size = new System.Drawing.Size(180, 22);
+            this.helpSpecBMW.Text = "BMW";
+            this.helpSpecBMW.Click += new System.EventHandler(this.helpSpecBMW_Click);
+            // 
+            // helpSpecOBC
+            // 
+            this.helpSpecOBC.Image = global::PE.Properties.Resources.DAI_32;
+            this.helpSpecOBC.Name = "helpSpecOBC";
+            this.helpSpecOBC.Size = new System.Drawing.Size(180, 22);
+            this.helpSpecOBC.Text = "DAIMLER-OBC";
+            this.helpSpecOBC.Click += new System.EventHandler(this.helpSpecOBC_Click);
+            // 
+            // helpSpecDCB
+            // 
+            this.helpSpecDCB.Image = global::PE.Properties.Resources.DAI_32;
+            this.helpSpecDCB.Name = "helpSpecDCB";
+            this.helpSpecDCB.Size = new System.Drawing.Size(180, 22);
+            this.helpSpecDCB.Text = "DAIMLER-DC Box";
+            this.helpSpecDCB.Click += new System.EventHandler(this.helpSpecDCB_Click);
+            // 
+            // helpSpec5DH
+            // 
+            this.helpSpec5DH.Image = global::PE.Properties.Resources.REN_32;
+            this.helpSpec5DH.Name = "helpSpec5DH";
+            this.helpSpec5DH.Size = new System.Drawing.Size(180, 22);
+            this.helpSpec5DH.Text = "Renault 5DH DCDC";
+            this.helpSpec5DH.Click += new System.EventHandler(this.helpSpec5DH_Click);
+            // 
+            // helpSpecNIS
+            // 
+            this.helpSpecNIS.Image = global::PE.Properties.Resources.NIS_32;
+            this.helpSpecNIS.Name = "helpSpecNIS";
+            this.helpSpecNIS.Size = new System.Drawing.Size(180, 22);
+            this.helpSpecNIS.Text = "Nissan-OBC";
+            this.helpSpecNIS.Click += new System.EventHandler(this.helpSpecNIS_Click);
+            // 
+            // helpHelp
+            // 
+            this.helpHelp.Image = global::PE.Properties.Resources.icons8_get_help_32;
+            this.helpHelp.Name = "helpHelp";
+            this.helpHelp.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.helpHelp.Size = new System.Drawing.Size(180, 22);
+            this.helpHelp.Text = "Help";
+            // 
             // peTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1841,41 +1892,30 @@ namespace PE
             this.menuStrip1.PerformLayout();
             this.serialPort.ResumeLayout(false);
             this.serialPort.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).EndInit();
             this.setPoint.ResumeLayout(false);
             this.setPoint.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBox)).EndInit();
             this.startTesting.ResumeLayout(false);
             this.startTesting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.warning)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danger)).EndInit();
             this.getData.ResumeLayout(false);
             this.getData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupTest.ResumeLayout(false);
             this.manualDC.ResumeLayout(false);
             this.gbDMM.ResumeLayout(false);
             this.gbDMM.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).EndInit();
             this.statusDMM.ResumeLayout(false);
             this.statusDMM.PerformLayout();
             this.gbDC.ResumeLayout(false);
             this.gbDC.PerformLayout();
             this.statusDC.ResumeLayout(false);
             this.statusDC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).EndInit();
             this.setPointManual.ResumeLayout(false);
             this.setPointManual.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBoxManual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBoxManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).EndInit();
             this.testProgram.ResumeLayout(false);
             this.testProgram.PerformLayout();
             this.editSpecTest.ResumeLayout(false);
@@ -1887,6 +1927,17 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.delta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disConnect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.connect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danger)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1898,7 +1949,7 @@ namespace PE
         private System.Windows.Forms.ToolStripMenuItem fileSaveAs;
         private System.Windows.Forms.ToolStripMenuItem fileExit;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenu;
-        private System.Windows.Forms.ToolStripMenuItem helpInfo;
+        private System.Windows.Forms.ToolStripMenuItem helpSpec;
         public System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.PictureBox statusBox;
         private System.Windows.Forms.Label lblBaud;
@@ -2018,6 +2069,11 @@ namespace PE
         private System.Windows.Forms.DataGridViewTextBoxColumn measVolt;
         private System.Windows.Forms.DataGridViewTextBoxColumn res;
         private System.Windows.Forms.DataGridViewTextBoxColumn result;
+        private System.Windows.Forms.ToolStripMenuItem helpSpecBMW;
+        private System.Windows.Forms.ToolStripMenuItem helpSpecOBC;
+        private System.Windows.Forms.ToolStripMenuItem helpSpecDCB;
+        private System.Windows.Forms.ToolStripMenuItem helpSpec5DH;
+        private System.Windows.Forms.ToolStripMenuItem helpSpecNIS;
     }
 }
 

@@ -231,6 +231,11 @@
   <ItemGroup>
     <Content Include="icons8_electric_armature.ico" />
     <Content Include="icons8_quick_mode_on.ico" />
+    <None Include="Resources\badge\REN.png" />
+    <None Include="Resources\badge\NIS_32.png" />
+    <None Include="Resources\badge\REN_32.png" />
+    <None Include="Resources\badge\DAI_32.png" />
+    <None Include="Resources\badge\BMW_32.png" />
     <None Include="Resources\icons8_flammable_material_64.png" />
     <None Include="Resources\icons8_fire_hazard_64.png" />
     <None Include="Resources\icons8_voltmeter_64.png" />
