@@ -704,7 +704,8 @@ namespace PE
                 saveData.FileName = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
                 if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    workBook.SaveAs(@"D:\PE_DATA\" + saveData.FileName + ".xlsx");
+                    workBook.SaveAs(saveData.FileName);
+                    MessageBox.Show("Report Generated.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 app.Quit();
                 workBook = null;
@@ -1032,7 +1033,8 @@ namespace PE
                 saveData.FileName = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
                 if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    workBook.SaveAs(@"D:\PE_DATA\" + saveData.FileName + ".xlsx");
+                    workBook.SaveAs(saveData.FileName);
+                    MessageBox.Show("Report Generated.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 app.Quit();
                 workBook = null;
@@ -1131,5 +1133,6 @@ namespace PE
 //  - Add auto complete source tbSn and increase limit lenght -- OK 29/09/2021
 //  - Add Warning popup when turn on over 10 sec -- Remove
 //  - increase Contact pairs width cells -- OK 30/09/2021
+//  - Edit export button cannot export and add finish popup when export finish -- OK 30/09/2021
 
 
