@@ -46,7 +46,6 @@ namespace PE
             comPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(port_DataReceived_1);
             comPort2.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(port_DataReceived_2);
             dangerTime.Stop();
-            hotTime.Stop();
             toolStripStatusLabel.Text = "Device not connected";
         }
 
@@ -160,7 +159,6 @@ namespace PE
                 pushStart.Text = "Push foot button to Stop ...";
                 pushStart.ForeColor = Color.Red;
                 dangerTime.Start();
-                hotTime.Start();
                 toolStripStatusLabel.Text = "Testing...";
             }
             else if (rtbIncoming1.Text == "0\r\n")
@@ -177,7 +175,6 @@ namespace PE
                 pushStart.Text = "Push foot button to Start ...";
                 pushStart.ForeColor = Color.RoyalBlue;
                 dangerTime.Stop();
-                warningDialog.resultCloseWarning(DialogResult.Yes);
                 toolStripStatusLabel.Text = "Ready";
 
                 if (gridTable1.Rows[cntRow].Cells[0].Value != null)
@@ -619,14 +616,6 @@ namespace PE
         }
 
         /*====================================================================================================*/
-        /*-----------------------------------------Timer 10sec warning----------------------------------------*/
-        private void hotTime_Tick(object sender, EventArgs e)
-        {
-            warningDialog.Show("", "PE TESTING");
-            hotTime.Stop();
-        }
-
-        /*====================================================================================================*/
         /*----------------------------------------------Interface---------------------------------------------*/
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -634,7 +623,6 @@ namespace PE
             lblDCPort.Text = null;
             lblDMMPort.Text = null;
             dangerTime.Stop();
-            hotTime.Stop();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -906,7 +894,6 @@ namespace PE
                     setPoint.Enabled = true;
                     startTesting.Enabled = true;
                     manualDC.Enabled = true;
-                    hotTime.Stop();
 
                     //Inintial DC
                     comPort1.Write("*cls\r\n");
@@ -1142,6 +1129,7 @@ namespace PE
 //  - Add "'" before SN when export to Excel to keep in format -- OK 29/09/2021
 //  - Reset cntRow when Stop program -- OK 29/09/2021
 //  - Add auto complete source tbSn and increase limit lenght -- OK 29/09/2021
-//  - Add Warning popup when turn on over 10 sec -- OK 29/09/2021
+//  - Add Warning popup when turn on over 10 sec -- Remove
+//  - increase Contact pairs width cells -- OK 29/09/2021
 
 
