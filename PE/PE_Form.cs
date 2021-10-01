@@ -177,7 +177,7 @@ namespace PE
                 dangerTime.Stop();
                 toolStripStatusLabel.Text = "Ready";
 
-                if (gridTable1.Rows[cntRow].Cells[0].Value != null)
+                if (gridTable1.Rows[cntRow].Cells[0].Value != null)     //update cntRow
                 {
                     if (rtbIncoming2.Text != null)
                     {
@@ -211,6 +211,10 @@ namespace PE
                             gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
                             gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
                             cntRow++;
+                            if(gridTable1.Rows[cntRow].Cells[0].Value == null)
+                            {
+                                MessageBox.Show("Testing Done.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                         catch
                         {
@@ -220,7 +224,7 @@ namespace PE
                 }
                 else
                 {
-                    MessageBox.Show("Done !!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Testing Done.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -1162,5 +1166,6 @@ namespace PE
 //  - increase Contact pairs width cells -- OK 30/09/2021
 //  - Edit export button cannot export and add finish popup when export finish -- OK 30/09/2021
 //  - Add help >>> Spec (BMW,OBC,DCB,5DH,NISSAN) information dialog -- OK 30/09/2021
+//  - Add popup inform tester after the last test is finish (Testing Done.) -- OK 1/10/2021
 
 
