@@ -3,7 +3,7 @@
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 30/9/2021 08:13:00 PM
+//Last Modified On : 06/10/2021 14:11:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -317,11 +317,6 @@ namespace PE
             }
         }
 
-        private void tbSn_Click(object sender, EventArgs e)
-        {
-            tbSn.Text = null;
-        }
-
         private void confirmSelectBtn_Click(object sender, EventArgs e)
         {
             gridTable1.Rows.Clear();
@@ -360,10 +355,15 @@ namespace PE
 
                 //trim SN
                 trimSN = tbSn.Text.Substring(tbSn.Text.Length - 4);
+
+                //add sn to completelist
+                tbSn.AutoCompleteCustomSource.Add(tbSn.Text);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                confirmSelectBtn.Enabled = true;
             }
             workBook.Close();
             app.Quit();
@@ -905,6 +905,7 @@ namespace PE
                 startTool.Text = "Stop";
                 connect.Visible = true;
                 disConnect.Visible = false;
+                programList.SelectedItem = "BMW	- CCU";
                 toolStripStatusLabel.Text = "Ready";
 
                 //Port1-DC
@@ -1120,7 +1121,7 @@ namespace PE
     }
 }
 
-//Update : 30/9/2021 08:13:00 PM
+//Update : 06/10/2021 14:11:00 PM
 //Coming up Next--------------------------------
 //  - Insert data format each program to data table -- OK 1/9/2021
 //  - logging data as table to CSV -- OK 15/9/2021
@@ -1167,5 +1168,6 @@ namespace PE
 //  - Edit export button cannot export and add finish popup when export finish -- OK 30/09/2021
 //  - Add help >>> Spec (BMW,OBC,DCB,5DH,NISSAN) information dialog -- OK 30/09/2021
 //  - Add popup inform tester after the last test is finish (Testing Done.) -- OK 1/10/2021
+//  - Add auto complete SN and first program select -- OK 6/10/2021
 
 
