@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aboutPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aboutPE.Designer.cs">
+      <DependentUpon>aboutPE.cs</DependentUpon>
+    </Compile>
     <Compile Include="specDCB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="aboutPE.resx">
+      <DependentUpon>aboutPE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PE_Form.resx">
       <DependentUpon>PE_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +283,11 @@
     <None Include="Resources\icons8_ok_64.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\qr\line\Unitag_QRCode_1633566970790.png" />
+    <None Include="Resources\qr\outlook\Unitag_QRCode_1633567236824.png" />
+    <None Include="Resources\qr\user\Unitag_QRCode_1633567566589.png" />
+    <None Include="Resources\line.png" />
+    <None Include="Resources\pe.png" />
     <None Include="ext_Resources\file\specsheet\BM22.jpg" />
     <None Include="ext_Resources\file\specsheet\BM7.4.jpg" />
     <None Include="ext_Resources\file\specsheet\DCB2.0.jpg" />

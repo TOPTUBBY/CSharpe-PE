@@ -801,6 +801,12 @@ namespace PE
             specNIS.Show("Nissan OBC Specification");
         }
 
+        //Help >>> Info
+        private void helpInfo_Click(object sender, EventArgs e)
+        {
+            aboutPE.Show("About PE semi-auto testing");
+        }
+
         //Tool Strip
         //Start button
         private void startTool_Click(object sender, EventArgs e)
@@ -1169,5 +1175,6 @@ namespace PE
 //  - Add help >>> Spec (BMW,OBC,DCB,5DH,NISSAN) information dialog -- OK 30/09/2021
 //  - Add popup inform tester after the last test is finish (Testing Done.) -- OK 1/10/2021
 //  - Add auto complete SN and first program select -- OK 6/10/2021
+//  - Add aboutPE -- OK 7/10/2021
 
 

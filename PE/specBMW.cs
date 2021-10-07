@@ -2,8 +2,8 @@
 //FileName: specBMW.cs
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
-//Created On : 30/8/2021 15:58:00 PM
-//Last Modified On : 30/8/2021 15:58:00 PM
+//Created On : 1/10/2021 15:58:00 PM
+//Last Modified On : 1/10/2021 15:58:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

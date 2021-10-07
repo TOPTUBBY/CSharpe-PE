@@ -813,6 +813,16 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap line {
+            get {
+                object obj = ResourceManager.GetObject("line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NIS {
             get {
                 object obj = ResourceManager.GetObject("NIS", resourceCulture);
@@ -836,6 +846,26 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap OBC {
             get {
                 object obj = ResourceManager.GetObject("OBC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pe {
+            get {
+                object obj = ResourceManager.GetObject("pe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pe1 {
+            get {
+                object obj = ResourceManager.GetObject("pe1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -876,6 +906,36 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap REN2_32 {
             get {
                 object obj = ResourceManager.GetObject("REN2_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unitag_QRCode_1633566970790 {
+            get {
+                object obj = ResourceManager.GetObject("Unitag_QRCode_1633566970790", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unitag_QRCode_1633567236824 {
+            get {
+                object obj = ResourceManager.GetObject("Unitag_QRCode_1633567236824", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unitag_QRCode_1633567566589 {
+            get {
+                object obj = ResourceManager.GetObject("Unitag_QRCode_1633567566589", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

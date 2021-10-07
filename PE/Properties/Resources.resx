@@ -166,6 +166,9 @@
   <data name="icons8_info_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_info_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_delete_481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_delete_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -177,6 +180,9 @@
   </data>
   <data name="icons8_internet_of_things_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_internet_of_things_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_internet_of_things_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_internet_of_things_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_question_mark_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_question_mark_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +202,9 @@
   <data name="Artboard-56" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Artboard-56.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Unitag_QRCode_1633567236824" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\qr\outlook\Unitag_QRCode_1633567236824.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_circled_0_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_circled_0_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,8 +223,8 @@
   <data name="icons8_voltmeter_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_voltmeter_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_internet_of_things_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_internet_of_things_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="REN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ext_Resources\file\specsheet\REN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_about_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_about_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,14 +244,20 @@
   <data name="icons8_get_help_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_get_help_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BM22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ext_Resources\file\specsheet\BM22.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Artboard-56G" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Artboard-56G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_open_folder_in_new_tab_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_open_folder_in_new_tab_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Unitag_QRCode_1633567566589" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\qr\user\Unitag_QRCode_1633567566589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_voltmeter_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_voltmeter_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,14 +280,14 @@
   <data name="icons8_connected_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_connected_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_save_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_save_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_energy_meter_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_energy_meter_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BM7.4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ext_Resources\file\specsheet\BM7.4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_1st_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_1st_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,8 +295,8 @@
   <data name="icons8_voltmeter_642" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_voltmeter_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BM7.4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ext_Resources\file\specsheet\BM7.4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_circled_0_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_circled_0_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -343,6 +358,9 @@
   <data name="DCB1.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ext_Resources\file\specsheet\DCB1.2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_open_folder_in_new_tab_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_open_folder_in_new_tab_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_edit_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_edit_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -361,7 +379,7 @@
   <data name="icons8_manual_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_manual_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="REN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ext_Resources\file\specsheet\REN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Unitag_QRCode_1633566970790" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\qr\line\Unitag_QRCode_1633566970790.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

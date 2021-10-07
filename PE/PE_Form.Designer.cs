@@ -66,7 +66,7 @@ namespace PE
             this.helpSpecDCB = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSpecREN = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSpecNIS = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.serialPort = new System.Windows.Forms.GroupBox();
             this.statusBox = new System.Windows.Forms.PictureBox();
             this.lblBaud = new System.Windows.Forms.Label();
@@ -331,7 +331,7 @@ namespace PE
             // 
             this.helpToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpSpec,
-            this.helpHelp});
+            this.helpInfo});
             this.helpToolStripMenu.Name = "helpToolStripMenu";
             this.helpToolStripMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.helpToolStripMenu.Size = new System.Drawing.Size(44, 20);
@@ -347,7 +347,7 @@ namespace PE
             this.helpSpecNIS});
             this.helpSpec.Image = global::PE.Properties.Resources.icons8_about_32;
             this.helpSpec.Name = "helpSpec";
-            this.helpSpec.Size = new System.Drawing.Size(142, 22);
+            this.helpSpec.Size = new System.Drawing.Size(244, 22);
             this.helpSpec.Text = "Specification";
             // 
             // helpSpecBMW
@@ -390,13 +390,13 @@ namespace PE
             this.helpSpecNIS.Text = "Nissan-OBC";
             this.helpSpecNIS.Click += new System.EventHandler(this.helpSpecNIS_Click);
             // 
-            // helpHelp
+            // helpInfo
             // 
-            this.helpHelp.Image = global::PE.Properties.Resources.icons8_get_help_32;
-            this.helpHelp.Name = "helpHelp";
-            this.helpHelp.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.helpHelp.Size = new System.Drawing.Size(142, 22);
-            this.helpHelp.Text = "Help";
+            this.helpInfo.Name = "helpInfo";
+            this.helpInfo.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.helpInfo.Size = new System.Drawing.Size(244, 22);
+            this.helpInfo.Text = "About PE semi-auto testing";
+            this.helpInfo.Click += new System.EventHandler(this.helpInfo_Click);
             // 
             // serialPort
             // 
@@ -1991,7 +1991,7 @@ namespace PE
         public System.Windows.Forms.ToolStripButton homeTool;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem helpHelp;
+        private System.Windows.Forms.ToolStripMenuItem helpInfo;
         private System.Windows.Forms.ToolStripMenuItem fileSave;
         public System.Windows.Forms.DataGridView gridTable1;
         private System.Windows.Forms.GroupBox testData;
