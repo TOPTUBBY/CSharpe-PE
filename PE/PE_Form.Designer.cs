@@ -1526,7 +1526,6 @@ namespace PE
             this.programList.Items.AddRange(new object[] {
             "BMW\t- CCU",
             "DAIMLER\t- OBC",
-            "DAIMLER\t- OBC (PE_CHASSIS)",
             "DAIMLER\t- DC Box 1.2",
             "DAIMLER\t- DC Box 1.2H",
             "DAIMLER\t- DC Box 2.0",

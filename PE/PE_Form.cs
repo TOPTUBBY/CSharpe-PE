@@ -291,10 +291,6 @@ namespace PE
             {
                 projSheet = "DAI_OBC";
             }
-            else if (programName == "DAIMLER	- OBC (PE_CHASSIS)")
-            {
-                projSheet = "DAI_OBC(PE_CHASSIS)";
-            }
             else if (programName == "DAIMLER	- DC Box 1.2")
             {
                 projSheet = "DAI_DCB1.2";
