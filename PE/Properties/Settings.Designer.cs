@@ -25,13 +25,49 @@ namespace PE.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Setting {
+        [global::System.Configuration.DefaultSettingValueAttribute("21/07/2021")]
+        public string dcCalDate {
             get {
-                return ((string)(this["Setting"]));
+                return ((string)(this["dcCalDate"]));
             }
             set {
-                this["Setting"] = value;
+                this["dcCalDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20/07/2022")]
+        public string dcDueDate {
+            get {
+                return ((string)(this["dcDueDate"]));
+            }
+            set {
+                this["dcDueDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("01/02/2021")]
+        public string dmmCalDate {
+            get {
+                return ((string)(this["dmmCalDate"]));
+            }
+            set {
+                this["dmmCalDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("31/01/2022")]
+        public string dmmDueDate {
+            get {
+                return ((string)(this["dmmDueDate"]));
+            }
+            set {
+                this["dmmDueDate"] = value;
             }
         }
     }

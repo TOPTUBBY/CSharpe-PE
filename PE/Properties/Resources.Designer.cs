@@ -743,6 +743,16 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_timetable_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_timetable_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_toggle_off_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8_toggle_off_64", resourceCulture);

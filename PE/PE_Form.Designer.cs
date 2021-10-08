@@ -90,11 +90,12 @@ namespace PE
             this.dangerTime = new System.Windows.Forms.Timer(this.components);
             this.pushStart = new System.Windows.Forms.Label();
             this.startTesting = new System.Windows.Forms.GroupBox();
-            this.warning = new System.Windows.Forms.PictureBox();
+            this.btnCalDC = new System.Windows.Forms.Button();
             this.dangerOn = new System.Windows.Forms.PictureBox();
             this.danger = new System.Windows.Forms.PictureBox();
             this.comPort1 = new System.IO.Ports.SerialPort(this.components);
             this.getData = new System.Windows.Forms.GroupBox();
+            this.btnCalDMM = new System.Windows.Forms.Button();
             this.lblTestResult = new System.Windows.Forms.Label();
             this.dmm34401a = new System.Windows.Forms.PictureBox();
             this.lblVolt3 = new System.Windows.Forms.Label();
@@ -185,7 +186,6 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.currBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBox)).BeginInit();
             this.startTesting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.warning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danger)).BeginInit();
             this.getData.SuspendLayout();
@@ -659,7 +659,7 @@ namespace PE
             this.pushStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pushStart.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.pushStart.Location = new System.Drawing.Point(64, 28);
+            this.pushStart.Location = new System.Drawing.Point(72, 29);
             this.pushStart.Name = "pushStart";
             this.pushStart.Size = new System.Drawing.Size(297, 25);
             this.pushStart.TabIndex = 5;
@@ -668,7 +668,7 @@ namespace PE
             // 
             // startTesting
             // 
-            this.startTesting.Controls.Add(this.warning);
+            this.startTesting.Controls.Add(this.btnCalDC);
             this.startTesting.Controls.Add(this.dangerOn);
             this.startTesting.Controls.Add(this.pushStart);
             this.startTesting.Controls.Add(this.danger);
@@ -679,30 +679,29 @@ namespace PE
             this.startTesting.Size = new System.Drawing.Size(474, 218);
             this.startTesting.TabIndex = 6;
             this.startTesting.TabStop = false;
-            this.startTesting.Text = "Start testing (On/Off DC-Source Chroma 62000H )";
+            this.startTesting.Text = "Start testing (DC-Source Chroma 62000H )";
             // 
-            // warning
+            // btnCalDC
             // 
-            this.warning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.warning.ErrorImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.Image = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.InitialImage = global::PE.Properties.Resources.icons8_electricity_hazard_64;
-            this.warning.Location = new System.Drawing.Point(367, 23);
-            this.warning.Name = "warning";
-            this.warning.Size = new System.Drawing.Size(40, 36);
-            this.warning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.warning.TabIndex = 9;
-            this.warning.TabStop = false;
-            this.warning.Visible = false;
+            this.btnCalDC.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCalDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCalDC.Location = new System.Drawing.Point(393, 0);
+            this.btnCalDC.Name = "btnCalDC";
+            this.btnCalDC.Size = new System.Drawing.Size(75, 26);
+            this.btnCalDC.TabIndex = 6;
+            this.btnCalDC.TabStop = false;
+            this.btnCalDC.Text = "Calibration";
+            this.btnCalDC.UseVisualStyleBackColor = true;
+            this.btnCalDC.Click += new System.EventHandler(this.btnCalDC_Click);
             // 
             // dangerOn
             // 
             this.dangerOn.ErrorImage = global::PE.Properties.Resources.Artboard_56;
             this.dangerOn.Image = global::PE.Properties.Resources.Artboard_56;
             this.dangerOn.InitialImage = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.Location = new System.Drawing.Point(11, 64);
+            this.dangerOn.Location = new System.Drawing.Point(11, 65);
             this.dangerOn.Name = "dangerOn";
-            this.dangerOn.Size = new System.Drawing.Size(450, 148);
+            this.dangerOn.Size = new System.Drawing.Size(450, 147);
             this.dangerOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dangerOn.TabIndex = 4;
             this.dangerOn.TabStop = false;
@@ -729,6 +728,7 @@ namespace PE
             // 
             // getData
             // 
+            this.getData.Controls.Add(this.btnCalDMM);
             this.getData.Controls.Add(this.lblTestResult);
             this.getData.Controls.Add(this.dmm34401a);
             this.getData.Controls.Add(this.lblVolt3);
@@ -740,7 +740,20 @@ namespace PE
             this.getData.Size = new System.Drawing.Size(474, 218);
             this.getData.TabIndex = 6;
             this.getData.TabStop = false;
-            this.getData.Text = "Get data (Digital Multimeter - Keysight 34401a)";
+            this.getData.Text = "Get data (DMM - Keysight 34401a)";
+            // 
+            // btnCalDMM
+            // 
+            this.btnCalDMM.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCalDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnCalDMM.Location = new System.Drawing.Point(392, 0);
+            this.btnCalDMM.Name = "btnCalDMM";
+            this.btnCalDMM.Size = new System.Drawing.Size(75, 26);
+            this.btnCalDMM.TabIndex = 6;
+            this.btnCalDMM.TabStop = false;
+            this.btnCalDMM.Text = "Calibration";
+            this.btnCalDMM.UseVisualStyleBackColor = true;
+            this.btnCalDMM.Click += new System.EventHandler(this.btnCalDMM_Click);
             // 
             // lblTestResult
             // 
@@ -758,7 +771,7 @@ namespace PE
             this.dmm34401a.ErrorImage = global::PE.Properties.Resources._34401DMM;
             this.dmm34401a.Image = global::PE.Properties.Resources._34401DMM;
             this.dmm34401a.InitialImage = global::PE.Properties.Resources._34401DMM;
-            this.dmm34401a.Location = new System.Drawing.Point(133, 31);
+            this.dmm34401a.Location = new System.Drawing.Point(130, 29);
             this.dmm34401a.Name = "dmm34401a";
             this.dmm34401a.Size = new System.Drawing.Size(193, 76);
             this.dmm34401a.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1513,6 +1526,7 @@ namespace PE
             this.programList.Items.AddRange(new object[] {
             "BMW\t- CCU",
             "DAIMLER\t- OBC",
+            "DAIMLER\t- OBC (PE_CHASSIS)",
             "DAIMLER\t- DC Box 1.2",
             "DAIMLER\t- DC Box 1.2H",
             "DAIMLER\t- DC Box 2.0",
@@ -1900,7 +1914,6 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.voltBox)).EndInit();
             this.startTesting.ResumeLayout(false);
             this.startTesting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.warning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.danger)).EndInit();
             this.getData.ResumeLayout(false);
@@ -1998,7 +2011,6 @@ namespace PE
         public System.Windows.Forms.SaveFileDialog saveData;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.PictureBox delta;
-        private System.Windows.Forms.PictureBox warning;
         private System.Windows.Forms.ToolStripMenuItem configEdit;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.GroupBox testProgram;
@@ -2075,6 +2087,8 @@ namespace PE
         private System.Windows.Forms.ToolStripMenuItem helpSpecREN;
         private System.Windows.Forms.ToolStripMenuItem helpSpecNIS;
         public System.Windows.Forms.ComboBox programList;
+        public System.Windows.Forms.Button btnCalDC;
+        public System.Windows.Forms.Button btnCalDMM;
     }
 }
 

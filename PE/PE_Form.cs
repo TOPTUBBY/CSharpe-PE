@@ -24,6 +24,8 @@ namespace PE
         internal delegate void SerialDataReceivedEventHandlerDelegate(object sender, SerialDataReceivedEventArgs e);
         delegate void SetTextCallback(string text);
         string InputData = String.Empty;
+        calDC calDC = new calDC();
+        calDMM calDMM = new calDMM();
         _Application app;
         _Workbook workBook;
         _Worksheet workSheet;
@@ -38,7 +40,6 @@ namespace PE
         decimal resValue = 0;
         decimal currValue = 0;
         string resultValue;
-
 
         public peTest()
         {
@@ -170,7 +171,6 @@ namespace PE
                 fileSaveAs.Enabled = true;
                 exportTool.Enabled = true;
                 pushStart.Visible = true;
-                warning.Visible = false;
                 dangerOn.Visible = false;
                 pushStart.Text = "Push foot button to Start ...";
                 pushStart.ForeColor = Color.RoyalBlue;
@@ -291,6 +291,10 @@ namespace PE
             {
                 projSheet = "DAI_OBC";
             }
+            else if (programName == "DAIMLER	- OBC (PE_CHASSIS)")
+            {
+                projSheet = "DAI_OBC(PE_CHASSIS)";
+            }
             else if (programName == "DAIMLER	- DC Box 1.2")
             {
                 projSheet = "DAI_DCB1.2";
@@ -358,6 +362,7 @@ namespace PE
 
                 //add sn to completelist
                 tbSn.AutoCompleteCustomSource.Add(tbSn.Text);
+                
 
             }
             catch (Exception ex)
@@ -539,6 +544,15 @@ namespace PE
             comPort1.Write("0\r\n");
         }
 
+        //Cal date
+        private void btnCalDC_Click(object sender, EventArgs e)
+        {
+            calDC.ShowDialog();
+            Properties.Settings.Default.dcCalDate = calDC.mtbCalDate.Text;
+            Properties.Settings.Default.dcDueDate = calDC.mtbDueDate.Text;
+            Properties.Settings.Default.Save();
+        }
+
         /*--------------------------------------------Multimeter-------------------------------------------*/
         //Manual DMM --------------------------------------------------------------------------------------
         private void btnRemoteDMM_Click(object sender, EventArgs e)
@@ -598,8 +612,16 @@ namespace PE
             this.Text = "PE TESTING";
             valueDMM.Text = "---.---";
             pushStart.Visible = false;
-            warning.Visible = false;
             dangerOn.Visible = false;
+        }
+
+        //Cal date
+        private void btnCalDMM_Click(object sender, EventArgs e)
+        {
+            calDMM.ShowDialog();
+            Properties.Settings.Default.dmmCalDate = calDMM.mtbCalDate.Text;
+            Properties.Settings.Default.dmmDueDate = calDMM.mtbDueDate.Text;
+            Properties.Settings.Default.Save();
         }
 
         /*====================================================================================================*/
@@ -616,7 +638,6 @@ namespace PE
             }
             dangerOn.Visible = !dangerOn.Visible;
             pushStart.Visible = !pushStart.Visible;
-            warning.Visible = !warning.Visible;
         }
 
         /*====================================================================================================*/
@@ -685,10 +706,14 @@ namespace PE
                 workSheet.Cells[2, 2] = "'" + tbSn.Text;
                 workSheet.Cells[3, 1] = "Test Date";
                 workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                workSheet.Cells[4, 1] = "DC Cal.Date";
+                workSheet.Cells[4, 2] = Properties.Settings.Default.dcDueDate;
+                workSheet.Cells[5, 1] = "DMM Cal.Date";
+                workSheet.Cells[5, 2] = Properties.Settings.Default.dmmDueDate;
                 // header
                 for (int i = 1; i <= gridTable1.Columns.Count; i++)
                 {
-                    workSheet.Cells[4, i] = gridTable1.Columns[i - 1].HeaderText;
+                    workSheet.Cells[6, i] = gridTable1.Columns[i - 1].HeaderText;
                 }
 
                 // data
@@ -696,7 +721,7 @@ namespace PE
                 {
                     for (int j = 1; j <= gridTable1.Columns.Count; j++)
                     {
-                        workSheet.Cells[i + 4, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
+                        workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
                     }
                 }
                 string root = @"D:\PE_DATA";
@@ -851,7 +876,6 @@ namespace PE
                 setPoint.Enabled = false;
                 startTesting.Enabled = false;
                 pushStart.Visible = true;
-                warning.Visible = false;
                 dangerOn.Visible = false;
                 pushStart.Text = "Push foot button to Start ...";
                 pushStart.ForeColor = Color.RoyalBlue;
@@ -874,10 +898,14 @@ namespace PE
                     workSheet.Cells[2, 2] = "'" + tbSn.Text;
                     workSheet.Cells[3, 1] = "Test Date";
                     workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                    workSheet.Cells[4, 1] = "DC Cal.Date";
+                    workSheet.Cells[4, 2] = Properties.Settings.Default.dcDueDate;
+                    workSheet.Cells[5, 1] = "DMM Cal.Date";
+                    workSheet.Cells[5, 2] = Properties.Settings.Default.dmmDueDate;
                     // header
                     for (int i = 1; i <= gridTable1.Columns.Count; i++)
                     {
-                        workSheet.Cells[4, i] = gridTable1.Columns[i - 1].HeaderText;
+                        workSheet.Cells[6, i] = gridTable1.Columns[i - 1].HeaderText;
                     }
 
                     // data
@@ -885,7 +913,7 @@ namespace PE
                     {
                         for (int j = 1; j <= gridTable1.Columns.Count; j++)
                         {
-                            workSheet.Cells[i + 4, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
+                            workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
                         }
                     }
                     string root = @"D:\PE_DATA";
@@ -1048,10 +1076,14 @@ namespace PE
                 workSheet.Cells[2, 2] = "'" + tbSn.Text;
                 workSheet.Cells[3, 1] = "Test Date";
                 workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                workSheet.Cells[4, 1] = "DC Cal.Date";
+                workSheet.Cells[4, 2] = Properties.Settings.Default.dcDueDate;
+                workSheet.Cells[5, 1] = "DMM Cal.Date";
+                workSheet.Cells[5, 2] = Properties.Settings.Default.dmmDueDate;
                 // header
                 for (int i = 1; i <= gridTable1.Columns.Count; i++)
                 {
-                    workSheet.Cells[4, i] = gridTable1.Columns[i - 1].HeaderText;
+                    workSheet.Cells[6, i] = gridTable1.Columns[i - 1].HeaderText;
                 }
 
                 // data
@@ -1059,7 +1091,7 @@ namespace PE
                 {
                     for (int j = 1; j <= gridTable1.Columns.Count; j++)
                     {
-                        workSheet.Cells[i + 4, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
+                        workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
                     }
                 }
                 string root = @"D:\PE_DATA";
@@ -1176,5 +1208,7 @@ namespace PE
 //  - Add popup inform tester after the last test is finish (Testing Done.) -- OK 1/10/2021
 //  - Add auto complete SN and first program select -- OK 6/10/2021
 //  - Add aboutPE -- OK 7/10/2021
+//  - Add button to cal date <--> setting.default -- OK 8/10/2021
+//  - Edit dataGrid1 auto scroll
 
 

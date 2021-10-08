@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PE.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="dcCalDate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">21/07/2021</Value>
+    </Setting>
+    <Setting Name="dcDueDate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">20/07/2022</Value>
+    </Setting>
+    <Setting Name="dmmCalDate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">01/02/2021</Value>
+    </Setting>
+    <Setting Name="dmmDueDate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">31/01/2022</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

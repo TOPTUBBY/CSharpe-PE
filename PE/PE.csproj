@@ -57,6 +57,18 @@
     <Compile Include="aboutPE.Designer.cs">
       <DependentUpon>aboutPE.cs</DependentUpon>
     </Compile>
+    <Compile Include="calDMM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="calDMM.Designer.cs">
+      <DependentUpon>calDMM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calDC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="calDC.Designer.cs">
+      <DependentUpon>calDC.cs</DependentUpon>
+    </Compile>
     <Compile Include="specDCB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="aboutPE.resx">
       <DependentUpon>aboutPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calDMM.resx">
+      <DependentUpon>calDMM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calDC.resx">
+      <DependentUpon>calDC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PE_Form.resx">
       <DependentUpon>PE_Form.cs</DependentUpon>
@@ -283,6 +301,7 @@
     <None Include="Resources\icons8_ok_64.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8_timetable_64.png" />
     <None Include="Resources\qr\line\Unitag_QRCode_1633566970790.png" />
     <None Include="Resources\qr\outlook\Unitag_QRCode_1633567236824.png" />
     <None Include="Resources\qr\user\Unitag_QRCode_1633567566589.png" />
