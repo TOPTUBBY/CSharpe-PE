@@ -650,7 +650,7 @@ namespace PE
             // dangerTime
             // 
             this.dangerTime.Enabled = true;
-            this.dangerTime.Interval = 600;
+            this.dangerTime.Interval = 650;
             this.dangerTime.Tick += new System.EventHandler(this.dangerTime_Tick);
             // 
             // pushStart
@@ -809,7 +809,7 @@ namespace PE
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.toolStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1043,7 +1043,7 @@ namespace PE
             this.tbCommandDMM.Name = "tbCommandDMM";
             this.tbCommandDMM.Size = new System.Drawing.Size(255, 26);
             this.tbCommandDMM.TabIndex = 4;
-            this.tbCommandDMM.Text = "*IDN?";
+            this.tbCommandDMM.Text = "*CLS";
             this.tbCommandDMM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDMM_KeyDown);
             // 
             // lblDMMPort
@@ -1217,7 +1217,7 @@ namespace PE
             this.tbCommandDC.Name = "tbCommandDC";
             this.tbCommandDC.Size = new System.Drawing.Size(255, 26);
             this.tbCommandDC.TabIndex = 4;
-            this.tbCommandDC.Text = "*IDN?";
+            this.tbCommandDC.Text = "*CLS";
             this.tbCommandDC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDC_KeyDown);
             // 
             // tbIdentDC
