@@ -4,6 +4,7 @@ bool button_status_1;
 int count;
 int count_1;
 String c = "";
+String d = "";
 String command = "";
 
 void setup() {
@@ -66,16 +67,19 @@ void loop() {
       String setType = c.substring(0, 1);
       String setValue = c.substring(2, 5);  //recieve max 999
       if (setType == "v") {
-        Serial1.println("SOURce:VOLTage " + setValue);
-        delay(1000);
-        Serial1.println("*cls");
+        Serial1.println("sour:volt " + setValue);
+        delay(500);
       } else if (setType == "a") {
         Serial1.println("SOURce:CURRent " + setValue);
-        delay(1000);
-        Serial1.println("*cls");
+        delay(500);
       }
       //send to DC directly--------------------
       Serial1.println(c);
+      d = Serial1.readString();
+      //delay(500);
+      Serial.println(d);
+      Serial1.println("*cls");
+      
     }
   }
 }
