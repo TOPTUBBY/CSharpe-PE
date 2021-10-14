@@ -452,8 +452,9 @@ namespace PE
         {
             try
             {
-                comPort1.Write("*idn?\r\n");
-                System.Threading.Thread.Sleep(2000);    //Delay command 2 sec
+                tbIdentDC.Text = "CHROMA ATE,62100H-40,00118,02.21";        //Manual
+                /*comPort1.Write("*idn?\r\n");
+                System.Threading.Thread.Sleep(2000);    //Delay command 2 sec*/
                 comPort1.Write("comf:rem\r\n");
             }
             catch

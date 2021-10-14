@@ -1043,7 +1043,7 @@ namespace PE
             this.tbCommandDMM.Name = "tbCommandDMM";
             this.tbCommandDMM.Size = new System.Drawing.Size(255, 26);
             this.tbCommandDMM.TabIndex = 4;
-            this.tbCommandDMM.Text = "*CLS";
+            this.tbCommandDMM.Text = "Enter Command";
             this.tbCommandDMM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDMM_KeyDown);
             // 
             // lblDMMPort
@@ -1208,6 +1208,8 @@ namespace PE
             "CONF:REM OFF",
             "CONF:OUTP ON",
             "CONF:OUTP OFF",
+            "CONF:OUTP?",
+            "CONF:REM?",
             "SOUR:VOLT?",
             "SOUR:CURR?"});
             this.tbCommandDC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -1217,7 +1219,7 @@ namespace PE
             this.tbCommandDC.Name = "tbCommandDC";
             this.tbCommandDC.Size = new System.Drawing.Size(255, 26);
             this.tbCommandDC.TabIndex = 4;
-            this.tbCommandDC.Text = "*CLS";
+            this.tbCommandDC.Text = "Enter Command";
             this.tbCommandDC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDC_KeyDown);
             // 
             // tbIdentDC
