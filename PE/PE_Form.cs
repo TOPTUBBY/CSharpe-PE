@@ -358,8 +358,6 @@ namespace PE
 
                 //add sn to completelist
                 tbSn.AutoCompleteCustomSource.Add(tbSn.Text);
-                
-
             }
             catch (Exception ex)
             {
@@ -691,6 +689,7 @@ namespace PE
         //File Save As Menu
         private void fileSaveAs_Click(object sender, EventArgs e)
         {
+            //Excel Manage
             try
             {
                 workBook = app.Workbooks.Add(1);
@@ -721,6 +720,8 @@ namespace PE
                         workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
                     }
                 }
+
+                workSheet.Columns.AutoFit();
                 string root = @"D:\PE_DATA";
                 // If directory does not exist, create it. 
                 if (!Directory.Exists(root))
@@ -884,12 +885,12 @@ namespace PE
                 editSpecTest.Enabled = false;
 
                 //Auto Export
+                //Excel Manage
                 try
                 {
                     workBook = app.Workbooks.Add(1);
                     workSheet = workBook.ActiveSheet;
                     workSheet.Name = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-
                     workSheet.Cells[1, 1] = "Project";
                     workSheet.Cells[1, 2] = programList.Text;
                     workSheet.Cells[2, 1] = "Serial No.";
@@ -914,6 +915,17 @@ namespace PE
                             workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
                         }
                     }
+
+                    //Cell merge
+                    /*workSheet.Columns["D"].Insert();
+                    workSheet.Columns["D"].Insert();
+                    workSheet.Columns["D"].Insert();
+                    for (int i = 1; i <= gridTable1.Rows.Count + 5; i++)
+                    {
+                        workSheet.Range[workSheet.Cells[i, 3], workSheet.Cells[i, 6]].Merge();
+                    }*/
+
+                    workSheet.Columns.AutoFit();
                     string root = @"D:\PE_DATA";
                     // If directory does not exist, create it. 
                     if (!Directory.Exists(root))
@@ -1063,6 +1075,7 @@ namespace PE
         //Export button
         private void exportTool_Click(object sender, EventArgs e)
         {
+            //Excel Manage
             try
             {
                 workBook = app.Workbooks.Add(1);
@@ -1093,6 +1106,7 @@ namespace PE
                         workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
                     }
                 }
+                workSheet.Columns.AutoFit();
                 string root = @"D:\PE_DATA";
                 // If directory does not exist, create it. 
                 if (!Directory.Exists(root))
