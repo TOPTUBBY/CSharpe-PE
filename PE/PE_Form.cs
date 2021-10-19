@@ -847,6 +847,7 @@ namespace PE
                 cntRow = 0;
                 startTool.Image = new Bitmap(PE.Properties.Resources.icons8_conflict_48);
                 startTool.Text = "Start";
+                startTool.ToolTipText = "Click to start program.";
 
                 //Port1-DC
                 comPort1.RtsEnable = false;
@@ -934,6 +935,7 @@ namespace PE
             {
                 startTool.Image = new Bitmap(PE.Properties.Resources.icons8_full_stop_48);
                 startTool.Text = "Stop";
+                startTool.ToolTipText = "Click to stop program and export data.";
                 connect.Visible = true;
                 disConnect.Visible = false;
                 programList.SelectedItem = "BMW	- CCU";
