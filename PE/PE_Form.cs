@@ -3,7 +3,7 @@
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 11/10/2021 19:26:00 PM
+//Last Modified On : 22/10/2021 18:09:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -354,7 +354,14 @@ namespace PE
                 setPoint.Enabled = true;
 
                 //trim SN
-                trimSN = tbSn.Text.Substring(tbSn.Text.Length - 4);
+                try
+                {
+                    trimSN = tbSn.Text.Substring(tbSn.Text.Length - 6);
+                }
+                catch
+                {
+
+                }
 
                 //add sn to completelist
                 tbSn.AutoCompleteCustomSource.Add(tbSn.Text);
@@ -1172,7 +1179,7 @@ namespace PE
     }
 }
 
-//Update : 11/10/2021 19:26:00 PM
+//Update : 22/10/2021 18:09:00 PM
 //Coming up Next--------------------------------
 //  - Insert data format each program to data table -- OK 1/9/2021
 //  - logging data as table to CSV -- OK 15/9/2021
@@ -1224,5 +1231,6 @@ namespace PE
 //  - Add button to cal date <--> setting.default -- OK 8/10/2021
 //  - Edit dataGrid1 auto scroll
 //  - Increase timer 600-->650 to avoid DMM error -- OK 11/10/2021
+//  - Add try catch to tbSN -- OK 22/10/2021
 
 
