@@ -327,7 +327,7 @@ namespace PE
                 setPoint.Enabled = false;
 
                 app = new Microsoft.Office.Interop.Excel.Application();
-                workBook = app.Workbooks.Open(@"D:/pe_database.xlsx");
+                workBook = app.Workbooks.Open(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\pe_database.xlsx");
                 workSheet = workBook.Worksheets[projSheet];
                 range = workSheet.UsedRange;
 
@@ -801,7 +801,7 @@ namespace PE
         private void databaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             app = new Microsoft.Office.Interop.Excel.Application();
-            workBook = app.Workbooks.Open(@"D:/pe_database.xlsx");
+            workBook = app.Workbooks.Open(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\pe_database.xlsx");
             app.Visible = true;
         }
 
@@ -1060,7 +1060,7 @@ namespace PE
         private void databaseTool_Click(object sender, EventArgs e)
         {
             app = new Microsoft.Office.Interop.Excel.Application();
-            workBook = app.Workbooks.Open(@"D:/pe_database.xlsx");
+            workBook = app.Workbooks.Open(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\pe_database.xlsx");
             app.Visible = true;
         }
 
