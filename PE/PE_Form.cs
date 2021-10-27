@@ -3,7 +3,7 @@
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 22/10/2021 18:09:00 PM
+//Last Modified On : 27/10/2021 14:02:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,7 +20,7 @@ namespace PE
 {
     public partial class peTest : Form
     {
-        IniFile ini = new IniFile(@"D:\\config.ini");
+        IniFile ini = new IniFile(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\config.ini");
         internal delegate void SerialDataReceivedEventHandlerDelegate(object sender, SerialDataReceivedEventArgs e);
         delegate void SetTextCallback(string text);
         string InputData = String.Empty;
@@ -764,7 +764,7 @@ namespace PE
         //Config port Menu 
         private void configPort_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"D:/config.ini");
+            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\config.ini");
         }
 
         //Config edit Menu
@@ -1179,7 +1179,7 @@ namespace PE
     }
 }
 
-//Update : 22/10/2021 18:09:00 PM
+//Update : 27/10/2021 14:02:00 PM
 //Coming up Next--------------------------------
 //  - Insert data format each program to data table -- OK 1/9/2021
 //  - logging data as table to CSV -- OK 15/9/2021
