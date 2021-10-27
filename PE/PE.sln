@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PE", "PE.csproj", "{688092B5-78E0-4C6B-AF85-8ACADC8A5FED}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PESAT", "..\PESAT\PESAT.vdproj", "{5AE620B0-CDDB-4D65-AE15-F06C2FF36E08}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PESAT", "..\PESAT\PESAT.vdproj", "{B234F88C-2992-4055-AF39-8D6CFEB03458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{688092B5-78E0-4C6B-AF85-8ACADC8A5FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{688092B5-78E0-4C6B-AF85-8ACADC8A5FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{688092B5-78E0-4C6B-AF85-8ACADC8A5FED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5AE620B0-CDDB-4D65-AE15-F06C2FF36E08}.Debug|Any CPU.ActiveCfg = Debug
-		{5AE620B0-CDDB-4D65-AE15-F06C2FF36E08}.Release|Any CPU.ActiveCfg = Release
+		{B234F88C-2992-4055-AF39-8D6CFEB03458}.Debug|Any CPU.ActiveCfg = Debug
+		{B234F88C-2992-4055-AF39-8D6CFEB03458}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
