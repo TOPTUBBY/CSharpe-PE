@@ -283,9 +283,17 @@ namespace PE
         private void programList_SelectionChangeCommitted(object sender, EventArgs e)
         {
             programName = programList.Text;
-            if (programName == "BMW	- CCU")
+            if (programName == "BMW	- CCU L 7.4kW")
             {
-                projSheet = "BMW";
+                projSheet = "7.4kW_CCU_L";
+            }
+            else if (programName == "BMW	- CCU S 7.4kW")
+            {
+                projSheet = "7.4kW_CCU_S";
+            }
+            else if (programName == "BMW	- CCU L 22kW")
+            {
+                projSheet = "22kW_CCU_L";
             }
             else if (programName == "DAIMLER	- OBC")
             {

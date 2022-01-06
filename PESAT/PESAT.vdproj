@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_111A690043D3472D873DBF8A320833F1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_29F60562964348848C84BB03093647C4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,6 +34,12 @@
         "Entry"
         {
         "MsmKey" = "8:_4ED84776CF554B64A439806F717E0B1F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_53BE8DA517854782929CA3C0FFA89E49"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -187,6 +187,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -203,6 +219,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -232,26 +256,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_111A690043D3472D873DBF8A320833F1"
-            {
-            "SourcePath" = "8:..\\PE\\ext_Resources\\file\\pe_database.xlsx"
-            "TargetName" = "8:pe_database.xlsx"
-            "Tag" = "8:"
-            "Folder" = "8:_62A6D002FB074A0C890DE187A02F1877"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_29F60562964348848C84BB03093647C4"
             {
             "SourcePath" = "8:..\\PE\\ext_Resources\\file\\config.ini"
@@ -318,6 +322,26 @@
             "TargetName" = "8:DCB2.0.xls"
             "Tag" = "8:"
             "Folder" = "8:_B7B39F7E06754D94A1207DFD022A5D03"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_53BE8DA517854782929CA3C0FFA89E49"
+            {
+            "SourcePath" = "8:..\\PE\\ext_Resources\\file\\pe_database.xlsx"
+            "TargetName" = "8:pe_database.xlsx"
+            "Tag" = "8:"
+            "Folder" = "8:_62A6D002FB074A0C890DE187A02F1877"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -802,7 +826,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PESAT"
         "ProductCode" = "8:{DADE1327-4E99-4382-A229-AC073BD0891A}"
-        "PackageCode" = "8:{13B4032A-1A72-4C08-94A7-8CD364A7739A}"
+        "PackageCode" = "8:{DBD89B4B-FE02-459E-89AE-7E421A4282EF}"
         "UpgradeCode" = "8:{045FE00C-6F7A-434E-A0EE-9B3BB6A98621}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -813,7 +837,7 @@
         "Manufacturer" = "8:Delta Electronics (Thailand) Public Co.,Ltd"
         "ARPHELPTELEPHONE" = "8:ext.6787"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:PESAT 1.9.2"
+        "Title" = "8:PESAT 1.10.4"
         "Subject" = "8:Automotive Software DET5"
         "ARPCONTACT" = "8:Patiphan Phakdeeburi"
         "Keywords" = "8:PE"
