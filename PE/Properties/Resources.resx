@@ -178,6 +178,9 @@
   <data name="icons8_delete_481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_delete_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_insert_button_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_insert_button_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_microsoft_excel_2019_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_microsoft_excel_2019_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,14 +202,11 @@
   <data name="icons8_checked_radio_button_481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_checked_radio_button_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_delete_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_delete_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_circled_2_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_circled_2_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Artboard-56" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Artboard-56.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_delete_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_delete_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Unitag_QRCode_1633567236824" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\qr\outlook\Unitag_QRCode_1633567236824.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -216,6 +216,9 @@
   </data>
   <data name="icons8_home_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_home_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_user_manual_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_user_manual_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_manual_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_manual_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -228,6 +231,9 @@
   </data>
   <data name="Unitag_QRCode_1633566970790" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\qr\line\Unitag_QRCode_1633566970790.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_manual_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_manual_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_voltmeter_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_voltmeter_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,8 +313,8 @@
   <data name="icons8_circled_0_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_circled_0_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_insert_button_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_insert_button_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Artboard-56" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Artboard-56.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_toggle_on_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_toggle_on_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -385,7 +391,7 @@
   <data name="icons8_manual_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_manual_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_manual_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_manual_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_work_instructions_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_work_instructions_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

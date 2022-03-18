@@ -3,11 +3,12 @@
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 27/10/2021 14:02:00 PM
+//Last Modified On : 18/03/2022 14:02:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 using Microsoft.Office.Interop.Excel;
+using Microsoft.VisualBasic;
 using System;
 using System.Drawing;
 using System.IO;
@@ -20,7 +21,7 @@ namespace PE
 {
     public partial class peTest : Form
     {
-        IniFile ini = new IniFile(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\config.ini");
+        IniFile ini = new IniFile(@"D:\Automotive_Software_DET5\PESAT\database\config.ini");
         internal delegate void SerialDataReceivedEventHandlerDelegate(object sender, SerialDataReceivedEventArgs e);
         delegate void SetTextCallback(string text);
         string InputData = String.Empty;
@@ -31,7 +32,6 @@ namespace PE
         _Worksheet workSheet;
         Range range;
         string projSheet;
-        string programName;
         string trimSN;
         int cntRow = 0;
         decimal resMax = 0;
@@ -211,7 +211,7 @@ namespace PE
                             gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
                             gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
                             cntRow++;
-                            if(gridTable1.Rows[cntRow].Cells[0].Value == null)
+                            if (gridTable1.Rows[cntRow].Cells[0].Value == null)
                             {
                                 MessageBox.Show("Testing Done.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -282,47 +282,7 @@ namespace PE
         //Auto insert program
         private void programList_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            programName = programList.Text;
-            if (programName == "BMW	- CCU L 7.4kW")
-            {
-                projSheet = "7.4kW_CCU_L";
-            }
-            else if (programName == "BMW	- CCU S 7.4kW")
-            {
-                projSheet = "7.4kW_CCU_S";
-            }
-            else if (programName == "BMW	- CCU L 22kW")
-            {
-                projSheet = "22kW_CCU_L";
-            }
-            else if (programName == "DAIMLER	- OBC")
-            {
-                projSheet = "DAI_OBC";
-            }
-            else if (programName == "DAIMLER	- DC Box 1.2")
-            {
-                projSheet = "DAI_DCB1.2";
-            }
-            else if (programName == "DAIMLER	- DC Box 1.2H")
-            {
-                projSheet = "DAI_DCB1.2H";
-            }
-            else if (programName == "DAIMLER	- DC Box 2.0")
-            {
-                projSheet = "DAI_DCB2.0";
-            }
-            else if (programName == "RENAULT	- 5DH")
-            {
-                projSheet = "REN_5DH";
-            }
-            else if (programName == "NISSAN	- OBC")
-            {
-                projSheet = "NISSAN_OBC";
-            }
-            else
-            {
-                projSheet = "CUSTOM";
-            }
+            projSheet = programList.Text;
         }
 
         private void confirmSelectBtn_Click(object sender, EventArgs e)
@@ -335,7 +295,7 @@ namespace PE
                 setPoint.Enabled = false;
 
                 app = new Microsoft.Office.Interop.Excel.Application();
-                workBook = app.Workbooks.Open(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\pe_database.xlsx");
+                workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
                 workSheet = workBook.Worksheets[projSheet];
                 range = workSheet.UsedRange;
 
@@ -374,9 +334,8 @@ namespace PE
                 //add sn to completelist
                 tbSn.AutoCompleteCustomSource.Add(tbSn.Text);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 confirmSelectBtn.Enabled = true;
             }
             workBook.Close();
@@ -386,6 +345,19 @@ namespace PE
         //Manual insert program
         private void insertBtn_Click(object sender, EventArgs e)
         {
+            /*//Add new program in programList
+            string message, title;
+            object newProgram;
+
+            message = "Please input new test program name.";
+            title = "New program insert.";
+            newProgram = Interaction.InputBox(message, title, default);
+
+            if ((string)newProgram != "")
+            {
+                programList.Items.Insert(0, newProgram);
+            }*/
+
             gridTable1.Rows.Clear();
             foreach (DataGridViewRow row in gridTable2.Rows)
             {
@@ -400,6 +372,7 @@ namespace PE
             testData.Visible = true;
             editSpecTest.Visible = false;
             serialPort.Visible = false;
+            programList.SelectedIndex = 0;
 
             //Enable test
             setPoint.Enabled = true;
@@ -407,7 +380,12 @@ namespace PE
             getData.Enabled = true;
         }
 
-        private void cleatBtn_Click(object sender, EventArgs e)
+        private void delProgBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
         {
             gridTable2.Rows.Clear();
         }
@@ -772,7 +750,7 @@ namespace PE
         //Config port Menu 
         private void configPort_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\config.ini");
+            System.Diagnostics.Process.Start(@"D:\Automotive_Software_DET5\PESAT\database\config.ini");
         }
 
         //Config edit Menu
@@ -809,7 +787,7 @@ namespace PE
         private void databaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             app = new Microsoft.Office.Interop.Excel.Application();
-            workBook = app.Workbooks.Open(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\pe_database.xlsx");
+            workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
             app.Visible = true;
         }
 
@@ -837,6 +815,30 @@ namespace PE
         private void helpSpecNIS_Click(object sender, EventArgs e)
         {
             specNIS.Show("Nissan OBC Specification");
+        }
+
+        //Help >>> Equipment manual
+        private void helpEqManDC_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"D:\Automotive_Software_DET5\PESAT\manual\62000h_series.pdf");
+        }
+
+        private void helpEqManDMM_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"D:\Automotive_Software_DET5\PESAT\manual\34460a-34461a-34465a-34470a_manual.pdf");
+        }
+
+        //Help >>> PE Testing manual
+        private void helpPEMan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"D:\Automotive_Software_DET5\PESAT\manual\PESAT_manual.pdf");
+            }
+            catch
+            {
+                MessageBox.Show("Under preparing process.", "Sorry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         //Help >>> Info
@@ -953,7 +955,7 @@ namespace PE
                     workBook = null;
                     workSheet = null;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     //MessageBox.Show(ex.Message);
                 }
@@ -965,7 +967,6 @@ namespace PE
                 startTool.ToolTipText = "Click to stop program and export data.";
                 connect.Visible = true;
                 disConnect.Visible = false;
-                programList.SelectedItem = "BMW	- CCU";
                 toolStripStatusLabel.Text = "Ready";
 
                 //Port1-DC
@@ -1032,6 +1033,29 @@ namespace PE
                     lblDMMPort.Text = comPort2.PortName + "," + comPort2.BaudRate;
                     lblDMMPort.BackColor = Color.Red;
                 }
+
+                //Pull test program from database.xlsx
+                try
+                {
+                    programList.Items.Clear();
+                    app = new Microsoft.Office.Interop.Excel.Application();
+                    workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
+
+                    String[] excelSheets = new String[workBook.Worksheets.Count];
+                    int i = 0;
+                    foreach (Worksheet sheet in workBook.Worksheets)
+                    {
+                        excelSheets[i] = sheet.Name;
+                        programList.Items.Add(excelSheets[i]);
+                        i++;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Program can't listed the test sequence in the database. Please check database file.");
+                    workBook.Close();
+                }
+                workBook.Close();
             }
         }
 
@@ -1068,7 +1092,7 @@ namespace PE
         private void databaseTool_Click(object sender, EventArgs e)
         {
             app = new Microsoft.Office.Interop.Excel.Application();
-            workBook = app.Workbooks.Open(@"C:\Program Files (x86)\Delta Electronics (Thailand) Public Co.,Ltd\PESAT\database\pe_database.xlsx");
+            workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
             app.Visible = true;
         }
 

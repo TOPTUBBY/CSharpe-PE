@@ -783,6 +783,16 @@ namespace PE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_manual_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_user_manual_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_voltage_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8_voltage_64", resourceCulture);
@@ -826,6 +836,16 @@ namespace PE.Properties {
         internal static System.Drawing.Bitmap icons8_voltmeter_642 {
             get {
                 object obj = ResourceManager.GetObject("icons8_voltmeter_642", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_work_instructions_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_work_instructions_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

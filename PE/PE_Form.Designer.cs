@@ -50,25 +50,11 @@ namespace PE
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ms = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.configToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.configPort = new System.Windows.Forms.ToolStripMenuItem();
-            this.configEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.configManualDC = new System.Windows.Forms.ToolStripMenuItem();
-            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpSpec = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpSpecBMW = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpSpecOBC = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpSpecDCB = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpSpecREN = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpSpecNIS = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpPEMan = new System.Windows.Forms.ToolStripMenuItem();
             this.helpInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.serialPort = new System.Windows.Forms.GroupBox();
-            this.statusBox = new System.Windows.Forms.PictureBox();
             this.lblBaud = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
             this.rtbIncoming2 = new System.Windows.Forms.RichTextBox();
@@ -91,39 +77,28 @@ namespace PE
             this.pushStart = new System.Windows.Forms.Label();
             this.startTesting = new System.Windows.Forms.GroupBox();
             this.btnCalDC = new System.Windows.Forms.Button();
-            this.dangerOn = new System.Windows.Forms.PictureBox();
-            this.danger = new System.Windows.Forms.PictureBox();
             this.comPort1 = new System.IO.Ports.SerialPort(this.components);
             this.getData = new System.Windows.Forms.GroupBox();
             this.btnCalDMM = new System.Windows.Forms.Button();
             this.lblTestResult = new System.Windows.Forms.Label();
-            this.dmm34401a = new System.Windows.Forms.PictureBox();
             this.lblVolt3 = new System.Windows.Forms.Label();
+            this.btnClearDMM = new System.Windows.Forms.Button();
             this.value = new System.Windows.Forms.Label();
             this.ts = new System.Windows.Forms.ToolStrip();
-            this.startTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.homeTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.editTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.manualTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.databaseTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.exportTool = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.shutdownTool = new System.Windows.Forms.ToolStripButton();
             this.groupTest = new System.Windows.Forms.GroupBox();
             this.manualDC = new System.Windows.Forms.GroupBox();
             this.gbDMM = new System.Windows.Forms.GroupBox();
-            this.pbDMM = new System.Windows.Forms.PictureBox();
             this.statusDMM = new System.Windows.Forms.GroupBox();
             this.tbCommandDMM = new System.Windows.Forms.TextBox();
             this.lblDMMPort = new System.Windows.Forms.Label();
             this.tbIdentDMM = new System.Windows.Forms.TextBox();
             this.btnRemoteDMM = new System.Windows.Forms.Button();
-            this.btnClearDMM = new System.Windows.Forms.Button();
             this.valueDMM = new System.Windows.Forms.Label();
             this.btnStopMeasure = new System.Windows.Forms.Button();
             this.btnStartMeasure = new System.Windows.Forms.Button();
@@ -137,28 +112,23 @@ namespace PE
             this.lblDCPort = new System.Windows.Forms.Label();
             this.btnRemoteDC = new System.Windows.Forms.Button();
             this.btnClearDC = new System.Windows.Forms.Button();
-            this.btnToggleOff = new System.Windows.Forms.PictureBox();
-            this.btnToggleOn = new System.Windows.Forms.PictureBox();
-            this.pbDC = new System.Windows.Forms.PictureBox();
             this.setPointManual = new System.Windows.Forms.GroupBox();
             this.currBoxManual = new System.Windows.Forms.NumericUpDown();
             this.voltBoxManual = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSetCurrManual = new System.Windows.Forms.Button();
             this.btnSetVoltManual = new System.Windows.Forms.Button();
             this.lblCurrManual = new System.Windows.Forms.Label();
             this.lblCurrManual2 = new System.Windows.Forms.Label();
             this.lblVoltManual2 = new System.Windows.Forms.Label();
             this.lblVoltManual = new System.Windows.Forms.Label();
-            this.pbDMMSign = new System.Windows.Forms.PictureBox();
-            this.pbDCSign = new System.Windows.Forms.PictureBox();
             this.testProgram = new System.Windows.Forms.GroupBox();
             this.tbSn = new System.Windows.Forms.TextBox();
-            this.confirmSelectBtn = new System.Windows.Forms.Button();
             this.lblSn = new System.Windows.Forms.Label();
             this.lblSelectProgram = new System.Windows.Forms.Label();
             this.programList = new System.Windows.Forms.ComboBox();
             this.editSpecTest = new System.Windows.Forms.GroupBox();
-            this.cleatBtn = new System.Windows.Forms.Button();
+            this.delProgBtn = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.insertBtn = new System.Windows.Forms.Button();
             this.gridTable2 = new System.Windows.Forms.DataGridView();
             this.editContactPairs = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -179,33 +149,58 @@ namespace PE
             this.delta = new System.Windows.Forms.PictureBox();
             this.disConnect = new System.Windows.Forms.PictureBox();
             this.connect = new System.Windows.Forms.PictureBox();
+            this.pbDMM = new System.Windows.Forms.PictureBox();
+            this.btnToggleOff = new System.Windows.Forms.PictureBox();
+            this.btnToggleOn = new System.Windows.Forms.PictureBox();
+            this.pbDC = new System.Windows.Forms.PictureBox();
+            this.pbDMMSign = new System.Windows.Forms.PictureBox();
+            this.pbDCSign = new System.Windows.Forms.PictureBox();
+            this.statusBox = new System.Windows.Forms.PictureBox();
+            this.confirmSelectBtn = new System.Windows.Forms.Button();
+            this.dangerOn = new System.Windows.Forms.PictureBox();
+            this.danger = new System.Windows.Forms.PictureBox();
+            this.dmm34401a = new System.Windows.Forms.PictureBox();
+            this.startTool = new System.Windows.Forms.ToolStripButton();
+            this.homeTool = new System.Windows.Forms.ToolStripButton();
+            this.editTool = new System.Windows.Forms.ToolStripButton();
+            this.manualTool = new System.Windows.Forms.ToolStripButton();
+            this.databaseTool = new System.Windows.Forms.ToolStripButton();
+            this.exportTool = new System.Windows.Forms.ToolStripButton();
+            this.shutdownTool = new System.Windows.Forms.ToolStripButton();
+            this.fileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.configPort = new System.Windows.Forms.ToolStripMenuItem();
+            this.configEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.configManualDC = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpec = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecBMW = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecOBC = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecDCB = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecREN = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpSpecNIS = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpEqMan = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpEqManDC = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpEqManDMM = new System.Windows.Forms.ToolStripMenuItem();
             this.ms.SuspendLayout();
             this.serialPort.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
             this.setPoint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBox)).BeginInit();
             this.startTesting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danger)).BeginInit();
             this.getData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).BeginInit();
             this.ts.SuspendLayout();
             this.groupTest.SuspendLayout();
             this.manualDC.SuspendLayout();
             this.gbDMM.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).BeginInit();
             this.statusDMM.SuspendLayout();
             this.gbDC.SuspendLayout();
             this.statusDC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).BeginInit();
             this.setPointManual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBoxManual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBoxManual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).BeginInit();
             this.testProgram.SuspendLayout();
             this.editSpecTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTable2)).BeginInit();
@@ -215,6 +210,16 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.delta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disConnect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.connect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danger)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).BeginInit();
             this.SuspendLayout();
             // 
             // ms
@@ -242,47 +247,6 @@ namespace PE
             this.fileToolStripMenu.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenu.Text = "File";
             // 
-            // fileOpen
-            // 
-            this.fileOpen.Image = global::PE.Properties.Resources.icons8_open_folder_in_new_tab_32;
-            this.fileOpen.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.fileOpen.Name = "fileOpen";
-            this.fileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.fileOpen.Size = new System.Drawing.Size(179, 38);
-            this.fileOpen.Text = "Open...";
-            this.fileOpen.Click += new System.EventHandler(this.fileOpen_Click);
-            // 
-            // fileSave
-            // 
-            this.fileSave.Enabled = false;
-            this.fileSave.Image = global::PE.Properties.Resources.icons8_save_32;
-            this.fileSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.fileSave.Name = "fileSave";
-            this.fileSave.Size = new System.Drawing.Size(179, 38);
-            this.fileSave.Text = "Save...";
-            this.fileSave.Click += new System.EventHandler(this.fileSave_Click);
-            // 
-            // fileSaveAs
-            // 
-            this.fileSaveAs.Enabled = false;
-            this.fileSaveAs.Image = global::PE.Properties.Resources.icons8_save_as_32;
-            this.fileSaveAs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.fileSaveAs.Name = "fileSaveAs";
-            this.fileSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.fileSaveAs.Size = new System.Drawing.Size(179, 38);
-            this.fileSaveAs.Text = "Save As...";
-            this.fileSaveAs.Click += new System.EventHandler(this.fileSaveAs_Click);
-            // 
-            // fileExit
-            // 
-            this.fileExit.Image = global::PE.Properties.Resources.icons8_shutdown_32;
-            this.fileExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.fileExit.Name = "fileExit";
-            this.fileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.fileExit.Size = new System.Drawing.Size(179, 38);
-            this.fileExit.Text = "Exit";
-            this.fileExit.Click += new System.EventHandler(this.fileExit_Click);
-            // 
             // configToolStripMenu
             // 
             this.configToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -294,115 +258,26 @@ namespace PE
             this.configToolStripMenu.Size = new System.Drawing.Size(93, 20);
             this.configToolStripMenu.Text = "Configuration";
             // 
-            // configPort
-            // 
-            this.configPort.Image = global::PE.Properties.Resources.icons8_internet_of_things_32;
-            this.configPort.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.configPort.Name = "configPort";
-            this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.C)));
-            this.configPort.Size = new System.Drawing.Size(235, 38);
-            this.configPort.Text = "Port";
-            this.configPort.Click += new System.EventHandler(this.configPort_Click);
-            // 
-            // configEdit
-            // 
-            this.configEdit.Image = global::PE.Properties.Resources.icons8_edit_32;
-            this.configEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.configEdit.Name = "configEdit";
-            this.configEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.configEdit.Size = new System.Drawing.Size(235, 38);
-            this.configEdit.Text = "Edit program";
-            this.configEdit.Click += new System.EventHandler(this.configEdit_Click);
-            // 
-            // configManualDC
-            // 
-            this.configManualDC.Image = global::PE.Properties.Resources.icons8_manual_321;
-            this.configManualDC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.configManualDC.Name = "configManualDC";
-            this.configManualDC.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.configManualDC.Size = new System.Drawing.Size(235, 38);
-            this.configManualDC.Text = "Manual DC-Source";
-            this.configManualDC.Click += new System.EventHandler(this.configManual_Click);
-            // 
-            // databaseToolStripMenuItem
-            // 
-            this.databaseToolStripMenuItem.Image = global::PE.Properties.Resources.icons8_database_administrator_32;
-            this.databaseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(235, 38);
-            this.databaseToolStripMenuItem.Text = "Database";
-            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
-            // 
             // helpToolStripMenu
             // 
             this.helpToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpSpec,
+            this.helpEqMan,
+            this.helpPEMan,
             this.helpInfo});
             this.helpToolStripMenu.Name = "helpToolStripMenu";
             this.helpToolStripMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.helpToolStripMenu.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenu.Text = "Help";
             // 
-            // helpSpec
+            // helpPEMan
             // 
-            this.helpSpec.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpSpecBMW,
-            this.helpSpecOBC,
-            this.helpSpecDCB,
-            this.helpSpecREN,
-            this.helpSpecNIS});
-            this.helpSpec.Image = global::PE.Properties.Resources.icons8_about_32;
-            this.helpSpec.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.helpSpec.Name = "helpSpec";
-            this.helpSpec.Size = new System.Drawing.Size(260, 38);
-            this.helpSpec.Text = "Specification";
-            // 
-            // helpSpecBMW
-            // 
-            this.helpSpecBMW.Image = global::PE.Properties.Resources.BMW_32;
-            this.helpSpecBMW.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.helpSpecBMW.Name = "helpSpecBMW";
-            this.helpSpecBMW.Size = new System.Drawing.Size(191, 38);
-            this.helpSpecBMW.Text = "BMW";
-            this.helpSpecBMW.Click += new System.EventHandler(this.helpSpecBMW_Click);
-            // 
-            // helpSpecOBC
-            // 
-            this.helpSpecOBC.Image = global::PE.Properties.Resources.DAI2_32;
-            this.helpSpecOBC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.helpSpecOBC.Name = "helpSpecOBC";
-            this.helpSpecOBC.Size = new System.Drawing.Size(191, 38);
-            this.helpSpecOBC.Text = "DAIMLER-OBC";
-            this.helpSpecOBC.Click += new System.EventHandler(this.helpSpecOBC_Click);
-            // 
-            // helpSpecDCB
-            // 
-            this.helpSpecDCB.Image = global::PE.Properties.Resources.DAI2_32;
-            this.helpSpecDCB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.helpSpecDCB.Name = "helpSpecDCB";
-            this.helpSpecDCB.Size = new System.Drawing.Size(191, 38);
-            this.helpSpecDCB.Text = "DAIMLER-DC Box";
-            this.helpSpecDCB.Click += new System.EventHandler(this.helpSpecDCB_Click);
-            // 
-            // helpSpecREN
-            // 
-            this.helpSpecREN.Image = global::PE.Properties.Resources.REN2_32;
-            this.helpSpecREN.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.helpSpecREN.Name = "helpSpecREN";
-            this.helpSpecREN.Size = new System.Drawing.Size(191, 38);
-            this.helpSpecREN.Text = "Renault 5DH DCDC";
-            this.helpSpecREN.Click += new System.EventHandler(this.helpSpecREN_Click);
-            // 
-            // helpSpecNIS
-            // 
-            this.helpSpecNIS.Image = global::PE.Properties.Resources.NIS_32;
-            this.helpSpecNIS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.helpSpecNIS.Name = "helpSpecNIS";
-            this.helpSpecNIS.Size = new System.Drawing.Size(191, 38);
-            this.helpSpecNIS.Text = "Nissan-OBC";
-            this.helpSpecNIS.Click += new System.EventHandler(this.helpSpecNIS_Click);
+            this.helpPEMan.Image = global::PE.Properties.Resources.icons8_work_instructions_32;
+            this.helpPEMan.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.helpPEMan.Name = "helpPEMan";
+            this.helpPEMan.Size = new System.Drawing.Size(260, 38);
+            this.helpPEMan.Text = "PE Testing manual";
+            this.helpPEMan.Click += new System.EventHandler(this.helpPEMan_Click);
             // 
             // helpInfo
             // 
@@ -432,16 +307,6 @@ namespace PE
             this.serialPort.TabStop = false;
             this.serialPort.Text = "Connection";
             this.serialPort.Visible = false;
-            // 
-            // statusBox
-            // 
-            this.statusBox.BackColor = System.Drawing.Color.Red;
-            this.statusBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.statusBox.Location = new System.Drawing.Point(286, 0);
-            this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(30, 15);
-            this.statusBox.TabIndex = 3;
-            this.statusBox.TabStop = false;
             // 
             // lblBaud
             // 
@@ -708,31 +573,6 @@ namespace PE
             this.btnCalDC.UseVisualStyleBackColor = true;
             this.btnCalDC.Click += new System.EventHandler(this.btnCalDC_Click);
             // 
-            // dangerOn
-            // 
-            this.dangerOn.ErrorImage = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.Image = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.InitialImage = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.Location = new System.Drawing.Point(11, 65);
-            this.dangerOn.Name = "dangerOn";
-            this.dangerOn.Size = new System.Drawing.Size(450, 147);
-            this.dangerOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dangerOn.TabIndex = 4;
-            this.dangerOn.TabStop = false;
-            this.dangerOn.Visible = false;
-            // 
-            // danger
-            // 
-            this.danger.ErrorImage = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.Image = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.InitialImage = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.Location = new System.Drawing.Point(11, 64);
-            this.danger.Name = "danger";
-            this.danger.Size = new System.Drawing.Size(450, 148);
-            this.danger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.danger.TabIndex = 4;
-            this.danger.TabStop = false;
-            // 
             // comPort1
             // 
             this.comPort1.BaudRate = 115200;
@@ -746,6 +586,7 @@ namespace PE
             this.getData.Controls.Add(this.lblTestResult);
             this.getData.Controls.Add(this.dmm34401a);
             this.getData.Controls.Add(this.lblVolt3);
+            this.getData.Controls.Add(this.btnClearDMM);
             this.getData.Controls.Add(this.value);
             this.getData.Enabled = false;
             this.getData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -779,19 +620,6 @@ namespace PE
             this.lblTestResult.TabIndex = 7;
             this.lblTestResult.Text = "Test Result";
             // 
-            // dmm34401a
-            // 
-            this.dmm34401a.Enabled = false;
-            this.dmm34401a.ErrorImage = global::PE.Properties.Resources._34401DMM;
-            this.dmm34401a.Image = global::PE.Properties.Resources._34401DMM;
-            this.dmm34401a.InitialImage = global::PE.Properties.Resources._34401DMM;
-            this.dmm34401a.Location = new System.Drawing.Point(130, 29);
-            this.dmm34401a.Name = "dmm34401a";
-            this.dmm34401a.Size = new System.Drawing.Size(193, 76);
-            this.dmm34401a.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dmm34401a.TabIndex = 4;
-            this.dmm34401a.TabStop = false;
-            // 
             // lblVolt3
             // 
             this.lblVolt3.AutoSize = true;
@@ -802,6 +630,21 @@ namespace PE
             this.lblVolt3.TabIndex = 6;
             this.lblVolt3.Text = "mV";
             // 
+            // btnClearDMM
+            // 
+            this.btnClearDMM.BackColor = System.Drawing.Color.Red;
+            this.btnClearDMM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClearDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnClearDMM.ForeColor = System.Drawing.Color.White;
+            this.btnClearDMM.Location = new System.Drawing.Point(345, 73);
+            this.btnClearDMM.Name = "btnClearDMM";
+            this.btnClearDMM.Size = new System.Drawing.Size(117, 32);
+            this.btnClearDMM.TabIndex = 1;
+            this.btnClearDMM.TabStop = false;
+            this.btnClearDMM.Text = "Clear Error";
+            this.btnClearDMM.UseVisualStyleBackColor = false;
+            this.btnClearDMM.Click += new System.EventHandler(this.btnClearDMM_Click);
+            // 
             // value
             // 
             this.value.AutoSize = true;
@@ -809,7 +652,7 @@ namespace PE
             this.value.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.value.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.value.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.value.ForeColor = System.Drawing.Color.LawnGreen;
+            this.value.ForeColor = System.Drawing.Color.Cyan;
             this.value.Location = new System.Drawing.Point(48, 124);
             this.value.MaximumSize = new System.Drawing.Size(275, 75);
             this.value.MinimumSize = new System.Drawing.Size(275, 75);
@@ -848,36 +691,11 @@ namespace PE
             this.ts.TabIndex = 8;
             this.ts.Text = "toolStrip1";
             // 
-            // startTool
-            // 
-            this.startTool.Image = global::PE.Properties.Resources.icons8_conflict_48;
-            this.startTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.startTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.startTool.Margin = new System.Windows.Forms.Padding(20, 1, 0, 2);
-            this.startTool.Name = "startTool";
-            this.startTool.Size = new System.Drawing.Size(52, 67);
-            this.startTool.Text = "Start";
-            this.startTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.startTool.ToolTipText = "Click to start program.";
-            this.startTool.Click += new System.EventHandler(this.startTool_Click);
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
-            // 
-            // homeTool
-            // 
-            this.homeTool.Image = global::PE.Properties.Resources.icons8_home_48;
-            this.homeTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.homeTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.homeTool.Name = "homeTool";
-            this.homeTool.Size = new System.Drawing.Size(52, 67);
-            this.homeTool.Text = "Home";
-            this.homeTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.homeTool.ToolTipText = "Go to homepage.";
-            this.homeTool.Click += new System.EventHandler(this.homeTool_Click);
             // 
             // toolStripSeparator1
             // 
@@ -885,35 +703,11 @@ namespace PE
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 70);
             // 
-            // editTool
-            // 
-            this.editTool.Image = global::PE.Properties.Resources.icons8_edit_48;
-            this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.editTool.Name = "editTool";
-            this.editTool.Size = new System.Drawing.Size(80, 67);
-            this.editTool.Text = "Edit Program";
-            this.editTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.editTool.ToolTipText = "Go to edit program.";
-            this.editTool.Click += new System.EventHandler(this.editTool_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
-            // 
-            // manualTool
-            // 
-            this.manualTool.Image = global::PE.Properties.Resources.icons8_manual_48;
-            this.manualTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.manualTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.manualTool.Name = "manualTool";
-            this.manualTool.Size = new System.Drawing.Size(52, 67);
-            this.manualTool.Text = "Manual";
-            this.manualTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.manualTool.ToolTipText = "Go to equipment manual.";
-            this.manualTool.Click += new System.EventHandler(this.manualTool_Click);
             // 
             // toolStripSeparator3
             // 
@@ -921,54 +715,17 @@ namespace PE
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
             // 
-            // databaseTool
-            // 
-            this.databaseTool.Image = global::PE.Properties.Resources.icons8_database_administrator_48;
-            this.databaseTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.databaseTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.databaseTool.Name = "databaseTool";
-            this.databaseTool.Size = new System.Drawing.Size(59, 67);
-            this.databaseTool.Text = "Database";
-            this.databaseTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.databaseTool.ToolTipText = "Click to open PE database.";
-            this.databaseTool.Click += new System.EventHandler(this.databaseTool_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 70);
             // 
-            // exportTool
-            // 
-            this.exportTool.Enabled = false;
-            this.exportTool.Image = global::PE.Properties.Resources.icons8_microsoft_excel_2019_48;
-            this.exportTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.exportTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.exportTool.Name = "exportTool";
-            this.exportTool.Size = new System.Drawing.Size(72, 67);
-            this.exportTool.Text = "Export Data";
-            this.exportTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.exportTool.ToolTipText = "Click to export data.";
-            this.exportTool.Click += new System.EventHandler(this.exportTool_Click);
-            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
-            // 
-            // shutdownTool
-            // 
-            this.shutdownTool.Image = global::PE.Properties.Resources.icons8_shutdown_48;
-            this.shutdownTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.shutdownTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.shutdownTool.Name = "shutdownTool";
-            this.shutdownTool.Size = new System.Drawing.Size(52, 67);
-            this.shutdownTool.Text = "Exit";
-            this.shutdownTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shutdownTool.ToolTipText = "Exit program.";
-            this.shutdownTool.Click += new System.EventHandler(this.shutdownTool_Click);
             // 
             // groupTest
             // 
@@ -1019,23 +776,12 @@ namespace PE
             this.gbDMM.TabStop = false;
             this.gbDMM.Text = "Digital Multimeter (Agilent 34401A 6½ Digit Multimeter)";
             // 
-            // pbDMM
-            // 
-            this.pbDMM.Image = global::PE.Properties.Resources._34401DMM;
-            this.pbDMM.Location = new System.Drawing.Point(58, 29);
-            this.pbDMM.Name = "pbDMM";
-            this.pbDMM.Size = new System.Drawing.Size(284, 123);
-            this.pbDMM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDMM.TabIndex = 8;
-            this.pbDMM.TabStop = false;
-            // 
             // statusDMM
             // 
             this.statusDMM.Controls.Add(this.tbCommandDMM);
             this.statusDMM.Controls.Add(this.lblDMMPort);
             this.statusDMM.Controls.Add(this.tbIdentDMM);
             this.statusDMM.Controls.Add(this.btnRemoteDMM);
-            this.statusDMM.Controls.Add(this.btnClearDMM);
             this.statusDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.statusDMM.Location = new System.Drawing.Point(379, 29);
             this.statusDMM.Name = "statusDMM";
@@ -1091,18 +837,6 @@ namespace PE
             this.btnRemoteDMM.Text = "Get";
             this.btnRemoteDMM.UseVisualStyleBackColor = true;
             this.btnRemoteDMM.Click += new System.EventHandler(this.btnRemoteDMM_Click);
-            // 
-            // btnClearDMM
-            // 
-            this.btnClearDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnClearDMM.Location = new System.Drawing.Point(313, 70);
-            this.btnClearDMM.Name = "btnClearDMM";
-            this.btnClearDMM.Size = new System.Drawing.Size(61, 32);
-            this.btnClearDMM.TabIndex = 1;
-            this.btnClearDMM.TabStop = false;
-            this.btnClearDMM.Text = "Reset";
-            this.btnClearDMM.UseVisualStyleBackColor = true;
-            this.btnClearDMM.Click += new System.EventHandler(this.btnClearDMM_Click);
             // 
             // valueDMM
             // 
@@ -1280,48 +1014,11 @@ namespace PE
             this.btnClearDC.UseVisualStyleBackColor = true;
             this.btnClearDC.Click += new System.EventHandler(this.btnClearDC_Click);
             // 
-            // btnToggleOff
-            // 
-            this.btnToggleOff.ErrorImage = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.Image = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.InitialImage = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.Location = new System.Drawing.Point(263, 172);
-            this.btnToggleOff.Name = "btnToggleOff";
-            this.btnToggleOff.Size = new System.Drawing.Size(106, 77);
-            this.btnToggleOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnToggleOff.TabIndex = 4;
-            this.btnToggleOff.TabStop = false;
-            this.btnToggleOff.Click += new System.EventHandler(this.btnToggleOff_Click);
-            // 
-            // btnToggleOn
-            // 
-            this.btnToggleOn.ErrorImage = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.Image = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.InitialImage = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.Location = new System.Drawing.Point(263, 171);
-            this.btnToggleOn.Name = "btnToggleOn";
-            this.btnToggleOn.Size = new System.Drawing.Size(106, 77);
-            this.btnToggleOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnToggleOn.TabIndex = 4;
-            this.btnToggleOn.TabStop = false;
-            this.btnToggleOn.Visible = false;
-            this.btnToggleOn.Click += new System.EventHandler(this.btnToggleOn_Click);
-            // 
-            // pbDC
-            // 
-            this.pbDC.Image = global::PE.Properties.Resources.CHR_62000H;
-            this.pbDC.Location = new System.Drawing.Point(26, 30);
-            this.pbDC.Name = "pbDC";
-            this.pbDC.Size = new System.Drawing.Size(343, 112);
-            this.pbDC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDC.TabIndex = 8;
-            this.pbDC.TabStop = false;
-            // 
             // setPointManual
             // 
             this.setPointManual.Controls.Add(this.currBoxManual);
             this.setPointManual.Controls.Add(this.voltBoxManual);
-            this.setPointManual.Controls.Add(this.button1);
+            this.setPointManual.Controls.Add(this.btnSetCurrManual);
             this.setPointManual.Controls.Add(this.btnSetVoltManual);
             this.setPointManual.Controls.Add(this.lblCurrManual);
             this.setPointManual.Controls.Add(this.lblCurrManual2);
@@ -1379,17 +1076,17 @@ namespace PE
             this.voltBoxManual.ThousandsSeparator = true;
             this.voltBoxManual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.voltBoxManual_KeyDown);
             // 
-            // button1
+            // btnSetCurrManual
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.Location = new System.Drawing.Point(255, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 32);
-            this.button1.TabIndex = 1;
-            this.button1.TabStop = false;
-            this.button1.Text = "Set";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnSetCurrManual_Click);
+            this.btnSetCurrManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSetCurrManual.Location = new System.Drawing.Point(255, 70);
+            this.btnSetCurrManual.Name = "btnSetCurrManual";
+            this.btnSetCurrManual.Size = new System.Drawing.Size(118, 32);
+            this.btnSetCurrManual.TabIndex = 1;
+            this.btnSetCurrManual.TabStop = false;
+            this.btnSetCurrManual.Text = "Set";
+            this.btnSetCurrManual.UseVisualStyleBackColor = true;
+            this.btnSetCurrManual.Click += new System.EventHandler(this.btnSetCurrManual_Click);
             // 
             // btnSetVoltManual
             // 
@@ -1443,30 +1140,6 @@ namespace PE
             this.lblVoltManual.TabIndex = 0;
             this.lblVoltManual.Text = "Voltage :";
             // 
-            // pbDMMSign
-            // 
-            this.pbDMMSign.ErrorImage = global::PE.Properties.Resources.icons8_voltmeter_64;
-            this.pbDMMSign.Image = global::PE.Properties.Resources.icons8_voltmeter_641;
-            this.pbDMMSign.InitialImage = global::PE.Properties.Resources.icons8_voltmeter_642;
-            this.pbDMMSign.Location = new System.Drawing.Point(6, 321);
-            this.pbDMMSign.Name = "pbDMMSign";
-            this.pbDMMSign.Size = new System.Drawing.Size(59, 43);
-            this.pbDMMSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDMMSign.TabIndex = 7;
-            this.pbDMMSign.TabStop = false;
-            // 
-            // pbDCSign
-            // 
-            this.pbDCSign.ErrorImage = global::PE.Properties.Resources.icons8_energy_meter_641;
-            this.pbDCSign.Image = global::PE.Properties.Resources.icons8_energy_meter_64;
-            this.pbDCSign.InitialImage = global::PE.Properties.Resources.icons8_energy_meter_642;
-            this.pbDCSign.Location = new System.Drawing.Point(14, 25);
-            this.pbDCSign.Name = "pbDCSign";
-            this.pbDCSign.Size = new System.Drawing.Size(51, 43);
-            this.pbDCSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDCSign.TabIndex = 7;
-            this.pbDCSign.TabStop = false;
-            // 
             // testProgram
             // 
             this.testProgram.Controls.Add(this.tbSn);
@@ -1501,20 +1174,6 @@ namespace PE
             this.tbSn.Size = new System.Drawing.Size(205, 26);
             this.tbSn.TabIndex = 2;
             // 
-            // confirmSelectBtn
-            // 
-            this.confirmSelectBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.confirmSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.confirmSelectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.confirmSelectBtn.Image = global::PE.Properties.Resources.icons8_ok_64;
-            this.confirmSelectBtn.Location = new System.Drawing.Point(375, 25);
-            this.confirmSelectBtn.Name = "confirmSelectBtn";
-            this.confirmSelectBtn.Size = new System.Drawing.Size(86, 71);
-            this.confirmSelectBtn.TabIndex = 2;
-            this.confirmSelectBtn.TabStop = false;
-            this.confirmSelectBtn.UseVisualStyleBackColor = false;
-            this.confirmSelectBtn.Click += new System.EventHandler(this.confirmSelectBtn_Click);
-            // 
             // lblSn
             // 
             this.lblSn.AutoSize = true;
@@ -1540,17 +1199,6 @@ namespace PE
             this.programList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.programList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.programList.FormattingEnabled = true;
-            this.programList.Items.AddRange(new object[] {
-            "BMW\t- CCU L 7.4kW",
-            "BMW\t- CCU S 7.4kW",
-            "BMW\t- CCU L 22kW",
-            "DAIMLER\t- OBC",
-            "DAIMLER\t- DC Box 1.2",
-            "DAIMLER\t- DC Box 1.2H",
-            "DAIMLER\t- DC Box 2.0",
-            "RENAULT\t- 5DH",
-            "NISSAN\t- OBC",
-            "CUSTOM "});
             this.programList.Location = new System.Drawing.Point(164, 25);
             this.programList.Name = "programList";
             this.programList.Size = new System.Drawing.Size(205, 28);
@@ -1561,7 +1209,8 @@ namespace PE
             // 
             this.editSpecTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.editSpecTest.Controls.Add(this.cleatBtn);
+            this.editSpecTest.Controls.Add(this.delProgBtn);
+            this.editSpecTest.Controls.Add(this.clearBtn);
             this.editSpecTest.Controls.Add(this.insertBtn);
             this.editSpecTest.Controls.Add(this.gridTable2);
             this.editSpecTest.Enabled = false;
@@ -1574,18 +1223,32 @@ namespace PE
             this.editSpecTest.Text = "Edit Specification Test";
             this.editSpecTest.Visible = false;
             // 
-            // cleatBtn
+            // delProgBtn
             // 
-            this.cleatBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cleatBtn.BackColor = System.Drawing.Color.Red;
-            this.cleatBtn.Location = new System.Drawing.Point(538, 202);
-            this.cleatBtn.Name = "cleatBtn";
-            this.cleatBtn.Size = new System.Drawing.Size(121, 64);
-            this.cleatBtn.TabIndex = 2;
-            this.cleatBtn.TabStop = false;
-            this.cleatBtn.Text = "Clear";
-            this.cleatBtn.UseVisualStyleBackColor = false;
-            this.cleatBtn.Click += new System.EventHandler(this.cleatBtn_Click);
+            this.delProgBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.delProgBtn.BackColor = System.Drawing.Color.DarkOrange;
+            this.delProgBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.delProgBtn.Location = new System.Drawing.Point(538, 132);
+            this.delProgBtn.Name = "delProgBtn";
+            this.delProgBtn.Size = new System.Drawing.Size(121, 64);
+            this.delProgBtn.TabIndex = 2;
+            this.delProgBtn.TabStop = false;
+            this.delProgBtn.Text = "Delete Selected Program";
+            this.delProgBtn.UseVisualStyleBackColor = false;
+            this.delProgBtn.Click += new System.EventHandler(this.delProgBtn_Click);
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.clearBtn.BackColor = System.Drawing.Color.Red;
+            this.clearBtn.Location = new System.Drawing.Point(538, 202);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(121, 64);
+            this.clearBtn.TabIndex = 2;
+            this.clearBtn.TabStop = false;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // insertBtn
             // 
@@ -1691,14 +1354,16 @@ namespace PE
             // 
             this.btnClearData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnClearData.ForeColor = System.Drawing.Color.Red;
+            this.btnClearData.BackColor = System.Drawing.Color.Red;
+            this.btnClearData.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClearData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnClearData.ForeColor = System.Drawing.Color.White;
             this.btnClearData.Location = new System.Drawing.Point(876, 209);
             this.btnClearData.Name = "btnClearData";
             this.btnClearData.Size = new System.Drawing.Size(76, 57);
             this.btnClearData.TabIndex = 6;
             this.btnClearData.Text = "Clear ";
-            this.btnClearData.UseVisualStyleBackColor = true;
+            this.btnClearData.UseVisualStyleBackColor = false;
             this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // gridTable1
@@ -1900,6 +1565,391 @@ namespace PE
             this.connect.TabStop = false;
             this.connect.Visible = false;
             // 
+            // pbDMM
+            // 
+            this.pbDMM.Image = global::PE.Properties.Resources._34401DMM;
+            this.pbDMM.Location = new System.Drawing.Point(58, 29);
+            this.pbDMM.Name = "pbDMM";
+            this.pbDMM.Size = new System.Drawing.Size(284, 123);
+            this.pbDMM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDMM.TabIndex = 8;
+            this.pbDMM.TabStop = false;
+            // 
+            // btnToggleOff
+            // 
+            this.btnToggleOff.ErrorImage = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.Image = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.InitialImage = global::PE.Properties.Resources.icons8_toggle_off_64;
+            this.btnToggleOff.Location = new System.Drawing.Point(263, 172);
+            this.btnToggleOff.Name = "btnToggleOff";
+            this.btnToggleOff.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnToggleOff.TabIndex = 4;
+            this.btnToggleOff.TabStop = false;
+            this.btnToggleOff.Click += new System.EventHandler(this.btnToggleOff_Click);
+            // 
+            // btnToggleOn
+            // 
+            this.btnToggleOn.ErrorImage = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.Image = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.InitialImage = global::PE.Properties.Resources.icons8_toggle_on_64;
+            this.btnToggleOn.Location = new System.Drawing.Point(263, 171);
+            this.btnToggleOn.Name = "btnToggleOn";
+            this.btnToggleOn.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnToggleOn.TabIndex = 4;
+            this.btnToggleOn.TabStop = false;
+            this.btnToggleOn.Visible = false;
+            this.btnToggleOn.Click += new System.EventHandler(this.btnToggleOn_Click);
+            // 
+            // pbDC
+            // 
+            this.pbDC.Image = global::PE.Properties.Resources.CHR_62000H;
+            this.pbDC.Location = new System.Drawing.Point(26, 30);
+            this.pbDC.Name = "pbDC";
+            this.pbDC.Size = new System.Drawing.Size(343, 112);
+            this.pbDC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDC.TabIndex = 8;
+            this.pbDC.TabStop = false;
+            // 
+            // pbDMMSign
+            // 
+            this.pbDMMSign.ErrorImage = global::PE.Properties.Resources.icons8_voltmeter_64;
+            this.pbDMMSign.Image = global::PE.Properties.Resources.icons8_voltmeter_641;
+            this.pbDMMSign.InitialImage = global::PE.Properties.Resources.icons8_voltmeter_642;
+            this.pbDMMSign.Location = new System.Drawing.Point(6, 321);
+            this.pbDMMSign.Name = "pbDMMSign";
+            this.pbDMMSign.Size = new System.Drawing.Size(59, 43);
+            this.pbDMMSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDMMSign.TabIndex = 7;
+            this.pbDMMSign.TabStop = false;
+            // 
+            // pbDCSign
+            // 
+            this.pbDCSign.ErrorImage = global::PE.Properties.Resources.icons8_energy_meter_641;
+            this.pbDCSign.Image = global::PE.Properties.Resources.icons8_energy_meter_64;
+            this.pbDCSign.InitialImage = global::PE.Properties.Resources.icons8_energy_meter_642;
+            this.pbDCSign.Location = new System.Drawing.Point(14, 25);
+            this.pbDCSign.Name = "pbDCSign";
+            this.pbDCSign.Size = new System.Drawing.Size(51, 43);
+            this.pbDCSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDCSign.TabIndex = 7;
+            this.pbDCSign.TabStop = false;
+            // 
+            // statusBox
+            // 
+            this.statusBox.BackColor = System.Drawing.Color.Red;
+            this.statusBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.statusBox.Location = new System.Drawing.Point(286, 0);
+            this.statusBox.Name = "statusBox";
+            this.statusBox.Size = new System.Drawing.Size(30, 15);
+            this.statusBox.TabIndex = 3;
+            this.statusBox.TabStop = false;
+            // 
+            // confirmSelectBtn
+            // 
+            this.confirmSelectBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.confirmSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.confirmSelectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.confirmSelectBtn.Image = global::PE.Properties.Resources.icons8_ok_64;
+            this.confirmSelectBtn.Location = new System.Drawing.Point(375, 25);
+            this.confirmSelectBtn.Name = "confirmSelectBtn";
+            this.confirmSelectBtn.Size = new System.Drawing.Size(86, 71);
+            this.confirmSelectBtn.TabIndex = 2;
+            this.confirmSelectBtn.TabStop = false;
+            this.confirmSelectBtn.UseVisualStyleBackColor = false;
+            this.confirmSelectBtn.Click += new System.EventHandler(this.confirmSelectBtn_Click);
+            // 
+            // dangerOn
+            // 
+            this.dangerOn.ErrorImage = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.Image = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.InitialImage = global::PE.Properties.Resources.Artboard_56;
+            this.dangerOn.Location = new System.Drawing.Point(11, 65);
+            this.dangerOn.Name = "dangerOn";
+            this.dangerOn.Size = new System.Drawing.Size(450, 147);
+            this.dangerOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dangerOn.TabIndex = 4;
+            this.dangerOn.TabStop = false;
+            this.dangerOn.Visible = false;
+            // 
+            // danger
+            // 
+            this.danger.ErrorImage = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.Image = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.InitialImage = global::PE.Properties.Resources.Artboard_56G;
+            this.danger.Location = new System.Drawing.Point(11, 64);
+            this.danger.Name = "danger";
+            this.danger.Size = new System.Drawing.Size(450, 148);
+            this.danger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.danger.TabIndex = 4;
+            this.danger.TabStop = false;
+            // 
+            // dmm34401a
+            // 
+            this.dmm34401a.Enabled = false;
+            this.dmm34401a.ErrorImage = global::PE.Properties.Resources._34401DMM;
+            this.dmm34401a.Image = global::PE.Properties.Resources._34401DMM;
+            this.dmm34401a.InitialImage = global::PE.Properties.Resources._34401DMM;
+            this.dmm34401a.Location = new System.Drawing.Point(130, 29);
+            this.dmm34401a.Name = "dmm34401a";
+            this.dmm34401a.Size = new System.Drawing.Size(193, 76);
+            this.dmm34401a.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dmm34401a.TabIndex = 4;
+            this.dmm34401a.TabStop = false;
+            // 
+            // startTool
+            // 
+            this.startTool.Image = global::PE.Properties.Resources.icons8_conflict_48;
+            this.startTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.startTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.startTool.Margin = new System.Windows.Forms.Padding(20, 1, 0, 2);
+            this.startTool.Name = "startTool";
+            this.startTool.Size = new System.Drawing.Size(52, 67);
+            this.startTool.Text = "Start";
+            this.startTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.startTool.ToolTipText = "Click to start program.";
+            this.startTool.Click += new System.EventHandler(this.startTool_Click);
+            // 
+            // homeTool
+            // 
+            this.homeTool.Image = global::PE.Properties.Resources.icons8_home_48;
+            this.homeTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.homeTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.homeTool.Name = "homeTool";
+            this.homeTool.Size = new System.Drawing.Size(52, 67);
+            this.homeTool.Text = "Home";
+            this.homeTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.homeTool.ToolTipText = "Go to homepage.";
+            this.homeTool.Click += new System.EventHandler(this.homeTool_Click);
+            // 
+            // editTool
+            // 
+            this.editTool.Image = global::PE.Properties.Resources.icons8_edit_48;
+            this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editTool.Name = "editTool";
+            this.editTool.Size = new System.Drawing.Size(80, 67);
+            this.editTool.Text = "Edit Program";
+            this.editTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editTool.ToolTipText = "Go to edit program.";
+            this.editTool.Click += new System.EventHandler(this.editTool_Click);
+            // 
+            // manualTool
+            // 
+            this.manualTool.Image = global::PE.Properties.Resources.icons8_manual_48;
+            this.manualTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manualTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.manualTool.Name = "manualTool";
+            this.manualTool.Size = new System.Drawing.Size(52, 67);
+            this.manualTool.Text = "Manual";
+            this.manualTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.manualTool.ToolTipText = "Go to equipment manual.";
+            this.manualTool.Click += new System.EventHandler(this.manualTool_Click);
+            // 
+            // databaseTool
+            // 
+            this.databaseTool.Image = global::PE.Properties.Resources.icons8_database_administrator_48;
+            this.databaseTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.databaseTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.databaseTool.Name = "databaseTool";
+            this.databaseTool.Size = new System.Drawing.Size(59, 67);
+            this.databaseTool.Text = "Database";
+            this.databaseTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.databaseTool.ToolTipText = "Click to open PE database.";
+            this.databaseTool.Click += new System.EventHandler(this.databaseTool_Click);
+            // 
+            // exportTool
+            // 
+            this.exportTool.Enabled = false;
+            this.exportTool.Image = global::PE.Properties.Resources.icons8_microsoft_excel_2019_48;
+            this.exportTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.exportTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.exportTool.Name = "exportTool";
+            this.exportTool.Size = new System.Drawing.Size(72, 67);
+            this.exportTool.Text = "Export Data";
+            this.exportTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportTool.ToolTipText = "Click to export data.";
+            this.exportTool.Click += new System.EventHandler(this.exportTool_Click);
+            // 
+            // shutdownTool
+            // 
+            this.shutdownTool.Image = global::PE.Properties.Resources.icons8_shutdown_48;
+            this.shutdownTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.shutdownTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.shutdownTool.Name = "shutdownTool";
+            this.shutdownTool.Size = new System.Drawing.Size(52, 67);
+            this.shutdownTool.Text = "Exit";
+            this.shutdownTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shutdownTool.ToolTipText = "Exit program.";
+            this.shutdownTool.Click += new System.EventHandler(this.shutdownTool_Click);
+            // 
+            // fileOpen
+            // 
+            this.fileOpen.Image = global::PE.Properties.Resources.icons8_open_folder_in_new_tab_32;
+            this.fileOpen.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.fileOpen.Name = "fileOpen";
+            this.fileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.fileOpen.Size = new System.Drawing.Size(179, 38);
+            this.fileOpen.Text = "Open...";
+            this.fileOpen.Click += new System.EventHandler(this.fileOpen_Click);
+            // 
+            // fileSave
+            // 
+            this.fileSave.Enabled = false;
+            this.fileSave.Image = global::PE.Properties.Resources.icons8_save_32;
+            this.fileSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.fileSave.Name = "fileSave";
+            this.fileSave.Size = new System.Drawing.Size(179, 38);
+            this.fileSave.Text = "Save...";
+            this.fileSave.Click += new System.EventHandler(this.fileSave_Click);
+            // 
+            // fileSaveAs
+            // 
+            this.fileSaveAs.Enabled = false;
+            this.fileSaveAs.Image = global::PE.Properties.Resources.icons8_save_as_32;
+            this.fileSaveAs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.fileSaveAs.Name = "fileSaveAs";
+            this.fileSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.fileSaveAs.Size = new System.Drawing.Size(179, 38);
+            this.fileSaveAs.Text = "Save As...";
+            this.fileSaveAs.Click += new System.EventHandler(this.fileSaveAs_Click);
+            // 
+            // fileExit
+            // 
+            this.fileExit.Image = global::PE.Properties.Resources.icons8_shutdown_32;
+            this.fileExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.fileExit.Name = "fileExit";
+            this.fileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.fileExit.Size = new System.Drawing.Size(179, 38);
+            this.fileExit.Text = "Exit";
+            this.fileExit.Click += new System.EventHandler(this.fileExit_Click);
+            // 
+            // configPort
+            // 
+            this.configPort.Image = global::PE.Properties.Resources.icons8_internet_of_things_32;
+            this.configPort.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.configPort.Name = "configPort";
+            this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.configPort.Size = new System.Drawing.Size(235, 38);
+            this.configPort.Text = "Port";
+            this.configPort.Click += new System.EventHandler(this.configPort_Click);
+            // 
+            // configEdit
+            // 
+            this.configEdit.Image = global::PE.Properties.Resources.icons8_edit_32;
+            this.configEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.configEdit.Name = "configEdit";
+            this.configEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.configEdit.Size = new System.Drawing.Size(235, 38);
+            this.configEdit.Text = "Edit program";
+            this.configEdit.Click += new System.EventHandler(this.configEdit_Click);
+            // 
+            // configManualDC
+            // 
+            this.configManualDC.Image = global::PE.Properties.Resources.icons8_manual_321;
+            this.configManualDC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.configManualDC.Name = "configManualDC";
+            this.configManualDC.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.configManualDC.Size = new System.Drawing.Size(235, 38);
+            this.configManualDC.Text = "Manual DC-Source";
+            this.configManualDC.Click += new System.EventHandler(this.configManual_Click);
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.Image = global::PE.Properties.Resources.icons8_database_administrator_32;
+            this.databaseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(235, 38);
+            this.databaseToolStripMenuItem.Text = "Database";
+            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
+            // 
+            // helpSpec
+            // 
+            this.helpSpec.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpSpecBMW,
+            this.helpSpecOBC,
+            this.helpSpecDCB,
+            this.helpSpecREN,
+            this.helpSpecNIS});
+            this.helpSpec.Image = global::PE.Properties.Resources.icons8_about_32;
+            this.helpSpec.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.helpSpec.Name = "helpSpec";
+            this.helpSpec.Size = new System.Drawing.Size(260, 38);
+            this.helpSpec.Text = "Specification";
+            // 
+            // helpSpecBMW
+            // 
+            this.helpSpecBMW.Image = global::PE.Properties.Resources.BMW_32;
+            this.helpSpecBMW.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.helpSpecBMW.Name = "helpSpecBMW";
+            this.helpSpecBMW.Size = new System.Drawing.Size(196, 38);
+            this.helpSpecBMW.Text = "BMW";
+            this.helpSpecBMW.Click += new System.EventHandler(this.helpSpecBMW_Click);
+            // 
+            // helpSpecOBC
+            // 
+            this.helpSpecOBC.Image = global::PE.Properties.Resources.DAI2_32;
+            this.helpSpecOBC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.helpSpecOBC.Name = "helpSpecOBC";
+            this.helpSpecOBC.Size = new System.Drawing.Size(196, 38);
+            this.helpSpecOBC.Text = "DAIMLER-OBC";
+            this.helpSpecOBC.Click += new System.EventHandler(this.helpSpecOBC_Click);
+            // 
+            // helpSpecDCB
+            // 
+            this.helpSpecDCB.Image = global::PE.Properties.Resources.DAI2_32;
+            this.helpSpecDCB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.helpSpecDCB.Name = "helpSpecDCB";
+            this.helpSpecDCB.Size = new System.Drawing.Size(196, 38);
+            this.helpSpecDCB.Text = "DAIMLER-DC Box";
+            this.helpSpecDCB.Click += new System.EventHandler(this.helpSpecDCB_Click);
+            // 
+            // helpSpecREN
+            // 
+            this.helpSpecREN.Image = global::PE.Properties.Resources.REN2_32;
+            this.helpSpecREN.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.helpSpecREN.Name = "helpSpecREN";
+            this.helpSpecREN.Size = new System.Drawing.Size(196, 38);
+            this.helpSpecREN.Text = "Renault 5DH DCDC";
+            this.helpSpecREN.Click += new System.EventHandler(this.helpSpecREN_Click);
+            // 
+            // helpSpecNIS
+            // 
+            this.helpSpecNIS.Image = global::PE.Properties.Resources.NIS_32;
+            this.helpSpecNIS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.helpSpecNIS.Name = "helpSpecNIS";
+            this.helpSpecNIS.Size = new System.Drawing.Size(196, 38);
+            this.helpSpecNIS.Text = "Nissan-OBC";
+            this.helpSpecNIS.Click += new System.EventHandler(this.helpSpecNIS_Click);
+            // 
+            // helpEqMan
+            // 
+            this.helpEqMan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpEqManDC,
+            this.helpEqManDMM});
+            this.helpEqMan.Image = global::PE.Properties.Resources.icons8_user_manual_32;
+            this.helpEqMan.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.helpEqMan.Name = "helpEqMan";
+            this.helpEqMan.Size = new System.Drawing.Size(260, 38);
+            this.helpEqMan.Text = "Equipment manual";
+            // 
+            // helpEqManDC
+            // 
+            this.helpEqManDC.Name = "helpEqManDC";
+            this.helpEqManDC.Size = new System.Drawing.Size(180, 22);
+            this.helpEqManDC.Text = "DC-Source";
+            this.helpEqManDC.Click += new System.EventHandler(this.helpEqManDC_Click);
+            // 
+            // helpEqManDMM
+            // 
+            this.helpEqManDMM.Name = "helpEqManDMM";
+            this.helpEqManDMM.Size = new System.Drawing.Size(180, 22);
+            this.helpEqManDMM.Text = "Digital Multimeter";
+            this.helpEqManDMM.Click += new System.EventHandler(this.helpEqManDMM_Click);
+            // 
             // peTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1925,40 +1975,30 @@ namespace PE
             this.ms.PerformLayout();
             this.serialPort.ResumeLayout(false);
             this.serialPort.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).EndInit();
             this.setPoint.ResumeLayout(false);
             this.setPoint.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBox)).EndInit();
             this.startTesting.ResumeLayout(false);
             this.startTesting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danger)).EndInit();
             this.getData.ResumeLayout(false);
             this.getData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).EndInit();
             this.ts.ResumeLayout(false);
             this.ts.PerformLayout();
             this.groupTest.ResumeLayout(false);
             this.manualDC.ResumeLayout(false);
             this.gbDMM.ResumeLayout(false);
             this.gbDMM.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).EndInit();
             this.statusDMM.ResumeLayout(false);
             this.statusDMM.PerformLayout();
             this.gbDC.ResumeLayout(false);
             this.gbDC.PerformLayout();
             this.statusDC.ResumeLayout(false);
             this.statusDC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).EndInit();
             this.setPointManual.ResumeLayout(false);
             this.setPointManual.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currBoxManual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voltBoxManual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).EndInit();
             this.testProgram.ResumeLayout(false);
             this.testProgram.PerformLayout();
             this.editSpecTest.ResumeLayout(false);
@@ -1970,6 +2010,16 @@ namespace PE
             ((System.ComponentModel.ISupportInitialize)(this.delta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disConnect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.connect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnToggleOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDMMSign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDCSign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dangerOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danger)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dmm34401a)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2039,7 +2089,7 @@ namespace PE
         public System.Windows.Forms.TextBox tbSn;
         private System.Windows.Forms.GroupBox editSpecTest;
         public System.Windows.Forms.DataGridView gridTable2;
-        private System.Windows.Forms.Button cleatBtn;
+        private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button insertBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn editContactPairs;
         private System.Windows.Forms.DataGridViewTextBoxColumn editMaxRes;
@@ -2052,7 +2102,7 @@ namespace PE
         private System.Windows.Forms.GroupBox setPointManual;
         public System.Windows.Forms.NumericUpDown currBoxManual;
         public System.Windows.Forms.NumericUpDown voltBoxManual;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSetCurrManual;
         private System.Windows.Forms.Button btnSetVoltManual;
         private System.Windows.Forms.Label lblCurrManual;
         private System.Windows.Forms.Label lblCurrManual2;
@@ -2107,6 +2157,11 @@ namespace PE
         public System.Windows.Forms.ComboBox programList;
         public System.Windows.Forms.Button btnCalDC;
         public System.Windows.Forms.Button btnCalDMM;
+        private System.Windows.Forms.Button delProgBtn;
+        private System.Windows.Forms.ToolStripMenuItem helpEqMan;
+        private System.Windows.Forms.ToolStripMenuItem helpPEMan;
+        private System.Windows.Forms.ToolStripMenuItem helpEqManDC;
+        private System.Windows.Forms.ToolStripMenuItem helpEqManDMM;
     }
 }
 
