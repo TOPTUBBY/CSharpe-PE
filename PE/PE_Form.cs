@@ -8,7 +8,6 @@
 //Description : Class for defining database related functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 using Microsoft.Office.Interop.Excel;
-using Microsoft.VisualBasic;
 using System;
 using System.Drawing;
 using System.IO;
@@ -21,25 +20,28 @@ namespace PE
 {
     public partial class peTest : Form
     {
-        IniFile ini = new IniFile(@"D:\Automotive_Software_DET5\PESAT\database\config.ini");
+        private IniFile ini = new IniFile(@"D:\Automotive_Software_DET5\PESAT\database\config.ini");
+
         internal delegate void SerialDataReceivedEventHandlerDelegate(object sender, SerialDataReceivedEventArgs e);
-        delegate void SetTextCallback(string text);
-        string InputData = String.Empty;
-        calDC calDC = new calDC();
-        calDMM calDMM = new calDMM();
-        _Application app;
-        _Workbook workBook;
-        _Worksheet workSheet;
-        Range range;
-        string projSheet;
-        string trimSN;
-        int cntRow = 0;
-        decimal resMax = 0;
-        decimal measValue;
-        decimal voltValue = 0;
-        decimal resValue = 0;
-        decimal currValue = 0;
-        string resultValue;
+
+        private delegate void SetTextCallback(string text);
+
+        private string InputData = String.Empty;
+        private calDC calDC = new calDC();
+        private calDMM calDMM = new calDMM();
+        private _Application app;
+        private _Workbook workBook;
+        private _Worksheet workSheet;
+        private Range range;
+        private string projSheet;
+        private string trimSN;
+        private int cntRow = 0;
+        private decimal resMax = 0;
+        private decimal measValue;
+        private decimal voltValue = 0;
+        private decimal resValue = 0;
+        private decimal currValue = 0;
+        private string resultValue;
 
         public peTest()
         {
@@ -52,6 +54,7 @@ namespace PE
 
         /*====================================================================================================*/
         /*--------------------------------------------SerialPort----------------------------------------------*/
+
         //NOT USE---------------------------------------------------------------------------------------------
         private void btnScan_Click(object sender, EventArgs e)
         {
@@ -129,6 +132,7 @@ namespace PE
 
         /*====================================================================================================*/
         /*-------------------------------------------Read Port1-----------------------------------------------*/
+
         private void port_DataReceived_1(object sender, SerialDataReceivedEventArgs e)
         {
             InputData = comPort1.ReadExisting();
@@ -201,7 +205,6 @@ namespace PE
                             {
                                 resultValue = "PASS";
                                 _color = Color.Green;
-
                             }
                             else
                             {
@@ -243,10 +246,10 @@ namespace PE
             {
                 MessageBox.Show("Data unavailable to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         /*-------------------------------------------Read Port2-----------------------------------------------*/
+
         private void port_DataReceived_2(object sender, SerialDataReceivedEventArgs e)
         {
             InputData = comPort2.ReadExisting();
@@ -273,12 +276,12 @@ namespace PE
             }
             catch
             {
-
             }
         }
 
         /*====================================================================================================*/
         /*------------------------------------------Select Program--------------------------------------------*/
+
         //Auto insert program
         private void programList_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -328,7 +331,6 @@ namespace PE
                 }
                 catch
                 {
-
                 }
 
                 //add sn to completelist
@@ -382,7 +384,6 @@ namespace PE
 
         private void delProgBtn_Click(object sender, EventArgs e)
         {
-
         }
 
         private void clearBtn_Click(object sender, EventArgs e)
@@ -392,6 +393,7 @@ namespace PE
 
         /*====================================================================================================*/
         /*--------------------------------------------DC Source-----------------------------------------------*/
+
         //Auto DC source --------------------------------------------------------------------------------------
         //Delete value in box when click
         private void voltBox_MouseClick(object sender, MouseEventArgs e)
@@ -542,6 +544,7 @@ namespace PE
         }
 
         /*--------------------------------------------Multimeter-------------------------------------------*/
+
         //Manual DMM --------------------------------------------------------------------------------------
         private void btnRemoteDMM_Click(object sender, EventArgs e)
         {
@@ -614,7 +617,8 @@ namespace PE
 
         /*====================================================================================================*/
         /*-----------------------------------------DangerSign/Run---------------------------------------------*/
-        void dangerTime_Tick(object sender, EventArgs e)
+
+        private void dangerTime_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -622,7 +626,6 @@ namespace PE
             }
             catch
             {
-
             }
             dangerOn.Visible = !dangerOn.Visible;
             pushStart.Visible = !pushStart.Visible;
@@ -630,6 +633,7 @@ namespace PE
 
         /*====================================================================================================*/
         /*----------------------------------------------Interface---------------------------------------------*/
+
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel.Text = "Device not connected";
@@ -676,7 +680,6 @@ namespace PE
         //File Save Menu
         private void fileSave_Click(object sender, EventArgs e)
         {
-
         }
 
         //File Save As Menu
@@ -716,7 +719,7 @@ namespace PE
 
                 workSheet.Columns.AutoFit();
                 string root = @"D:\PE_DATA";
-                // If directory does not exist, create it. 
+                // If directory does not exist, create it.
                 if (!Directory.Exists(root))
                 {
                     Directory.CreateDirectory(root);
@@ -747,7 +750,7 @@ namespace PE
             comPort1.Close();
         }
 
-        //Config port Menu 
+        //Config port Menu
         private void configPort_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"D:\Automotive_Software_DET5\PESAT\database\config.ini");
@@ -944,7 +947,7 @@ namespace PE
 
                     workSheet.Columns.AutoFit();
                     string root = @"D:\PE_DATA";
-                    // If directory does not exist, create it. 
+                    // If directory does not exist, create it.
                     if (!Directory.Exists(root))
                     {
                         Directory.CreateDirectory(root);
@@ -1147,7 +1150,7 @@ namespace PE
                 }
                 workSheet.Columns.AutoFit();
                 string root = @"D:\PE_DATA";
-                // If directory does not exist, create it. 
+                // If directory does not exist, create it.
                 if (!Directory.Exists(root))
                 {
                     Directory.CreateDirectory(root);
@@ -1181,7 +1184,8 @@ namespace PE
 
     /*====================================================================================================*/
     /*-----------------------------------------Class Ext.Config-------------------------------------------*/
-    class IniFile
+
+    internal class IniFile
     {
         public string path;
 
@@ -1207,7 +1211,6 @@ namespace PE
             int i = GetPrivateProfileString(Section, Key, "", temp, 255, this.path);
             return temp.ToString();
         }
-
     }
 }
 
@@ -1221,7 +1224,7 @@ namespace PE
 //  - Help,Info
 //  - ini config -- OK 1/9/2021
 //  - user login
-//  - pre load progress 
+//  - pre load progress
 //  - sync progress bar with work -- Remove
 //  - manual test program -- OK 3/9/2021
 //  - Add data in cell -- OK 13/9/2021
@@ -1264,5 +1267,3 @@ namespace PE
 //  - Edit dataGrid1 auto scroll
 //  - Increase timer 600-->650 to avoid DMM error -- OK 11/10/2021
 //  - Add try catch to tbSN -- OK 22/10/2021
-
-

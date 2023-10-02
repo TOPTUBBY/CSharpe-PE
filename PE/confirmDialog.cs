@@ -19,8 +19,9 @@ namespace PE
             InitializeComponent();
         }
 
-        static confirmDialog MsgBox;
-        static DialogResult result = DialogResult.No;
+        private static confirmDialog MsgBox;
+        private static DialogResult result = DialogResult.No;
+
         public static DialogResult Show(string Text, string Caption)
         {
             MsgBox = new confirmDialog();

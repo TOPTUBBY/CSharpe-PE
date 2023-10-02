@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Timers;
 
 namespace PE
 {
@@ -12,8 +11,8 @@ namespace PE
             InitializeComponent();
         }
 
-        static warningDialog MsgBox;
-        static DialogResult result = DialogResult.No;
+        private static warningDialog MsgBox;
+        private static DialogResult result = DialogResult.No;
 
         public static DialogResult Show(string Text, string Caption)
         {
@@ -33,7 +32,6 @@ namespace PE
                 }
                 catch
                 {
-
                 }
             }
             return result;
@@ -52,7 +50,9 @@ namespace PE
                 thread.Start();
             }
         }
-        int count = 1;
+
+        private int count = 1;
+
         private void Blink(object o)
         {
             bool go = false;

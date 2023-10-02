@@ -18,8 +18,9 @@ namespace PE
             InitializeComponent();
         }
 
-        static specDCB MsgBox;
-        static DialogResult result = DialogResult.No;
+        private static specDCB MsgBox;
+        private static DialogResult result = DialogResult.No;
+
         public static DialogResult Show(string Caption)
         {
             MsgBox = new specDCB();

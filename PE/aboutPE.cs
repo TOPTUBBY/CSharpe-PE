@@ -20,8 +20,9 @@ namespace PE
             InitializeComponent();
         }
 
-        static aboutPE MsgBox;
-        static DialogResult result = DialogResult.No;
+        private static aboutPE MsgBox;
+        private static DialogResult result = DialogResult.No;
+
         public static DialogResult Show(string Caption)
         {
             MsgBox = new aboutPE();
