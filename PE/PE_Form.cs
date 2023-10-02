@@ -1052,7 +1052,7 @@ namespace PE
                 }
                 catch
                 {
-                    MessageBox.Show("Program can't listed the test sequence in the database. Please check database file.");
+                    MessageBox.Show("Program can't listed the test sequence in the database. Please check database file.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     workBook.Close();
                 }
                 workBook.Close();
