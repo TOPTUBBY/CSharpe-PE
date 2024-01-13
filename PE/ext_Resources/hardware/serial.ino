@@ -11,7 +11,7 @@ String c = "";
 String d = "";
 String command = "";
 unsigned long previousMillis = 0;
-const long interval = 10000;
+const long interval = 30000;
 
 SoftwareSerial serial1 = SoftwareSerial(rxPin, txPin);
 
@@ -29,7 +29,7 @@ void setup() {
 //Serial1 (for Mega) is Ext.Equipment
 //serial1 (for Uno) is Ext.Equipment
 void loop() {
-  //interrupt 10 sec DC off
+  //interrupt 100 sec DC off
   unsigned long currentMillis = millis();
   if  (count_1_interrupt == 1 && (currentMillis - previousMillis >= interval)) {
     Serial.println("0");
@@ -101,7 +101,7 @@ void loop() {
         delay(500);
       }
       //send to DC directly--------------------
-      serial1.println(c);
+      Serial.println(c);
       d = serial1.readString();
       //delay(500);
       Serial.println(d);
