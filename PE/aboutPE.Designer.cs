@@ -31,6 +31,7 @@ namespace PE
         {
             this.btnOK = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,12 +41,12 @@ namespace PE
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
@@ -70,6 +71,18 @@ namespace PE
             this.panel1.Size = new System.Drawing.Size(462, 96);
             this.panel1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = global::PE.Properties.Resources.pe1;
+            this.pictureBox1.Image = global::PE.Properties.Resources.pe1;
+            this.pictureBox1.InitialImage = global::PE.Properties.Resources.pe1;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(298, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblVersion
             // 
             this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -85,7 +98,7 @@ namespace PE
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(22, 137);
+            this.label2.Location = new System.Drawing.Point(22, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 18);
             this.label2.TabIndex = 2;
@@ -95,7 +108,7 @@ namespace PE
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(22, 115);
+            this.label1.Location = new System.Drawing.Point(22, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 18);
             this.label1.TabIndex = 2;
@@ -105,7 +118,7 @@ namespace PE
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(30, 297);
+            this.label3.Location = new System.Drawing.Point(30, 286);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(302, 15);
             this.label3.TabIndex = 2;
@@ -115,7 +128,7 @@ namespace PE
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label4.Location = new System.Drawing.Point(30, 313);
+            this.label4.Location = new System.Drawing.Point(30, 319);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(221, 15);
             this.label4.TabIndex = 2;
@@ -125,7 +138,7 @@ namespace PE
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(30, 330);
+            this.label5.Location = new System.Drawing.Point(30, 336);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 15);
             this.label5.TabIndex = 2;
@@ -136,7 +149,7 @@ namespace PE
             this.pictureBox4.ErrorImage = global::PE.Properties.Resources.pe1;
             this.pictureBox4.Image = global::PE.Properties.Resources.Unitag_QRCode_1633566970790;
             this.pictureBox4.InitialImage = global::PE.Properties.Resources.pe1;
-            this.pictureBox4.Location = new System.Drawing.Point(279, 171);
+            this.pictureBox4.Location = new System.Drawing.Point(279, 160);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(117, 110);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +161,7 @@ namespace PE
             this.pictureBox3.ErrorImage = global::PE.Properties.Resources.pe1;
             this.pictureBox3.Image = global::PE.Properties.Resources.Unitag_QRCode_1633567236824;
             this.pictureBox3.InitialImage = global::PE.Properties.Resources.pe1;
-            this.pictureBox3.Location = new System.Drawing.Point(156, 171);
+            this.pictureBox3.Location = new System.Drawing.Point(156, 160);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(117, 110);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,24 +173,22 @@ namespace PE
             this.pictureBox2.ErrorImage = global::PE.Properties.Resources.pe1;
             this.pictureBox2.Image = global::PE.Properties.Resources.Unitag_QRCode_1633567566589;
             this.pictureBox2.InitialImage = global::PE.Properties.Resources.pe1;
-            this.pictureBox2.Location = new System.Drawing.Point(33, 171);
+            this.pictureBox2.Location = new System.Drawing.Point(33, 160);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(117, 110);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // label6
             // 
-            this.pictureBox1.ErrorImage = global::PE.Properties.Resources.pe1;
-            this.pictureBox1.Image = global::PE.Properties.Resources.pe1;
-            this.pictureBox1.InitialImage = global::PE.Properties.Resources.pe1;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(298, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.Location = new System.Drawing.Point(30, 303);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(171, 15);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Dept. : QE APEBU, DET9-RD1";
             // 
             // aboutPE
             // 
@@ -187,6 +198,7 @@ namespace PE
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(462, 367);
             this.ControlBox = false;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -207,10 +219,10 @@ namespace PE
             this.Load += new System.EventHandler(this.aboutPE_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +242,6 @@ namespace PE
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label6;
     }
 }

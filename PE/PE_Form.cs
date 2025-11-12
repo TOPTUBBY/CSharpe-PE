@@ -1,12 +1,19 @@
-﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
+﻿//################################################################################
 //FileName: peTest.cs
 //FileType: Visual C# Source file
 //Author : TOPTUBBY (AnonymouS)
 //Created On : 24/8/2021 12:00:00 PM
-//Last Modified On : 18/03/2022 14:02:00 PM
+//Last Modified On : 12/11/2025 08:20:00 PM
 //Copy Rights : Delta Electronics Thailand PCL.
 //Description : Class for defining database related functions
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  ------------------------------------------------------------------------------
+//v2.0.11.25                                                           12 Nov 2025
+//  - Update aboutPE add Dept name
+//  - Add Dept name and version in PE_Form
+//  - Adjust size of dmmValue to can be received 4.3 digits
+//  - Add DMM reset button to Main page
+//  - Add command dmm reset at clear button event occured
+//################################################################################
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Drawing;
@@ -241,10 +248,12 @@ namespace PE
                 gridTable1.Rows[cntRow - 1].Cells[3].Value = null;
                 gridTable1.Rows[cntRow - 1].Cells[4].Value = null;
                 cntRow--;
+                comPort2.Write("*cls\r\n");
             }
             catch
             {
                 MessageBox.Show("Data unavailable to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comPort2.Write("*cls\r\n");
             }
         }
 
@@ -448,7 +457,7 @@ namespace PE
                 tbIdentDC.Text = "CHROMA ATE,62100H-40,00118,02.21";        //Manual
                 /*comPort1.Write("*idn?\r\n");
                 System.Threading.Thread.Sleep(2000);    //Delay command 2 sec*/
-                comPort1.Write("comf:rem\r\n");
+                comPort1.Write("conf:rem\r\n");
             }
             catch
             {
