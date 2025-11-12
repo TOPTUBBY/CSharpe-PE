@@ -18,21 +18,22 @@ namespace PE
             InitializeComponent();
         }
 
-        private static specREN MsgBox;
-        private static DialogResult result = DialogResult.No;
+        //private static specREN MsgBox;
+        //private static DialogResult result = DialogResult.No;
 
-        public static DialogResult Show(string Caption)
-        {
-            MsgBox = new specREN();
-            MsgBox.Text = Caption;
-            MsgBox.ShowDialog();
-            return result;
-        }
+        //public static DialogResult Show(string Caption)
+        //{
+        //    MsgBox = new specREN();
+        //    MsgBox.Text = Caption;
+        //    MsgBox.ShowDialog();
+        //    return result;
+        //}
 
         private void btnOK_Click(object sender, System.EventArgs e)
         {
-            result = DialogResult.Yes;
-            MsgBox.Close();
+            //result = DialogResult.Yes;
+            //MsgBox.Close();
+            this.Close();
         }
     }
 }

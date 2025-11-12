@@ -13,6 +13,13 @@
 //  - Adjust size of dmmValue to can be received 4.3 digits
 //  - Add DMM reset button to Main page
 //  - Add command dmm reset at clear button event occured
+//  - Add excel kill process before program open excel to load configuration
+//  - Re-arrange enable GUI process when start program/confirm select program
+//  - Add blacklist to block user access program
+//  - Change open spec each project to be modeless form
+//  - show aboutPE at program start to be welcome form
+//  - Adjust sampling time of dangerTime from 650mS to 1000mS
+//  - Change .net framework from 4.0 to 4.5 for Threading.task support
 //################################################################################
 using Microsoft.Office.Interop.Excel;
 using System;
@@ -22,17 +29,19 @@ using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Collections.Generic;
 
 namespace PE
 {
     public partial class peTest : Form
     {
         private IniFile ini = new IniFile(@"D:\Automotive_Software_DET5\PESAT\database\config.ini");
-
         internal delegate void SerialDataReceivedEventHandlerDelegate(object sender, SerialDataReceivedEventArgs e);
-
         private delegate void SetTextCallback(string text);
-
         private string InputData = String.Empty;
         private calDC calDC = new calDC();
         private calDMM calDMM = new calDMM();
@@ -50,6 +59,9 @@ namespace PE
         private decimal currValue = 0;
         private string resultValue;
 
+        private List<string> BlackList = new List<string>();
+        private List<string> file_List = new List<string>();
+
         public peTest()
         {
             InitializeComponent();
@@ -57,6 +69,53 @@ namespace PE
             comPort2.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(port_DataReceived_2);
             dangerTime.Stop();
             toolStripStatusLabel.Text = "Device not connected";
+        }
+
+        private async void Form1_Load(object sender, EventArgs e)
+        {
+            addBlackList("delta\\Larry");
+            addBlackList("delta\\sutsoboo");
+            checkBlackList();
+
+            toolStripStatusLabel.Text = "Device not connected";
+            lblDCPort.Text = null;
+            lblDMMPort.Text = null;
+            dangerTime.Stop();
+
+            await Task.Delay(1);
+            aboutPE startFrm = new aboutPE();
+            startFrm.Show();
+            await Task.Delay(1000);
+            startFrm.Close();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            comPort1.RtsEnable = false;
+            comPort1.DtrEnable = false;
+            comPort1.Close();
+            comPort2.RtsEnable = false;
+            comPort2.DtrEnable = false;
+            comPort2.Close();
+        }
+
+        private void addBlackList(string User)
+        {
+            BlackList.Add(User.ToLower());
+        }
+
+        private void checkBlackList()
+        {
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            Console.WriteLine(userName);
+            if (BlackList.Contains(userName.ToLower()))
+            {
+                DialogResult dialogResult = MessageBox.Show(
+                    "An internal error occured while installing the service pack." + Environment.NewLine + Environment.NewLine + "Error code: 0x80070002."
+                    + Environment.NewLine + Environment.NewLine + "See " + "http://go.microsoft.com/fwlink/?LinkId=101139 for details."
+                    , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
 
         /*====================================================================================================*/
@@ -152,14 +211,14 @@ namespace PE
         private void SetText1(string text1)
         {
             this.rtbIncoming1.Text = text1;
-            if (rtbIncoming1.Text == "0\r\n" || rtbIncoming1.Text == "1\r\n")
-            {
-                value.Text = "---.---";
-            }
-            else
-            {
-                tbIdentDC.Text = rtbIncoming1.Text;
-            }
+            //if (rtbIncoming1.Text == "0\r\n" || rtbIncoming1.Text == "1\r\n")
+            //{
+            //    value.Text = "----.---";
+            //}
+            //else
+            //{
+            //    tbIdentDC.Text = rtbIncoming1.Text;
+            //}
 
             if (rtbIncoming1.Text == "1\r\n")
             {
@@ -305,7 +364,10 @@ namespace PE
                 //Disable interface while load test program
                 confirmSelectBtn.Enabled = false;
                 setPoint.Enabled = false;
+                programList.Enabled = false;
+                tbSn.Enabled = false;
 
+                CloseAllExcelProcesses();
                 app = new Microsoft.Office.Interop.Excel.Application();
                 workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
                 workSheet = workBook.Worksheets[projSheet];
@@ -332,6 +394,8 @@ namespace PE
                 //Enable to normal
                 confirmSelectBtn.Enabled = true;
                 setPoint.Enabled = true;
+                programList.Enabled = true;
+                tbSn.Enabled = true;
 
                 //trim SN
                 try
@@ -610,7 +674,7 @@ namespace PE
             btnStopMeasure.Enabled = false;
             dangerTime.Stop();
             this.Text = "PE TESTING";
-            valueDMM.Text = "---.---";
+            valueDMM.Text = "----.---";
             pushStart.Visible = false;
             dangerOn.Visible = false;
         }
@@ -642,21 +706,6 @@ namespace PE
 
         /*====================================================================================================*/
         /*----------------------------------------------Interface---------------------------------------------*/
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            toolStripStatusLabel.Text = "Device not connected";
-            lblDCPort.Text = null;
-            lblDMMPort.Text = null;
-            dangerTime.Stop();
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            comPort1.RtsEnable = false;
-            comPort1.DtrEnable = false;
-            comPort1.Close();
-        }
 
         //File Open Menu
         private void fileOpen_Click(object sender, EventArgs e)
@@ -806,27 +855,37 @@ namespace PE
         //Help >>> Spec
         private void helpSpecBMW_Click(object sender, EventArgs e)
         {
-            specBMW.Show("BMW Specification");
+            specBMW bmwSpec = new specBMW();
+            bmwSpec.Text = "BMW Specification";
+            bmwSpec.Show();
         }
 
         private void helpSpecOBC_Click(object sender, EventArgs e)
         {
-            specOBC.Show("DAIMLER-OBC Specification");
+            specOBC obcSpec = new specOBC();
+            obcSpec.Text = "DAIMLER-OBC Specification";
+            obcSpec.Show();
         }
 
         private void helpSpecDCB_Click(object sender, EventArgs e)
         {
-            specDCB.Show("DAIMLER-DC Box Specification");
+            specDCB dcbSpec = new specDCB();
+            dcbSpec.Text = "DAIMLER-DC Box Specificationn";
+            dcbSpec.Show();
         }
 
         private void helpSpecREN_Click(object sender, EventArgs e)
         {
-            specREN.Show("Renault 5DH Specification");
+            specREN renSpec = new specREN();
+            renSpec.Text = "Renault 5DH Specification";
+            renSpec.Show();
         }
 
         private void helpSpecNIS_Click(object sender, EventArgs e)
         {
-            specNIS.Show("Nissan OBC Specification");
+            specNIS nisSpec = new specNIS();
+            nisSpec.Text = "Nissan OBC Specification";
+            nisSpec.Show();
         }
 
         //Help >>> Equipment manual
@@ -977,9 +1036,6 @@ namespace PE
                 startTool.Image = new Bitmap(PE.Properties.Resources.icons8_full_stop_48);
                 startTool.Text = "Stop";
                 startTool.ToolTipText = "Click to stop program and export data.";
-                connect.Visible = true;
-                disConnect.Visible = false;
-                toolStripStatusLabel.Text = "Ready";
 
                 //Port1-DC
                 try
@@ -996,9 +1052,6 @@ namespace PE
                     editSpecTest.Enabled = true;
                     //manualTool.Enabled = true;
                     databaseTool.Enabled = false;
-                    testProgram.Enabled = true;
-                    setPoint.Enabled = true;
-                    startTesting.Enabled = true;
                     manualDC.Enabled = true;
 
                     //Inintial DC
@@ -1029,9 +1082,6 @@ namespace PE
                     //GUI Enable
                     editSpecTest.Enabled = true;
                     databaseTool.Enabled = false;
-                    testProgram.Enabled = true;
-                    getData.Enabled = true;
-                    testData.Enabled = true;
 
                     //Inintial DMM
                     comPort2.Write("*cls\r\n");
@@ -1049,6 +1099,7 @@ namespace PE
                 //Pull test program from database.xlsx
                 try
                 {
+                    CloseAllExcelProcesses();
                     programList.Items.Clear();
                     app = new Microsoft.Office.Interop.Excel.Application();
                     workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
@@ -1061,6 +1112,15 @@ namespace PE
                         programList.Items.Add(excelSheets[i]);
                         i++;
                     }
+
+                    testData.Enabled = true;
+                    getData.Enabled = true;
+                    setPoint.Enabled = true;
+                    startTesting.Enabled = true;
+                    testProgram.Enabled = true;
+                    connect.Visible = true;
+                    disConnect.Visible = false;
+                    toolStripStatusLabel.Text = "Ready";
                 }
                 catch
                 {
@@ -1078,7 +1138,7 @@ namespace PE
             setPoint.Visible = true;
             startTesting.Visible = true;
             getData.Visible = true;
-            value.Text = "---.---";
+            value.Text = "----.---";
             testData.Visible = true;
             editSpecTest.Visible = false;
             serialPort.Visible = false;
@@ -1188,6 +1248,28 @@ namespace PE
             comPort1.RtsEnable = false;
             comPort1.DtrEnable = false;
             comPort1.Close();
+        }
+
+        /*====================================================================================================*/
+        /*------------------------------------------Excel ProcessKill-----------------------------------------*/
+        public void CloseAllExcelProcesses()
+        {
+            Process[] excelProcesses = Process.GetProcessesByName("EXCEL");
+            foreach (Process process in excelProcesses)
+            {
+                try
+                {
+                    if (!process.HasExited)
+                    {
+                        process.Kill();
+                        process.WaitForExit(1000); 
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
         }
     }
 

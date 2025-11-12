@@ -31,23 +31,23 @@ namespace PE
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(peTest));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ms = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.fileOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -225,6 +225,7 @@ namespace PE
             // ms
             // 
             this.ms.BackColor = System.Drawing.Color.White;
+            this.ms.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenu,
             this.configToolStripMenu,
@@ -232,7 +233,7 @@ namespace PE
             this.ms.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.ms.Location = new System.Drawing.Point(0, 0);
             this.ms.Name = "ms";
-            this.ms.Size = new System.Drawing.Size(983, 24);
+            this.ms.Size = new System.Drawing.Size(1311, 28);
             this.ms.TabIndex = 0;
             this.ms.Text = "menuStrip1";
             // 
@@ -244,7 +245,7 @@ namespace PE
             this.fileSaveAs,
             this.fileExit});
             this.fileToolStripMenu.Name = "fileToolStripMenu";
-            this.fileToolStripMenu.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenu.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenu.Text = "File";
             // 
             // fileOpen
@@ -253,7 +254,7 @@ namespace PE
             this.fileOpen.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fileOpen.Name = "fileOpen";
             this.fileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.fileOpen.Size = new System.Drawing.Size(179, 38);
+            this.fileOpen.Size = new System.Drawing.Size(214, 38);
             this.fileOpen.Text = "Open...";
             this.fileOpen.Click += new System.EventHandler(this.fileOpen_Click);
             // 
@@ -263,7 +264,7 @@ namespace PE
             this.fileSave.Image = global::PE.Properties.Resources.icons8_save_32;
             this.fileSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fileSave.Name = "fileSave";
-            this.fileSave.Size = new System.Drawing.Size(179, 38);
+            this.fileSave.Size = new System.Drawing.Size(214, 38);
             this.fileSave.Text = "Save...";
             this.fileSave.Click += new System.EventHandler(this.fileSave_Click);
             // 
@@ -274,7 +275,7 @@ namespace PE
             this.fileSaveAs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fileSaveAs.Name = "fileSaveAs";
             this.fileSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.fileSaveAs.Size = new System.Drawing.Size(179, 38);
+            this.fileSaveAs.Size = new System.Drawing.Size(214, 38);
             this.fileSaveAs.Text = "Save As...";
             this.fileSaveAs.Click += new System.EventHandler(this.fileSaveAs_Click);
             // 
@@ -284,7 +285,7 @@ namespace PE
             this.fileExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fileExit.Name = "fileExit";
             this.fileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.fileExit.Size = new System.Drawing.Size(179, 38);
+            this.fileExit.Size = new System.Drawing.Size(214, 38);
             this.fileExit.Text = "Exit";
             this.fileExit.Click += new System.EventHandler(this.fileExit_Click);
             // 
@@ -296,7 +297,7 @@ namespace PE
             this.configManualDC,
             this.databaseToolStripMenuItem});
             this.configToolStripMenu.Name = "configToolStripMenu";
-            this.configToolStripMenu.Size = new System.Drawing.Size(93, 20);
+            this.configToolStripMenu.Size = new System.Drawing.Size(114, 24);
             this.configToolStripMenu.Text = "Configuration";
             // 
             // configPort
@@ -306,7 +307,7 @@ namespace PE
             this.configPort.Name = "configPort";
             this.configPort.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.configPort.Size = new System.Drawing.Size(235, 38);
+            this.configPort.Size = new System.Drawing.Size(284, 38);
             this.configPort.Text = "Port";
             this.configPort.Click += new System.EventHandler(this.configPort_Click);
             // 
@@ -316,7 +317,7 @@ namespace PE
             this.configEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.configEdit.Name = "configEdit";
             this.configEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.configEdit.Size = new System.Drawing.Size(235, 38);
+            this.configEdit.Size = new System.Drawing.Size(284, 38);
             this.configEdit.Text = "Edit program";
             this.configEdit.Click += new System.EventHandler(this.configEdit_Click);
             // 
@@ -326,7 +327,7 @@ namespace PE
             this.configManualDC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.configManualDC.Name = "configManualDC";
             this.configManualDC.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.configManualDC.Size = new System.Drawing.Size(235, 38);
+            this.configManualDC.Size = new System.Drawing.Size(284, 38);
             this.configManualDC.Text = "Manual DC-Source";
             this.configManualDC.Click += new System.EventHandler(this.configManual_Click);
             // 
@@ -336,7 +337,7 @@ namespace PE
             this.databaseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
             this.databaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(235, 38);
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(284, 38);
             this.databaseToolStripMenuItem.Text = "Database";
             this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
             // 
@@ -349,7 +350,7 @@ namespace PE
             this.helpInfo});
             this.helpToolStripMenu.Name = "helpToolStripMenu";
             this.helpToolStripMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.helpToolStripMenu.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenu.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenu.Text = "Help";
             // 
             // helpSpec
@@ -363,7 +364,7 @@ namespace PE
             this.helpSpec.Image = global::PE.Properties.Resources.icons8_about_32;
             this.helpSpec.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.helpSpec.Name = "helpSpec";
-            this.helpSpec.Size = new System.Drawing.Size(260, 38);
+            this.helpSpec.Size = new System.Drawing.Size(317, 38);
             this.helpSpec.Text = "Specification";
             // 
             // helpSpecBMW
@@ -371,7 +372,7 @@ namespace PE
             this.helpSpecBMW.Image = global::PE.Properties.Resources.BMW_32;
             this.helpSpecBMW.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.helpSpecBMW.Name = "helpSpecBMW";
-            this.helpSpecBMW.Size = new System.Drawing.Size(191, 38);
+            this.helpSpecBMW.Size = new System.Drawing.Size(232, 38);
             this.helpSpecBMW.Text = "BMW";
             this.helpSpecBMW.Click += new System.EventHandler(this.helpSpecBMW_Click);
             // 
@@ -380,7 +381,7 @@ namespace PE
             this.helpSpecOBC.Image = global::PE.Properties.Resources.DAI2_32;
             this.helpSpecOBC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.helpSpecOBC.Name = "helpSpecOBC";
-            this.helpSpecOBC.Size = new System.Drawing.Size(191, 38);
+            this.helpSpecOBC.Size = new System.Drawing.Size(232, 38);
             this.helpSpecOBC.Text = "DAIMLER-OBC";
             this.helpSpecOBC.Click += new System.EventHandler(this.helpSpecOBC_Click);
             // 
@@ -389,7 +390,7 @@ namespace PE
             this.helpSpecDCB.Image = global::PE.Properties.Resources.DAI2_32;
             this.helpSpecDCB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.helpSpecDCB.Name = "helpSpecDCB";
-            this.helpSpecDCB.Size = new System.Drawing.Size(191, 38);
+            this.helpSpecDCB.Size = new System.Drawing.Size(232, 38);
             this.helpSpecDCB.Text = "DAIMLER-DC Box";
             this.helpSpecDCB.Click += new System.EventHandler(this.helpSpecDCB_Click);
             // 
@@ -398,7 +399,7 @@ namespace PE
             this.helpSpecREN.Image = global::PE.Properties.Resources.REN2_32;
             this.helpSpecREN.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.helpSpecREN.Name = "helpSpecREN";
-            this.helpSpecREN.Size = new System.Drawing.Size(191, 38);
+            this.helpSpecREN.Size = new System.Drawing.Size(232, 38);
             this.helpSpecREN.Text = "Renault 5DH DCDC";
             this.helpSpecREN.Click += new System.EventHandler(this.helpSpecREN_Click);
             // 
@@ -407,7 +408,7 @@ namespace PE
             this.helpSpecNIS.Image = global::PE.Properties.Resources.NIS_32;
             this.helpSpecNIS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.helpSpecNIS.Name = "helpSpecNIS";
-            this.helpSpecNIS.Size = new System.Drawing.Size(191, 38);
+            this.helpSpecNIS.Size = new System.Drawing.Size(232, 38);
             this.helpSpecNIS.Text = "Nissan-OBC";
             this.helpSpecNIS.Click += new System.EventHandler(this.helpSpecNIS_Click);
             // 
@@ -419,20 +420,20 @@ namespace PE
             this.helpEqMan.Image = global::PE.Properties.Resources.icons8_user_manual_32;
             this.helpEqMan.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.helpEqMan.Name = "helpEqMan";
-            this.helpEqMan.Size = new System.Drawing.Size(260, 38);
+            this.helpEqMan.Size = new System.Drawing.Size(317, 38);
             this.helpEqMan.Text = "Equipment manual";
             // 
             // helpEqManDC
             // 
             this.helpEqManDC.Name = "helpEqManDC";
-            this.helpEqManDC.Size = new System.Drawing.Size(170, 22);
+            this.helpEqManDC.Size = new System.Drawing.Size(214, 26);
             this.helpEqManDC.Text = "DC-Source";
             this.helpEqManDC.Click += new System.EventHandler(this.helpEqManDC_Click);
             // 
             // helpEqManDMM
             // 
             this.helpEqManDMM.Name = "helpEqManDMM";
-            this.helpEqManDMM.Size = new System.Drawing.Size(170, 22);
+            this.helpEqManDMM.Size = new System.Drawing.Size(214, 26);
             this.helpEqManDMM.Text = "Digital Multimeter";
             this.helpEqManDMM.Click += new System.EventHandler(this.helpEqManDMM_Click);
             // 
@@ -441,7 +442,7 @@ namespace PE
             this.helpPEMan.Image = global::PE.Properties.Resources.icons8_work_instructions_32;
             this.helpPEMan.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.helpPEMan.Name = "helpPEMan";
-            this.helpPEMan.Size = new System.Drawing.Size(260, 38);
+            this.helpPEMan.Size = new System.Drawing.Size(317, 38);
             this.helpPEMan.Text = "PE Testing manual";
             this.helpPEMan.Click += new System.EventHandler(this.helpPEMan_Click);
             // 
@@ -449,7 +450,7 @@ namespace PE
             // 
             this.helpInfo.Name = "helpInfo";
             this.helpInfo.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.helpInfo.Size = new System.Drawing.Size(260, 38);
+            this.helpInfo.Size = new System.Drawing.Size(317, 38);
             this.helpInfo.Text = "About PE semi-auto testing";
             this.helpInfo.Click += new System.EventHandler(this.helpInfo_Click);
             // 
@@ -466,9 +467,11 @@ namespace PE
             this.serialPort.Controls.Add(this.cbbPort);
             this.serialPort.Enabled = false;
             this.serialPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.serialPort.Location = new System.Drawing.Point(990, 11);
+            this.serialPort.Location = new System.Drawing.Point(1320, 14);
+            this.serialPort.Margin = new System.Windows.Forms.Padding(4);
             this.serialPort.Name = "serialPort";
-            this.serialPort.Size = new System.Drawing.Size(322, 117);
+            this.serialPort.Padding = new System.Windows.Forms.Padding(4);
+            this.serialPort.Size = new System.Drawing.Size(429, 144);
             this.serialPort.TabIndex = 1;
             this.serialPort.TabStop = false;
             this.serialPort.Text = "Connection";
@@ -478,9 +481,10 @@ namespace PE
             // 
             this.statusBox.BackColor = System.Drawing.Color.Red;
             this.statusBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.statusBox.Location = new System.Drawing.Point(286, 0);
+            this.statusBox.Location = new System.Drawing.Point(381, 0);
+            this.statusBox.Margin = new System.Windows.Forms.Padding(4);
             this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(30, 15);
+            this.statusBox.Size = new System.Drawing.Size(39, 18);
             this.statusBox.TabIndex = 3;
             this.statusBox.TabStop = false;
             // 
@@ -488,9 +492,10 @@ namespace PE
             // 
             this.lblBaud.AutoSize = true;
             this.lblBaud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblBaud.Location = new System.Drawing.Point(233, 57);
+            this.lblBaud.Location = new System.Drawing.Point(311, 70);
+            this.lblBaud.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBaud.Name = "lblBaud";
-            this.lblBaud.Size = new System.Drawing.Size(75, 20);
+            this.lblBaud.Size = new System.Drawing.Size(91, 25);
             this.lblBaud.TabIndex = 2;
             this.lblBaud.Text = "Baudrate";
             // 
@@ -498,36 +503,40 @@ namespace PE
             // 
             this.lblPort.AutoSize = true;
             this.lblPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblPort.Location = new System.Drawing.Point(233, 25);
+            this.lblPort.Location = new System.Drawing.Point(311, 31);
+            this.lblPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(75, 20);
+            this.lblPort.Size = new System.Drawing.Size(94, 25);
             this.lblPort.TabIndex = 2;
             this.lblPort.Text = "Com Port";
             // 
             // rtbIncoming2
             // 
-            this.rtbIncoming2.Location = new System.Drawing.Point(6, 232);
+            this.rtbIncoming2.Location = new System.Drawing.Point(8, 286);
+            this.rtbIncoming2.Margin = new System.Windows.Forms.Padding(4);
             this.rtbIncoming2.Name = "rtbIncoming2";
             this.rtbIncoming2.ReadOnly = true;
-            this.rtbIncoming2.Size = new System.Drawing.Size(310, 85);
+            this.rtbIncoming2.Size = new System.Drawing.Size(412, 104);
             this.rtbIncoming2.TabIndex = 2;
             this.rtbIncoming2.Text = "";
             // 
             // rtbIncoming1
             // 
-            this.rtbIncoming1.Location = new System.Drawing.Point(6, 140);
+            this.rtbIncoming1.Location = new System.Drawing.Point(8, 172);
+            this.rtbIncoming1.Margin = new System.Windows.Forms.Padding(4);
             this.rtbIncoming1.Name = "rtbIncoming1";
             this.rtbIncoming1.ReadOnly = true;
-            this.rtbIncoming1.Size = new System.Drawing.Size(310, 85);
+            this.rtbIncoming1.Size = new System.Drawing.Size(412, 104);
             this.rtbIncoming1.TabIndex = 2;
             this.rtbIncoming1.Text = "";
             // 
             // btnState
             // 
             this.btnState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnState.Location = new System.Drawing.Point(6, 88);
+            this.btnState.Location = new System.Drawing.Point(8, 108);
+            this.btnState.Margin = new System.Windows.Forms.Padding(4);
             this.btnState.Name = "btnState";
-            this.btnState.Size = new System.Drawing.Size(310, 29);
+            this.btnState.Size = new System.Drawing.Size(413, 36);
             this.btnState.TabIndex = 1;
             this.btnState.TabStop = false;
             this.btnState.Text = "Connect";
@@ -537,9 +546,10 @@ namespace PE
             // btnScan
             // 
             this.btnScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnScan.Location = new System.Drawing.Point(6, 20);
+            this.btnScan.Location = new System.Drawing.Point(8, 25);
+            this.btnScan.Margin = new System.Windows.Forms.Padding(4);
             this.btnScan.Name = "btnScan";
-            this.btnScan.Size = new System.Drawing.Size(96, 62);
+            this.btnScan.Size = new System.Drawing.Size(128, 76);
             this.btnScan.TabIndex = 1;
             this.btnScan.TabStop = false;
             this.btnScan.Text = "Scan Port";
@@ -551,9 +561,10 @@ namespace PE
             this.cbbBaud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbBaud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cbbBaud.FormattingEnabled = true;
-            this.cbbBaud.Location = new System.Drawing.Point(111, 54);
+            this.cbbBaud.Location = new System.Drawing.Point(148, 66);
+            this.cbbBaud.Margin = new System.Windows.Forms.Padding(4);
             this.cbbBaud.Name = "cbbBaud";
-            this.cbbBaud.Size = new System.Drawing.Size(116, 28);
+            this.cbbBaud.Size = new System.Drawing.Size(153, 33);
             this.cbbBaud.TabIndex = 1;
             // 
             // cbbPort
@@ -561,9 +572,10 @@ namespace PE
             this.cbbPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cbbPort.FormattingEnabled = true;
-            this.cbbPort.Location = new System.Drawing.Point(111, 20);
+            this.cbbPort.Location = new System.Drawing.Point(148, 25);
+            this.cbbPort.Margin = new System.Windows.Forms.Padding(4);
             this.cbbPort.Name = "cbbPort";
-            this.cbbPort.Size = new System.Drawing.Size(116, 28);
+            this.cbbPort.Size = new System.Drawing.Size(153, 33);
             this.cbbPort.TabIndex = 0;
             // 
             // notifySerial
@@ -585,9 +597,11 @@ namespace PE
             this.setPoint.Controls.Add(this.lblVolt);
             this.setPoint.Enabled = false;
             this.setPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.setPoint.Location = new System.Drawing.Point(496, 11);
+            this.setPoint.Location = new System.Drawing.Point(661, 14);
+            this.setPoint.Margin = new System.Windows.Forms.Padding(4);
             this.setPoint.Name = "setPoint";
-            this.setPoint.Size = new System.Drawing.Size(474, 117);
+            this.setPoint.Padding = new System.Windows.Forms.Padding(4);
+            this.setPoint.Size = new System.Drawing.Size(632, 144);
             this.setPoint.TabIndex = 3;
             this.setPoint.TabStop = false;
             this.setPoint.Text = "Setpoint";
@@ -601,14 +615,15 @@ namespace PE
             0,
             0,
             262144});
-            this.currBox.Location = new System.Drawing.Point(143, 74);
+            this.currBox.Location = new System.Drawing.Point(191, 91);
+            this.currBox.Margin = new System.Windows.Forms.Padding(4);
             this.currBox.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.currBox.Name = "currBox";
-            this.currBox.Size = new System.Drawing.Size(128, 26);
+            this.currBox.Size = new System.Drawing.Size(171, 30);
             this.currBox.TabIndex = 4;
             this.currBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.currBox.ThousandsSeparator = true;
@@ -624,14 +639,15 @@ namespace PE
             0,
             0,
             262144});
-            this.voltBox.Location = new System.Drawing.Point(143, 29);
+            this.voltBox.Location = new System.Drawing.Point(191, 36);
+            this.voltBox.Margin = new System.Windows.Forms.Padding(4);
             this.voltBox.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.voltBox.Name = "voltBox";
-            this.voltBox.Size = new System.Drawing.Size(128, 26);
+            this.voltBox.Size = new System.Drawing.Size(171, 30);
             this.voltBox.TabIndex = 3;
             this.voltBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.voltBox.ThousandsSeparator = true;
@@ -641,9 +657,10 @@ namespace PE
             // btnSetCurr
             // 
             this.btnSetCurr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSetCurr.Location = new System.Drawing.Point(325, 70);
+            this.btnSetCurr.Location = new System.Drawing.Point(433, 86);
+            this.btnSetCurr.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetCurr.Name = "btnSetCurr";
-            this.btnSetCurr.Size = new System.Drawing.Size(118, 32);
+            this.btnSetCurr.Size = new System.Drawing.Size(157, 39);
             this.btnSetCurr.TabIndex = 2;
             this.btnSetCurr.TabStop = false;
             this.btnSetCurr.Text = "Set";
@@ -653,9 +670,10 @@ namespace PE
             // btnSetVolt
             // 
             this.btnSetVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSetVolt.Location = new System.Drawing.Point(325, 25);
+            this.btnSetVolt.Location = new System.Drawing.Point(433, 31);
+            this.btnSetVolt.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetVolt.Name = "btnSetVolt";
-            this.btnSetVolt.Size = new System.Drawing.Size(118, 32);
+            this.btnSetVolt.Size = new System.Drawing.Size(157, 39);
             this.btnSetVolt.TabIndex = 2;
             this.btnSetVolt.TabStop = false;
             this.btnSetVolt.Text = "Set";
@@ -666,9 +684,10 @@ namespace PE
             // 
             this.lblCurr.AutoSize = true;
             this.lblCurr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblCurr.Location = new System.Drawing.Point(67, 76);
+            this.lblCurr.Location = new System.Drawing.Point(89, 94);
+            this.lblCurr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurr.Name = "lblCurr";
-            this.lblCurr.Size = new System.Drawing.Size(70, 20);
+            this.lblCurr.Size = new System.Drawing.Size(88, 25);
             this.lblCurr.TabIndex = 1;
             this.lblCurr.Text = "Current :";
             // 
@@ -676,9 +695,10 @@ namespace PE
             // 
             this.lblCurr2.AutoSize = true;
             this.lblCurr2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblCurr2.Location = new System.Drawing.Point(287, 76);
+            this.lblCurr2.Location = new System.Drawing.Point(383, 94);
+            this.lblCurr2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurr2.Name = "lblCurr2";
-            this.lblCurr2.Size = new System.Drawing.Size(20, 20);
+            this.lblCurr2.Size = new System.Drawing.Size(26, 25);
             this.lblCurr2.TabIndex = 1;
             this.lblCurr2.Text = "A";
             // 
@@ -686,9 +706,10 @@ namespace PE
             // 
             this.lblVolt2.AutoSize = true;
             this.lblVolt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblVolt2.Location = new System.Drawing.Point(287, 31);
+            this.lblVolt2.Location = new System.Drawing.Point(383, 38);
+            this.lblVolt2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVolt2.Name = "lblVolt2";
-            this.lblVolt2.Size = new System.Drawing.Size(20, 20);
+            this.lblVolt2.Size = new System.Drawing.Size(26, 25);
             this.lblVolt2.TabIndex = 1;
             this.lblVolt2.Text = "V";
             // 
@@ -696,16 +717,17 @@ namespace PE
             // 
             this.lblVolt.AutoSize = true;
             this.lblVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblVolt.Location = new System.Drawing.Point(65, 31);
+            this.lblVolt.Location = new System.Drawing.Point(87, 38);
+            this.lblVolt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVolt.Name = "lblVolt";
-            this.lblVolt.Size = new System.Drawing.Size(72, 20);
+            this.lblVolt.Size = new System.Drawing.Size(90, 25);
             this.lblVolt.TabIndex = 1;
             this.lblVolt.Text = "Voltage :";
             // 
             // dangerTime
             // 
             this.dangerTime.Enabled = true;
-            this.dangerTime.Interval = 650;
+            this.dangerTime.Interval = 1000;
             this.dangerTime.Tick += new System.EventHandler(this.dangerTime_Tick);
             // 
             // pushStart
@@ -714,9 +736,10 @@ namespace PE
             this.pushStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pushStart.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.pushStart.Location = new System.Drawing.Point(72, 29);
+            this.pushStart.Location = new System.Drawing.Point(96, 36);
+            this.pushStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pushStart.Name = "pushStart";
-            this.pushStart.Size = new System.Drawing.Size(297, 25);
+            this.pushStart.Size = new System.Drawing.Size(367, 31);
             this.pushStart.TabIndex = 5;
             this.pushStart.Text = "Push foot button to Start ...";
             this.pushStart.Visible = false;
@@ -729,9 +752,11 @@ namespace PE
             this.startTesting.Controls.Add(this.danger);
             this.startTesting.Enabled = false;
             this.startTesting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.startTesting.Location = new System.Drawing.Point(12, 134);
+            this.startTesting.Location = new System.Drawing.Point(16, 165);
+            this.startTesting.Margin = new System.Windows.Forms.Padding(4);
             this.startTesting.Name = "startTesting";
-            this.startTesting.Size = new System.Drawing.Size(474, 218);
+            this.startTesting.Padding = new System.Windows.Forms.Padding(4);
+            this.startTesting.Size = new System.Drawing.Size(632, 268);
             this.startTesting.TabIndex = 6;
             this.startTesting.TabStop = false;
             this.startTesting.Text = "Start testing (DC-Source Chroma 62000H )";
@@ -740,9 +765,10 @@ namespace PE
             // 
             this.btnCalDC.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCalDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnCalDC.Location = new System.Drawing.Point(393, 0);
+            this.btnCalDC.Location = new System.Drawing.Point(524, 0);
+            this.btnCalDC.Margin = new System.Windows.Forms.Padding(4);
             this.btnCalDC.Name = "btnCalDC";
-            this.btnCalDC.Size = new System.Drawing.Size(75, 26);
+            this.btnCalDC.Size = new System.Drawing.Size(100, 32);
             this.btnCalDC.TabIndex = 6;
             this.btnCalDC.TabStop = false;
             this.btnCalDC.Text = "Calibration";
@@ -754,9 +780,10 @@ namespace PE
             this.dangerOn.ErrorImage = global::PE.Properties.Resources.Artboard_56;
             this.dangerOn.Image = global::PE.Properties.Resources.Artboard_56;
             this.dangerOn.InitialImage = global::PE.Properties.Resources.Artboard_56;
-            this.dangerOn.Location = new System.Drawing.Point(11, 65);
+            this.dangerOn.Location = new System.Drawing.Point(15, 80);
+            this.dangerOn.Margin = new System.Windows.Forms.Padding(4);
             this.dangerOn.Name = "dangerOn";
-            this.dangerOn.Size = new System.Drawing.Size(450, 147);
+            this.dangerOn.Size = new System.Drawing.Size(600, 181);
             this.dangerOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dangerOn.TabIndex = 4;
             this.dangerOn.TabStop = false;
@@ -767,9 +794,10 @@ namespace PE
             this.danger.ErrorImage = global::PE.Properties.Resources.Artboard_56G;
             this.danger.Image = global::PE.Properties.Resources.Artboard_56G;
             this.danger.InitialImage = global::PE.Properties.Resources.Artboard_56G;
-            this.danger.Location = new System.Drawing.Point(11, 64);
+            this.danger.Location = new System.Drawing.Point(15, 79);
+            this.danger.Margin = new System.Windows.Forms.Padding(4);
             this.danger.Name = "danger";
-            this.danger.Size = new System.Drawing.Size(450, 148);
+            this.danger.Size = new System.Drawing.Size(600, 182);
             this.danger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.danger.TabIndex = 4;
             this.danger.TabStop = false;
@@ -791,9 +819,11 @@ namespace PE
             this.getData.Controls.Add(this.value);
             this.getData.Enabled = false;
             this.getData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getData.Location = new System.Drawing.Point(496, 134);
+            this.getData.Location = new System.Drawing.Point(661, 165);
+            this.getData.Margin = new System.Windows.Forms.Padding(4);
             this.getData.Name = "getData";
-            this.getData.Size = new System.Drawing.Size(474, 218);
+            this.getData.Padding = new System.Windows.Forms.Padding(4);
+            this.getData.Size = new System.Drawing.Size(632, 268);
             this.getData.TabIndex = 6;
             this.getData.TabStop = false;
             this.getData.Text = "Get data (DMM - Keysight 34401a)";
@@ -802,9 +832,10 @@ namespace PE
             // 
             this.btnCalDMM.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCalDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnCalDMM.Location = new System.Drawing.Point(392, 0);
+            this.btnCalDMM.Location = new System.Drawing.Point(523, 0);
+            this.btnCalDMM.Margin = new System.Windows.Forms.Padding(4);
             this.btnCalDMM.Name = "btnCalDMM";
-            this.btnCalDMM.Size = new System.Drawing.Size(75, 26);
+            this.btnCalDMM.Size = new System.Drawing.Size(100, 32);
             this.btnCalDMM.TabIndex = 6;
             this.btnCalDMM.TabStop = false;
             this.btnCalDMM.Text = "Calibration";
@@ -815,9 +846,10 @@ namespace PE
             // 
             this.lblTestResult.AutoSize = true;
             this.lblTestResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTestResult.Location = new System.Drawing.Point(23, 28);
+            this.lblTestResult.Location = new System.Drawing.Point(31, 34);
+            this.lblTestResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTestResult.Name = "lblTestResult";
-            this.lblTestResult.Size = new System.Drawing.Size(90, 20);
+            this.lblTestResult.Size = new System.Drawing.Size(110, 25);
             this.lblTestResult.TabIndex = 7;
             this.lblTestResult.Text = "Test Result";
             // 
@@ -827,9 +859,10 @@ namespace PE
             this.dmm34401a.ErrorImage = global::PE.Properties.Resources._34401DMM;
             this.dmm34401a.Image = global::PE.Properties.Resources._34401DMM;
             this.dmm34401a.InitialImage = global::PE.Properties.Resources._34401DMM;
-            this.dmm34401a.Location = new System.Drawing.Point(130, 29);
+            this.dmm34401a.Location = new System.Drawing.Point(173, 36);
+            this.dmm34401a.Margin = new System.Windows.Forms.Padding(4);
             this.dmm34401a.Name = "dmm34401a";
-            this.dmm34401a.Size = new System.Drawing.Size(193, 76);
+            this.dmm34401a.Size = new System.Drawing.Size(257, 94);
             this.dmm34401a.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dmm34401a.TabIndex = 4;
             this.dmm34401a.TabStop = false;
@@ -838,9 +871,10 @@ namespace PE
             // 
             this.lblVolt3.AutoSize = true;
             this.lblVolt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVolt3.Location = new System.Drawing.Point(358, 134);
+            this.lblVolt3.Location = new System.Drawing.Point(477, 165);
+            this.lblVolt3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVolt3.Name = "lblVolt3";
-            this.lblVolt3.Size = new System.Drawing.Size(98, 55);
+            this.lblVolt3.Size = new System.Drawing.Size(122, 69);
             this.lblVolt3.TabIndex = 6;
             this.lblVolt3.Text = "mV";
             // 
@@ -850,9 +884,10 @@ namespace PE
             this.btnClearDMM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClearDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnClearDMM.ForeColor = System.Drawing.Color.White;
-            this.btnClearDMM.Location = new System.Drawing.Point(345, 73);
+            this.btnClearDMM.Location = new System.Drawing.Point(460, 90);
+            this.btnClearDMM.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearDMM.Name = "btnClearDMM";
-            this.btnClearDMM.Size = new System.Drawing.Size(117, 32);
+            this.btnClearDMM.Size = new System.Drawing.Size(156, 39);
             this.btnClearDMM.TabIndex = 1;
             this.btnClearDMM.TabStop = false;
             this.btnClearDMM.Text = "Clear Error";
@@ -867,12 +902,13 @@ namespace PE
             this.value.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.value.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.value.ForeColor = System.Drawing.Color.Lime;
-            this.value.Location = new System.Drawing.Point(22, 124);
-            this.value.MaximumSize = new System.Drawing.Size(320, 75);
-            this.value.MinimumSize = new System.Drawing.Size(320, 75);
+            this.value.Location = new System.Drawing.Point(29, 153);
+            this.value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.value.MaximumSize = new System.Drawing.Size(427, 92);
+            this.value.MinimumSize = new System.Drawing.Size(427, 92);
             this.value.Name = "value";
             this.value.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.value.Size = new System.Drawing.Size(320, 75);
+            this.value.Size = new System.Drawing.Size(427, 92);
             this.value.TabIndex = 6;
             this.value.Text = "----.---";
             this.value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -882,6 +918,7 @@ namespace PE
             // 
             this.ts.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ts.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.ts.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startTool,
@@ -898,9 +935,9 @@ namespace PE
             this.toolStripSeparator5,
             this.shutdownTool});
             this.ts.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.ts.Location = new System.Drawing.Point(0, 24);
+            this.ts.Location = new System.Drawing.Point(0, 28);
             this.ts.Name = "ts";
-            this.ts.Size = new System.Drawing.Size(983, 70);
+            this.ts.Size = new System.Drawing.Size(1311, 75);
             this.ts.Stretch = true;
             this.ts.TabIndex = 8;
             this.ts.Text = "toolStrip1";
@@ -912,7 +949,7 @@ namespace PE
             this.startTool.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.startTool.Margin = new System.Windows.Forms.Padding(20, 1, 0, 2);
             this.startTool.Name = "startTool";
-            this.startTool.Size = new System.Drawing.Size(52, 67);
+            this.startTool.Size = new System.Drawing.Size(52, 72);
             this.startTool.Text = "Start";
             this.startTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.startTool.ToolTipText = "Click to start program.";
@@ -922,7 +959,7 @@ namespace PE
             // 
             this.toolStripSeparator6.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 75);
             // 
             // homeTool
             // 
@@ -930,7 +967,7 @@ namespace PE
             this.homeTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.homeTool.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.homeTool.Name = "homeTool";
-            this.homeTool.Size = new System.Drawing.Size(52, 67);
+            this.homeTool.Size = new System.Drawing.Size(54, 72);
             this.homeTool.Text = "Home";
             this.homeTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.homeTool.ToolTipText = "Go to homepage.";
@@ -940,7 +977,7 @@ namespace PE
             // 
             this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 75);
             // 
             // editTool
             // 
@@ -948,7 +985,7 @@ namespace PE
             this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.editTool.Name = "editTool";
-            this.editTool.Size = new System.Drawing.Size(80, 67);
+            this.editTool.Size = new System.Drawing.Size(100, 72);
             this.editTool.Text = "Edit Program";
             this.editTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.editTool.ToolTipText = "Go to edit program.";
@@ -958,7 +995,7 @@ namespace PE
             // 
             this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 75);
             // 
             // manualTool
             // 
@@ -966,7 +1003,7 @@ namespace PE
             this.manualTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.manualTool.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.manualTool.Name = "manualTool";
-            this.manualTool.Size = new System.Drawing.Size(52, 67);
+            this.manualTool.Size = new System.Drawing.Size(62, 72);
             this.manualTool.Text = "Manual";
             this.manualTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.manualTool.ToolTipText = "Go to equipment manual.";
@@ -976,7 +1013,7 @@ namespace PE
             // 
             this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 75);
             // 
             // databaseTool
             // 
@@ -984,7 +1021,7 @@ namespace PE
             this.databaseTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.databaseTool.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.databaseTool.Name = "databaseTool";
-            this.databaseTool.Size = new System.Drawing.Size(59, 67);
+            this.databaseTool.Size = new System.Drawing.Size(76, 72);
             this.databaseTool.Text = "Database";
             this.databaseTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.databaseTool.ToolTipText = "Click to open PE database.";
@@ -994,7 +1031,7 @@ namespace PE
             // 
             this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 75);
             // 
             // exportTool
             // 
@@ -1003,7 +1040,7 @@ namespace PE
             this.exportTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.exportTool.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exportTool.Name = "exportTool";
-            this.exportTool.Size = new System.Drawing.Size(72, 67);
+            this.exportTool.Size = new System.Drawing.Size(92, 72);
             this.exportTool.Text = "Export Data";
             this.exportTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.exportTool.ToolTipText = "Click to export data.";
@@ -1013,7 +1050,7 @@ namespace PE
             // 
             this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 75);
             // 
             // shutdownTool
             // 
@@ -1021,7 +1058,7 @@ namespace PE
             this.shutdownTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.shutdownTool.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.shutdownTool.Name = "shutdownTool";
-            this.shutdownTool.Size = new System.Drawing.Size(52, 67);
+            this.shutdownTool.Size = new System.Drawing.Size(52, 72);
             this.shutdownTool.Text = "Exit";
             this.shutdownTool.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.shutdownTool.ToolTipText = "Exit program.";
@@ -1039,9 +1076,11 @@ namespace PE
             this.groupTest.Controls.Add(this.getData);
             this.groupTest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupTest.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupTest.Location = new System.Drawing.Point(0, 94);
+            this.groupTest.Location = new System.Drawing.Point(0, 103);
+            this.groupTest.Margin = new System.Windows.Forms.Padding(4);
             this.groupTest.Name = "groupTest";
-            this.groupTest.Size = new System.Drawing.Size(983, 655);
+            this.groupTest.Padding = new System.Windows.Forms.Padding(4);
+            this.groupTest.Size = new System.Drawing.Size(1311, 819);
             this.groupTest.TabIndex = 9;
             this.groupTest.TabStop = false;
             // 
@@ -1053,9 +1092,11 @@ namespace PE
             this.manualDC.Controls.Add(this.pbDCSign);
             this.manualDC.Enabled = false;
             this.manualDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.manualDC.Location = new System.Drawing.Point(990, 134);
+            this.manualDC.Location = new System.Drawing.Point(1320, 165);
+            this.manualDC.Margin = new System.Windows.Forms.Padding(4);
             this.manualDC.Name = "manualDC";
-            this.manualDC.Size = new System.Drawing.Size(677, 218);
+            this.manualDC.Padding = new System.Windows.Forms.Padding(4);
+            this.manualDC.Size = new System.Drawing.Size(903, 268);
             this.manualDC.TabIndex = 8;
             this.manualDC.TabStop = false;
             this.manualDC.Text = "Manual";
@@ -1069,9 +1110,11 @@ namespace PE
             this.gbDMM.Controls.Add(this.btnStopMeasure);
             this.gbDMM.Controls.Add(this.btnStartMeasure);
             this.gbDMM.Controls.Add(this.lblVoltDMM);
-            this.gbDMM.Location = new System.Drawing.Point(71, 318);
+            this.gbDMM.Location = new System.Drawing.Point(95, 391);
+            this.gbDMM.Margin = new System.Windows.Forms.Padding(4);
             this.gbDMM.Name = "gbDMM";
-            this.gbDMM.Size = new System.Drawing.Size(788, 262);
+            this.gbDMM.Padding = new System.Windows.Forms.Padding(4);
+            this.gbDMM.Size = new System.Drawing.Size(1051, 322);
             this.gbDMM.TabIndex = 10;
             this.gbDMM.TabStop = false;
             this.gbDMM.Text = "Digital Multimeter (Agilent 34401A 6½ Digit Multimeter)";
@@ -1079,9 +1122,10 @@ namespace PE
             // pbDMM
             // 
             this.pbDMM.Image = global::PE.Properties.Resources._34401DMM;
-            this.pbDMM.Location = new System.Drawing.Point(58, 29);
+            this.pbDMM.Location = new System.Drawing.Point(77, 36);
+            this.pbDMM.Margin = new System.Windows.Forms.Padding(4);
             this.pbDMM.Name = "pbDMM";
-            this.pbDMM.Size = new System.Drawing.Size(284, 123);
+            this.pbDMM.Size = new System.Drawing.Size(379, 151);
             this.pbDMM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDMM.TabIndex = 8;
             this.pbDMM.TabStop = false;
@@ -1093,9 +1137,11 @@ namespace PE
             this.statusDMM.Controls.Add(this.tbIdentDMM);
             this.statusDMM.Controls.Add(this.btnRemoteDMM);
             this.statusDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.statusDMM.Location = new System.Drawing.Point(379, 29);
+            this.statusDMM.Location = new System.Drawing.Point(505, 36);
+            this.statusDMM.Margin = new System.Windows.Forms.Padding(4);
             this.statusDMM.Name = "statusDMM";
-            this.statusDMM.Size = new System.Drawing.Size(395, 117);
+            this.statusDMM.Padding = new System.Windows.Forms.Padding(4);
+            this.statusDMM.Size = new System.Drawing.Size(527, 144);
             this.statusDMM.TabIndex = 3;
             this.statusDMM.TabStop = false;
             this.statusDMM.Text = "Status";
@@ -1110,9 +1156,10 @@ namespace PE
             "TRIG:SOUR?",
             "MEAS:VOLT:DC?"});
             this.tbCommandDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tbCommandDMM.Location = new System.Drawing.Point(39, 73);
+            this.tbCommandDMM.Location = new System.Drawing.Point(52, 90);
+            this.tbCommandDMM.Margin = new System.Windows.Forms.Padding(4);
             this.tbCommandDMM.Name = "tbCommandDMM";
-            this.tbCommandDMM.Size = new System.Drawing.Size(255, 26);
+            this.tbCommandDMM.Size = new System.Drawing.Size(339, 30);
             this.tbCommandDMM.TabIndex = 4;
             this.tbCommandDMM.Text = "Enter Command";
             this.tbCommandDMM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDMM_KeyDown);
@@ -1121,27 +1168,30 @@ namespace PE
             // 
             this.lblDMMPort.AutoSize = true;
             this.lblDMMPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblDMMPort.Location = new System.Drawing.Point(68, 3);
+            this.lblDMMPort.Location = new System.Drawing.Point(91, 4);
+            this.lblDMMPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDMMPort.Name = "lblDMMPort";
-            this.lblDMMPort.Size = new System.Drawing.Size(47, 15);
+            this.lblDMMPort.Size = new System.Drawing.Size(58, 18);
             this.lblDMMPort.TabIndex = 6;
             this.lblDMMPort.Text = "PORT2";
             // 
             // tbIdentDMM
             // 
             this.tbIdentDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tbIdentDMM.Location = new System.Drawing.Point(39, 29);
+            this.tbIdentDMM.Location = new System.Drawing.Point(52, 36);
+            this.tbIdentDMM.Margin = new System.Windows.Forms.Padding(4);
             this.tbIdentDMM.Name = "tbIdentDMM";
             this.tbIdentDMM.ReadOnly = true;
-            this.tbIdentDMM.Size = new System.Drawing.Size(255, 26);
+            this.tbIdentDMM.Size = new System.Drawing.Size(339, 30);
             this.tbIdentDMM.TabIndex = 3;
             // 
             // btnRemoteDMM
             // 
             this.btnRemoteDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnRemoteDMM.Location = new System.Drawing.Point(313, 27);
+            this.btnRemoteDMM.Location = new System.Drawing.Point(417, 33);
+            this.btnRemoteDMM.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoteDMM.Name = "btnRemoteDMM";
-            this.btnRemoteDMM.Size = new System.Drawing.Size(61, 32);
+            this.btnRemoteDMM.Size = new System.Drawing.Size(81, 39);
             this.btnRemoteDMM.TabIndex = 1;
             this.btnRemoteDMM.TabStop = false;
             this.btnRemoteDMM.Text = "Get";
@@ -1156,12 +1206,13 @@ namespace PE
             this.valueDMM.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.valueDMM.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valueDMM.ForeColor = System.Drawing.Color.LawnGreen;
-            this.valueDMM.Location = new System.Drawing.Point(70, 174);
-            this.valueDMM.MaximumSize = new System.Drawing.Size(350, 75);
-            this.valueDMM.MinimumSize = new System.Drawing.Size(350, 75);
+            this.valueDMM.Location = new System.Drawing.Point(93, 214);
+            this.valueDMM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valueDMM.MaximumSize = new System.Drawing.Size(467, 92);
+            this.valueDMM.MinimumSize = new System.Drawing.Size(467, 92);
             this.valueDMM.Name = "valueDMM";
             this.valueDMM.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.valueDMM.Size = new System.Drawing.Size(350, 75);
+            this.valueDMM.Size = new System.Drawing.Size(467, 92);
             this.valueDMM.TabIndex = 6;
             this.valueDMM.Text = "----.---";
             this.valueDMM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1171,9 +1222,10 @@ namespace PE
             // 
             this.btnStopMeasure.Enabled = false;
             this.btnStopMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnStopMeasure.Location = new System.Drawing.Point(640, 174);
+            this.btnStopMeasure.Location = new System.Drawing.Point(853, 214);
+            this.btnStopMeasure.Margin = new System.Windows.Forms.Padding(4);
             this.btnStopMeasure.Name = "btnStopMeasure";
-            this.btnStopMeasure.Size = new System.Drawing.Size(86, 75);
+            this.btnStopMeasure.Size = new System.Drawing.Size(115, 92);
             this.btnStopMeasure.TabIndex = 1;
             this.btnStopMeasure.TabStop = false;
             this.btnStopMeasure.Text = "Stop";
@@ -1183,9 +1235,10 @@ namespace PE
             // btnStartMeasure
             // 
             this.btnStartMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnStartMeasure.Location = new System.Drawing.Point(548, 174);
+            this.btnStartMeasure.Location = new System.Drawing.Point(731, 214);
+            this.btnStartMeasure.Margin = new System.Windows.Forms.Padding(4);
             this.btnStartMeasure.Name = "btnStartMeasure";
-            this.btnStartMeasure.Size = new System.Drawing.Size(86, 75);
+            this.btnStartMeasure.Size = new System.Drawing.Size(115, 92);
             this.btnStartMeasure.TabIndex = 1;
             this.btnStartMeasure.TabStop = false;
             this.btnStartMeasure.Text = "Measure";
@@ -1196,9 +1249,10 @@ namespace PE
             // 
             this.lblVoltDMM.AutoSize = true;
             this.lblVoltDMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVoltDMM.Location = new System.Drawing.Point(444, 184);
+            this.lblVoltDMM.Location = new System.Drawing.Point(592, 226);
+            this.lblVoltDMM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVoltDMM.Name = "lblVoltDMM";
-            this.lblVoltDMM.Size = new System.Drawing.Size(98, 55);
+            this.lblVoltDMM.Size = new System.Drawing.Size(122, 69);
             this.lblVoltDMM.TabIndex = 6;
             this.lblVoltDMM.Text = "mV";
             // 
@@ -1211,9 +1265,11 @@ namespace PE
             this.gbDC.Controls.Add(this.btnToggleOn);
             this.gbDC.Controls.Add(this.pbDC);
             this.gbDC.Controls.Add(this.setPointManual);
-            this.gbDC.Location = new System.Drawing.Point(71, 25);
+            this.gbDC.Location = new System.Drawing.Point(95, 31);
+            this.gbDC.Margin = new System.Windows.Forms.Padding(4);
             this.gbDC.Name = "gbDC";
-            this.gbDC.Size = new System.Drawing.Size(788, 287);
+            this.gbDC.Padding = new System.Windows.Forms.Padding(4);
+            this.gbDC.Size = new System.Drawing.Size(1051, 353);
             this.gbDC.TabIndex = 9;
             this.gbDC.TabStop = false;
             this.gbDC.Text = "DC Source (Chroma 62100H Series)";
@@ -1224,9 +1280,10 @@ namespace PE
             this.lblToggleOn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.lblToggleOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblToggleOn.ForeColor = System.Drawing.Color.Black;
-            this.lblToggleOn.Location = new System.Drawing.Point(271, 202);
+            this.lblToggleOn.Location = new System.Drawing.Point(361, 249);
+            this.lblToggleOn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblToggleOn.Name = "lblToggleOn";
-            this.lblToggleOn.Size = new System.Drawing.Size(30, 16);
+            this.lblToggleOn.Size = new System.Drawing.Size(36, 20);
             this.lblToggleOn.TabIndex = 5;
             this.lblToggleOn.Text = "ON";
             this.lblToggleOn.Visible = false;
@@ -1237,9 +1294,10 @@ namespace PE
             this.lblToggleOff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
             this.lblToggleOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lblToggleOff.ForeColor = System.Drawing.Color.Black;
-            this.lblToggleOff.Location = new System.Drawing.Point(323, 203);
+            this.lblToggleOff.Location = new System.Drawing.Point(431, 250);
+            this.lblToggleOff.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblToggleOff.Name = "lblToggleOff";
-            this.lblToggleOff.Size = new System.Drawing.Size(37, 16);
+            this.lblToggleOff.Size = new System.Drawing.Size(45, 20);
             this.lblToggleOff.TabIndex = 5;
             this.lblToggleOff.Text = "OFF";
             // 
@@ -1251,9 +1309,11 @@ namespace PE
             this.statusDC.Controls.Add(this.btnRemoteDC);
             this.statusDC.Controls.Add(this.btnClearDC);
             this.statusDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.statusDC.Location = new System.Drawing.Point(379, 25);
+            this.statusDC.Location = new System.Drawing.Point(505, 31);
+            this.statusDC.Margin = new System.Windows.Forms.Padding(4);
             this.statusDC.Name = "statusDC";
-            this.statusDC.Size = new System.Drawing.Size(395, 117);
+            this.statusDC.Padding = new System.Windows.Forms.Padding(4);
+            this.statusDC.Size = new System.Drawing.Size(527, 144);
             this.statusDC.TabIndex = 3;
             this.statusDC.TabStop = false;
             this.statusDC.Text = "Status";
@@ -1274,9 +1334,10 @@ namespace PE
             this.tbCommandDC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbCommandDC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbCommandDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tbCommandDC.Location = new System.Drawing.Point(39, 73);
+            this.tbCommandDC.Location = new System.Drawing.Point(52, 90);
+            this.tbCommandDC.Margin = new System.Windows.Forms.Padding(4);
             this.tbCommandDC.Name = "tbCommandDC";
-            this.tbCommandDC.Size = new System.Drawing.Size(255, 26);
+            this.tbCommandDC.Size = new System.Drawing.Size(339, 30);
             this.tbCommandDC.TabIndex = 4;
             this.tbCommandDC.Text = "Enter Command";
             this.tbCommandDC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCommandDC_KeyDown);
@@ -1284,28 +1345,31 @@ namespace PE
             // tbIdentDC
             // 
             this.tbIdentDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tbIdentDC.Location = new System.Drawing.Point(39, 29);
+            this.tbIdentDC.Location = new System.Drawing.Point(52, 36);
+            this.tbIdentDC.Margin = new System.Windows.Forms.Padding(4);
             this.tbIdentDC.Name = "tbIdentDC";
             this.tbIdentDC.ReadOnly = true;
-            this.tbIdentDC.Size = new System.Drawing.Size(255, 26);
+            this.tbIdentDC.Size = new System.Drawing.Size(339, 30);
             this.tbIdentDC.TabIndex = 3;
             // 
             // lblDCPort
             // 
             this.lblDCPort.AutoSize = true;
             this.lblDCPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblDCPort.Location = new System.Drawing.Point(68, 3);
+            this.lblDCPort.Location = new System.Drawing.Point(91, 4);
+            this.lblDCPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDCPort.Name = "lblDCPort";
-            this.lblDCPort.Size = new System.Drawing.Size(47, 15);
+            this.lblDCPort.Size = new System.Drawing.Size(58, 18);
             this.lblDCPort.TabIndex = 6;
             this.lblDCPort.Text = "PORT1";
             // 
             // btnRemoteDC
             // 
             this.btnRemoteDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnRemoteDC.Location = new System.Drawing.Point(313, 27);
+            this.btnRemoteDC.Location = new System.Drawing.Point(417, 33);
+            this.btnRemoteDC.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoteDC.Name = "btnRemoteDC";
-            this.btnRemoteDC.Size = new System.Drawing.Size(61, 32);
+            this.btnRemoteDC.Size = new System.Drawing.Size(81, 39);
             this.btnRemoteDC.TabIndex = 1;
             this.btnRemoteDC.TabStop = false;
             this.btnRemoteDC.Text = "Get";
@@ -1315,9 +1379,10 @@ namespace PE
             // btnClearDC
             // 
             this.btnClearDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnClearDC.Location = new System.Drawing.Point(313, 70);
+            this.btnClearDC.Location = new System.Drawing.Point(417, 86);
+            this.btnClearDC.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearDC.Name = "btnClearDC";
-            this.btnClearDC.Size = new System.Drawing.Size(61, 32);
+            this.btnClearDC.Size = new System.Drawing.Size(81, 39);
             this.btnClearDC.TabIndex = 1;
             this.btnClearDC.TabStop = false;
             this.btnClearDC.Text = "Reset";
@@ -1329,9 +1394,10 @@ namespace PE
             this.btnToggleOff.ErrorImage = global::PE.Properties.Resources.icons8_toggle_off_64;
             this.btnToggleOff.Image = global::PE.Properties.Resources.icons8_toggle_off_64;
             this.btnToggleOff.InitialImage = global::PE.Properties.Resources.icons8_toggle_off_64;
-            this.btnToggleOff.Location = new System.Drawing.Point(263, 172);
+            this.btnToggleOff.Location = new System.Drawing.Point(351, 212);
+            this.btnToggleOff.Margin = new System.Windows.Forms.Padding(4);
             this.btnToggleOff.Name = "btnToggleOff";
-            this.btnToggleOff.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOff.Size = new System.Drawing.Size(141, 95);
             this.btnToggleOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnToggleOff.TabIndex = 4;
             this.btnToggleOff.TabStop = false;
@@ -1342,9 +1408,10 @@ namespace PE
             this.btnToggleOn.ErrorImage = global::PE.Properties.Resources.icons8_toggle_on_64;
             this.btnToggleOn.Image = global::PE.Properties.Resources.icons8_toggle_on_64;
             this.btnToggleOn.InitialImage = global::PE.Properties.Resources.icons8_toggle_on_64;
-            this.btnToggleOn.Location = new System.Drawing.Point(263, 171);
+            this.btnToggleOn.Location = new System.Drawing.Point(351, 210);
+            this.btnToggleOn.Margin = new System.Windows.Forms.Padding(4);
             this.btnToggleOn.Name = "btnToggleOn";
-            this.btnToggleOn.Size = new System.Drawing.Size(106, 77);
+            this.btnToggleOn.Size = new System.Drawing.Size(141, 95);
             this.btnToggleOn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnToggleOn.TabIndex = 4;
             this.btnToggleOn.TabStop = false;
@@ -1354,9 +1421,10 @@ namespace PE
             // pbDC
             // 
             this.pbDC.Image = global::PE.Properties.Resources.CHR_62000H;
-            this.pbDC.Location = new System.Drawing.Point(26, 30);
+            this.pbDC.Location = new System.Drawing.Point(35, 37);
+            this.pbDC.Margin = new System.Windows.Forms.Padding(4);
             this.pbDC.Name = "pbDC";
-            this.pbDC.Size = new System.Drawing.Size(343, 112);
+            this.pbDC.Size = new System.Drawing.Size(457, 138);
             this.pbDC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDC.TabIndex = 8;
             this.pbDC.TabStop = false;
@@ -1372,9 +1440,11 @@ namespace PE
             this.setPointManual.Controls.Add(this.lblVoltManual2);
             this.setPointManual.Controls.Add(this.lblVoltManual);
             this.setPointManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.setPointManual.Location = new System.Drawing.Point(380, 148);
+            this.setPointManual.Location = new System.Drawing.Point(507, 182);
+            this.setPointManual.Margin = new System.Windows.Forms.Padding(4);
             this.setPointManual.Name = "setPointManual";
-            this.setPointManual.Size = new System.Drawing.Size(395, 117);
+            this.setPointManual.Padding = new System.Windows.Forms.Padding(4);
+            this.setPointManual.Size = new System.Drawing.Size(527, 144);
             this.setPointManual.TabIndex = 3;
             this.setPointManual.TabStop = false;
             this.setPointManual.Text = "Setpoint";
@@ -1388,14 +1458,15 @@ namespace PE
             0,
             0,
             262144});
-            this.currBoxManual.Location = new System.Drawing.Point(113, 74);
+            this.currBoxManual.Location = new System.Drawing.Point(151, 91);
+            this.currBoxManual.Margin = new System.Windows.Forms.Padding(4);
             this.currBoxManual.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.currBoxManual.Name = "currBoxManual";
-            this.currBoxManual.Size = new System.Drawing.Size(103, 26);
+            this.currBoxManual.Size = new System.Drawing.Size(137, 30);
             this.currBoxManual.TabIndex = 2;
             this.currBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.currBoxManual.ThousandsSeparator = true;
@@ -1410,14 +1481,15 @@ namespace PE
             0,
             0,
             262144});
-            this.voltBoxManual.Location = new System.Drawing.Point(113, 29);
+            this.voltBoxManual.Location = new System.Drawing.Point(151, 36);
+            this.voltBoxManual.Margin = new System.Windows.Forms.Padding(4);
             this.voltBoxManual.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.voltBoxManual.Name = "voltBoxManual";
-            this.voltBoxManual.Size = new System.Drawing.Size(103, 26);
+            this.voltBoxManual.Size = new System.Drawing.Size(137, 30);
             this.voltBoxManual.TabIndex = 1;
             this.voltBoxManual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.voltBoxManual.ThousandsSeparator = true;
@@ -1426,9 +1498,10 @@ namespace PE
             // btnSetCurrManual
             // 
             this.btnSetCurrManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSetCurrManual.Location = new System.Drawing.Point(255, 70);
+            this.btnSetCurrManual.Location = new System.Drawing.Point(340, 86);
+            this.btnSetCurrManual.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetCurrManual.Name = "btnSetCurrManual";
-            this.btnSetCurrManual.Size = new System.Drawing.Size(118, 32);
+            this.btnSetCurrManual.Size = new System.Drawing.Size(157, 39);
             this.btnSetCurrManual.TabIndex = 1;
             this.btnSetCurrManual.TabStop = false;
             this.btnSetCurrManual.Text = "Set";
@@ -1438,9 +1511,10 @@ namespace PE
             // btnSetVoltManual
             // 
             this.btnSetVoltManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSetVoltManual.Location = new System.Drawing.Point(255, 25);
+            this.btnSetVoltManual.Location = new System.Drawing.Point(340, 31);
+            this.btnSetVoltManual.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetVoltManual.Name = "btnSetVoltManual";
-            this.btnSetVoltManual.Size = new System.Drawing.Size(118, 32);
+            this.btnSetVoltManual.Size = new System.Drawing.Size(157, 39);
             this.btnSetVoltManual.TabIndex = 1;
             this.btnSetVoltManual.TabStop = false;
             this.btnSetVoltManual.Text = "Set";
@@ -1451,9 +1525,10 @@ namespace PE
             // 
             this.lblCurrManual.AutoSize = true;
             this.lblCurrManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblCurrManual.Location = new System.Drawing.Point(37, 76);
+            this.lblCurrManual.Location = new System.Drawing.Point(49, 94);
+            this.lblCurrManual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrManual.Name = "lblCurrManual";
-            this.lblCurrManual.Size = new System.Drawing.Size(70, 20);
+            this.lblCurrManual.Size = new System.Drawing.Size(88, 25);
             this.lblCurrManual.TabIndex = 0;
             this.lblCurrManual.Text = "Current :";
             // 
@@ -1461,9 +1536,10 @@ namespace PE
             // 
             this.lblCurrManual2.AutoSize = true;
             this.lblCurrManual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblCurrManual2.Location = new System.Drawing.Point(227, 76);
+            this.lblCurrManual2.Location = new System.Drawing.Point(303, 94);
+            this.lblCurrManual2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrManual2.Name = "lblCurrManual2";
-            this.lblCurrManual2.Size = new System.Drawing.Size(20, 20);
+            this.lblCurrManual2.Size = new System.Drawing.Size(26, 25);
             this.lblCurrManual2.TabIndex = 0;
             this.lblCurrManual2.Text = "A";
             // 
@@ -1471,9 +1547,10 @@ namespace PE
             // 
             this.lblVoltManual2.AutoSize = true;
             this.lblVoltManual2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblVoltManual2.Location = new System.Drawing.Point(227, 31);
+            this.lblVoltManual2.Location = new System.Drawing.Point(303, 38);
+            this.lblVoltManual2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVoltManual2.Name = "lblVoltManual2";
-            this.lblVoltManual2.Size = new System.Drawing.Size(20, 20);
+            this.lblVoltManual2.Size = new System.Drawing.Size(26, 25);
             this.lblVoltManual2.TabIndex = 0;
             this.lblVoltManual2.Text = "V";
             // 
@@ -1481,9 +1558,10 @@ namespace PE
             // 
             this.lblVoltManual.AutoSize = true;
             this.lblVoltManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblVoltManual.Location = new System.Drawing.Point(35, 31);
+            this.lblVoltManual.Location = new System.Drawing.Point(47, 38);
+            this.lblVoltManual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVoltManual.Name = "lblVoltManual";
-            this.lblVoltManual.Size = new System.Drawing.Size(72, 20);
+            this.lblVoltManual.Size = new System.Drawing.Size(90, 25);
             this.lblVoltManual.TabIndex = 0;
             this.lblVoltManual.Text = "Voltage :";
             // 
@@ -1492,9 +1570,10 @@ namespace PE
             this.pbDMMSign.ErrorImage = global::PE.Properties.Resources.icons8_voltmeter_64;
             this.pbDMMSign.Image = global::PE.Properties.Resources.icons8_voltmeter_641;
             this.pbDMMSign.InitialImage = global::PE.Properties.Resources.icons8_voltmeter_642;
-            this.pbDMMSign.Location = new System.Drawing.Point(6, 321);
+            this.pbDMMSign.Location = new System.Drawing.Point(8, 395);
+            this.pbDMMSign.Margin = new System.Windows.Forms.Padding(4);
             this.pbDMMSign.Name = "pbDMMSign";
-            this.pbDMMSign.Size = new System.Drawing.Size(59, 43);
+            this.pbDMMSign.Size = new System.Drawing.Size(79, 53);
             this.pbDMMSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDMMSign.TabIndex = 7;
             this.pbDMMSign.TabStop = false;
@@ -1504,9 +1583,10 @@ namespace PE
             this.pbDCSign.ErrorImage = global::PE.Properties.Resources.icons8_energy_meter_641;
             this.pbDCSign.Image = global::PE.Properties.Resources.icons8_energy_meter_64;
             this.pbDCSign.InitialImage = global::PE.Properties.Resources.icons8_energy_meter_642;
-            this.pbDCSign.Location = new System.Drawing.Point(14, 25);
+            this.pbDCSign.Location = new System.Drawing.Point(19, 31);
+            this.pbDCSign.Margin = new System.Windows.Forms.Padding(4);
             this.pbDCSign.Name = "pbDCSign";
-            this.pbDCSign.Size = new System.Drawing.Size(51, 43);
+            this.pbDCSign.Size = new System.Drawing.Size(68, 53);
             this.pbDCSign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDCSign.TabIndex = 7;
             this.pbDCSign.TabStop = false;
@@ -1520,9 +1600,11 @@ namespace PE
             this.testProgram.Controls.Add(this.programList);
             this.testProgram.Enabled = false;
             this.testProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.testProgram.Location = new System.Drawing.Point(12, 11);
+            this.testProgram.Location = new System.Drawing.Point(16, 14);
+            this.testProgram.Margin = new System.Windows.Forms.Padding(4);
             this.testProgram.Name = "testProgram";
-            this.testProgram.Size = new System.Drawing.Size(474, 117);
+            this.testProgram.Padding = new System.Windows.Forms.Padding(4);
+            this.testProgram.Size = new System.Drawing.Size(632, 144);
             this.testProgram.TabIndex = 9;
             this.testProgram.TabStop = false;
             this.testProgram.Text = "Test Program";
@@ -1539,10 +1621,11 @@ namespace PE
             this.tbSn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbSn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbSn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tbSn.Location = new System.Drawing.Point(164, 70);
+            this.tbSn.Location = new System.Drawing.Point(219, 86);
+            this.tbSn.Margin = new System.Windows.Forms.Padding(4);
             this.tbSn.MaxLength = 22;
             this.tbSn.Name = "tbSn";
-            this.tbSn.Size = new System.Drawing.Size(205, 26);
+            this.tbSn.Size = new System.Drawing.Size(272, 30);
             this.tbSn.TabIndex = 2;
             // 
             // confirmSelectBtn
@@ -1551,9 +1634,10 @@ namespace PE
             this.confirmSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.confirmSelectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.confirmSelectBtn.Image = global::PE.Properties.Resources.icons8_ok_64;
-            this.confirmSelectBtn.Location = new System.Drawing.Point(375, 25);
+            this.confirmSelectBtn.Location = new System.Drawing.Point(500, 31);
+            this.confirmSelectBtn.Margin = new System.Windows.Forms.Padding(4);
             this.confirmSelectBtn.Name = "confirmSelectBtn";
-            this.confirmSelectBtn.Size = new System.Drawing.Size(86, 71);
+            this.confirmSelectBtn.Size = new System.Drawing.Size(115, 87);
             this.confirmSelectBtn.TabIndex = 2;
             this.confirmSelectBtn.TabStop = false;
             this.confirmSelectBtn.UseVisualStyleBackColor = false;
@@ -1563,9 +1647,10 @@ namespace PE
             // 
             this.lblSn.AutoSize = true;
             this.lblSn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblSn.Location = new System.Drawing.Point(73, 73);
+            this.lblSn.Location = new System.Drawing.Point(97, 90);
+            this.lblSn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSn.Name = "lblSn";
-            this.lblSn.Size = new System.Drawing.Size(85, 20);
+            this.lblSn.Size = new System.Drawing.Size(108, 25);
             this.lblSn.TabIndex = 1;
             this.lblSn.Text = "Serial No. :";
             // 
@@ -1573,9 +1658,10 @@ namespace PE
             // 
             this.lblSelectProgram.AutoSize = true;
             this.lblSelectProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblSelectProgram.Location = new System.Drawing.Point(22, 29);
+            this.lblSelectProgram.Location = new System.Drawing.Point(29, 36);
+            this.lblSelectProgram.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSelectProgram.Name = "lblSelectProgram";
-            this.lblSelectProgram.Size = new System.Drawing.Size(136, 20);
+            this.lblSelectProgram.Size = new System.Drawing.Size(171, 25);
             this.lblSelectProgram.TabIndex = 1;
             this.lblSelectProgram.Text = "Choose Program :";
             // 
@@ -1584,9 +1670,10 @@ namespace PE
             this.programList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.programList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.programList.FormattingEnabled = true;
-            this.programList.Location = new System.Drawing.Point(164, 25);
+            this.programList.Location = new System.Drawing.Point(219, 31);
+            this.programList.Margin = new System.Windows.Forms.Padding(4);
             this.programList.Name = "programList";
-            this.programList.Size = new System.Drawing.Size(205, 28);
+            this.programList.Size = new System.Drawing.Size(272, 33);
             this.programList.TabIndex = 1;
             this.programList.SelectionChangeCommitted += new System.EventHandler(this.programList_SelectionChangeCommitted);
             // 
@@ -1600,9 +1687,11 @@ namespace PE
             this.editSpecTest.Controls.Add(this.gridTable2);
             this.editSpecTest.Enabled = false;
             this.editSpecTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.editSpecTest.Location = new System.Drawing.Point(990, 358);
+            this.editSpecTest.Location = new System.Drawing.Point(1320, 441);
+            this.editSpecTest.Margin = new System.Windows.Forms.Padding(4);
             this.editSpecTest.Name = "editSpecTest";
-            this.editSpecTest.Size = new System.Drawing.Size(677, 272);
+            this.editSpecTest.Padding = new System.Windows.Forms.Padding(4);
+            this.editSpecTest.Size = new System.Drawing.Size(903, 350);
             this.editSpecTest.TabIndex = 8;
             this.editSpecTest.TabStop = false;
             this.editSpecTest.Text = "Edit Specification Test";
@@ -1613,9 +1702,10 @@ namespace PE
             this.delProgBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.delProgBtn.BackColor = System.Drawing.Color.DarkOrange;
             this.delProgBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.delProgBtn.Location = new System.Drawing.Point(538, 132);
+            this.delProgBtn.Location = new System.Drawing.Point(717, 177);
+            this.delProgBtn.Margin = new System.Windows.Forms.Padding(4);
             this.delProgBtn.Name = "delProgBtn";
-            this.delProgBtn.Size = new System.Drawing.Size(121, 64);
+            this.delProgBtn.Size = new System.Drawing.Size(161, 79);
             this.delProgBtn.TabIndex = 2;
             this.delProgBtn.TabStop = false;
             this.delProgBtn.Text = "Delete Selected Program";
@@ -1626,9 +1716,10 @@ namespace PE
             // 
             this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.clearBtn.BackColor = System.Drawing.Color.Red;
-            this.clearBtn.Location = new System.Drawing.Point(538, 202);
+            this.clearBtn.Location = new System.Drawing.Point(717, 264);
+            this.clearBtn.Margin = new System.Windows.Forms.Padding(4);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(121, 64);
+            this.clearBtn.Size = new System.Drawing.Size(161, 79);
             this.clearBtn.TabIndex = 2;
             this.clearBtn.TabStop = false;
             this.clearBtn.Text = "Clear";
@@ -1638,9 +1729,10 @@ namespace PE
             // insertBtn
             // 
             this.insertBtn.BackColor = System.Drawing.Color.LawnGreen;
-            this.insertBtn.Location = new System.Drawing.Point(538, 29);
+            this.insertBtn.Location = new System.Drawing.Point(717, 36);
+            this.insertBtn.Margin = new System.Windows.Forms.Padding(4);
             this.insertBtn.Name = "insertBtn";
-            this.insertBtn.Size = new System.Drawing.Size(121, 64);
+            this.insertBtn.Size = new System.Drawing.Size(161, 79);
             this.insertBtn.TabIndex = 1;
             this.insertBtn.TabStop = false;
             this.insertBtn.Text = "Insert";
@@ -1651,9 +1743,9 @@ namespace PE
             // 
             this.gridTable2.AllowUserToOrderColumns = true;
             this.gridTable2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridTable2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridTable2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -1661,62 +1753,66 @@ namespace PE
             this.gridTable2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridTable2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridTable2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridTable2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTable2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.editContactPairs,
             this.editMaxRes});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.DefaultCellStyle = dataGridViewCellStyle22;
-            this.gridTable2.Location = new System.Drawing.Point(16, 29);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.gridTable2.Location = new System.Drawing.Point(21, 36);
+            this.gridTable2.Margin = new System.Windows.Forms.Padding(4);
             this.gridTable2.Name = "gridTable2";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridTable2.RowHeadersVisible = false;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable2.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.gridTable2.Size = new System.Drawing.Size(510, 237);
+            this.gridTable2.RowHeadersWidth = 51;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable2.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.gridTable2.Size = new System.Drawing.Size(680, 307);
             this.gridTable2.TabIndex = 7;
             // 
             // editContactPairs
             // 
             this.editContactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editContactPairs.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editContactPairs.DefaultCellStyle = dataGridViewCellStyle3;
             this.editContactPairs.HeaderText = "Contact Pairs";
+            this.editContactPairs.MinimumWidth = 6;
             this.editContactPairs.Name = "editContactPairs";
             // 
             // editMaxRes
             // 
             this.editMaxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.Format = "N1";
-            dataGridViewCellStyle21.NullValue = null;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editMaxRes.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N1";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editMaxRes.DefaultCellStyle = dataGridViewCellStyle4;
             this.editMaxRes.HeaderText = "Max.Res (mΩ)";
+            this.editMaxRes.MinimumWidth = 6;
             this.editMaxRes.Name = "editMaxRes";
             this.editMaxRes.Width = 150;
             // 
@@ -1728,9 +1824,11 @@ namespace PE
             this.testData.Controls.Add(this.gridTable1);
             this.testData.Enabled = false;
             this.testData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.testData.Location = new System.Drawing.Point(12, 358);
+            this.testData.Location = new System.Drawing.Point(16, 441);
+            this.testData.Margin = new System.Windows.Forms.Padding(4);
             this.testData.Name = "testData";
-            this.testData.Size = new System.Drawing.Size(958, 272);
+            this.testData.Padding = new System.Windows.Forms.Padding(4);
+            this.testData.Size = new System.Drawing.Size(1277, 350);
             this.testData.TabIndex = 8;
             this.testData.TabStop = false;
             this.testData.Text = "Test Data";
@@ -1743,9 +1841,10 @@ namespace PE
             this.btnClearData.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClearData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnClearData.ForeColor = System.Drawing.Color.White;
-            this.btnClearData.Location = new System.Drawing.Point(876, 209);
+            this.btnClearData.Location = new System.Drawing.Point(1168, 272);
+            this.btnClearData.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearData.Name = "btnClearData";
-            this.btnClearData.Size = new System.Drawing.Size(76, 57);
+            this.btnClearData.Size = new System.Drawing.Size(101, 70);
             this.btnClearData.TabIndex = 6;
             this.btnClearData.Text = "Clear ";
             this.btnClearData.UseVisualStyleBackColor = false;
@@ -1755,9 +1854,9 @@ namespace PE
             // 
             this.gridTable1.AllowUserToOrderColumns = true;
             this.gridTable1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridTable1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridTable1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -1765,14 +1864,14 @@ namespace PE
             this.gridTable1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridTable1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridTable1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.gridTable1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTable1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.contactPairs,
@@ -1780,87 +1879,94 @@ namespace PE
             this.measVolt,
             this.res,
             this.result});
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.DefaultCellStyle = dataGridViewCellStyle32;
-            this.gridTable1.Location = new System.Drawing.Point(16, 29);
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.DefaultCellStyle = dataGridViewCellStyle15;
+            this.gridTable1.Location = new System.Drawing.Point(21, 36);
+            this.gridTable1.Margin = new System.Windows.Forms.Padding(4);
             this.gridTable1.Name = "gridTable1";
             this.gridTable1.ReadOnly = true;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.gridTable1.RowHeadersVisible = false;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle34;
-            this.gridTable1.Size = new System.Drawing.Size(854, 237);
+            this.gridTable1.RowHeadersWidth = 51;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTable1.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            this.gridTable1.Size = new System.Drawing.Size(1139, 307);
             this.gridTable1.TabIndex = 5;
             // 
             // contactPairs
             // 
             this.contactPairs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contactPairs.DefaultCellStyle = dataGridViewCellStyle10;
             this.contactPairs.FillWeight = 150F;
             this.contactPairs.HeaderText = "Contact Pairs";
+            this.contactPairs.MinimumWidth = 6;
             this.contactPairs.Name = "contactPairs";
             this.contactPairs.ReadOnly = true;
             // 
             // maxRes
             // 
             this.maxRes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.Format = "N1";
-            dataGridViewCellStyle28.NullValue = null;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.maxRes.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "N1";
+            dataGridViewCellStyle11.NullValue = null;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.maxRes.DefaultCellStyle = dataGridViewCellStyle11;
             this.maxRes.HeaderText = "Max.Res (mΩ)";
+            this.maxRes.MinimumWidth = 6;
             this.maxRes.Name = "maxRes";
             this.maxRes.ReadOnly = true;
             // 
             // measVolt
             // 
             this.measVolt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.Format = "N2";
-            dataGridViewCellStyle29.NullValue = null;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.measVolt.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.measVolt.DefaultCellStyle = dataGridViewCellStyle12;
             this.measVolt.HeaderText = "Voltage (mV)";
+            this.measVolt.MinimumWidth = 6;
             this.measVolt.Name = "measVolt";
             this.measVolt.ReadOnly = true;
             // 
             // res
             // 
             this.res.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.Format = "N2";
-            dataGridViewCellStyle30.NullValue = null;
-            this.res.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.res.DefaultCellStyle = dataGridViewCellStyle13;
             this.res.HeaderText = "Res (mΩ)";
+            this.res.MinimumWidth = 6;
             this.res.Name = "res";
             this.res.ReadOnly = true;
             // 
             // result
             // 
             this.result.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.NullValue = null;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.result.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.NullValue = null;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.result.DefaultCellStyle = dataGridViewCellStyle14;
             this.result.HeaderText = "Result";
+            this.result.MinimumWidth = 6;
             this.result.Name = "result";
             this.result.ReadOnly = true;
             // 
@@ -1890,19 +1996,21 @@ namespace PE
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(45, 17);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(59, 20);
             this.toolStripStatusLabel.Text = "STATUS";
             this.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ss
             // 
             this.ss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ss.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ss.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.ss.Location = new System.Drawing.Point(0, 727);
+            this.ss.Location = new System.Drawing.Point(0, 896);
             this.ss.Name = "ss";
+            this.ss.Padding = new System.Windows.Forms.Padding(19, 0, 1, 0);
             this.ss.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ss.Size = new System.Drawing.Size(983, 22);
+            this.ss.Size = new System.Drawing.Size(1311, 26);
             this.ss.SizingGrip = false;
             this.ss.TabIndex = 10;
             this.ss.Text = "statusStrip1";
@@ -1914,9 +2022,10 @@ namespace PE
             this.delta.ErrorImage = global::PE.Properties.Resources.delta;
             this.delta.Image = global::PE.Properties.Resources.delta;
             this.delta.InitialImage = global::PE.Properties.Resources.delta;
-            this.delta.Location = new System.Drawing.Point(789, 32);
+            this.delta.Location = new System.Drawing.Point(1052, 39);
+            this.delta.Margin = new System.Windows.Forms.Padding(4);
             this.delta.Name = "delta";
-            this.delta.Size = new System.Drawing.Size(179, 56);
+            this.delta.Size = new System.Drawing.Size(239, 69);
             this.delta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.delta.TabIndex = 9;
             this.delta.TabStop = false;
@@ -1928,9 +2037,10 @@ namespace PE
             this.disConnect.ErrorImage = global::PE.Properties.Resources.icons8_disconnected_64;
             this.disConnect.Image = global::PE.Properties.Resources.icons8_disconnected_64;
             this.disConnect.InitialImage = global::PE.Properties.Resources.icons8_disconnected_64;
-            this.disConnect.Location = new System.Drawing.Point(716, 27);
+            this.disConnect.Location = new System.Drawing.Point(955, 33);
+            this.disConnect.Margin = new System.Windows.Forms.Padding(4);
             this.disConnect.Name = "disConnect";
-            this.disConnect.Size = new System.Drawing.Size(67, 67);
+            this.disConnect.Size = new System.Drawing.Size(89, 82);
             this.disConnect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.disConnect.TabIndex = 7;
             this.disConnect.TabStop = false;
@@ -1942,9 +2052,10 @@ namespace PE
             this.connect.ErrorImage = global::PE.Properties.Resources.icons8_connected_64;
             this.connect.Image = global::PE.Properties.Resources.icons8_connected_64;
             this.connect.InitialImage = global::PE.Properties.Resources.icons8_connected_64;
-            this.connect.Location = new System.Drawing.Point(716, 27);
+            this.connect.Location = new System.Drawing.Point(955, 33);
+            this.connect.Margin = new System.Windows.Forms.Padding(4);
             this.connect.Name = "connect";
-            this.connect.Size = new System.Drawing.Size(67, 67);
+            this.connect.Size = new System.Drawing.Size(89, 82);
             this.connect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.connect.TabIndex = 7;
             this.connect.TabStop = false;
@@ -1952,11 +2063,11 @@ namespace PE
             // 
             // peTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(983, 749);
+            this.ClientSize = new System.Drawing.Size(1311, 922);
             this.Controls.Add(this.delta);
             this.Controls.Add(this.disConnect);
             this.Controls.Add(this.ss);
@@ -1966,6 +2077,7 @@ namespace PE
             this.Controls.Add(this.ms);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.ms;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "peTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PE TESTING - QE APEBU DELTA v2.0.11.25";

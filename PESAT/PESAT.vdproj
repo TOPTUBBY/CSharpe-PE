@@ -63,12 +63,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_39207F1165AE4759A4E2C467C3579534"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3A005AEDBAB34B58B09BFCBB6BC9F544"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -76,6 +70,12 @@
         "Entry"
         {
         "MsmKey" = "8:_4CE53C86E7C44C7CAE8D6DA0D9ABFC00"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_50419DEACFD94A70BCEF2FC12A550E35"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -112,12 +112,6 @@
         "Entry"
         {
         "MsmKey" = "8:_7C06A474F2D249E0B3631B22F2520A46"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7F7C813A114D4275946BCDAAE257724C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -231,6 +225,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F13E479CBB4B4933AA29D543A328F657"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F6B085BFEC844B90948D0947EACD16CD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -238,6 +238,12 @@
         "Entry"
         {
         "MsmKey" = "8:_F8D8D8C0DF934560870C8D51715A1A47"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FC614F25836041CFA2DA55FAC12F5906"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -502,26 +508,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_39207F1165AE4759A4E2C467C3579534"
-            {
-            "SourcePath" = "8:..\\PE\\ext_Resources\\datasheet\\34460a-34461a-34465a-34470a_manual.pdf"
-            "TargetName" = "8:34460a-34461a-34465a-34470a_manual.pdf"
-            "Tag" = "8:"
-            "Folder" = "8:_2F159B9E3A4F40EE88B96E2AC1F453BE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3A005AEDBAB34B58B09BFCBB6BC9F544"
             {
             "SourcePath" = "8:..\\PE\\ext_Resources\\file\\specsheet\\DCB2.0.jpg"
@@ -548,6 +534,26 @@
             "TargetName" = "8:NIS.xls"
             "Tag" = "8:"
             "Folder" = "8:_D39EAB1D8916438EAF761228AB9452AB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_50419DEACFD94A70BCEF2FC12A550E35"
+            {
+            "SourcePath" = "8:..\\PE\\ext_Resources\\manual\\34460a-34461a-34465a-34470a_manual.pdf"
+            "TargetName" = "8:34460a-34461a-34465a-34470a_manual.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_2F159B9E3A4F40EE88B96E2AC1F453BE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -648,26 +654,6 @@
             "TargetName" = "8:BM22.jpg"
             "Tag" = "8:"
             "Folder" = "8:_D39EAB1D8916438EAF761228AB9452AB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7F7C813A114D4275946BCDAAE257724C"
-            {
-            "SourcePath" = "8:..\\PE\\ext_Resources\\datasheet\\62000h_series.pdf"
-            "TargetName" = "8:62000h_series.pdf"
-            "Tag" = "8:"
-            "Folder" = "8:_2F159B9E3A4F40EE88B96E2AC1F453BE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1042,6 +1028,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F13E479CBB4B4933AA29D543A328F657"
+            {
+            "SourcePath" = "8:..\\PE\\ext_Resources\\manual\\62000h_series.pdf"
+            "TargetName" = "8:62000h_series.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_2F159B9E3A4F40EE88B96E2AC1F453BE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F6B085BFEC844B90948D0947EACD16CD"
             {
             "SourcePath" = "8:..\\PE\\ext_Resources\\file\\specsheet\\BM22.pdf"
@@ -1068,6 +1074,26 @@
             "TargetName" = "8:BM7.4.pdf"
             "Tag" = "8:"
             "Folder" = "8:_D39EAB1D8916438EAF761228AB9452AB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FC614F25836041CFA2DA55FAC12F5906"
+            {
+            "SourcePath" = "8:..\\PE\\ext_Resources\\manual\\PESAT_manual.pdf"
+            "TargetName" = "8:PESAT_manual.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_2F159B9E3A4F40EE88B96E2AC1F453BE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1214,17 +1240,6 @@
                             "Condition" = "8:"
                             "Transitive" = "11:FALSE"
                             "Property" = "8:_C1EE09EFCB53448094DB78EFA8B6E8DD"
-                                "Folders"
-                                {
-                                }
-                            }
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_D09EAD50D9F84C56A59071724203793F"
-                            {
-                            "Name" = "8:specsheet"
-                            "AlwaysCreate" = "11:FALSE"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "Property" = "8:_BCBC5A666CE941619726F95D2AE3D27B"
                                 "Folders"
                                 {
                                 }
