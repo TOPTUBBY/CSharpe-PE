@@ -3,7 +3,7 @@
 # ⚡ PE Semi-Auto Testing (CSharpe-PE)
 
 [![Language](https://img.shields.io/badge/Language-C%23-239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/csharp/)
-[![Framework](https://img.shields.io/badge/Framework-.NET_WinForms-512BD4.svg?style=for-the-badge&logo=.net&logoColor=white)](https://dotnet.microsoft.com/)
+[![Framework](https://img.shields.io/badge/Framework-.NET4.5-512BD4.svg?style=for-the-badge&logo=.net&logoColor=white)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-success.svg?style=for-the-badge)]()
 [![Version](https://img.shields.io/badge/Version-2.0.11.25-blue.svg?style=for-the-badge)](https://github.com/TOPTUBBY/CSharpe-PE)
