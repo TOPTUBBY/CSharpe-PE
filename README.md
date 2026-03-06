@@ -6,7 +6,7 @@
 [![Framework](https://img.shields.io/badge/Framework-.NET4.5-512BD4.svg?style=for-the-badge&logo=.net&logoColor=white)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-success.svg?style=for-the-badge)]()
-[![Version](https://img.shields.io/badge/Version-2.0.11.25-blue.svg?style=for-the-badge)](https://github.com/TOPTUBBY/CSharpe-PE)
+[![Version](https://img.shields.io/badge/Version-2.0.11.25-red.svg?style=for-the-badge)](https://github.com/TOPTUBBY/CSharpe-PE)
 
 **A professional internal testing tool for Power Electronics (PE) modules.**<br>
 Created for *Delta Electronics (Thailand) Public Co.,Ltd.*
