@@ -34,17 +34,26 @@ using System.Threading;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace PE
 {
     public partial class peTest : Form
     {
-        private IniFile ini = new IniFile(@"D:\Automotive_Software_DET5\PESAT\database\config.ini");
-        internal delegate void SerialDataReceivedEventHandlerDelegate(object sender, SerialDataReceivedEventArgs e);
-        private delegate void SetTextCallback(string text);
-        private string InputData = String.Empty;
-        private calDC calDC = new calDC();
-        private calDMM calDMM = new calDMM();
+        private const string PesatRootPath = @"D:\Automotive_Software_DET5\PESAT";
+        private const string ConfigPath = PesatRootPath + @"\database\config.ini";
+        private const string DatabasePath = PesatRootPath + @"\database\pe_database.xlsx";
+        private const string ReportRootPath = @"D:\PE_DATA";
+
+        private IniFile ini = new IniFile(ConfigPath);
+        private readonly StringBuilder dcReceiveBuffer = new StringBuilder();
+        private readonly StringBuilder dmmReceiveBuffer = new StringBuilder();
+        private readonly object dcReceiveLock = new object();
+        private readonly object dmmReceiveLock = new object();
+        private bool isClosing;
+        private bool suppressDcStatusHandling;
+        private bool hasValidMeasurement;
+        private DateTime lastMeasurementAtUtc = DateTime.MinValue;
         private _Application app;
         private _Workbook workBook;
         private _Worksheet workSheet;
@@ -65,8 +74,6 @@ namespace PE
         public peTest()
         {
             InitializeComponent();
-            comPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(port_DataReceived_1);
-            comPort2.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(port_DataReceived_2);
             dangerTime.Stop();
             toolStripStatusLabel.Text = "Device not connected";
         }
@@ -89,14 +96,23 @@ namespace PE
             startFrm.Close();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private async void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            comPort1.RtsEnable = false;
-            comPort1.DtrEnable = false;
-            comPort1.Close();
-            comPort2.RtsEnable = false;
-            comPort2.DtrEnable = false;
-            comPort2.Close();
+            if (isClosing)
+            {
+                return;
+            }
+
+            e.Cancel = true;
+            isClosing = true;
+            await SafeStopOutputAsync();
+
+            comPort1.DataReceived -= port_DataReceived_1;
+            comPort2.DataReceived -= port_DataReceived_2;
+            CloseSerialPorts();
+
+            // Cancel this close request and issue a new one after the asynchronous safety work.
+            BeginInvoke(new Action(Close));
         }
 
         private void addBlackList(string User)
@@ -201,29 +217,37 @@ namespace PE
 
         private void port_DataReceived_1(object sender, SerialDataReceivedEventArgs e)
         {
-            InputData = comPort1.ReadExisting();
-            if (InputData != String.Empty)
+            if (isClosing)
             {
-                this.BeginInvoke(new SetTextCallback(SetText1), new object[] { InputData });
+                return;
+            }
+
+            try
+            {
+                string inputData = comPort1.ReadExisting();
+                foreach (string message in ExtractCompleteMessages(dcReceiveBuffer, dcReceiveLock, inputData))
+                {
+                    if (!suppressDcStatusHandling && IsHandleCreated && !IsDisposed)
+                    {
+                        BeginInvoke(new Action<string>(SetText1), message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError("Read DC serial port", ex);
             }
         }
 
-        private void SetText1(string text1)
+        private void SetText1(string message)
         {
-            this.rtbIncoming1.Text = text1;
-            //if (rtbIncoming1.Text == "0\r\n" || rtbIncoming1.Text == "1\r\n")
-            //{
-            //    value.Text = "----.---";
-            //}
-            //else
-            //{
-            //    tbIdentDC.Text = rtbIncoming1.Text;
-            //}
+            rtbIncoming1.Text = message;
 
-            if (rtbIncoming1.Text == "1\r\n")
+            if (message == "1")
             {
-                this.rtbIncoming2.Text = null;
-                this.Text = "PE TESTING (RUNNING)";
+                rtbIncoming2.Clear();
+                hasValidMeasurement = false;
+                Text = "PE TESTING (RUNNING)";
                 testProgram.Enabled = false;
                 setPoint.Enabled = false;
                 manualTool.Enabled = false;
@@ -231,88 +255,111 @@ namespace PE
                 pushStart.ForeColor = Color.Red;
                 dangerTime.Start();
                 toolStripStatusLabel.Text = "Testing...";
+                return;
             }
-            else if (rtbIncoming1.Text == "0\r\n")
+
+            if (message != "0")
             {
-                this.Text = "PE TESTING";
-                testProgram.Enabled = true;
-                setPoint.Enabled = true;
-                manualTool.Enabled = true;
-                fileSaveAs.Enabled = true;
-                exportTool.Enabled = true;
-                pushStart.Visible = true;
-                dangerOn.Visible = false;
-                pushStart.Text = "Push foot button to Start ...";
-                pushStart.ForeColor = Color.RoyalBlue;
-                dangerTime.Stop();
-                toolStripStatusLabel.Text = "Ready";
+                return;
+            }
 
-                if (gridTable1.Rows[cntRow].Cells[0].Value != null)     //update cntRow
-                {
-                    if (rtbIncoming2.Text != null)
-                    {
-                        //Cells Manangement
-                        //Add data in voltage cell
-                        try
-                        {
-                            //Add data in voltage cell
-                            gridTable1.Rows[cntRow].Cells[2].Value = measValue;
+            Text = "PE TESTING";
+            testProgram.Enabled = true;
+            setPoint.Enabled = true;
+            manualTool.Enabled = true;
+            fileSaveAs.Enabled = true;
+            exportTool.Enabled = true;
+            pushStart.Visible = true;
+            dangerOn.Visible = false;
+            pushStart.Text = "Push foot button to Start ...";
+            pushStart.ForeColor = Color.RoyalBlue;
+            dangerTime.Stop();
+            toolStripStatusLabel.Text = "Ready";
+            CompleteCurrentTestStep();
+        }
 
-                            //Calculate to Resistance by use Current from setpoint
-                            //Add data in resistance cell
-                            voltValue = Convert.ToDecimal(measValue);
-                            resValue = voltValue / currValue;
-                            gridTable1.Rows[cntRow].Cells[3].Value = resValue;
+        private void CompleteCurrentTestStep()
+        {
+            if (cntRow < 0 || cntRow >= gridTable1.Rows.Count)
+            {
+                MessageBox.Show("Testing Done.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-                            //Add data in result cell
-                            resMax = Convert.ToDecimal(gridTable1.Rows[cntRow].Cells[1].Value);
-                            var _color = Color.Black;
-                            if (resValue <= resMax)
-                            {
-                                resultValue = "PASS";
-                                _color = Color.Green;
-                            }
-                            else
-                            {
-                                resultValue = "FAIL";
-                                _color = Color.Red;
-                            }
-                            gridTable1.Rows[cntRow].Cells[4].Value = resultValue;
-                            gridTable1.Rows[cntRow].Cells[4].Style.ForeColor = _color;
-                            cntRow++;
-                            if (gridTable1.Rows[cntRow].Cells[0].Value == null)
-                            {
-                                MessageBox.Show("Testing Done.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                        }
-                        catch
-                        {
-                            resValue = 0;
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Testing Done.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            DataGridViewRow currentRow = gridTable1.Rows[cntRow];
+            if (currentRow.IsNewRow || currentRow.Cells[0].Value == null)
+            {
+                MessageBox.Show("Testing Done.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (!hasValidMeasurement || DateTime.UtcNow - lastMeasurementAtUtc > TimeSpan.FromSeconds(5))
+            {
+                MessageBox.Show("No fresh DMM measurement is available. Please check the DMM connection and repeat this test point.",
+                    "Measurement unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (currValue <= 0)
+            {
+                MessageBox.Show("Current setpoint must be greater than zero before resistance can be calculated.",
+                    "Invalid current setpoint", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!TryConvertToDecimal(currentRow.Cells[1].Value, out resMax))
+            {
+                MessageBox.Show("The maximum resistance value in the selected test program is invalid.",
+                    "Invalid test limit", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            voltValue = measValue;
+            resValue = voltValue / currValue;
+            currentRow.Cells[2].Value = measValue;
+            currentRow.Cells[3].Value = resValue;
+
+            bool passed = resValue <= resMax;
+            resultValue = passed ? "PASS" : "FAIL";
+            currentRow.Cells[4].Value = resultValue;
+            currentRow.Cells[4].Style.ForeColor = passed ? Color.Green : Color.Red;
+
+            cntRow++;
+            hasValidMeasurement = false;
+
+            if (cntRow >= gridTable1.Rows.Count ||
+                gridTable1.Rows[cntRow].IsNewRow ||
+                gridTable1.Rows[cntRow].Cells[0].Value == null)
+            {
+                MessageBox.Show("Testing Done.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         //Clear Lastest data in gridTable1
         private void btnClearData_Click(object sender, EventArgs e)
         {
-            try
-            {
-                gridTable1.Rows[cntRow - 1].Cells[2].Value = null;
-                gridTable1.Rows[cntRow - 1].Cells[3].Value = null;
-                gridTable1.Rows[cntRow - 1].Cells[4].Value = null;
-                cntRow--;
-                comPort2.Write("*cls\r\n");
-            }
-            catch
+            if (cntRow <= 0)
             {
                 MessageBox.Show("Data unavailable to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                comPort2.Write("*cls\r\n");
+                return;
+            }
+
+            cntRow--;
+            gridTable1.Rows[cntRow].Cells[2].Value = null;
+            gridTable1.Rows[cntRow].Cells[3].Value = null;
+            gridTable1.Rows[cntRow].Cells[4].Value = null;
+            hasValidMeasurement = false;
+
+            try
+            {
+                if (comPort2.IsOpen)
+                {
+                    comPort2.Write("*cls\r\n");
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError("Clear DMM status", ex);
             }
         }
 
@@ -320,30 +367,92 @@ namespace PE
 
         private void port_DataReceived_2(object sender, SerialDataReceivedEventArgs e)
         {
-            InputData = comPort2.ReadExisting();
-            if (InputData != String.Empty)
+            if (isClosing)
             {
-                this.BeginInvoke(new SetTextCallback(SetText2), new object[] { InputData });
+                return;
+            }
+
+            try
+            {
+                string inputData = comPort2.ReadExisting();
+                foreach (string message in ExtractCompleteMessages(dmmReceiveBuffer, dmmReceiveLock, inputData))
+                {
+                    if (IsHandleCreated && !IsDisposed)
+                    {
+                        BeginInvoke(new Action<string>(SetText2), message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError("Read DMM serial port", ex);
             }
         }
 
-        private void SetText2(string text2)
+        private void SetText2(string message)
         {
-            this.rtbIncoming2.Text = text2;
+            rtbIncoming2.Text = message;
+
+            decimal decimalValue;
+            if (!Decimal.TryParse(message.Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out decimalValue))
+            {
+                LogError("Parse DMM measurement", new FormatException("Unsupported DMM response: " + message));
+                return;
+            }
+
+            decimal milliValue = Decimal.Abs(decimalValue * 1000M);
+            string finalValue = milliValue.ToString("0.000", CultureInfo.InvariantCulture);
+
+            value.Text = finalValue;
+            valueDMM.Text = finalValue;
+            measValue = milliValue;
+            lastMeasurementAtUtc = DateTime.UtcNow;
+            hasValidMeasurement = true;
+        }
+
+        private static List<string> ExtractCompleteMessages(StringBuilder receiveBuffer, object receiveLock, string inputData)
+        {
+            List<string> messages = new List<string>();
+            if (String.IsNullOrEmpty(inputData))
+            {
+                return messages;
+            }
+
+            lock (receiveLock)
+            {
+                receiveBuffer.Append(inputData);
+                string bufferedText = receiveBuffer.ToString();
+                int lineEndIndex;
+
+                while ((lineEndIndex = bufferedText.IndexOf('\n')) >= 0)
+                {
+                    string message = bufferedText.Substring(0, lineEndIndex).TrimEnd('\r');
+                    bufferedText = bufferedText.Substring(lineEndIndex + 1);
+
+                    if (!String.IsNullOrWhiteSpace(message))
+                    {
+                        messages.Add(message);
+                    }
+                }
+
+                receiveBuffer.Clear();
+                receiveBuffer.Append(bufferedText);
+            }
+
+            return messages;
+        }
+
+        private static bool TryConvertToDecimal(object valueToConvert, out decimal convertedValue)
+        {
             try
             {
-                string trimStart = rtbIncoming2.Text.TrimStart('+', '-');
-                string trimEnd = trimStart.Replace("\r\n", string.Empty);
-                decimal decimalValue = Decimal.Parse(trimEnd, System.Globalization.NumberStyles.Any);
-                decimal milliValue = decimalValue * 1000;
-                string finalValue = milliValue.ToString("0.000");
-
-                value.Text = finalValue;
-                valueDMM.Text = finalValue;
-                measValue = Convert.ToDecimal(value.Text); //Measure voltage
+                convertedValue = Convert.ToDecimal(valueToConvert, CultureInfo.InvariantCulture);
+                return true;
             }
             catch
             {
+                convertedValue = 0;
+                return false;
             }
         }
 
@@ -356,65 +465,72 @@ namespace PE
             projSheet = programList.Text;
         }
 
-        private void confirmSelectBtn_Click(object sender, EventArgs e)
+        private async void confirmSelectBtn_Click(object sender, EventArgs e)
         {
             gridTable1.Rows.Clear();
+            confirmSelectBtn.Enabled = false;
+            setPoint.Enabled = false;
+            programList.Enabled = false;
+            tbSn.Enabled = false;
+
             try
             {
-                //Disable interface while load test program
-                confirmSelectBtn.Enabled = false;
-                setPoint.Enabled = false;
-                programList.Enabled = false;
-                tbSn.Enabled = false;
+                projSheet = programList.Text;
+                if (String.IsNullOrWhiteSpace(projSheet))
+                {
+                    throw new InvalidOperationException("Please select a test program.");
+                }
 
-                CloseAllExcelProcesses();
+                if (!comPort1.IsOpen)
+                {
+                    throw new InvalidOperationException("The DC source communication port is not connected.");
+                }
+
+                CloseExcelResources();
                 app = new Microsoft.Office.Interop.Excel.Application();
-                workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
+                workBook = app.Workbooks.Open(DatabasePath);
                 workSheet = workBook.Worksheets[projSheet];
                 range = workSheet.UsedRange;
 
-                //Start Importing from the second row. Since the first row is column header
-                for (int excelWorkSheetRowIndex = 2; excelWorkSheetRowIndex < range.Rows.Count + 1; excelWorkSheetRowIndex++)
+                for (int excelRowIndex = 2; excelRowIndex < range.Rows.Count + 1; excelRowIndex++)
                 {
-                    gridTable1.Rows.Add(workSheet.Cells[excelWorkSheetRowIndex, 1].Value, workSheet.Cells[excelWorkSheetRowIndex, 2].Value);
+                    gridTable1.Rows.Add(workSheet.Cells[excelRowIndex, 1].Value, workSheet.Cells[excelRowIndex, 2].Value);
                 }
 
-                //Get setpoint from database
-                double dbSetVolt = workSheet.Cells[2, 3].Value;
-                double dbSetCurr = workSheet.Cells[2, 4].Value;
-                comPort1.Write("v," + dbSetVolt + "\r\n");
-                System.Threading.Thread.Sleep(2000);    //Delay command 2 sec
-                comPort1.Write("a," + dbSetCurr + "\r\n");
-                System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
+                double dbSetVolt = Convert.ToDouble(workSheet.Cells[2, 3].Value, CultureInfo.InvariantCulture);
+                double dbSetCurr = Convert.ToDouble(workSheet.Cells[2, 4].Value, CultureInfo.InvariantCulture);
+
+                comPort1.Write("v," + dbSetVolt.ToString(CultureInfo.InvariantCulture) + "\r\n");
+                await Task.Delay(2000);
+                comPort1.Write("a," + dbSetCurr.ToString(CultureInfo.InvariantCulture) + "\r\n");
+                await Task.Delay(1000);
                 comPort1.Write("*cls\r\n");
+
                 voltBox.Value = Convert.ToInt32(dbSetVolt);
                 currBox.Value = Convert.ToInt32(dbSetCurr);
                 currValue = currBox.Value;
+                cntRow = 0;
+                hasValidMeasurement = false;
 
-                //Enable to normal
+                TryUpdateReportSerialNumber(false);
+                if (!String.IsNullOrWhiteSpace(tbSn.Text) && !tbSn.AutoCompleteCustomSource.Contains(tbSn.Text))
+                {
+                    tbSn.AutoCompleteCustomSource.Add(tbSn.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unable to load test program", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LogError("Load selected test program", ex);
+            }
+            finally
+            {
+                CloseExcelResources();
                 confirmSelectBtn.Enabled = true;
                 setPoint.Enabled = true;
                 programList.Enabled = true;
                 tbSn.Enabled = true;
-
-                //trim SN
-                try
-                {
-                    trimSN = tbSn.Text.Substring(tbSn.Text.Length - 6);
-                }
-                catch
-                {
-                }
-
-                //add sn to completelist
-                tbSn.AutoCompleteCustomSource.Add(tbSn.Text);
             }
-            catch (Exception)
-            {
-                confirmSelectBtn.Enabled = true;
-            }
-            workBook.Close();
-            app.Quit();
         }
 
         //Manual insert program
@@ -593,7 +709,7 @@ namespace PE
             lblToggleOff.Visible = false;
             lblToggleOn.Visible = true;
 
-            comPort1.Write("1\r\n");
+            comPort1.Write("1");
         }
 
         private void btnToggleOn_Click(object sender, EventArgs e)
@@ -604,16 +720,19 @@ namespace PE
             lblToggleOn.Visible = false;
             lblToggleOff.Visible = true;
 
-            comPort1.Write("0\r\n");
+            comPort1.Write("0");
         }
 
         //Cal date
         private void btnCalDC_Click(object sender, EventArgs e)
         {
-            calDC.ShowDialog();
-            Properties.Settings.Default.dcCalDate = calDC.mtbCalDate.Text;
-            Properties.Settings.Default.dcDueDate = calDC.mtbDueDate.Text;
-            Properties.Settings.Default.Save();
+            using (calDC calibrationDialog = new calDC())
+            {
+                calibrationDialog.ShowDialog(this);
+                Properties.Settings.Default.dcCalDate = calibrationDialog.mtbCalDate.Text;
+                Properties.Settings.Default.dcDueDate = calibrationDialog.mtbDueDate.Text;
+                Properties.Settings.Default.Save();
+            }
         }
 
         /*--------------------------------------------Multimeter-------------------------------------------*/
@@ -682,10 +801,13 @@ namespace PE
         //Cal date
         private void btnCalDMM_Click(object sender, EventArgs e)
         {
-            calDMM.ShowDialog();
-            Properties.Settings.Default.dmmCalDate = calDMM.mtbCalDate.Text;
-            Properties.Settings.Default.dmmDueDate = calDMM.mtbDueDate.Text;
-            Properties.Settings.Default.Save();
+            using (calDMM calibrationDialog = new calDMM())
+            {
+                calibrationDialog.ShowDialog(this);
+                Properties.Settings.Default.dmmCalDate = calibrationDialog.mtbCalDate.Text;
+                Properties.Settings.Default.dmmDueDate = calibrationDialog.mtbDueDate.Text;
+                Properties.Settings.Default.Save();
+            }
         }
 
         /*====================================================================================================*/
@@ -693,13 +815,24 @@ namespace PE
 
         private void dangerTime_Tick(object sender, EventArgs e)
         {
+            if (!comPort2.IsOpen)
+            {
+                dangerTime.Stop();
+                toolStripStatusLabel.Text = "DMM disconnected";
+                return;
+            }
+
             try
             {
                 comPort2.Write("meas:volt:dc?\r\n");
             }
-            catch
+            catch (Exception ex)
             {
+                dangerTime.Stop();
+                toolStripStatusLabel.Text = "DMM communication error";
+                LogError("Request DMM measurement", ex);
             }
+
             dangerOn.Visible = !dangerOn.Visible;
             pushStart.Visible = !pushStart.Visible;
         }
@@ -710,28 +843,19 @@ namespace PE
         //File Open Menu
         private void fileOpen_Click(object sender, EventArgs e)
         {
-            var path = string.Empty;
-            if (openFile.ShowDialog() == DialogResult.OK)
+            if (openFile.ShowDialog() != DialogResult.OK)
             {
-                if (openFile.FilterIndex == 1)
-                {
-                    path = openFile.FileName;
-                    app = new Microsoft.Office.Interop.Excel.Application();
-                    workBook = app.Workbooks.Open(path);
-                    app.Visible = true;
-                }
-                else if (openFile.FilterIndex == 2)
-                {
-                    path = openFile.FileName;
-                    app = new Microsoft.Office.Interop.Excel.Application();
-                    workBook = app.Workbooks.Open(path);
-                    app.Visible = true;
-                }
-                else
-                {
-                    path = openFile.FileName;
-                    System.Diagnostics.Process.Start(path);
-                }
+                return;
+            }
+
+            try
+            {
+                Process.Start(openFile.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unable to open file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LogError("Open selected file", ex);
             }
         }
 
@@ -743,75 +867,22 @@ namespace PE
         //File Save As Menu
         private void fileSaveAs_Click(object sender, EventArgs e)
         {
-            //Excel Manage
-            try
-            {
-                workBook = app.Workbooks.Add(1);
-                workSheet = workBook.ActiveSheet;
-                workSheet.Name = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-
-                workSheet.Cells[1, 1] = "Project";
-                workSheet.Cells[1, 2] = programList.Text;
-                workSheet.Cells[2, 1] = "Serial No.";
-                workSheet.Cells[2, 2] = "'" + tbSn.Text;
-                workSheet.Cells[3, 1] = "Test Date";
-                workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-                workSheet.Cells[4, 1] = "DC Cal.Date";
-                workSheet.Cells[4, 2] = Properties.Settings.Default.dcDueDate;
-                workSheet.Cells[5, 1] = "DMM Cal.Date";
-                workSheet.Cells[5, 2] = Properties.Settings.Default.dmmDueDate;
-                // header
-                for (int i = 1; i <= gridTable1.Columns.Count; i++)
-                {
-                    workSheet.Cells[6, i] = gridTable1.Columns[i - 1].HeaderText;
-                }
-
-                // data
-                for (int i = 1; i <= gridTable1.RowCount; i++)
-                {
-                    for (int j = 1; j <= gridTable1.Columns.Count; j++)
-                    {
-                        workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
-                    }
-                }
-
-                workSheet.Columns.AutoFit();
-                string root = @"D:\PE_DATA";
-                // If directory does not exist, create it.
-                if (!Directory.Exists(root))
-                {
-                    Directory.CreateDirectory(root);
-                }
-                saveData.FileName = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-                if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workBook.SaveAs(saveData.FileName);
-                    MessageBox.Show("Report Generated.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                app.Quit();
-                workBook = null;
-                workSheet = null;
-                fileSave.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
+            ExportReportWithDialog();
         }
 
         //File exit Menu
         private void fileExit_Click(object sender, EventArgs e)
         {
-            confirmDialog.Show("Do you want to exit ?", "PE TESTING");
-            comPort1.RtsEnable = false;
-            comPort1.DtrEnable = false;
-            comPort1.Close();
+            if (confirmDialog.Show("Do you want to exit ?", "PE TESTING") == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
         //Config port Menu
         private void configPort_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"D:\Automotive_Software_DET5\PESAT\database\config.ini");
+            Process.Start(ConfigPath);
         }
 
         //Config edit Menu
@@ -847,9 +918,7 @@ namespace PE
         //Config Database
         private void databaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            app = new Microsoft.Office.Interop.Excel.Application();
-            workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
-            app.Visible = true;
+            OpenDatabaseFile();
         }
 
         //Help >>> Spec
@@ -920,7 +989,7 @@ namespace PE
 
         //Tool Strip
         //Start button
-        private void startTool_Click(object sender, EventArgs e)
+        private async void startTool_Click(object sender, EventArgs e)
         {
             String _port1 = ini.IniReadValue("DC-SOURCE", "PORT");
             String _baud1 = ini.IniReadValue("DC-SOURCE", "BAUDRATE");
@@ -938,15 +1007,8 @@ namespace PE
                 startTool.Text = "Start";
                 startTool.ToolTipText = "Click to start program.";
 
-                //Port1-DC
-                comPort1.RtsEnable = false;
-                comPort1.DtrEnable = false;
-                comPort1.Close();
-
-                //Port2-DMM
-                comPort2.RtsEnable = false;
-                comPort2.DtrEnable = false;
-                comPort2.Close();
+                await SafeStopOutputAsync();
+                CloseSerialPorts();
 
                 toolStripStatusLabel.Text = "Device not connected";
                 rtbIncoming1.Clear();
@@ -972,63 +1034,12 @@ namespace PE
                 manualDC.Enabled = false;
                 editSpecTest.Enabled = false;
 
-                //Auto Export
-                //Excel Manage
-                try
+                //Auto export after the equipment has been moved to a safe state.
+                if (TryUpdateReportSerialNumber(true))
                 {
-                    workBook = app.Workbooks.Add(1);
-                    workSheet = workBook.ActiveSheet;
-                    workSheet.Name = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-                    workSheet.Cells[1, 1] = "Project";
-                    workSheet.Cells[1, 2] = programList.Text;
-                    workSheet.Cells[2, 1] = "Serial No.";
-                    workSheet.Cells[2, 2] = "'" + tbSn.Text;
-                    workSheet.Cells[3, 1] = "Test Date";
-                    workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-                    workSheet.Cells[4, 1] = "DC Cal.Date";
-                    workSheet.Cells[4, 2] = Properties.Settings.Default.dcDueDate;
-                    workSheet.Cells[5, 1] = "DMM Cal.Date";
-                    workSheet.Cells[5, 2] = Properties.Settings.Default.dmmDueDate;
-                    // header
-                    for (int i = 1; i <= gridTable1.Columns.Count; i++)
-                    {
-                        workSheet.Cells[6, i] = gridTable1.Columns[i - 1].HeaderText;
-                    }
-
-                    // data
-                    for (int i = 1; i <= gridTable1.RowCount; i++)
-                    {
-                        for (int j = 1; j <= gridTable1.Columns.Count; j++)
-                        {
-                            workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
-                        }
-                    }
-
-                    //Cell merge
-                    /*workSheet.Columns["D"].Insert();
-                    workSheet.Columns["D"].Insert();
-                    workSheet.Columns["D"].Insert();
-                    for (int i = 1; i <= gridTable1.Rows.Count + 5; i++)
-                    {
-                        workSheet.Range[workSheet.Cells[i, 3], workSheet.Cells[i, 6]].Merge();
-                    }*/
-
-                    workSheet.Columns.AutoFit();
-                    string root = @"D:\PE_DATA";
-                    // If directory does not exist, create it.
-                    if (!Directory.Exists(root))
-                    {
-                        Directory.CreateDirectory(root);
-                    }
-                    saveData.FileName = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-                    workBook.SaveAs(@"D:\PE_DATA\" + saveData.FileName + ".xlsx");
-                    app.Quit();
-                    workBook = null;
-                    workSheet = null;
-                }
-                catch (Exception)
-                {
-                    //MessageBox.Show(ex.Message);
+                    Directory.CreateDirectory(ReportRootPath);
+                    string automaticReportPath = Path.Combine(ReportRootPath, BuildReportFileName());
+                    ExportReport(automaticReportPath, false);
                 }
             }
             else if (startTool.Text == "Start")
@@ -1056,7 +1067,7 @@ namespace PE
 
                     //Inintial DC
                     comPort1.Write("*cls\r\n");
-                    System.Threading.Thread.Sleep(2000);    //Delay command 2 sec
+                    await Task.Delay(2000);
                     comPort1.Write("conf:rem\r\n");
                 }
                 catch
@@ -1085,7 +1096,7 @@ namespace PE
 
                     //Inintial DMM
                     comPort2.Write("*cls\r\n");
-                    System.Threading.Thread.Sleep(1000);    //Delay command 1 sec
+                    await Task.Delay(1000);
                     comPort2.Write("syst:rem\r\n");
                 }
                 catch
@@ -1096,22 +1107,33 @@ namespace PE
                     lblDMMPort.BackColor = Color.Red;
                 }
 
-                //Pull test program from database.xlsx
+                //Pull test programs from the database workbook.
                 try
                 {
-                    CloseAllExcelProcesses();
+                    CloseExcelResources();
                     programList.Items.Clear();
                     app = new Microsoft.Office.Interop.Excel.Application();
-                    workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
+                    workBook = app.Workbooks.Open(DatabasePath);
 
-                    String[] excelSheets = new String[workBook.Worksheets.Count];
-                    int i = 0;
                     foreach (Worksheet sheet in workBook.Worksheets)
                     {
-                        excelSheets[i] = sheet.Name;
-                        programList.Items.Add(excelSheets[i]);
-                        i++;
+                        try
+                        {
+                            programList.Items.Add(sheet.Name);
+                        }
+                        finally
+                        {
+                            Marshal.FinalReleaseComObject(sheet);
+                        }
                     }
+
+                    if (programList.Items.Count == 0)
+                    {
+                        throw new InvalidOperationException("The database does not contain any test program.");
+                    }
+
+                    programList.SelectedIndex = 0;
+                    projSheet = programList.Text;
 
                     testData.Enabled = true;
                     getData.Enabled = true;
@@ -1122,12 +1144,19 @@ namespace PE
                     disConnect.Visible = false;
                     toolStripStatusLabel.Text = "Ready";
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Program can't listed the test sequence in the database. Please check database file.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    workBook.Close();
+                    MessageBox.Show(
+                        "Program can't list the test sequence in the database. Please check the database file.\r\n\r\n" + ex.Message,
+                        "PE TESTING",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    LogError("List test programs", ex);
                 }
-                workBook.Close();
+                finally
+                {
+                    CloseExcelResources();
+                }
             }
         }
 
@@ -1163,9 +1192,7 @@ namespace PE
         //Database button
         private void databaseTool_Click(object sender, EventArgs e)
         {
-            app = new Microsoft.Office.Interop.Excel.Application();
-            workBook = app.Workbooks.Open(@"D:\Automotive_Software_DET5\PESAT\database\pe_database.xlsx");
-            app.Visible = true;
+            OpenDatabaseFile();
         }
 
         //Manual button
@@ -1186,91 +1213,293 @@ namespace PE
         //Export button
         private void exportTool_Click(object sender, EventArgs e)
         {
-            //Excel Manage
-            try
-            {
-                workBook = app.Workbooks.Add(1);
-                workSheet = workBook.ActiveSheet;
-                workSheet.Name = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-
-                workSheet.Cells[1, 1] = "Project";
-                workSheet.Cells[1, 2] = programList.Text;
-                workSheet.Cells[2, 1] = "Serial No.";
-                workSheet.Cells[2, 2] = "'" + tbSn.Text;
-                workSheet.Cells[3, 1] = "Test Date";
-                workSheet.Cells[3, 2] = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-                workSheet.Cells[4, 1] = "DC Cal.Date";
-                workSheet.Cells[4, 2] = Properties.Settings.Default.dcDueDate;
-                workSheet.Cells[5, 1] = "DMM Cal.Date";
-                workSheet.Cells[5, 2] = Properties.Settings.Default.dmmDueDate;
-                // header
-                for (int i = 1; i <= gridTable1.Columns.Count; i++)
-                {
-                    workSheet.Cells[6, i] = gridTable1.Columns[i - 1].HeaderText;
-                }
-
-                // data
-                for (int i = 1; i <= gridTable1.RowCount; i++)
-                {
-                    for (int j = 1; j <= gridTable1.Columns.Count; j++)
-                    {
-                        workSheet.Cells[i + 6, j] = gridTable1.Rows[i - 1].Cells[j - 1].Value;
-                    }
-                }
-                workSheet.Columns.AutoFit();
-                string root = @"D:\PE_DATA";
-                // If directory does not exist, create it.
-                if (!Directory.Exists(root))
-                {
-                    Directory.CreateDirectory(root);
-                }
-                saveData.FileName = "PE_SN" + trimSN + "_" + System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-                if (saveData.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workBook.SaveAs(saveData.FileName);
-                    MessageBox.Show("Report Generated.", "PE TESTING", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                app.Quit();
-                workBook = null;
-                workSheet = null;
-                fileSave.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
+            ExportReportWithDialog();
         }
 
         //Shutdown button
         private void shutdownTool_Click(object sender, EventArgs e)
         {
-            confirmDialog.Show("Do you want to exit ?", "PE TESTING");
-            comPort1.RtsEnable = false;
-            comPort1.DtrEnable = false;
-            comPort1.Close();
+            if (confirmDialog.Show("Do you want to exit ?", "PE TESTING") == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
         /*====================================================================================================*/
-        /*------------------------------------------Excel ProcessKill-----------------------------------------*/
-        public void CloseAllExcelProcesses()
-        {
-            Process[] excelProcesses = Process.GetProcessesByName("EXCEL");
-            foreach (Process process in excelProcesses)
-            {
-                try
-                {
-                    if (!process.HasExited)
-                    {
-                        process.Kill();
-                        process.WaitForExit(1000); 
-                    }
-                }
-                catch (Exception ex)
-                {
+        /*-----------------------------------------Safety helpers---------------------------------------------*/
 
+        private async Task SafeStopOutputAsync()
+        {
+            bool previousSuppressState = suppressDcStatusHandling;
+            suppressDcStatusHandling = true;
+            dangerTime.Stop();
+
+            try
+            {
+                if (comPort1.IsOpen)
+                {
+                    comPort1.Write("0");
+                    await Task.Delay(1200);
                 }
             }
+            catch (Exception ex)
+            {
+                LogError("Turn DC output off during shutdown", ex);
+            }
+            finally
+            {
+                suppressDcStatusHandling = previousSuppressState;
+            }
         }
+
+        private void CloseSerialPorts()
+        {
+            CloseSerialPort(comPort1, "DC source");
+            CloseSerialPort(comPort2, "DMM");
+        }
+
+        private static void CloseSerialPort(SerialPort serialPort, string deviceName)
+        {
+            try
+            {
+                if (!serialPort.IsOpen)
+                {
+                    return;
+                }
+
+                serialPort.RtsEnable = false;
+                serialPort.DtrEnable = false;
+                serialPort.Close();
+            }
+            catch (Exception ex)
+            {
+                LogError("Close " + deviceName + " serial port", ex);
+            }
+        }
+
+        private bool TryUpdateReportSerialNumber(bool showMessage)
+        {
+            string serialNumber = (tbSn.Text ?? String.Empty).Trim();
+            if (serialNumber.Length == 0)
+            {
+                if (showMessage)
+                {
+                    MessageBox.Show("Please enter the DUT serial number before exporting the report.",
+                        "Serial number required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                trimSN = String.Empty;
+                return false;
+            }
+
+            string serialSuffix = serialNumber.Length <= 6
+                ? serialNumber
+                : serialNumber.Substring(serialNumber.Length - 6);
+
+            foreach (char invalidCharacter in Path.GetInvalidFileNameChars())
+            {
+                serialSuffix = serialSuffix.Replace(invalidCharacter, '_');
+            }
+
+            trimSN = serialSuffix;
+            return true;
+        }
+
+        private void ExportReportWithDialog()
+        {
+            if (!TryUpdateReportSerialNumber(true))
+            {
+                return;
+            }
+
+            saveData.DefaultExt = "xlsx";
+            saveData.AddExtension = true;
+            saveData.FileName = BuildReportFileName();
+
+            if (saveData.ShowDialog() == DialogResult.OK)
+            {
+                ExportReport(saveData.FileName, true);
+            }
+        }
+
+        private string BuildReportFileName()
+        {
+            return "PE_SN" + trimSN + "_" +
+                DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss", CultureInfo.InvariantCulture) +
+                ".xlsx";
+        }
+
+        private bool ExportReport(string reportPath, bool showSuccessMessage)
+        {
+            if (!TryUpdateReportSerialNumber(true))
+            {
+                return false;
+            }
+
+            try
+            {
+                string reportDirectory = Path.GetDirectoryName(reportPath);
+                if (!String.IsNullOrEmpty(reportDirectory))
+                {
+                    Directory.CreateDirectory(reportDirectory);
+                }
+
+                CloseExcelResources();
+                app = new Microsoft.Office.Interop.Excel.Application();
+                workBook = app.Workbooks.Add(1);
+                workSheet = workBook.ActiveSheet;
+
+                string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss", CultureInfo.InvariantCulture);
+                workSheet.Name = "PE_SN" + trimSN + "_" + timestamp;
+                workSheet.Cells[1, 1] = "Project";
+                workSheet.Cells[1, 2] = programList.Text;
+                workSheet.Cells[2, 1] = "Serial No.";
+                workSheet.Cells[2, 2] = "'" + tbSn.Text.Trim();
+                workSheet.Cells[3, 1] = "Test Date";
+                workSheet.Cells[3, 2] = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
+                workSheet.Cells[4, 1] = "DC Cal.Date";
+                workSheet.Cells[4, 2] = Properties.Settings.Default.dcCalDate;
+                workSheet.Cells[5, 1] = "DMM Cal.Date";
+                workSheet.Cells[5, 2] = Properties.Settings.Default.dmmCalDate;
+
+                for (int columnIndex = 0; columnIndex < gridTable1.Columns.Count; columnIndex++)
+                {
+                    workSheet.Cells[6, columnIndex + 1] = gridTable1.Columns[columnIndex].HeaderText;
+                }
+
+                int excelRow = 7;
+                foreach (DataGridViewRow dataRow in gridTable1.Rows)
+                {
+                    if (dataRow.IsNewRow)
+                    {
+                        continue;
+                    }
+
+                    for (int columnIndex = 0; columnIndex < gridTable1.Columns.Count; columnIndex++)
+                    {
+                        workSheet.Cells[excelRow, columnIndex + 1] = dataRow.Cells[columnIndex].Value;
+                    }
+
+                    excelRow++;
+                }
+
+                range = workSheet.UsedRange;
+                range.Columns.AutoFit();
+                workBook.SaveAs(reportPath);
+
+                if (showSuccessMessage)
+                {
+                    MessageBox.Show(
+                        "Report generated successfully.",
+                        "PE TESTING",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+
+                fileSave.Enabled = true;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Unable to export the report.\r\n\r\n" + ex.Message,
+                    "PE TESTING",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                LogError("Export report", ex);
+                return false;
+            }
+            finally
+            {
+                CloseExcelResources();
+            }
+        }
+
+        private void OpenDatabaseFile()
+        {
+            try
+            {
+                if (!File.Exists(DatabasePath))
+                {
+                    throw new FileNotFoundException("Database file was not found.", DatabasePath);
+                }
+
+                Process.Start(DatabasePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Unable to open the database.\r\n\r\n" + ex.Message,
+                    "PE TESTING",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                LogError("Open database", ex);
+            }
+        }
+
+        private void CloseExcelResources()
+        {
+            try
+            {
+                if (workBook != null)
+                {
+                    workBook.Close(false);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError("Close Excel workbook", ex);
+            }
+
+            try
+            {
+                if (app != null)
+                {
+                    app.Quit();
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError("Quit Excel", ex);
+            }
+
+            ReleaseExcelObject(range);
+            ReleaseExcelObject(workSheet);
+            ReleaseExcelObject(workBook);
+            ReleaseExcelObject(app);
+
+            range = null;
+            workSheet = null;
+            workBook = null;
+            app = null;
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
+        private static void ReleaseExcelObject(object excelObject)
+        {
+            if (excelObject == null || !Marshal.IsComObject(excelObject))
+            {
+                return;
+            }
+
+            try
+            {
+                Marshal.FinalReleaseComObject(excelObject);
+            }
+            catch (Exception ex)
+            {
+                LogError("Release Excel COM object", ex);
+            }
+        }
+
+        private static void LogError(string operation, Exception exception)
+        {
+            Debug.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture) +
+                " | " + operation + " | " + exception);
+        }
+
     }
 
     /*====================================================================================================*/
