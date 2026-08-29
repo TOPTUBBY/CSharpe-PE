@@ -112,7 +112,7 @@ namespace PE
             CloseSerialPorts();
 
             // Cancel this close request and issue a new one after the asynchronous safety work.
-            BeginInvoke(new Action(Close));
+            BeginInvoke(new System.Action(Close));
         }
 
         private void addBlackList(string User)
@@ -229,7 +229,7 @@ namespace PE
                 {
                     if (!suppressDcStatusHandling && IsHandleCreated && !IsDisposed)
                     {
-                        BeginInvoke(new Action<string>(SetText1), message);
+                        BeginInvoke(new System.Action<string>(SetText1), message);
                     }
                 }
             }
@@ -379,7 +379,7 @@ namespace PE
                 {
                     if (IsHandleCreated && !IsDisposed)
                     {
-                        BeginInvoke(new Action<string>(SetText2), message);
+                        BeginInvoke(new System.Action<string>(SetText2), message);
                     }
                 }
             }
@@ -400,7 +400,7 @@ namespace PE
                 return;
             }
 
-            decimal milliValue = Decimal.Abs(decimalValue * 1000M);
+            decimal milliValue = Math.Abs(decimalValue * 1000M);
             string finalValue = milliValue.ToString("0.000", CultureInfo.InvariantCulture);
 
             value.Text = finalValue;
