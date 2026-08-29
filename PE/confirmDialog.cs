@@ -24,22 +24,25 @@ namespace PE
 
         public static DialogResult Show(string Text, string Caption)
         {
-            MsgBox = new confirmDialog();
-            MsgBox.lblConfirm.Text = Text;
-            MsgBox.Text = Caption;
-            MsgBox.ShowDialog();
+            result = DialogResult.No;
+            using (MsgBox = new confirmDialog())
+            {
+                MsgBox.lblConfirm.Text = Text;
+                MsgBox.Text = Caption;
+                MsgBox.ShowDialog();
+            }
             return result;
         }
 
         private void pbY_Click(object sender, EventArgs e)
         {
             result = DialogResult.Yes;
-            Application.Exit();
+            MsgBox.Close();
         }
 
         private void pbX_Click(object sender, EventArgs e)
         {
-            result = DialogResult.Yes;
+            result = DialogResult.No;
             MsgBox.Close();
         }
     }
